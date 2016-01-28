@@ -12,7 +12,7 @@ Top = '
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", "Biosphere and Climate Dynamic Modelling", "me.jpg")
+Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling", "me.jpg")
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
@@ -78,4 +78,38 @@ Research = list(Name = "Current Research Interests",
                      "Plant resource allocation strategies"))
 
 
-AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research)
+Referee = list(Name = "References",
+               c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
+                 "Professor in Global Palaeoclimates and Biogeochemical Cycles",
+                 "Email: s.p.harrison@reading.ac.uk" = "",
+                 "Department of Geography and Environmental Science
+                 School of Archaeology, Geography and Environmental Science
+                 The University of Reading
+                 Whiteknights
+                 Reading
+                 RG6 6AB
+                 UK"),
+
+               c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
+                 "Chair of Biosphere and Climate Impacts",
+                 "Email: c.prentice@imperial.ac.uk" = "",
+                 "Grantham Institute for Climate Change and Department of Life Sciences
+                 Imperial College
+                 Silwood Park Campus
+                 Ascot
+                 SL5 7PY
+                 UK"),
+
+               c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
+                 "Climate and Forest Ecosystem Modelling",
+                 "Email: b.medlyn@westernsydney.edu.au" = "",
+                 "Hawkesbury Institute for the Environment,
+                 Western Sydney University,
+                 Locked Bag 1797,
+                 Penrith,
+                 NSW
+                 Australia
+                 2751"))
+
+
+AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research, Referee)
