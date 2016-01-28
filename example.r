@@ -13,13 +13,15 @@ head = '
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", "Biosphere and Climate Dynamic Modelling")
+Name    = c("Douglas Kelley", "Biosphere and Climate Dynamic Modelling", "me.jpg")
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
             web   = "douglask3.github.io")
 
-
+###############################################################
+## Additional Sections                                       ##
+###############################################################
 Qualifications = list(Name = "Academic qualification",
         c("PhD Ecology" = "",
           "2014",
@@ -55,20 +57,17 @@ Publications = list(Name = "Publication Statistics",
                     Main = MakeUserProfile(usrID, 'unformatted'))
 
 Awards = list(Name = "Award",
-    "Macquarie University Research Excellence Scholarship" =
-        c("http://www.hdr.mq.edu.au/information_about/scholarships",
+        c("Macquarie University Research Excellence Scholarship"="http://www.hdr.mq.edu.au/information_about/scholarships",
           "2010-2014",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           ""),
-    "Post Graduate Research Fund (PGRF)" =
-        c("http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support",
+        c("Post Graduate Research Fund (PGRF)" = "http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support",
           "2013",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           ""),
-    "Biology postgrad conference best presentation" =
-        c("",
+        c("Biology postgrad conference best presentation" = "",
           "2011",
-          "Biological Sciences, Macquarie University, Ryde, NSW, Australia",
+          "Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
           ""))
 
 Research = list(Name = "Current Research Interests",
@@ -79,4 +78,4 @@ Research = list(Name = "Current Research Interests",
                      "Vegetation model benchmarking and diagnosis",
                      "Plant resource allocation strategies"))
 
-AdditionalSection = list(Publications, Awards, Research)
+AdditionalSection = list(Qualifications, Employment, Publications, Awards, Research)

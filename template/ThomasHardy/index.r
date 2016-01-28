@@ -38,96 +38,97 @@ doc = c('
 	</div>
 	<div id="mainArea" class="quickFade delayFive">')
 
-	if (!is.null(Profile)) {
-		doc = c(doc, '
+
+	addSection <- function(section) {
+		ls = length(section)
+		     if (ls == 2) return(addParaSection    (section))
+		else if (ls == 3) return(addParaListSection(section))
+		else if (ls == 4) return(addListedSection  (section))
+		else {
+			warning("section not identifiable. Skipping over")
+			return(doc)
+		}
+	}
+
+	addParaSection <- function(section) {
+		c(doc, '
 			<section>
 				<article>
 					<div class="sectionTitle">
-						<h1>', Profile[1], '</h1>
+						<h1>', section[1], '</h1>
 					</div>
 
 					<div class="sectionContent">
-						<p>', Profile[2], '</p>
+						<p>', section[2], '</p>
 					</div>
 				</article>
 				<div class="clear"></div>
 			</section>
 		')
 	}
-	print("Employment")
-	if (!is.null(Employment)) {
-		doc = c(doc,'
+
+	addParaListSection <- function(section) {
+		doc = c(doc, '
 		<section>
-			<div class="sectionTitle">
-				<h1>', Employment[[1]], '</h1>
-			</div>
-			<div class="sectionContent">
-			')
-
-			for (job in tail(Employment, -1)) {
-				doc = c(doc, '
-				<article>
-					<h2>', hrefIndex(job, 1), '</h2>
-					<p class="subDetails">', job[2], '</p>
-					<b>', hrefIndex(job, 3), '</b>
-					<p>', job[4], '</p>
-				</article>')
-			}
-			doc = c(doc, '
-				</div>
-				<div class="clear"></div>
-			</section>')
-		}
-		print("Skills")
-		if (!is.null(Skills)) {
-			doc = c(doc, '
-				<section>
-					<div class="sectionTitle">
-						<h1>', Skills[1], '</h1>
-					</div>
-
-					<div class="sectionContent">
-						<ul class="keySkills">
-						')
-
-						for (Skill in tail(Skills, -1)) {
-							doc = c(doc, '<li>', Skill, '</li>
-									')
-						}
-			doc = c(doc, '
-					</ul>
-				</div>
-				<div class="clear"></div>
-			</section>')
-		}
-
-		print("Qualifications")
-		if (!is.null(Qualifications)) {
-			doc = c(doc, '
-			<section>
+			<article>
 				<div class="sectionTitle">
-					<h1>', Qualifications[1],'</h1>
+					<h1>', section[1], '</h1>
 				</div>
 
 				<div class="sectionContent">
+					<h3>', section[2], '</h3>
+				</div>
+			</article>
+			<div class="sectionContent">
+				')
+				for (sub in section[[3]]) doc = addItem(sub, doc)
+		doc = c(doc, '
+				</div>
+				<div class="clear"></div>
+			</section>')
+		return(doc)
+	}
+
+	addListedSection <- function(section) {
+		doc = c(doc,'
+			<section>
+				<div class="sectionTitle">
+					<h1>', section[[1]], '</h1>
+				</div>
+				<div class="sectionContent">
 				')
 
-			for (school in tail(Qualifications, -1)) {
-				doc = c(doc, '
-					<article>
-					<h2>', hrefIndex(school, 1), '</h2>
-					<p class="subDetails">', school[2], '</p>
-					<b>', hrefIndex(school, 3), '</b>
-					<p>', school[4], '</p>
-				</article>
-				')
-			}
+				for (sub in tail(section, -1)) doc = addItem(sub, doc)
 
-			doc = c(doc, '
-					</div>
-					<div class="clear"></div>
-				</section>')
-		}
+		doc = c(doc, '
+				</div>
+				<div class="clear"></div>
+			</section>')
+
+		return(doc)
+	}
+
+	addItem <- function(sub, ...) {
+		if (length(sub) == 1 ) return(addListItem(sub, ...))
+		if (length(sub) == 4 ) return(addDetailItem(sub, ...))
+	}
+
+	addDetailItem <- function(sub, doc) {
+		c(doc, '
+			<article>
+				<h2>', hrefIndex(sub, 1), '</h2>
+				<p class="subDetails">', sub[2], '</p>
+				<b>', hrefIndex(sub, 3), '</b>
+				<p>', sub[4], '</p>
+			</article>')
+	}
+
+	addListItem <- function(sub, doc) c(doc, '<li>', sub, '</li>\n')
+
+
+	for (section in AdditionalSection) doc = addSection(section)
+
+
 		doc = c(doc,'
 	</div>
 </div>

@@ -23,11 +23,7 @@ r2cv <- function(file = "example.r", template = "ThomasHardy", outPath = "docs")
 
     ## Set defualts
     Name              = NULL
-    Profile           = NULL
     Contact           = NULL
-    Qualifications    = NULL
-    Employment        = NULL
-    Skills            = NULL
     AdditionalSection = NULL
 
     ## Open
