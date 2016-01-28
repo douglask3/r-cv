@@ -6,9 +6,8 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ###############################################################
 ## Head                                                      ##
 ###############################################################
-head = '
-<a href="javascript:history.back()">Go Back to website</a>,
-<h1> Summary </h1>'
+Top = '
+<a href="javascript:history.back()">Go Back to website</a>'
 
 ###############################################################
 ## Basic Infomation                                          ##
@@ -78,4 +77,5 @@ Research = list(Name = "Current Research Interests",
                      "Vegetation model benchmarking and diagnosis",
                      "Plant resource allocation strategies"))
 
-AdditionalSection = list(Qualifications, Employment, Publications, Awards, Research)
+
+AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research)

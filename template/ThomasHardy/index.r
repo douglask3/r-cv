@@ -16,7 +16,15 @@ doc = c('
 <![endif]-->
 </head>
 <body id="top">
-<div id="cv" class="instaFade">
+<div id="cv" class="instaFade">')
+	if (!is.null(Top)) doc = c(doc, Top)
+
+	Contact = c(
+		paste('e: <a href="mailto:', Contact[1], '" target="_blank">',Contact[1], '</a>'),
+		paste('w: <a href="', Contact[3], '">', Contact[3], '</a>'),
+		paste('m: ', Contact[2]))
+
+	doc = c(doc,'
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
 			<img src="', Name[3], '" alt="', Name[1], '" />
@@ -29,9 +37,9 @@ doc = c('
 
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <a href="mailto:', Contact[1], '" target="_blank">',Contact[1], '</a></li>
-				<li>w: <a href="', Contact[3], '">', Contact[3], '</a></li>
-				<li>m: ', Contact[2], '</li>
+				<li>', Contact[1], '</li>
+				<li>', Contact[2], '</li>
+				<li>', Contact[3], '</li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -41,13 +49,15 @@ doc = c('
 
 	addSection <- function(section) {
 		ls = length(section)
-		     if (ls == 2) return(addParaSection    (section))
-		else if (ls == 3) return(addParaListSection(section))
-		else if (ls == 4) return(addListedSection  (section))
-		else {
-			warning("section not identifiable. Skipping over")
-			return(doc)
-		}
+		lsSub = length(section[[2]])
+
+		     if (ls == 2 && lsSub == 1) return(addParaSection    (section))
+		else if (ls == 3 && lsSub == 1) return(addParaListSection(section))
+		else                            return(addListedSection  (section))
+		#else {
+		#	warning("section not identifiable. Skipping over")
+		#	return(doc)
+		#}
 	}
 
 	addParaSection <- function(section) {
@@ -59,7 +69,7 @@ doc = c('
 					</div>
 
 					<div class="sectionContent">
-						<p>', section[2], '</p>
+						', section[2], '
 					</div>
 				</article>
 				<div class="clear"></div>
@@ -111,6 +121,8 @@ doc = c('
 	addItem <- function(sub, ...) {
 		if (length(sub) == 1 ) return(addListItem(sub, ...))
 		if (length(sub) == 4 ) return(addDetailItem(sub, ...))
+		for (i in sub) doc = addListItem(i, ...)
+		return(doc)
 	}
 
 	addDetailItem <- function(sub, doc) {
@@ -123,13 +135,21 @@ doc = c('
 			</article>')
 	}
 
-	addListItem <- function(sub, doc) c(doc, '<li>', sub, '</li>\n')
+	addListItem <- function(sub, doc) c(doc, '<li>', hrefIndex(sub, 1), '</li>\n')
 
 
 	for (section in AdditionalSection) doc = addSection(section)
 
+	doc = c(doc, '
+	</div>
+	<div id="mainArea" class=" mainDetails quickFade delayFive">')
 
-		doc = c(doc,'
+		footer = c( Name = Name[1],
+		 		   paste('<p class = "subDetails">',
+					     paste(Contact, collapse = ';&nbsp;&nbsp;'), '</p>'))
+
+		doc = addSection(footer)
+	doc = c(doc, '
 	</div>
 </div>
 <script type="text/javascript">

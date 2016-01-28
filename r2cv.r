@@ -22,6 +22,7 @@ r2cv <- function(file = "example.r", template = "ThomasHardy", outPath = "docs")
     }
 
     ## Set defualts
+    Top               = NULL
     Name              = NULL
     Contact           = NULL
     AdditionalSection = NULL
@@ -33,7 +34,7 @@ r2cv <- function(file = "example.r", template = "ThomasHardy", outPath = "docs")
     doc = paste(doc, collapse = "")
     cat(doc, file = 'docs/index.html')
 
-    mapply(file.copy,cps1, cps2)
+    mapply(file.copy, cps1, cps2, overwrite= TRUE)
 
 
 
