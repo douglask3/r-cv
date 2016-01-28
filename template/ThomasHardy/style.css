@@ -7,6 +7,29 @@ padding:0;
 vertical-align:baseline;
 }
 
+b {
+	font-weight: bold;
+}
+
+small {
+	font-size:80%;
+}
+
+a {
+	color:inherit;
+	text-decoration: none;
+}
+
+i {
+	font-style: italic;
+}
+
+li {
+	list-style-position: inside;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
 }
@@ -48,6 +71,13 @@ p {
 	font-size: 2em;
 	margin-left: 2px;
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+}
+
+#name h3 {
+	font-size: 1.75em;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	border-top: 2px solid #cf8a05;
 }
 
 #mainArea {
@@ -135,6 +165,7 @@ section:last-child {
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 	font-size: 1.5em;
 	margin-bottom: -2px;
+	color: #840;
 }
 
 .subDetails {

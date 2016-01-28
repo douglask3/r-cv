@@ -22,12 +22,13 @@ doc = c('
 	doc = c(doc,'
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
-			<img src="', Name[3], '" alt="', Name[1], '" />
+			<img src="', Name[4], '" alt="', Name[1], '" />
 		</div>
 
 		<div id="name">
 			<h1 class="quickFade delayTwo">', Name[1], '</h1>
 			<h2 class="quickFade delayThree">', Name[2], '</h2>
+			<h3 class="quickFade delayThree">', Name[3], '</h3>
 		</div>')
 		if (!is.null(Contact)) {
 			Contact = c(
@@ -52,8 +53,8 @@ doc = c('
 
 	addSection <- function(section) {
 		ls = length(section)
+			 if (ls == 1              ) return(addParaSection(c("", section)))
 		lsSub = length(section[[2]])
-
 		     if (ls == 2 && lsSub == 1) return(addParaSection    (section))
 		else if (ls == 3 && lsSub == 1) return(addParaListSection(section))
 		else                            return(addListedSection  (section))
@@ -111,7 +112,10 @@ doc = c('
 				<div class="sectionContent">
 				')
 
-				for (sub in tail(section, -1)) doc = addItem(sub, doc)
+				subs = tail(section, -1)
+				makeBoldName <- function(nm, txt) paste('<b>', nm, '</b>:', txt)
+				if (is.character(subs)) subs = mapply(makeBoldName, names(subs), subs)
+				for (sub in subs) doc = addItem(sub, doc)
 
 		doc = c(doc, '
 				</div>
@@ -122,19 +126,71 @@ doc = c('
 	}
 
 	addItem <- function(sub, ...) {
+		if (is.list(sub))      return(addMultItem(sub, ...))
 		if (length(sub) == 1 ) return(addListItem(sub, ...))
-		if (length(sub) == 4 ) return(addDetailItem(sub, ...))
+		if (length(sub) == 3 ) return(add3Item   (sub, ...))
+		if (length(sub) == 4 ) return(add4Item   (sub, ...))
+		if (length(sub) == 5 ) return(add5Item   (sub, ...))
+		if (length(sub) == 6 ) return(addPubs    (sub, ...))
 		for (i in sub) doc = addListItem(i, ...)
 		return(doc)
 	}
 
-	addDetailItem <- function(sub, doc) {
+	addMultItem <- function(sub, doc) {
+		doc = c(doc, '
+				<br>
+				<article>
+					<h2>', hrefIndex(sub, 1), '</h2>
+				</article>')
+
+		for (i in tail(sub, -1)) doc = addItem(i, doc)
+		doc = c(doc, '<br>')
+
+		return(doc)
+	}
+
+	addPubs  <- function(sub, doc) {
+
+		if (is.na(sub[5]) || sub[5]=="")
+			sub[5] = ": "
+		else sub[5] = paste(' (', sub[5], ') ', sep = "")
+
+		if (sub[6] == " 0") sub[6] = ""
+		if (sub[6] != "") sub[6] = paste('<p class="subDetails"> Cited by:', sub[6], '</p>',sep = "")
+
+		doc = c(doc, '<article>',
+			        sub[1], sub[5], sub[2], ' <i>', sub[3], '</i> - ', sub[4], sub[6],'
+		  </article><br>'
+		)
+	}
+
+	add4Item <- function(sub, doc) {
 		c(doc, '
 			<article>
 				<h2>', hrefIndex(sub, 1), '</h2>
 				<p class="subDetails">', sub[2], '</p>
 				<b>', hrefIndex(sub, 3), '</b>
-				<p>', sub[4], '</p>
+				<p>', sub[4], '<p>
+			</article>')
+	}
+
+	add3Item <- function(sub, doc) {
+		c(doc, '
+			<article>
+				<h2>', hrefIndex(sub, 1), '</h2>
+				<p>', sub[2], '<br>
+				<small><i>', sub[3], '</i></small></p>
+			</article>')
+	}
+
+	add5Item <- function(sub, doc) {
+		c(doc, '
+			<article>
+				<h2>', hrefIndex(sub, 1), '</h2>
+				<b>' , hrefIndex(sub, 2), '</b>
+				<p class="subDetails">', sub[3], '</p>
+				<h3>', hrefIndex(sub, 4), '</h3>
+				<small>', sub[5], '</small><p></p>
 			</article>')
 	}
 
@@ -147,15 +203,15 @@ doc = c('
 	</div>
 	<div id="mainArea" class=" mainDetails quickFade delayFive">')
 
-		if (is.null(footer)) {
+		if (is.null(Footer)) {
 			if (!is.null(Contact)) {
-				footer = c( Name = Name[1],
+				Footer = c( Name = Name[1],
 			 		       paste('<p class = "subDetails">',
 						         paste(Contact, collapse = ';&nbsp;&nbsp;'),
 								 '</p>'))
-			} else footer = c("", "")
+			} else Footer = c("", "")
 		}
-		doc = addSection(footer)
+		doc = addSection(Footer)
 	doc = c(doc, '
 	</div>
 </div>

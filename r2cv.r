@@ -1,13 +1,14 @@
-r2cv <- function(file = "example.r", template = "ThomasHardy", outPath = "docs") {
+r2cv <- function(file = "example-long.r", template = "ThomasHardy", outPath = "docs") {
 
     ###############################################################
     ## Cfg                                                       ##
     ###############################################################
     library(gitBasedProjects)
     sourceAllLibs()
-    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.list.r")
-    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.r")
     source("../webpageGenerator/libs/googleScholarGrab/MakeUserProfile.r")
+    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.r")
+    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.list.r")
+    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.Rlist.r")
 
     ## File paths
     template = paste('template', template, sep = '/')
@@ -36,14 +37,4 @@ r2cv <- function(file = "example.r", template = "ThomasHardy", outPath = "docs")
 
     mapply(file.copy, cps1, cps2, overwrite= TRUE)
 
-
-
-    #doc = readLines(index)
-
-    #doc = paste(c("'", doc, "'"), collapse = '\n')
-
-    #for (i in 1:length(doc)) {
-    #    if (grepl('{%', doc[i], fixed = TRUE)) browser()
-    #}
-    #browser()
 }
