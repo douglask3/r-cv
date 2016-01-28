@@ -19,11 +19,6 @@ doc = c('
 <div id="cv" class="instaFade">')
 	if (!is.null(Top)) doc = c(doc, Top)
 
-	Contact = c(
-		paste('e: <a href="mailto:', Contact[1], '" target="_blank">',Contact[1], '</a>'),
-		paste('w: <a href="', Contact[3], '">', Contact[3], '</a>'),
-		paste('m: ', Contact[2]))
-
 	doc = c(doc,'
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
@@ -33,15 +28,23 @@ doc = c('
 		<div id="name">
 			<h1 class="quickFade delayTwo">', Name[1], '</h1>
 			<h2 class="quickFade delayThree">', Name[2], '</h2>
-		</div>
+		</div>')
+		if (!is.null(Contact)) {
+			Contact = c(
+				paste('e: <a href="mailto:', Contact[1], '" target="_blank">',Contact[1], '</a>'),
+				paste('w: <a href="', Contact[3], '">', Contact[3], '</a>'),
+				paste('m: ', Contact[2]))
 
-		<div id="contactDetails" class="quickFade delayFour">
-			<ul>
-				<li>', Contact[1], '</li>
-				<li>', Contact[2], '</li>
-				<li>', Contact[3], '</li>
-			</ul>
-		</div>
+			doc = c(doc, '
+				<div id="contactDetails" class="quickFade delayFour">
+					<ul>
+						<li>', Contact[1], '</li>
+						<li>', Contact[2], '</li>
+						<li>', Contact[3], '</li>
+					</ul>
+				</div>')
+		}
+		doc = c(doc, '
 		<div class="clear"></div>
 	</div>
 	<div id="mainArea" class="quickFade delayFive">')
@@ -144,10 +147,14 @@ doc = c('
 	</div>
 	<div id="mainArea" class=" mainDetails quickFade delayFive">')
 
-		footer = c( Name = Name[1],
-		 		   paste('<p class = "subDetails">',
-					     paste(Contact, collapse = ';&nbsp;&nbsp;'), '</p>'))
-
+		if (is.null(footer)) {
+			if (!is.null(Contact)) {
+				footer = c( Name = Name[1],
+			 		       paste('<p class = "subDetails">',
+						         paste(Contact, collapse = ';&nbsp;&nbsp;'),
+								 '</p>'))
+			} else footer = c("", "")
+		}
 		doc = addSection(footer)
 	doc = c(doc, '
 	</div>
