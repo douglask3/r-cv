@@ -12,7 +12,7 @@ Top = '
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling", "me.jpg")
+Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling", "Summary", "me.jpg")
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",

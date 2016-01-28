@@ -7,6 +7,5 @@ href <- function(txt, link = "", target = "_blank") {
     return(out)
 }
 
-
-hrefIndex <- function(var, i)
-    href(names(var)[i], var[i])
+hrefIndex <- function(var, i, ...)
+    href(names(var)[i], var[i], ...)
