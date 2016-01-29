@@ -7,12 +7,14 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ## Head                                                      ##
 ###############################################################
 Top = '
-<a href="javascript:history.back()">Go Back to website</a>'
+<a href="javascript:history.back()">Go Back to website</a><br>
+<a href= "http://douglask3.github.io/cv/short/example.html"> See Summary, click here </a><br>
+<a href= "http://douglask3.github.io/cv/long/example-long.html", target = "_blank"> Open in new page, click here </a>'
 
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling", "Extended CV", "me.jpg")
+Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling", "Extended CV", "docs/me.jpg")
 
 ###############################################################
 ## Additional Sections                                       ##
@@ -415,11 +417,24 @@ Skills = list(Name = "Skills",
                       <li> Photoshop/Illistrator and GIMP (the open source equivalent). See <a href = "http://flickr.com/doug_from_the_uk"> flickr.com/doug_from_the_uk </a> for examples of graphical art and photo "touch ups", manipulation. </li>',
                       "")))
 
-Software = c("Software Tools",
-             "Collaborations on various projects has lead me to develop software packages to share across projects teams.
-                Some these perform statistical model-comparisons; others run vegetation models themselves, and some help keep track for workflows and provenance when using a version control system model.
-                Below are some of the most used software packages. More detail can be found at [douglask3.github.io/tools](http://douglask3.github.io/tools), while an exhustive list can be found on my bitbucket and github repository pages detailed in the contact section.")
+Software = c(Name = "Software Tools",
+             Main = "I have developed and maitained several software packages related to my reasrch projects and shared with collaborators. Some of the most used are:")
+            list(
+                c("Vegetation Benchmark Metrics" = "",
+                  "An R-package containing the metrics and basic statistical models relating to my work on Vegetation model benchmarking.",
+                  'See <a href="http://douglask3.github.io/vegetation-model-benchmarking.html">douglask3.github.io/vegetation-model-benchmarking</a> for more information.'),
 
+                c("Git-based R project Tracking" = "",
+                  "Tools for tracking r-projects version controlled by Git.",
+                  'See <a href="http://douglask3.github.io/git-based-r-project-extras.html">douglask3.github.io/git-based-r-project-extras</a> for more information.'),
+
+                c("LPX" = "",
+                  "Running, storing, analysing and plotting the LPX-Dynamic Global Vegetation Model.",
+                  'See <a href="http://douglask3.github.io/lpx-dynamic-global-vegetation-model.html">douglask3.github.io/lpx-dynamic-global-vegetation-model</a> for more information.'),
+
+                c('For a more comprehensive list, see <a href ="http://douglask3.github.io/pages/tools.html"> douglask3.github.io/pages/tools </a>'))
+
+    
 ExtraCircular = list(Name = "Extra-Circular",
                      c('Committee Member responsible for <a href = "http://www.eppingdac.com.au/"> web-design</a> communications, and social runners' = "",
                        "Feb 2011-May 2015",
