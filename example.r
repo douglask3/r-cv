@@ -7,8 +7,8 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ## Head                                                      ##
 ###############################################################
 Top = '
-
 <a href= "http://douglask3.github.io/cv/short/example.html", target = "_blank"> Open in new page, click here </a>'
+
 
 ###############################################################
 ## Basic Infomation                                          ##
