@@ -7,14 +7,13 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ## Head                                                      ##
 ###############################################################
 Top = '
-<a href="javascript:history.back()">Go Back to website</a><br>
-<a href= "http://douglask3.github.io/cv/short/example.html"> See Summary, click here </a><br>
 <a href= "http://douglask3.github.io/cv/long/example-long.html", target = "_blank"> Open in new page, click here </a>'
 
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling", "Extended CV", "docs/me.jpg")
+Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling",
+            'Extended CV - <a href = "http://douglask3.github.io/cv/short/example.html"> For Summary click here</a>', "docs/me.jpg")
 
 ###############################################################
 ## Additional Sections                                       ##
@@ -434,7 +433,7 @@ Software = c(Name = "Software Tools",
 
                 c('For a more comprehensive list, see <a href ="http://douglask3.github.io/pages/tools.html"> douglask3.github.io/pages/tools </a>'))
 
-    
+
 ExtraCircular = list(Name = "Extra-Circular",
                      c('Committee Member responsible for <a href = "http://www.eppingdac.com.au/"> web-design</a> communications, and social runners' = "",
                        "Feb 2011-May 2015",
