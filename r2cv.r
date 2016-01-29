@@ -1,4 +1,6 @@
-r2cv <- function(file = "example-long.r", template = "ThomasHardy", outPath = "docs") {
+r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NULL,
+                    Footer = NULL,
+                 file = "example-long.r", template = "ThomasHardy", outPath = "docs") {
 
     ###############################################################
     ## Cfg                                                       ##
@@ -22,17 +24,15 @@ r2cv <- function(file = "example-long.r", template = "ThomasHardy", outPath = "d
         cps2 = paste(outPath , cps2, sep = '/')
     }
 
-    ## Set defualts
-    Top               = NULL
-    Name              = NULL
-    Contact           = NULL
-    AdditionalSection = NULL
 
     ## Open
-    source(file, local = TRUE)
-    source(index, local = TRUE)
+    if (!is.null(file)) source(file, local = TRUE)
+    Credits = 'Made using r2cv R package - <a href = "http://github.com/douglask3/r-cv", target = "_blank"> github.com/douglask3/r-cv </a>'
 
+    source(index, local = TRUE)
     doc = paste(doc, collapse = "")
+
+    ## Outputs
     cat(doc, file = 'docs/index.html')
 
     mapply(file.copy, cps1, cps2, overwrite= TRUE)

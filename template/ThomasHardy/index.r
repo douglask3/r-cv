@@ -212,8 +212,9 @@ doc = c('
 			} else Footer = c("", "")
 		}
 		doc = addSection(Footer)
-	doc = c(doc, '
-	</div>
+		doc = c(doc, '
+	</div>')
+	doc = c(doc, '<small><i>', Credits, '</i></small>
 </div>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
