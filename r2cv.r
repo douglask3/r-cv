@@ -11,25 +11,35 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.r")
     source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.list.r")
     source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.Rlist.r")
+    Credits = 'Made using r2cv R package - <a href = "http://github.com/douglask3/r-cv", target = "_blank"> github.com/douglask3/r-cv </a>'
 
-    if (!is.null(file)) source(file, local = TRUE)
 
     ## File paths
+    ## template
     template = paste('template', template, sep = '/')
     index    = paste(template, 'index.r', sep = '/')
 
+    cpInFiles  = paste(template, 'style.css', sep = '/')
+    cpOutFiles = 'style.css'
+
+    outFile    = sapply(file, function(i) head(strsplit(i, '.', fixed = TRUE)[[1]],-1))
+    outFile    = paste(c(outFile,'html'), collapse = '.')
 
 
+    doc0 = ''; headHtml = TRUE;
+    for (i in file) {
+        source(i, local = TRUE)
 
-    outFile    = paste(c(head(strsplit(file, '.', fixed = TRUE)[[1]],-1),'html'), collapse = '.')
+        cpInFiles  = c(cpInFiles , Name[4])
+        Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
+        cpOutFiles = c(cpOutFiles, Name[4])
 
-    cpInFiles  = c(cssFile  = paste(template, 'style.css', sep = '/'),
-                  imageFile = Name[4])
+        source(index, local = TRUE)
 
-    Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
-
-    cpOutFiles = c(cssFile   = 'style.css',
-                   imageFile = Name[4])
+        doc  = c(doc0, doc)
+        doc0 = doc
+        headHtml = FALSE
+    }
 
     if (outPath != "") {
         makeDir(outPath)
@@ -37,10 +47,6 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
         cpOutFiles = paste(outPath, cpOutFiles, sep = '/')
     }
 
-
-    Credits = 'Made using r2cv R package - <a href = "http://github.com/douglask3/r-cv", target = "_blank"> github.com/douglask3/r-cv </a>'
-
-    source(index, local = TRUE)
     doc = paste(doc, collapse = "")
 
     ## Outputs

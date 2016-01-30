@@ -1,4 +1,8 @@
-doc = c('
+doc = c('')
+
+if (headHtml) {
+	print("yay")
+	doc = c('
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +18,10 @@ doc = c('
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-</head>
+</head>')
+}
+
+doc = c(doc, '
 <body id="top">
 <div id="cv" class="instaFade">')
 	if (!is.null(Top)) doc = c(doc, Top)
