@@ -22,20 +22,21 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     cpInFiles  = paste(template, 'style.css', sep = '/')
     cpOutFiles = 'style.css'
 
-    outFile    = sapply(file, function(i) head(strsplit(i, '.', fixed = TRUE)[[1]],-1))
+    outFile    = sapply(file   , function(i) tail(strsplit(i,'/')[[1]],1))
+    outFile    = sapply(outFile, function(i) head(strsplit(i, '.', fixed = TRUE)[[1]],-1))
     outFile    = paste(c(outFile,'html'), collapse = '.')
 
 
     doc0 = ''; headHtml = TRUE;
     for (i in file) {
         source(i, local = TRUE)
-
-        cpInFiles  = c(cpInFiles , Name[4])
-        Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
-        cpOutFiles = c(cpOutFiles, Name[4])
+        if (length(Name) > 3) {
+            cpInFiles  = c(cpInFiles , Name[4])
+            Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
+            cpOutFiles = c(cpOutFiles, Name[4])
+        }
 
         source(index, local = TRUE)
-
         doc  = c(doc0, doc)
         doc0 = doc
         headHtml = FALSE

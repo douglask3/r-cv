@@ -15,6 +15,8 @@ Top = '
 Name    = c("Douglas Kelley", "Biosphere & Climate Dynamics Modelling",
             'Extended CV - <a href = "http://douglask3.github.io/cv/short/example.html"> For Summary click here</a>', "docs/me.jpg")
 
+
+Contact = NULL
 ###############################################################
 ## Additional Sections                                       ##
 ###############################################################

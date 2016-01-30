@@ -27,11 +27,15 @@ doc = c(doc, '
 	if (!is.null(Top)) doc = c(doc, Top)
 
 	doc = c(doc,'
-	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
-			<img src="', Name[4], '" alt="', Name[1], '" />
-		</div>
-
+	<div class="mainDetails">')
+		if (length(Name) > 3) {
+			doc = c(doc, '
+				<div id="headshot" class="quickFade">
+					<img src="', Name[4], '" alt="', Name[1], '" />
+				</div>
+				')
+		}
+		doc = c(doc, '
 		<div id="name">
 			<h1 class="quickFade delayTwo">', Name[1], '</h1>
 			<h2 class="quickFade delayThree">', Name[2], '</h2>
