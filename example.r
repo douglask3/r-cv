@@ -13,7 +13,7 @@ Top = '
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", "Biosphere and Climate Dynamics Modelling",
+Name    = c("Douglas Kelley", "Biosphere & Climate Dynamics Modelling",
             'Summary - <a href = "http://douglask3.github.io/cv/long/example-long.html"> For Extended CV click here</a>', "docs/me.jpg")
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
