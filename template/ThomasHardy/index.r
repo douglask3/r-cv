@@ -28,34 +28,34 @@ addDocStart <- function(doc, top) {
 	return(doc)
 }
 
-addNameMainArea <- function(doc) {
+addNameMainArea <- function(doc, name, contact) {
 	doc = c(doc,'
 	<div class="mainDetails">')
-		if (length(Name) > 3) {
+		if (length(name) > 3) {
 			doc = c(doc, '
 				<div id="headshot" class="quickFade">
-					<img src="', Name[4], '" alt="', Name[1], '" />
+					<img src="', name[4], '" alt="', name[1], '" />
 				</div>
 				')
 		}
 		doc = c(doc, '
 		<div id="name">
-			<h1 class="quickFade delayTwo">', Name[1], '</h1>
-			<h2 class="quickFade delayThree">', Name[2], '</h2>
-			<h3 class="quickFade delayThree">', Name[3], '</h3>
+			<h1 class="quickFade delayTwo">', name[1], '</h1>
+			<h2 class="quickFade delayThree">', name[2], '</h2>
+			<h3 class="quickFade delayThree">', name[3], '</h3>
 		</div>')
 		if (!is.null(Contact)) {
 			Contact = c(
-				paste('e: <a href="mailto:', Contact[1], '" target="_blank">',Contact[1], '</a>'),
-				paste('w: <a href="', Contact[3], '">', Contact[3], '</a>'),
-				paste('m: ', Contact[2]))
+				paste('e: <a href="mailto:', contact[1], '" target="_blank">',contact[1], '</a>'),
+				paste('w: <a href="', contact[3], '">', contact[3], '</a>'),
+				paste('m: ', contact[2]))
 
 			doc = c(doc, '
 				<div id="contactDetails" class="quickFade delayFour">
 					<ul>
-						<li>', Contact[1], '</li>
-						<li>', Contact[2], '</li>
-						<li>', Contact[3], '</li>
+						<li>', contact[1], '</li>
+						<li>', contact[2], '</li>
+						<li>', contact[3], '</li>
 					</ul>
 				</div>')
 		}
@@ -169,6 +169,9 @@ addNameMainArea <- function(doc) {
 		doc = addEndSection(doc, footer, NULL)
 		doc = addDocStart(doc, Top)
 
+		name = c(Name[3], "", "")
+		doc = addNameMainArea(doc,name,NULL)
+
 		doc = c(doc, '<section>
 			<div class="sectionTitle">
 				<h1>', section[[1]], '</h1>
@@ -277,7 +280,7 @@ addEndSection <-function(doc, footer, credits) {
 if (headHtml) doc =addHeadInfo()
 
 			  doc = addDocStart(doc, Top)
-		      doc = addNameMainArea(doc)
+		      doc = addNameMainArea(doc, Name, Contact)
 
 for (section in AdditionalSection) doc = addSection(section, doc)
 
