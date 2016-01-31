@@ -25,4 +25,4 @@ line = 'Name = Name[1:3]
 
 write(line,file=files[2],append=TRUE)
 
-r2cv(file = files)
+r2cv(file = files, NewPage = c('Douglas Kelley CV', '', 'douglas.i.kelley@gmail.com'))

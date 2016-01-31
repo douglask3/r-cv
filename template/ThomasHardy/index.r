@@ -1,31 +1,34 @@
 doc = c('')
 
-if (headHtml) {
-	print("yay")
-	doc = c('
-<!DOCTYPE html>
-<html>
-<head>
-<title>', Name[1], ' - Curriculum Vitae</title>
+addHeadInfo <- function() {
+	c(doc, '
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<title>', Name[1], ' - Curriculum Vitae</title>
 
-<meta name="viewport" content="width=device-width"/>
-<meta name="description" content="The Curriculum Vitae of ', Name[1], '"/>
-<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="description" content="The Curriculum Vitae of ', Name[1], '"/>
+		<meta charset="UTF-8">
 
-<link type="text/css" rel="stylesheet" href="style.css">
-<link href="http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300" rel="stylesheet" type="text/css">
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<link href="http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300" rel="stylesheet" type="text/css">
 
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-</head>')
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		</head>')
 }
 
-doc = c(doc, '
-<body id="top">
-<div id="cv" class="instaFade">')
-	if (!is.null(Top)) doc = c(doc, Top)
+addDocStart <- function(doc, top) {
+	doc = c(doc, '
+		<body id="top">
+			<div id="cv" class="instaFade">')
+				if (!is.null(top)) doc = c(doc, top)
+	return(doc)
+}
 
+addNameMainArea <- function(doc) {
 	doc = c(doc,'
 	<div class="mainDetails">')
 		if (length(Name) > 3) {
@@ -61,21 +64,24 @@ doc = c(doc, '
 	</div>
 	<div id="mainArea" class="quickFade delayFive">')
 
+	return(doc)
+}
 
-	addSection <- function(section) {
+
+	addSection <- function(section, doc) {
 		ls = length(section)
-			 if (ls == 1              ) return(addParaSection(c("", section)))
+			 if (ls == 1              ) return(addParaSection(c("", section), doc))
 		lsSub = length(section[[2]])
-		     if (ls == 2 && lsSub == 1) return(addParaSection    (section))
-		else if (ls == 3 && lsSub == 1) return(addParaListSection(section))
-		else                            return(addListedSection  (section))
+		     if (ls == 2 && lsSub == 1) return(addParaSection    (section, doc))
+		else if (ls == 3 && lsSub == 1) return(addParaListSection(section, doc))
+		else                            return(addListedSection  (section, doc))
 		#else {
 		#	warning("section not identifiable. Skipping over")
 		#	return(doc)
 		#}
 	}
 
-	addParaSection <- function(section) {
+	addParaSection <- function(section, doc) {
 		c(doc, '
 			<section>
 				<article>
@@ -92,7 +98,7 @@ doc = c(doc, '
 		')
 	}
 
-	addParaListSection <- function(section) {
+	addParaListSection <- function(section, doc) {
 		doc = c(doc, '
 		<section>
 			<article>
@@ -114,7 +120,7 @@ doc = c(doc, '
 		return(doc)
 	}
 
-	addListedSection <- function(section) {
+	addListedSection <- function(section, doc) {
 		doc = c(doc,'
 			<section>
 				<div class="sectionTitle">
@@ -136,14 +142,39 @@ doc = c(doc, '
 		return(doc)
 	}
 
-	addItem <- function(sub, ...) {
-		if (is.list(sub))      return(addMultItem(sub, ...))
-		if (length(sub) == 1 ) return(addListItem(sub, ...))
-		if (length(sub) == 3 ) return(add3Item   (sub, ...))
-		if (length(sub) == 4 ) return(add4Item   (sub, ...))
-		if (length(sub) == 5 ) return(add5Item   (sub, ...))
-		if (length(sub) == 6 ) return(addPubs    (sub, ...))
-		for (i in sub) doc = addListItem(i, ...)
+	addItem <- function(sub, doc) {
+		if (is.list(sub))      return(addMultItem(sub, doc))
+		if (length(sub) == 1 && sub[1] == "New Page" )
+							   return(addNewPageItem(sub, doc))
+		if (length(sub) == 1 ) return(addListItem(sub, doc))
+		if (length(sub) == 3 ) return(add3Item   (sub, doc))
+		if (length(sub) == 4 ) return(add4Item   (sub, doc))
+		if (length(sub) == 5 ) return(add5Item   (sub, doc))
+		if (length(sub) == 6 ) return(addPubs    (sub, doc))
+		for (i in sub) doc = addListItem(i, doc)
+		return(doc)
+	}
+
+	addNewPageItem <- function(sub, doc) {
+		if (is.null(NewPage)) return(doc)
+		doc = c(doc, '
+				</div>
+				<div class="clear"></div>
+			</section>')
+
+		PAGE <<- PAGE +1
+		NewPage[NewPage == ""] = paste('page ', PAGE, '/', PAGES)
+		footer = paste('<p class = "subDetails"><left>', NewPage[1],'</left><centre>', NewPage[2], '</centre><right>', NewPage[3], '</right></p>')
+
+		doc = addEndSection(doc, footer, NULL)
+		doc = addDocStart(doc, Top)
+
+		doc = c(doc, '<section>
+			<div class="sectionTitle">
+				<h1>', section[[1]], '</h1>
+			</div>
+			<div class="sectionContent">')
+
 		return(doc)
 	}
 
@@ -208,33 +239,46 @@ doc = c(doc, '
 	addListItem <- function(sub, doc) c(doc, '<li>', hrefIndex(sub, 1), '</li>\n')
 
 
-	for (section in AdditionalSection) doc = addSection(section)
 
-	doc = c(doc, '
-	</div>
-	<div id="mainArea" class=" mainDetails quickFade delayFive">')
-
-		if (is.null(Footer)) {
-			if (!is.null(Contact)) {
-				Footer = c( Name = Name[1],
-			 		       paste('<p class = "subDetails">',
-						         paste(Contact, collapse = ';&nbsp;&nbsp;'),
-								 '</p>'))
-			} else Footer = c("", "")
-		}
-		doc = addSection(Footer)
+addEndSection <-function(doc, footer, credits) {
 		doc = c(doc, '
-	</div>')
-	doc = c(doc, '<small><i>', Credits, '</i></small>
-</div>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src=', "'", '+ gaJsHost + "google-analytics.com/ga.js', "' type='text/javascript'%3E%3C/script%3E", '"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-3753241-1");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>Per
-</body>
-</html>')
+		</div>
+		<div id="mainArea" class=" mainDetails quickFade delayFive">')
+
+			if (is.null(footer)) {
+				if (!is.null(Contact)) {
+					footer = c( Name = Name[1],
+				 		       paste('<p class = "subDetails">',
+							         paste(Contact, collapse = ';&nbsp;&nbsp;'),
+									 '</p>'))
+				} else footer = c("", "")
+			}
+			doc = addSection(footer, doc)
+			doc = c(doc, '
+		</div>')
+		doc = c(doc, '<small><i>', credits, '</i></small>
+	</div>
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src=', "'", '+ gaJsHost + "google-analytics.com/ga.js', "' type='text/javascript'%3E%3C/script%3E", '"));
+	</script>
+	<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-3753241-1");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+	</script>Per
+	</body>
+	</html>')
+
+	return(doc)
+}
+
+
+if (headHtml) doc =addHeadInfo()
+
+			  doc = addDocStart(doc, Top)
+		      doc = addNameMainArea(doc)
+
+for (section in AdditionalSection) doc = addSection(section, doc)
+
+doc = addEndSection(doc,Footer, Credits)

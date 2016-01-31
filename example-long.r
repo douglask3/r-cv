@@ -77,6 +77,8 @@ Employment = list(Name = "Employment History",
           " Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
           "Modelling changes on past and future vegetation-fire dynamics and its feedback on terrestial and atmospheric carbon."),
 
+        c("New Page"),
+
         c("Research Assistant" = "",
           "Sep 2008-Sep 2010",
           "Department of Geographical Sciences, University of Bristol, UK" = "http://www.bristol.ac.uk/geography/",

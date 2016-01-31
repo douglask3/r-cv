@@ -1,6 +1,7 @@
 r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NULL,
                     Footer = NULL,
-                 file = "example-long.r", template = "ThomasHardy", outPath = "output") {
+                 file = "example-long.r", template = "ThomasHardy", outPath = "output",
+                 NewPage = NULL) {
 
     ###############################################################
     ## Cfg                                                       ##
@@ -19,28 +20,34 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     template = paste('template', template, sep = '/')
     index    = paste(template, 'index.r', sep = '/')
 
-    cpInFiles  = paste(template, 'style.css', sep = '/')
-    cpOutFiles = 'style.css'
-
     outFile    = sapply(file   , function(i) tail(strsplit(i,'/')[[1]],1))
     outFile    = sapply(outFile, function(i) head(strsplit(i, '.', fixed = TRUE)[[1]],-1))
     outFile    = paste(c(outFile,'html'), collapse = '.')
 
+    PAGES = 0
+    for (nn in 1:2) {
+        cpInFiles  = paste(template, 'style.css', sep = '/')
+        cpOutFiles = 'style.css'
 
-    doc0 = ''; headHtml = TRUE;
-    for (i in file) {
-        source(i, local = TRUE)
-        if (length(Name) > 3) {
-            cpInFiles  = c(cpInFiles , Name[4])
-            Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
-            cpOutFiles = c(cpOutFiles, Name[4])
+        doc0 = ''; headHtml = TRUE; PAGE = 0
+        for (i in file) {
+            source(i, local = TRUE)
+            
+            if (length(Name) > 3) {
+                cpInFiles  = c(cpInFiles , Name[4])
+                Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
+                cpOutFiles = c(cpOutFiles, Name[4])
+            }
+
+            AdditionalSection = c(AdditionalSection, 'New Page')
+            source(index, local = TRUE)
+            doc  = c(doc0, doc)
+            doc0 = doc
+            headHtml = FALSE
         }
-
-        source(index, local = TRUE)
-        doc  = c(doc0, doc)
-        doc0 = doc
-        headHtml = FALSE
+        PAGES = PAGE
     }
+
 
     if (outPath != "") {
         makeDir(outPath)
