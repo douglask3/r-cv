@@ -71,8 +71,8 @@ p {
 }
 
 #cv-print {
-	width: 280mm;
-	height: 390mm;
+	width: 285mm;
+	height: 405mm;
 	background: #f3f3f3;
 	margin-top: 10mm;
 	margin-left: 10mm;
@@ -113,7 +113,7 @@ p {
 
 #mainFoot {
 	height: 10mm;
-		width: 280mm;
+		width: 285mm;
 	background: #f3f3f3;
 	padding: 0;
 
