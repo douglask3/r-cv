@@ -22,8 +22,10 @@ addHeadInfo <- function() {
 
 addDocStart <- function(doc, top) {
 	doc = c(doc, '
-		<body id="top">
-			<div id="cv" class="instaFade">')
+		<body id="top">')
+		if (is.null(NewPage))
+			doc = c(doc, '<div id="cv" class="instaFade">')
+		else doc = c(doc, '<div id="cv-print" class="instaFade">')
 				if (!is.null(top)) doc = c(doc, top)
 	return(doc)
 }
@@ -71,6 +73,8 @@ addNameMainArea <- function(doc, name, contact) {
 	addSection <- function(section, doc) {
 		ls = length(section)
 			 if (ls == 1              ) return(addParaSection(c("", section), doc))
+			 if (ls == 1 && section == "New Page")
+									    return(addNewPageSection(doc))
 		lsSub = length(section[[2]])
 		     if (ls == 2 && lsSub == 1) return(addParaSection    (section, doc))
 		else if (ls == 3 && lsSub == 1) return(addParaListSection(section, doc))
@@ -80,6 +84,19 @@ addNameMainArea <- function(doc, name, contact) {
 		#	return(doc)
 		#}
 	}
+
+	addNewPageSection <- function(doc) {
+		if (is.null(NewPage)) return(doc)
+
+		doc = pageFooter(doc)
+		doc = addDocStart(doc, Top)
+
+		name = c(paste ('<small>', Name[3], '</small>'), "", "")
+		doc = addNameMainArea(doc,name,NULL)
+
+		return(doc)
+	}
+
 
 	addParaSection <- function(section, doc) {
 		c(doc, '
@@ -160,7 +177,7 @@ addNameMainArea <- function(doc, name, contact) {
 		PAGE = PAGE +1
 		PAGE <<- PAGE
 		NewPage[NewPage == ""] = paste('page ', PAGE, '/', PAGES)
-		footer = paste('<p class = "subDetails"><left>', NewPage[1],'</left><centre>', NewPage[2], '</centre><right>', NewPage[3], '</right></p>')
+		footer = paste('<p class = "subDetailsPage"><left>', NewPage[1],'</left><centre>', NewPage[2], '</centre><right>', NewPage[3], '</right></p><br>')
 	 	addEndSection(doc, footer, ...)
 	}
 
@@ -252,13 +269,14 @@ addNameMainArea <- function(doc, name, contact) {
 addEndSection <-function(doc, footer, credits = NULL) {
 		doc = c(doc, '
 		</div>
-		<div id="mainArea" class=" mainDetails quickFade delayFive">')
+		</div>
+		<div id="mainFoot" class=" mainDetails quickFade delayFive">')
 
 			doc = addSection(footer, doc)
 
 			doc = c(doc, '
-		</div>')
-		doc = c(doc, '<small><i>', credits, '</i></small>
+		')
+		doc = c(doc, '<p color = "white"> <small><i>', credits, '</i></small></p>
 	</div>
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -268,7 +286,7 @@ addEndSection <-function(doc, footer, credits = NULL) {
 	var pageTracker = _gat._getTracker("UA-3753241-1");
 	pageTracker._initData();
 	pageTracker._trackPageview();
-	</script>Per
+	</script></br>
 	</body>
 	</html>')
 

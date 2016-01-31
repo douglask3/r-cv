@@ -20,7 +20,7 @@ center {
 
 right {
     position: absolute;
-    right: 0px;
+    left: 230mm;
     width: 300px;
 }
 
@@ -70,6 +70,16 @@ p {
 	margin: 30px auto;
 }
 
+#cv-print {
+	width: 280mm;
+	height: 390mm;
+	background: #f3f3f3;
+	margin-top: 10mm;
+	margin-left: 10mm;
+	margin-right: 10mm;
+	margin-bottom: 0;
+}
+
 .mainDetails {
 	padding: 25px 35px;
 	border-bottom: 2px solid #cf8a05;
@@ -99,6 +109,19 @@ p {
 
 #mainArea {
 	padding: 0 40px;
+}
+
+#mainFoot {
+	height: 10mm;
+		width: 280mm;
+	background: #f3f3f3;
+	padding: 0;
+
+
+	margin-top: 0;
+	margin-left: 10mm;
+	margin-right: 10mm;
+	margin-bottom: 10mm;
 }
 
 #headshot {
@@ -185,10 +208,15 @@ section:last-child {
 	color: #840;
 }
 
-.subDetails {
+.subDetails, .subDetailsPage {
 	font-size: 0.8em;
 	font-style: italic;
 	margin-bottom: 3px;
+}
+
+.subDetailsPage {
+	margin-bottom:0;
+	line-height: 0.0em;
 }
 
 .keySkills {
