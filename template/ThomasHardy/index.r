@@ -72,9 +72,9 @@ addNameMainArea <- function(doc, name, contact) {
 
 	addSection <- function(section, doc) {
 		ls = length(section)
-			 if (ls == 1              ) return(addParaSection(c("", section), doc))
 			 if (ls == 1 && section == "New Page")
-									    return(addNewPageSection(doc))
+										return(addNewPageSection(doc))
+			 if (ls == 1              ) return(addParaSection(c("", section), doc))
 		lsSub = length(section[[2]])
 		     if (ls == 2 && lsSub == 1) return(addParaSection    (section, doc))
 		else if (ls == 3 && lsSub == 1) return(addParaListSection(section, doc))
@@ -197,7 +197,7 @@ addNameMainArea <- function(doc, name, contact) {
 
 		doc = c(doc, '<section>
 			<div class="sectionTitle">
-				<h1>', section[[1]], '</h1>
+				<h1>', paste(section[[1]], 'Continued'), '</h1>
 			</div>
 			<div class="sectionContent">')
 
