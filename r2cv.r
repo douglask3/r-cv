@@ -32,20 +32,26 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
         doc0 = ''; headHtml = TRUE; PAGE = 0
         for (i in file) {
             source(i, local = TRUE)
-            
+
             if (length(Name) > 3) {
                 cpInFiles  = c(cpInFiles , Name[4])
                 Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
                 cpOutFiles = c(cpOutFiles, Name[4])
             }
 
-            AdditionalSection = c(AdditionalSection, 'New Page')
+
             source(index, local = TRUE)
             doc  = c(doc0, doc)
             doc0 = doc
             headHtml = FALSE
+
+
         }
+        print('yay')
+        print(PAGE)
         PAGES = PAGE
+        PAGES <<- PAGES
+        print(PAGES)
     }
 
 

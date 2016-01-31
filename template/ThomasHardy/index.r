@@ -155,6 +155,16 @@ addNameMainArea <- function(doc, name, contact) {
 		return(doc)
 	}
 
+	pageFooter <- function (doc, ...) {
+
+		PAGE = PAGE +1
+		PAGE <<- PAGE
+		NewPage[NewPage == ""] = paste('page ', PAGE, '/', PAGES)
+		footer = paste('<p class = "subDetails"><left>', NewPage[1],'</left><centre>', NewPage[2], '</centre><right>', NewPage[3], '</right></p>')
+	 	addEndSection(doc, footer, ...)
+	}
+
+
 	addNewPageItem <- function(sub, doc) {
 		if (is.null(NewPage)) return(doc)
 		doc = c(doc, '
@@ -162,14 +172,10 @@ addNameMainArea <- function(doc, name, contact) {
 				<div class="clear"></div>
 			</section>')
 
-		PAGE <<- PAGE +1
-		NewPage[NewPage == ""] = paste('page ', PAGE, '/', PAGES)
-		footer = paste('<p class = "subDetails"><left>', NewPage[1],'</left><centre>', NewPage[2], '</centre><right>', NewPage[3], '</right></p>')
-
-		doc = addEndSection(doc, footer, NULL)
+		doc = pageFooter(doc)
 		doc = addDocStart(doc, Top)
 
-		name = c(Name[3], "", "")
+		name = c(paste ('<small>', Name[3], '</small>'), "", "")
 		doc = addNameMainArea(doc,name,NULL)
 
 		doc = c(doc, '<section>
@@ -243,20 +249,13 @@ addNameMainArea <- function(doc, name, contact) {
 
 
 
-addEndSection <-function(doc, footer, credits) {
+addEndSection <-function(doc, footer, credits = NULL) {
 		doc = c(doc, '
 		</div>
 		<div id="mainArea" class=" mainDetails quickFade delayFive">')
 
-			if (is.null(footer)) {
-				if (!is.null(Contact)) {
-					footer = c( Name = Name[1],
-				 		       paste('<p class = "subDetails">',
-							         paste(Contact, collapse = ';&nbsp;&nbsp;'),
-									 '</p>'))
-				} else footer = c("", "")
-			}
 			doc = addSection(footer, doc)
+
 			doc = c(doc, '
 		</div>')
 		doc = c(doc, '<small><i>', credits, '</i></small>
@@ -284,4 +283,14 @@ if (headHtml) doc =addHeadInfo()
 
 for (section in AdditionalSection) doc = addSection(section, doc)
 
-doc = addEndSection(doc,Footer, Credits)
+
+if (is.null(Footer)) {
+	if (!is.null(Contact)) {
+		Footer = c( Name = Name[1],
+					paste('<p class = "subDetails">',
+						paste(Contact, collapse = ';&nbsp;&nbsp;'),
+						'</p>'))
+	} else Footer = c("", "")
+}
+
+if (is.null(NewPage)) doc = addEndSection(doc,Footer, Credits) else doc = pageFooter(doc, Credits)
