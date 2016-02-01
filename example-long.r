@@ -7,7 +7,9 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ## Head                                                      ##
 ###############################################################
 Top = '
-<a href= "http://douglask3.github.io/cv/long/example-long.html", target = "_blank"> Open in new page, click here </a>'
+<a href= "http://douglask3.github.io/cv/long/example-long.html", target = "_blank"> Open in new page, click here </a><br>
+<a href= "http://douglask3.github.io/docs/cv.pdf", target = "_blank"> Click here for PDF</a>'
+
 
 ###############################################################
 ## Basic Infomation                                          ##
@@ -77,7 +79,7 @@ Employment = list(Name = "Employment History",
           " Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
           "Modelling changes on past and future vegetation-fire dynamics and its feedback on terrestial and atmospheric carbon."),
 
-        c("New Page"),
+          c("New Page"),
 
         c("Research Assistant" = "",
           "Sep 2008-Sep 2010",
@@ -94,11 +96,13 @@ Employment = list(Name = "Employment History",
           "Widening Participation Office, University of Bristol, UK" = "http://www.bristol.ac.uk/sraa/uk-student-recruitment/student-support-team/",
           "Working with students in primary and secondary education to encourage university attendance from low socio-economic backgrounds: helping organize & run University open days and campus tours; in-school presentations and career evenings."))
 
+Published = MakePublicationDocument.Rlist(usrID, NULL)
+#Published = c(Published[1:6], "New Page", Published[7:length(Published)])
 
 Publications = list(Name = "Publication",
                     Main = MakeUserProfile(usrID, 'unformatted'),
                     c("Published Papers",
-                         MakePublicationDocument.Rlist(usrID, NULL)),
+                         Published),
 
                     list("Submitted",
 
@@ -115,6 +119,8 @@ Publications = list(Name = "Publication",
                            "bg-2016-17",
                            "",
                            ""),
+
+                           "New Page",
 
                          c("Ukkola, A, Keenan, T, Kelley, D. I., Prentice, I. C.",
                            "Vegetation buffers the water-resource impacts of environmental change in regions with declining precipitation",
@@ -407,6 +413,8 @@ Skills = list(Name = "Skills",
                      'See <a href="http://douglask3.gitgub.io/my_best_plots.html">douglask3.github.io/my_best_plots</a> for examples of R and matlab plots from my PhD.
                       <br> See <a href="http://douglask3.gitgub.io/lpxbenchmarking.html">douglask3.github.io/lpxbenchmarking</a> for an example of statistical benchmarking of extensive model outputs again global raster and site-based datasets.'),
 
+                      "New Page",
+
                    c("Web Design" = "",
                      "In my spare time, I have developed dynamic websites using open source content management system. My personal site is on a static host, but is maintained using a python based dynamic-site emulator. Developing and maintaining these sites have allowed me to become familiar with many contengt managment systems (i.e. wordpress, concrete5 etc) and fluent in HTML/CSS, PHP and Markdown. I have linked Markdown with R and python when sharing and presenting results from model development and anlaysis.",
                      'See <a href = "http://www.eppingdac.com.au/">eppingdac.com.au</a>, an example of a website I have developed using Concrete5 Content Managment System
@@ -458,9 +466,9 @@ ExtraCircular = list(Name = "Extra-Circular",
 Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com </a> - <i> +44 (0) 7936 726 819 </i> - <a href = "douglask3.github.io"> douglask3.github.io</a></p><br>'
 
 
-
 AdditionalSection = list(ExtendingContact, Qualifications, Employment,
-                         Publications, Conferences, Awards, Research, Workshops,
+                         Publications, Conferences,
+                         "New Page", Awards, Research, "New Page", Workshops,
                          Training, Skills, Software, ExtraCircular,
                          Referee)
 
