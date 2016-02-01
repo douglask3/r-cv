@@ -46,8 +46,8 @@ addNameMainArea <- function(doc, name, contact) {
 			<h2 class="quickFade delayThree">', name[2], '</h2>
 			<h3 class="quickFade delayThree">', name[3], '</h3>
 		</div>')
-		if (!is.null(Contact)) {
-			Contact = c(
+		if (!is.null(contact)) {
+			 contact = c(
 				paste('e: <a href="mailto:', contact[1], '" target="_blank">',contact[1], '</a>'),
 				paste('w: <a href="', contact[3], '">', contact[3], '</a>'),
 				paste('m: ', contact[2]))
