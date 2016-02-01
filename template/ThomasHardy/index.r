@@ -164,12 +164,19 @@ addNameMainArea <- function(doc, name, contact) {
 		if (length(sub) == 1 && sub[1] == "New Page" )
 							   return(addNewPageItem(sub, doc))
 		if (length(sub) == 1 ) return(addListItem(sub, doc))
+		if (length(sub) == 2 ) return(add2Item   (sub, doc))
 		if (length(sub) == 3 ) return(add3Item   (sub, doc))
 		if (length(sub) == 4 ) return(add4Item   (sub, doc))
 		if (length(sub) == 5 ) return(add5Item   (sub, doc))
 		if (length(sub) == 6 ) return(addPubs    (sub, doc))
 		for (i in sub) doc = addListItem(i, doc)
 		return(doc)
+	}
+    
+    add2Item <- function(section, doc) {
+		doc = c(doc, '\n <article> \n')
+        if (doc != "") doc = c(doc, '<h2>', hrefIndex(sub, 1), '</h2>\n')
+		doc = c('<p>', sub[2], '<p>\n</article>')
 	}
 
 	pageFooter <- function (doc, ...) {
@@ -218,16 +225,20 @@ addNameMainArea <- function(doc, name, contact) {
 	}
 
 	addPubs  <- function(sub, doc) {
-
-		if (is.na(sub[5]) || sub[5]=="")
-			sub[5] = ": "
-		else sub[5] = paste(' (', sub[5], ') ', sep = "")
+        if (!is.null(Author)) {
+            sub[1] = strsplit(sub[1], Author)[[1]]
+            sub[1] = paste(sub[1], collapse = paste('<b>', Author, '</b>'))
+        }
+        
+		if (is.na(sub[5]) || sub[5]=="") sub[5] = ": "
+            else sub[5] = paste(' (', sub[5], ') ', sep = "")
 
 		if (sub[6] == " 0") sub[6] = ""
 		if (sub[6] != "") sub[6] = paste('<p class="subDetails"> Cited by:', sub[6], '</p>',sep = "")
-
+        if (sub[4] == "") sub[3] = paste(' <i>', sub[3], '</i> ')
+            else sub[3] = paste(' <i>', sub[3], '</i> - ')
 		doc = c(doc, '<article>',
-			        sub[1], sub[5], sub[2], ' <i>', sub[3], '</i> - ', sub[4], sub[6],'
+			        sub[1], sub[5], sub[2], sub[3], sub[4], sub[6],'
 		  </article><br>'
 		)
 	}
@@ -236,7 +247,7 @@ addNameMainArea <- function(doc, name, contact) {
 		c(doc, '
 			<article>
 				<h2>', hrefIndex(sub, 1), '</h2>
-				<p class="subDetails">', sub[2], '</p>
+				<p class="subDetails">', hrefIndex(sub, 2), '</p>
 				<b>', hrefIndex(sub, 3), '</b>
 				<p>', sub[4], '<p>
 			</article>')
