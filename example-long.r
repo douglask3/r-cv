@@ -19,6 +19,8 @@ Name    = c("Douglas Kelley", "Biosphere & Climate Dynamics Modelling",
 
 
 Contact = NULL
+
+Author = "Kelley, D. I."
 ###############################################################
 ## Additional Sections                                       ##
 ###############################################################
@@ -48,7 +50,7 @@ Qualifications = list(Name = "Academic qualification",
           "Modelling Australian fire regimes" = "https://drive.google.com/file/d/0B6T4MHlQ-DuNS2ZsV09mdkdwYms/view?usp=sharing",
           "2010-2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
-          'Benchmarking and developing the LPX Dynamic Global Vegetation Model (DGVM) to improve the simulation of fire and fire-vegetation interacting. Using this new version of LPX to simulate fire, vegetation and carbon dynamics in Australia over the 21st century. Thesis can be downloaded from <a href="goo.gl/9YjwKw"</a>'),
+          'Benchmarking and developing the LPX Dynamic Global Vegetation Model (DGVM) to improve the simulation of fire and fire-vegetation interacting. Using this new version of LPX to simulate fire, vegetation and carbon dynamics in Australia over the 21<sup>st</sup> century. Thesis can be downloaded from <a href="goo.gl/9YjwKw"</a>'),
 
         c("MSc Earth System Science" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
           "Main dissertation: Wildfires as part of the global carbon cycle - Quantitative analysis using data assimilation" = "",
@@ -72,7 +74,7 @@ Employment = list(Name = "Employment History",
         c("Postdoctoral Research Assistant" = "",
           "Oct 2014-Apr 2015",
           "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
-          "Testing conceptual phenology and plant carbon allocation models under changing climate and elevated CO2 fertilization."),
+          "Testing conceptual phenology and plant carbon allocation models under changing climate and elevated CO<sub>2</sub> fertilization."),
 
         c("Research Assistant" = "",
           "Jun 2014-Sep 2014",
@@ -107,7 +109,7 @@ Publications = list(Name = "Publication",
                     list("Submitted",
 
                          c("Harrison, S. P. and Kelley, D. I.",
-                           "Projected changes in Australian fire regimes during the 21st century and consequences for ecosystem",
+                           "Projected changes in Australian fire regimes during the 21<sup>st</sup> century and consequences for ecosystems",
                            "International Journal of Wildland Fire",
                            "",
                            "",
@@ -304,14 +306,11 @@ Research = list(Name = "Current Research Interests",
                        " " = "http://douglask3.github.io/traits-for-resistance-and-recovery-to-disturbance.html",
                        " " = "",
                        "More recently, I have become involved in research projects exploring wider vegetation dynamics and responses to enviromental change including:
-                           <li> The testing of conceptual carbon allocation stratagies in a vegetation model framework, and the response of the startagies to changing climate and increasing CO2 fertilization. </li>
+                           <li> The testing of conceptual carbon allocation stratagies in a vegetation model framework, and the response of the startagies to changing climate and increasing CO<sub>2</sub> fertilization. </li>
                            <li> Development of a simple dry-season phenology model for tropical grass and woodland ecosystems. </li>"),
-                     'For more detail on all these projects, see <a href="http://douglask3.github.io/pages/research-interests.html">douglask3.github.io/pages/research-interests</a>'
-                     ))
-
-
-
-
+                           
+                     c("",'For more detail on all these projects, see <a href="http://douglask3.github.io/pages/research-interests.html">douglask3.github.io/pages/research-interests</a>'
+                     )))
 
 Referee = list(Name = "References",
                c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
