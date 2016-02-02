@@ -133,7 +133,7 @@ Publications = list(Name = "Publication",
 
                     list("In Prep",
 
-                         c("Kelley D. I., de Kauwe, M., Medlyn, B.",
+                         c("Kelley, D. I., de Kauwe, M., Medlyn, B.",
                            "Testing Allocation model assuptions in a simple ecosyste model",
                            "",
                            "",
@@ -165,7 +165,7 @@ Conferences =  list(Name = "Conferences",
                            "Dec 2013",
                            ""),
 
-                         c("Kelley, D I., Harrison, S. P.",
+                         c("Kelley, D. I., Harrison, S. P.",
                            "Comparison of simulated fire regimes at the Last Glacial Maximum and for the Mid-Holocene with charcoal data",
                            "QUEST: Quantifying and Understanding the Earth System Open Science Conference and Annual Science Meeting",
                            "Department of Earth Sciences, University of Bristol",
@@ -308,7 +308,7 @@ Research = list(Name = "Current Research Interests",
                        "More recently, I have become involved in research projects exploring wider vegetation dynamics and responses to enviromental change including:
                            <li> The testing of conceptual carbon allocation stratagies in a vegetation model framework, and the response of the startagies to changing climate and increasing CO<sub>2</sub> fertilization. </li>
                            <li> Development of a simple dry-season phenology model for tropical grass and woodland ecosystems. </li>"),
-                           
+
                      c("",'For more detail on all these projects, see <a href="http://douglask3.github.io/pages/research-interests.html">douglask3.github.io/pages/research-interests</a>'
                      )))
 
@@ -428,7 +428,7 @@ Skills = list(Name = "Skills",
                       "")))
 
 Software = c(Name = "Software Tools",
-             Main = "I have developed and maitained several software packages related to my reasrch projects and shared with collaborators. Some of the most used are:")
+             list(Main = c('', "I have developed and maitained several software packages related to my reasrch projects and shared with collaborators. Some of the most used are:")),
             list(
                 c("Vegetation Benchmark Metrics" = "",
                   "An R-package containing the metrics and basic statistical models relating to my work on Vegetation model benchmarking.",
@@ -442,7 +442,7 @@ Software = c(Name = "Software Tools",
                   "Running, storing, analysing and plotting the LPX-Dynamic Global Vegetation Model.",
                   'See <a href="http://douglask3.github.io/lpx-dynamic-global-vegetation-model.html">douglask3.github.io/lpx-dynamic-global-vegetation-model</a> for more information.'),
 
-                c('For a more comprehensive list, see <a href ="http://douglask3.github.io/pages/tools.html"> douglask3.github.io/pages/tools </a>'))
+                c('', 'For a more comprehensive list, see <a href ="http://douglask3.github.io/pages/tools.html"> douglask3.github.io/pages/tools </a>')))
 
 
 ExtraCircular = list(Name = "Extra-Circular",
@@ -468,7 +468,7 @@ Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:doug
 AdditionalSection = list(ExtendingContact, Qualifications, Employment,
                          Publications, Conferences,
                          "New Page", Awards, Research, "New Page", Workshops,
-                         Training, Skills, Software, ExtraCircular,
+                         Training, Skills, Software, ExtraCircular,"New Page",
                          Referee)
 
 #AdditionalSection = list(Skills, Referee, ExtraCircular, Software, Training, Workshops, Research, Awards, Conferences, Publications,Qualifications,ExtendingContact, Employment)
