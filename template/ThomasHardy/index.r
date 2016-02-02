@@ -235,11 +235,15 @@ addNameMainArea <- function(doc, name, contact) {
 
 	addPubs  <- function(sub, doc) {
 
-        if (!is.null(Author) && grepl(Author, sub[1])) {
-            X = strsplit(sub[1], Author)[[1]]
-			if (length(X) == 1) sub[1] = paste('<b>', Author, '</b>')
-            	else sub[1] = paste(X, collapse = paste('<b>', Author, '</b>'))
-        }
+		if (!is.null(Authors)){
+			for (Author in Authors) {
+        		if (grepl(Author, sub[1])) {
+            		X = strsplit(sub[1], Author)[[1]]
+					if (length(X) == 1) sub[1] = paste('<b>', Author, '</b>')
+            			else sub[1] = paste(X, collapse = paste('<b>', Author, '</b>'))
+        		}
+			}
+		}
 
 		if (is.na(sub[5]) || sub[5]=="") sub[5] = ": "
             else sub[5] = paste(' (', sub[5], ') ', sep = "")

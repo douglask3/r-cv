@@ -1,7 +1,7 @@
 r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NULL,
                     Footer = NULL,
                  file = "example-long.r", template = "ThomasHardy", outPath = "output",
-                 NewPage = NULL, Author = NULL) {
+                 NewPage = NULL, Authors = NULL) {
 
     ###############################################################
     ## Cfg                                                       ##
