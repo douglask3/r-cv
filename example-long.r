@@ -20,7 +20,7 @@ Name    = c("Douglas Kelley", "Biosphere & Climate Dynamics Modelling",
 
 Contact = NULL
 
-Author = "Kelley, D. I."
+Authors = c("DI Kelley", "D Kelley")
 ###############################################################
 ## Additional Sections                                       ##
 ###############################################################
@@ -74,7 +74,7 @@ Employment = list(Name = "Employment History",
         c("Postdoctoral Research Assistant" = "",
           "Oct 2014-Apr 2015",
           "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
-          "Testing conceptual phenology and plant carbon allocation models under changing climate and elevated CO<sub>2</sub> fertilization."),
+          "Testing conceptual phenology and plant carbon allocation models under changing climate and fertilization under elevated CO<sub>2</sub>."),
 
         c("Research Assistant" = "",
           "Jun 2014-Sep 2014",
@@ -86,7 +86,7 @@ Employment = list(Name = "Employment History",
         c("Research Assistant" = "",
           "Sep 2008-Sep 2010",
           "Department of Geographical Sciences, University of Bristol, UK" = "http://www.bristol.ac.uk/geography/",
-          "DGVM-fire model development. Applying developed model to: test to effectiveness of different fire management techniques in current and future climates; simulate paleo vegetation and carbon stocks."),
+          "Developing a coupled DGVM-fire model and applying the model to: test the effectiveness of different fire management techniques in current and future climates; simulate paleo vegetation and carbon stocks."),
 
         c("Earth System Science Summer School coordinator" = "http://www.greencycles.org/greencycles1/ES4%20flyer_2008.pdf",
           "Apr 2008-Sep 2008",
@@ -96,10 +96,24 @@ Employment = list(Name = "Employment History",
         c("Widening Participation" = "",
           "Sep 2007-Sep 2008",
           "Widening Participation Office, University of Bristol, UK" = "http://www.bristol.ac.uk/sraa/uk-student-recruitment/student-support-team/",
-          "Working with students in primary and secondary education to encourage university attendance from low socio-economic backgrounds: helping organize & run University open days and campus tours; in-school presentations and career evenings."))
+          "Working with students in primary and secondary education to encourage university attendance from low socio-economic backgrounds: helping organize & run University open days and campus tours; school presentations and career evenings."))
 
 Published = MakePublicationDocument.Rlist(usrID, NULL)
-#Published = c(Published[1:6], "New Page", Published[7:length(Published)])
+
+replaceAuthor <- function(pub) {
+    if (pub[1] == "P Ciais, A Tagliabue, M Cuntz, L Bopp, M Scholze, G Hoffmann, ...")
+        pub[1] =  "P Ciais, A Tagliabue, M Cuntz, L Bopp, Marko Scholze, G Hoffmann, A Lourantou, Sandy P Harrison, IC Prentice, DI Kelley, C Koven, SL Piao"
+
+    if (pub[1] == "T Kaminski, W Knorr, G Schürmann, M Scholze, PJ Rayner, S Zaehle, ...")
+        pub[1] =  "T Kaminski, W Knorr, G Schürmann, M Scholze, PJ Rayner, S Zaehle, S Blessing, W Dorigo, V Gayler, R Giering, N Gobron, JP Grant, M Heimann, A Hooker‐Stroud, S Houweling, T Kato, J Kattge, DI Kelley, S Kemp, EN Koffi, C Köstler, P‐P Mathieu, B Pinty, C H Reick, C Rödenbeck, R Schnur, K Scipal, C Sebald, T Stacke, A Terwisscha Scheltinga, M Vossbeck, H Widmann, T Ziehn"
+
+    if (pub[1] == "S Harrison, J Midgley, B Hoffmann, I Radford, C Nano, B Murphy10, ...")
+        pub[1] =  "S Harrison, J Midgley, B Hoffmann, I Radford, C Nano, B Murphy, R Gunton, D Kelley, G Hempson"
+
+    return(pub)
+}
+
+Published = lapply(Published, replaceAuthor)
 
 Publications = list(Name = "Publication",
                     Main = MakeUserProfile(usrID, 'unformatted'),
@@ -108,14 +122,14 @@ Publications = list(Name = "Publication",
 
                     list("Submitted",
 
-                         c("Harrison, S. P. and Kelley, D. I.",
+                         c("SP Harrison, DI Kelley",
                            "Projected changes in Australian fire regimes during the 21<sup>st</sup> century and consequences for ecosystems",
                            "International Journal of Wildland Fire",
                            "",
                            "",
                            ""),
 
-                         c("Hantson, S., Arneth, A., Harrison, S. P., Kelley, D. I., Prentice, I. C., Rabin, S. S., Archibald, S. ...",
+                         c("S Hantson, A Arneth, SP Harrison, DI Kelley, IC Prentice, SS Rabin, S Archibald. ...",
                            "The status and challenge of global fire modelling",
                            "Biogeosciences",
                            "bg-2016-17",
@@ -124,7 +138,7 @@ Publications = list(Name = "Publication",
 
                            "New Page",
 
-                         c("Ukkola, A, Keenan, T, Kelley, D. I., Prentice, I. C.",
+                         c("A Ukkola, T Keenan, DI Kelley, IC Prentice",
                            "Vegetation buffers the water-resource impacts of environmental change in regions with declining precipitation",
                            "Environmental Research Letters",
                            "ERL-102203",
@@ -133,21 +147,21 @@ Publications = list(Name = "Publication",
 
                     list("In Prep",
 
-                         c("Kelley, D. I., de Kauwe, M., Medlyn, B.",
-                           "Testing Allocation model assuptions in a simple ecosyste model",
+                         c("DI Kelley, M de Kauwe, B Medlyn",
+                           "Testing Allocation model assuptions in a simple ecosystem model",
                            "",
                            "",
                            "",
                            ""),
 
-                         c("Harrison, S. P., Kelley, D. I., Wang, H., Herbert, A., Li, G., Bradstock, R., Fontaine, J., Enright, N., Murphy, B. P., Pekin, B. K., Penman, T., Russell-Smith, J., Wittkuhn, R. S",
+                         c("SP Harrison, DI Kelley, H Wang, A Herbert, G Li, R Bradstock, J Fontaine, N Enright, BP Murphy, BK Pekin, T Penman, J Russell-Smith, RS Wittkuhn",
                            "Patterns in the abundance of post-fire resprouting in Australia based on plot-level measurements.",
                            "",
                            "",
                            "",
                            ""),
 
-                         c("Whitley, R., Kelley, D. I., de Kauwe, M., Keenan, T. F.",
+                         c("R Whitley, DI Kelley, M de Kauwe, TF Keenan",
                            "Phendulum - A first principles model of describing savanna phenology",
                            "",
                            "",
@@ -158,15 +172,15 @@ Publications = list(Name = "Publication",
 Conferences =  list(Name = "Conferences",
                     list("Conference Presentations & Posters",
 
-                         c("Kelley, D. I., Harrison, S. P. and Prentice, I. C.",
+                         c("DI Kelley, SP Harrison, IC Prentice",
                            "Implications of introducing realistic fire response traits in a Dynamic Global Vegetation Model",
                            "AGU Fall Meeting - Presentation Abstracts",
                            "1,  p.6.",
                            "Dec 2013",
                            ""),
 
-                         c("Kelley, D. I., Harrison, S. P.",
-                           "Comparison of simulated fire regimes at the Last Glacial Maximum and for the Mid-Holocene with charcoal data",
+                         c("DI Kelley, SP Harrison",
+                           "Comparison of simulated fire regimes at the Last Glacial Maximum and Mid-Holocene with charcoal data",
                            "QUEST: Quantifying and Understanding the Earth System Open Science Conference and Annual Science Meeting",
                            "Department of Earth Sciences, University of Bristol",
                            "Mar 2008",
@@ -174,77 +188,77 @@ Conferences =  list(Name = "Conferences",
 
                     list("Visits and Internal Presentations",
 
-                         c("Kelley, D. I., Harrison, S. P., Prentice, I. C. and Medlyn, B. E.",
+                         c("DI Kelley, SP Harrison, IC Prentice, BE Medlyn",
                            "Modelling Australian Fire Regimes",
                            "Thesis completion seminar",
                            "Macquarie University, Ryde, Australia",
                            "Mar 2015",
                            ""),
 
-                         c("Kelley, D. I., Harrison, S. P. and Prentice, I. C.",
+                         c("DI Kelley, SP Harrison, IC Prentice",
                            "The LPX fire-enabled Vegetation Model",
                            "visit to Centre for Environmental Risk Management of Bushfires",
                            "University of Wollongong, NSW, Australia",
                            "May 2013",
                            ""),
 
-                         c("Kelley, D. I., Harrison, S. P., Prentice, I. C. and Medlyn B. ",
+                         c("DI Kelley, SP Harrison, IC Prentice, B Medlyn",
                            "The effects of climate change on Australian fire regimes",
                            "Postgraduate supplementary conference",
                            "Macquarie University, Ryde, Australia",
                            "Nov 2012",
                            ""),
 
-                         c("Kelley, D. I.",
+                         c("DI Kelley",
                            "Development of lightning ignitions scheme in LPX-DGVM",
                            "Biosphere and Climate Dynamics brown bag seminars",
                            "Macquarie University, Ryde, Australia",
                            "Sep 2012",
                            ""),
 
-                         c("Kelley, D. I.",
+                         c("DI Kelley",
                            "Benchmarking vegetation and fire in LPX-DGVM",
                            "Biosphere and Climate Dynamics brown bag seminars",
                            "Macquarie University, Ryde, Australia",
                            "Mar 2012",
                            ""),
 
-                         c("Kelley, D. I., Prentice, I. C., Wang, H., Wills, K. and Harrison, S. P.",
+                         c("DI Kelley, IC Prentice, H Wang, K Wills, SP Harrison",
                            "A comprehensive benchmarking system for evaluating global vegetation models",
                            "Climate Futures Forum",
                            "Macquarie University, Ryde, Australia",
                            "Dec 2011",
                            ""),
 
-                         c("Kelley, D. I., Prentice, I. C., Wang, H., Wills, K. and Harrison, S. P.",
+                         c("DI Kelley, IC Prentice, H Wang, K Wills, SP Harrison",
                            "A comprehensive benchmarking system for evaluating global vegetation models",
                            "Postgraduate supplementary conference",
                            "Macquarie University, Ryde, Australia",
                            "Nov 2011",
                            ""),
 
-                         c("Kelley, D. I.",
+                         c("DI Kelley",
                            "Benchmark data-sets for assessing DGVM performance",
                            "Biosphere and Climate Dynamics brown bag seminars",
                            "Macquarie University, Ryde, Australia",
                            "Sep 2011",
                            ""),
 
-                         c("Kelley, D. I., Harrison, S. P. and Prentice, I. C.",
+                         c("DI Kelley, SP Harrison, IC Prentice",
                            "The effects of climate change on Australian fire regimes",
                            "Postgraduate supplementary conference",
                            "Macquarie University, Ryde, Australia",
                            "Nov 2010",
                            ""),
 
-                         c("Kelley, D. I.",
+                         c("DI Kelley",
                            "Transient Biomization Scheme",
                            "course seminar for Msc Earth Systems Science",
                            "Department of Earth Sciences, University of Bristol",
                            "Jul 2008",
                            ""),
 
-                         c("Kelley, D. I., Elena Counce",
+                         c("DI Kelley, E Counce",
                            "Forest Fire simulator",
                            "course seminar for Msc Earth Systems Science",
                            "Department of Earth Sciences, University of Bristol",
@@ -275,7 +289,15 @@ Awards = list(Name = "Award",
 
 
 Research = list(Name = "Current Research Interests",
-                Main = "My research focuses on improving our understanding of the interactions between vegetation and climate, and exploring how these interactions impact terrestrial ecosystem properties such as carbon and hydrological cycles. Much of this involves utilising experimental and satellite data for more observation-driven vegetation model development and benchmarking. Most of this has been exploring climate and vegetative controls and fire, and the impact fire has on ecosystem, atmposhperic emission and the carbon cycle, and vegetation-controlled hydrology. I am also involved in projects that explore plant resource allocation, phenology and drought recovery stratagies.
+                Main = "My research focuses on improving our understanding of
+                the interactions between vegetation and climate, and exploring
+                how these interactions impact terrestrial ecosystem properties
+                such as composition, disturbance regimes, and carbon and
+                hydrological cycles. Much of this involves
+                utilising experimental and satellite data for more
+                observation-driven vegetation model development and
+                benchmarking. Most of this has been exploring climate and
+                vegetative controls and fire, and the impact fire has on ecosystem, atmposhperic emission and the carbon cycle, and vegetation-controlled hydrology. I am also involved in projects that explore plant resource allocation, phenology and drought recovery stratagies.
                 &nbsp; <br><br>
                 My current research projects include:<br><br>",
                 list(
@@ -293,20 +315,22 @@ Research = list(Name = "Current Research Interests",
                        'I am the main developer and maintainer of the most widely used vegetation-model benchmarking system, which qualitativly assess model performance for a varity and vegetation and land surface processes. Current work includes:
                             <li> Incorporation for fire regime observatations </li>
                             <li> Inter-model comparisons for the <a href="http://www.mpic.de/fileadmin/user_upload/images_presse/Projects/IBBI/pdfs/Hantson_FireMIP.pdf">fireMIP project</a></li>
-                            <li> R-package development </li>'),
+                            <li> R software package development </li>'),
 
                      c("Vegetation disturbance resistance and recovery databases" = "http://douglask3.github.io/traits-for-resistance-and-recovery-to-disturbance.html",
                        "douglask3.github.io/traits-for-resistance-and-recovery-to-disturbance" = "http://douglask3.github.io/traits-for-resistance-and-recovery-to-disturbance.html",
                        " " = "",
-                       "I have been involved in the compilation of two databases compliling variations reistance and recovery traits across plant species and geogrpahic locations:
+                       "I have been one of the lead collaborators on compliling
+                       several databases describing site based disturnace resistance and recovery traits across plant species. disturnace regimes and climate gradiants. These include:
                             <li> Bark Thickness as protection against fire. </li>
-                            <li> Resprouting as a recovery to extreme distrubance from fire and drought. </li>"),
+                            <li> Resprouting as a recovery to extreme distrubance from fire and drought. </li>
+                            <li> Post-fire re-seeding stratagies. </li>"),
 
                      c("Plant resource allocation strategies" = "",
                        " " = "http://douglask3.github.io/traits-for-resistance-and-recovery-to-disturbance.html",
                        " " = "",
                        "More recently, I have become involved in research projects exploring wider vegetation dynamics and responses to enviromental change including:
-                           <li> The testing of conceptual carbon allocation stratagies in a vegetation model framework, and the response of the startagies to changing climate and increasing CO<sub>2</sub> fertilization. </li>
+                           <li> The testing of conceptual carbon allocation stratagies in a vegetation model framework, and the response of these startagies to changing climate and increasing CO<sub>2</sub> fertilization. </li>
                            <li> Development of a simple dry-season phenology model for tropical grass and woodland ecosystems. </li>"),
 
                      c("",'For more detail on all these projects, see <a href="http://douglask3.github.io/pages/research-interests.html">douglask3.github.io/pages/research-interests</a>'
@@ -316,22 +340,22 @@ Referee = list(Name = "References",
                c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
                  "Professor in Global Palaeoclimates and Biogeochemical Cycles",
                  "Email: s.p.harrison@reading.ac.uk" = "",
-                 "Department of Geography and Environmental Science
-                 School of Archaeology, Geography and Environmental Science
-                 The University of Reading
-                 Whiteknights
-                 Reading
-                 RG6 6AB
+                 "Department of Geography and Environmental Science,
+                 School of Archaeology, Geography and Environmental Science,
+                 The University of Reading,
+                 Whiteknights,
+                 Reading,
+                 RG6 6AB,
                  UK"),
 
                c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
                  "Chair of Biosphere and Climate Impacts",
                  "Email: c.prentice@imperial.ac.uk" = "",
-                 "Grantham Institute for Climate Change and Department of Life Sciences
-                 Imperial College
-                 Silwood Park Campus
-                 Ascot
-                 SL5 7PY
+                 "Grantham Institute for Climate Change and Department of Life Sciences,
+                 Imperial College,
+                 Silwood Park Campus,
+                 Ascot,
+                 SL5 7PY,
                  UK"),
 
                c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
@@ -341,8 +365,8 @@ Referee = list(Name = "References",
                  Western Sydney University,
                  Locked Bag 1797,
                  Penrith,
-                 NSW
-                 Australia
+                 NSW,
+                 Australia,
                  2751"))
 
 
@@ -354,7 +378,7 @@ Workshops = list(Name = "Workshops and Consultancy Visits",
                    "Oct 2013",
                    "University of Queensland, Brisbane, QL, Australia" =
                         "https://www.uq.edu.au/",
-                   'Data Synthesis workshop for fire resilience and response traits'),
+                   'Data Synthesis workshop for fire resilience and response analysis'),
 
                  c("Fire response traits database" = "https://bitbucket.org/teambcd/resprouting_workshop",
                    "",
@@ -396,15 +420,15 @@ Training = list(Name = "Training Courses",
 
         c("Planning and writing journal articles" = "",
           "Nov 2009",
-          "Macquarie University, Ryde, Australia" = "https://www.mq.edu.au/",
-          "Planning articles to fit journals."))
+          "University of Bristol, UK" = "http://www.bristol.ac.uk/earthsciences/",
+          ""))
 
 
 Skills = list(Name = "Skills",
               Main = "",
               list(
                    c("Vegetation modelling" = "",
-                     "I have been lead developer on LPX - a high-complexity coupled Dynamic Vegetation-Fire Model - since 2009LPX has both Fortran and C++ components for fast (relative to it's complexity) computational times. I have recently also added a shell and R interface to fasilitate parrallization and to allow results to be easily plotted and analysed.",
+                     "I have been lead developer on LPX - a high-complexity coupled Dynamic Vegetation-Fire Model - since 2009. LPX has both Fortran and C++ components for fast (relative to it's complexity) computational times. I have recently also added a shell and R interface to fasilitate parrallization and to allow results to be easily plotted and analysed.",
                      'See <a href="http://douglask3.gitgub.io/LPX.html">douglask3.github.io/LPX</a> for more information.'),
 
                    c("Statistical Programming" = "",
@@ -415,16 +439,16 @@ Skills = list(Name = "Skills",
                       "New Page",
 
                    c("Web Design" = "",
-                     "In my spare time, I have developed dynamic websites using open source content management system. My personal site is on a static host, but is maintained using a python based dynamic-site emulator. Developing and maintaining these sites have allowed me to become familiar with many contengt managment systems (i.e. wordpress, concrete5 etc) and fluent in HTML/CSS, PHP and Markdown. I have linked Markdown with R and python when sharing and presenting results from model development and anlaysis.",
-                     'See <a href = "http://www.eppingdac.com.au/">eppingdac.com.au</a>, an example of a website I have developed using Concrete5 Content Managment System
+                     "In my spare time, I have developed dynamic websites using open source content management system (such as concrete5 and wordpress). My personal site is on a static host, but is maintained using a python based dynamic-site emulator. Developing and maintaining these sites have allowed me to become familiar with many web design software packages systems and fluent in HTML/CSS, PHP and Markdown. I have linked Markdown with R and python when sharing and presenting results from model development and anlaysis.",
+                     'See <a href = "http://www.eppingdac.com.au/">eppingdac.com.au</a>, an example of a website I have developed using Concrete5 content managment system
                       <br> See <a href = "http://douglask3.gothub.io">douglask3.github.io </a>, an example of a website produced using a simple dynamic-site emulator.'),
 
 
                    c("Publishing" = "",
                      'As well has publishing papers, I have also written manuals, reports and newletters using a variety of languages and software products, including (aside from standard office/open office):
                       <li> Latex - this includes my thesis (available <a href="goo.gl/9YjwKw"</a>) </li>
-                      <li> Scribus - for example, my running clubs newsletter <a href="http://www.eppingdac.com.au/news-and-views/newsletter/"> eppingdac.com.au/news-and-views/newsletter </a> </li>
-                      <li> Photoshop/Illistrator and GIMP (the open source equivalent). See <a href = "http://flickr.com/doug_from_the_uk"> flickr.com/doug_from_the_uk </a> for examples of graphical art and photo "touch ups", manipulation. </li>',
+                      <li> Scribus - my running club newsletter at <a href="http://www.eppingdac.com.au/news-and-views/newsletter/"> eppingdac.com.au/news-and-views/newsletter </a> </li>
+                      <li> Photoshop/Illistrator and GIMP (the open source equivalent). See <a href = "http://flickr.com/doug_from_the_uk"> flickr.com/doug_from_the_uk </a> for examples of graphical art and photo "touch ups"/manipulation. </li>',
                       "")))
 
 Software = c(Name = "Software Tools",
@@ -449,7 +473,7 @@ ExtraCircular = list(Name = "Extra-Circular",
                      c('Committee Member responsible for <a href = "http://www.eppingdac.com.au/"> web-design</a> communications, and social runners' = "",
                        "Feb 2011-May 2015",
                        "Epping and District Athletics Clubs North Epping, Hornsby, NSW, Australia" = "http://www.eppingdac.com.au/",
-                       'Website development <a href = "http://www.eppingdac.com.au/"> www.eppingdac.com.au </a>; designing, producing and distributing <a href = "http://www.eppingdac.com.au/newsletter"> newsletter </a> and e-publicity for local community running and athletics club'),
+                       'Website development (<a href = "http://www.eppingdac.com.au/"> www.eppingdac.com.au </a>); designing, producing and distributing <a href = "http://www.eppingdac.com.au/newsletter"> newsletter </a> and e-publicity for local community running and athletics club'),
 
                      c('Student Union involvement' = "",
                        "2002-2009",

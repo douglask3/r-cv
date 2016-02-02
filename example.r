@@ -58,7 +58,7 @@ Employment = list(Name = "Employment History",
 Publications = list(Name = "Publication Statistics",
                     Main = MakeUserProfile(usrID, 'unformatted'))
 
-Awards = list(Name = "Award",
+Awards = list(Name = "Examples of Awardss won",
         c("Macquarie University Research Excellence Scholarship"="http://www.hdr.mq.edu.au/information_about/scholarships",
           "2010-2014",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
@@ -66,17 +66,13 @@ Awards = list(Name = "Award",
         c("Post Graduate Research Fund (PGRF)" = "http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support",
           "2013",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
-          ""),
-        c("Biology postgrad conference best presentation" = "",
-          "2011",
-          "Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
           ""))
 
 Research = list(Name = "Current Research Interests",
                 Main = "Vegetation-climate dynamics and ecosystem modelling, including:",
-                list("Fire dynamics and fire--climate--vegetation interactions",
+                list("Fire dynamics and fire-climate-vegetation interactions",
                      "Wildfire impacts (on e.g vegetation, carbon-cycle, hydrology)",
-                     "Vegetation disturbance resistance and recovery",
+                     "Vegetation disturbance resistance/protection and recovery",
                      "Vegetation model benchmarking and diagnosis",
                      "Plant resource allocation strategies"))
 
