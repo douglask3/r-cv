@@ -265,8 +265,6 @@ Conferences =  list(Name = "Conferences",
                            "Nov 2007",
                            "")))
 
-
-
 Awards = list(Name = "Award",
 
         c("Macquarie University Research Excellence Scholarship (iMQRES)"="http://www.hdr.mq.edu.au/information_about/scholarships",
@@ -335,41 +333,6 @@ Research = list(Name = "Current Research Interests",
 
                      c("",'For more detail on all these projects, see <a href="http://douglask3.github.io/pages/research-interests.html">douglask3.github.io/pages/research-interests</a>'
                      )))
-
-Referee = list(Name = "References",
-               c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
-                 "Professor in Global Palaeoclimates and Biogeochemical Cycles",
-                 "Email: s.p.harrison@reading.ac.uk" = "",
-                 "Department of Geography and Environmental Science,
-                 School of Archaeology, Geography and Environmental Science,
-                 The University of Reading,
-                 Whiteknights,
-                 Reading,
-                 RG6 6AB,
-                 UK"),
-
-               c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
-                 "Chair of Biosphere and Climate Impacts",
-                 "Email: c.prentice@imperial.ac.uk" = "",
-                 "Grantham Institute for Climate Change and Department of Life Sciences,
-                 Imperial College,
-                 Silwood Park Campus,
-                 Ascot,
-                 SL5 7PY,
-                 UK"),
-
-               c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
-                 "Climate and Forest Ecosystem Modelling",
-                 "Email: b.medlyn@westernsydney.edu.au" = "",
-                 "Hawkesbury Institute for the Environment,
-                 Western Sydney University,
-                 Locked Bag 1797,
-                 Penrith,
-                 NSW,
-                 Australia,
-                 2751"))
-
-
 
 Workshops = list(Name = "Workshops and Consultancy Visits",
                  c("Using plant functional traits to predict ecosystem vulnerability to changing fire regimes" =
@@ -485,6 +448,39 @@ ExtraCircular = list(Name = "Extra-Circular",
                        "Open Univesity, UK" = "http://www.open.ac.uk/",
                        '<a href = "http://www.open.ac.uk/library/digital-archive/module/xcri:T189/study"> Open University undergrad course in digital photography and image manipulation </a>
                        <br>See <a href = "http://www.flickr.com/photos/doug_from_the_uk/">www.flickr.com/photos/doug_from_the_uk</a>'))
+
+Referee = list(Name = "References",
+              c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
+                "Professor in Global Palaeoclimates and Biogeochemical Cycles",
+                "Email: s.p.harrison@reading.ac.uk" = "",
+                "Department of Geography and Environmental Science,
+                School of Archaeology, Geography and Environmental Science,
+                The University of Reading,
+                Whiteknights,
+                Reading,
+                RG6 6AB,
+                UK"),
+
+              c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
+                "Chair of Biosphere and Climate Impacts",
+                "Email: c.prentice@imperial.ac.uk" = "",
+                "Grantham Institute for Climate Change and Department of Life Sciences,
+                Imperial College,
+                Silwood Park Campus,
+                Ascot,
+                SL5 7PY,
+                UK"),
+
+              c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
+                "Climate and Forest Ecosystem Modelling",
+                "Email: b.medlyn@westernsydney.edu.au" = "",
+                "Hawkesbury Institute for the Environment,
+                Western Sydney University,
+                Locked Bag 1797,
+                Penrith,
+                NSW,
+                Australia,
+                2751"))
 
 Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com </a> - <i> +44 (0) 7936 726 819 </i> - <a href = "douglask3.github.io"> douglask3.github.io</a></p><br>'
 
