@@ -1,5 +1,13 @@
 doc = c('')
 
+sectionTitle = "sectionTitle"
+if (!is.null(NewPage)) sectionTitle = paste(sectionTitle, "sectionTitlePdf")
+sectionTitle = paste('<div class="' ,sectionTitle ,'">')
+
+sectionContent = "sectionContent"
+if (!is.null(NewPage)) sectionContent = paste(sectionContent, "sectionContentPdf")
+sectionContent = paste('<div class="' ,sectionContent ,'">')
+
 addHeadInfo <- function() {
 	c(doc, '
 		<!DOCTYPE html>
@@ -102,11 +110,11 @@ addNameMainArea <- function(doc, name, contact) {
 		c(doc, '
 			<section>
 				<article>
-					<div class="sectionTitle">
+					', sectionTitle, '
 						<h1>', section[1], '</h1>
 					</div>
 
-					<div class="sectionContent">
+					', sectionContent, '
 						', section[2], '
 					</div>
 				</article>
@@ -119,15 +127,15 @@ addNameMainArea <- function(doc, name, contact) {
 		doc = c(doc, '
 		<section>
 			<article>
-				<div class="sectionTitle">
+				', sectionTitle, '
 					<h1>', section[1], '</h1>
 				</div>
 
-				<div class="sectionContent">
+				', sectionContent, '
 					<h3>', section[2], '</h3>
 				</div>
 			</article>
-			<div class="sectionContent">
+			', sectionContent, '
 				')
 				for (sub in section[[3]]) doc = addItem(sub, doc)
 		doc = c(doc, '
@@ -140,10 +148,10 @@ addNameMainArea <- function(doc, name, contact) {
 	addListedSection <- function(section, doc) {
 		doc = c(doc,'
 			<section>
-				<div class="sectionTitle">
+				', sectionTitle, '
 					<h1>', section[[1]], '</h1>
 				</div>
-				<div class="sectionContent">
+				', sectionContent, '
 				')
 
 				subs = tail(section, -1)
@@ -172,11 +180,12 @@ addNameMainArea <- function(doc, name, contact) {
 		for (i in sub) doc = addListItem(i, doc)
 		return(doc)
 	}
-    
-    add2Item <- function(section, doc) {
+
+    add2Item <- function(sub, doc) {
 		doc = c(doc, '\n <article> \n')
-        if (doc != "") doc = c(doc, '<h2>', hrefIndex(sub, 1), '</h2>\n')
-		doc = c('<p>', sub[2], '<p>\n</article>')
+        if (!is.null(hrefIndex(sub, 1))) doc = c(doc, '<h2>', hrefIndex(sub, 1), '</h2>\n')
+		doc = c(doc, '<p>', sub[2], '<p>\n</article>')
+		return(doc)
 	}
 
 	pageFooter <- function (doc, ...) {
@@ -203,10 +212,10 @@ addNameMainArea <- function(doc, name, contact) {
 		doc = addNameMainArea(doc,name,NULL)
 
 		doc = c(doc, '<section>
-			<div class="sectionTitle">
+			', sectionTitle, '
 				<h1>', paste(section[[1]], 'Continued'), '</h1>
 			</div>
-			<div class="sectionContent">')
+			', sectionContent)
 
 		return(doc)
 	}
@@ -225,11 +234,13 @@ addNameMainArea <- function(doc, name, contact) {
 	}
 
 	addPubs  <- function(sub, doc) {
-        if (!is.null(Author)) {
-            sub[1] = strsplit(sub[1], Author)[[1]]
-            sub[1] = paste(sub[1], collapse = paste('<b>', Author, '</b>'))
+
+        if (!is.null(Author) && grepl(Author, sub[1])) {
+            X = strsplit(sub[1], Author)[[1]]
+			if (length(X) == 1) sub[1] = paste('<b>', Author, '</b>')
+            	else sub[1] = paste(X, collapse = paste('<b>', Author, '</b>'))
         }
-        
+
 		if (is.na(sub[5]) || sub[5]=="") sub[5] = ": "
             else sub[5] = paste(' (', sub[5], ') ', sep = "")
 

@@ -189,9 +189,17 @@ section:last-child {
 	width: 25%;
 }
 
+.sectionTitlePdf {
+	width: 18%
+}
+
 .sectionContent {
 	float: right;
 	width: 72.5%;
+}
+.sectionContentPdf {
+	width: 77%;
+	margin-right: 2.5%;
 }
 
 .sectionTitle h1 {
