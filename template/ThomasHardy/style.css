@@ -7,6 +7,20 @@ padding:0;
 vertical-align:baseline;
 }
 
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+table {
+
+}
+
 left {
     position: absolute;
     left: 50px;
@@ -46,6 +60,7 @@ li {
 	padding-left: 1em;
 	text-indent: -1em;
 }
+
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 display:block;
@@ -241,7 +256,7 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
-@media all and (min-width: 602px) and (max-width: 800px) {
+@media all and (min-width: 602px) and (max-width: 700px) {
 	#headshot {
 		display: none;
 	}
