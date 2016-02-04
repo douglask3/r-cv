@@ -183,8 +183,8 @@ addNameMainArea <- function(doc, name, contact) {
 
     add2Item <- function(sub, doc) {
 		doc = c(doc, '\n <article> \n')
-        if (!is.null(hrefIndex(sub, 1))) doc = c(doc, '<h2>', hrefIndex(sub, 1), '</h2>\n')
-		doc = c(doc, '<p>', sub[2], '<p>\n</article>')
+        if (!is.null(hrefIndex(sub, 1))) doc = c(doc, '<h2>', hrefIndex(sub, 1), '</h2>')
+		doc = c(doc, sub[2], '<p></p></article>')
 		return(doc)
 	}
 
@@ -205,7 +205,7 @@ addNameMainArea <- function(doc, name, contact) {
 				<div class="clear"></div>
 			</section>')
 
-		doc = pageFooter(doc)
+		doc = pageFooter(doc, Credits)
 		doc = addDocStart(doc, Top)
 
 		name = c(paste ('<small>', Name[3], '</small>'), "", "")
