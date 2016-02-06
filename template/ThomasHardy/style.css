@@ -68,6 +68,8 @@ display:block;
 
 html, body {background: #181818; font-family: 'Lato', helvetica, arial, sans-serif; font-size: 16px; color: #222;}
 
+.bodyPDF {background: #bbf;}
+
 .clear {clear: both;}
 
 p {
@@ -86,9 +88,9 @@ p {
 }
 
 #cv-print {
-	width: 285mm;
-	height: 405mm;
+	width: 288mm;
 	background: #f3f3f3;
+	height: 405mm;
 	margin-top: 10mm;
 	margin-left: 10mm;
 	margin-right: 10mm;
@@ -128,7 +130,7 @@ p {
 
 #mainFoot {
 	height: 10mm;
-		width: 285mm;
+		width: 288mm;
 	background: #f3f3f3;
 	padding: 0;
 

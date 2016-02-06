@@ -9,9 +9,11 @@ if (!is.null(NewPage)) sectionContent = paste(sectionContent, "sectionContentPdf
 sectionContent = paste('<div class="' ,sectionContent ,'">')
 
 addHeadInfo <- function() {
-	c(doc, '
+	if (is.null(NewPage)) html = '<html>'
+		else html = '<html class = "bodyPDF">'
+	doc = c(doc, '
 		<!DOCTYPE html>
-		<html>
+		', html,'
 		<head>
 		<title>', Name[1], ' - Curriculum Vitae</title>
 
@@ -29,8 +31,9 @@ addHeadInfo <- function() {
 }
 
 addDocStart <- function(doc, top) {
-	doc = c(doc, '
-		<body id="top">')
+	if (is.null(NewPage)) body = '<body id="top">'
+		else body = '<body id="top" class = "bodyPDF">'
+	doc = c(doc, body)
 		if (is.null(NewPage))
 			doc = c(doc, '<div id="cv" class="instaFade">')
 		else doc = c(doc, '<div id="cv-print" class="instaFade">')
