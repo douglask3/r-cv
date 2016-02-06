@@ -97,8 +97,8 @@ Skills = list(Name = "Skills",
                                 <li>Shell</li>
                             </td>
                         </tr>
-                    </table>
-                    <br> See examples at <a href="https://github.com/douglask3" target = "_blank"> github.com/douglask3 </a>
+                    </table>',
+                    'See examples at <a href="https://github.com/douglask3" target = "_blank"> github.com/douglask3 </a>
                     and <a href="https://bitbucket.org/douglask3/" target = "_blank"> bitbucket.org/douglask3 </a>'),
                  c("Web Design & Publishing" = "",
                      '<table width="100%">
@@ -123,9 +123,10 @@ Skills = list(Name = "Skills",
                                   <li>plus standard office</li>
                               </td>
                           </tr>
-                      </table>
-                    See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
+                      </table>',
+                    'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
                  c("Software Tool development" = "",
+                   'I have developed several software package tools related to my research, and to help track projecft work flows',
                    'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
 
 
