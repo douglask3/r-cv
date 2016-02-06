@@ -33,36 +33,35 @@ Qualifications = list(Name = "Academic qualification",
         c("MSc Earth System Science" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
           "2008",
           "University of Bristol, Department of Earth Sciences, UK" = "http://www.bristol.ac.uk/earthsciences/",
-          "Dissertation: Statistical modelling of global fire regimes."),
+          "Dissertation: Statistical modelling of global fire regimes."))
 
-        c("BSc (Hons.) Physics" = "http://www2.warwick.ac.uk/study/undergraduate/courses/f300",
-          "2007",
-          "University of Warwick, Department of Physics, UK" = "http://www2.warwick.ac.uk/fac/sci/physics",
-          "Dissertation: Modelling atmospheric effects on starlight"))
+#        c("BSc (Hons.) Physics" = "http://www2.warwick.ac.uk/study/undergraduate/courses/f300",
+#          "2007",
+#          "University of Warwick, Department of Physics, UK" = "http://www2.warwick.ac.uk/fac/sci/physics",
+#          "Dissertation: Modelling atmospheric effects on starlight"))
 
-Employment = list(Name = "Employment History",
+Employment = list(Name = "Recent Employment History",
         c("Postdoctoral Research Assistant" = "",
           "Apr 2015-present",
           "Department of Geography & Environmental Science, University of Reading, UK" = "https://www.reading.ac.uk/geographyandenvironmentalscience/",
           ""),
+
         c("Postdoctoral Research Assistant" = "",
           "Jun 2014-Mar 2015",
           "Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
-          ""),
-        c("Research Assistant" = "",
-          "Sep 2008-Sep 2010",
-          "Department of Geographical Sciences, University of Bristol, UK" = "http://www.bristol.ac.uk/geography/",
           ""))
 
 
 Publications = list(Name = "Publication Statistics",
                     Main = MakeUserProfile(usrID, 'unformatted'))
 
-Awards = list(Name = "Examples of Awardss won",
+Awards = list(Name = "Examples of Awards won",
+
         c("Macquarie University Research Excellence Scholarship"="http://www.hdr.mq.edu.au/information_about/scholarships",
           "2010-2014",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           ""),
+
         c("Post Graduate Research Fund (PGRF)" = "http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support",
           "2013",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
@@ -74,7 +73,60 @@ Research = list(Name = "Current Research Interests",
                      "Wildfire impacts (on e.g vegetation, carbon-cycle, hydrology)",
                      "Vegetation disturbance resistance/protection and recovery",
                      "Vegetation model benchmarking and diagnosis",
-                     "Plant resource allocation strategies"))
+                     "Plant resource allocation strategies<br>&nbsp;"))
+
+
+
+Skills = list(Name = "Skills",
+              Main = "",
+              list(
+                 c("Programming",
+                   '<table width="100%">
+                        <tr>
+                            <td style="width:30%">
+                                <li>Fortran</li>
+                                <li>C++</li>
+                                <li>C</li>
+                            </td>
+                            <td style="width:30%">
+                                <li>R</li>
+                                <li>Python</li>
+                                <li>Matlab</li>
+                            </td>
+                            <td style="width:30%">
+                                <li>Shell</li>
+                            </td>
+                        </tr>
+                    </table>
+                    <br> See examples at <a href="https://github.com/douglask3" target = "_blank"> github.com/douglask3 </a>
+                    and <a href="https://bitbucket.org/douglask3/" target = "_blank"> bitbucket.org/douglask3 </a>'),
+                 c("Web Design & Publishing" = "",
+                     '<table width="100%">
+                          <tr>
+                              <td style="width:30%">
+                                  <li>html</li>
+                                  <li>CSS</li>
+                                  <li>PHP</li>
+                                  <li>Markdown</li>
+                              </td>
+                              <td style="width:30%">
+                                  <li>Python/R for webpage generation</li>
+                                  <li>Wordpress</li>
+                                  <li>Concrete5</li>
+                                  <li>Latex</li>
+                              </td>
+                              <td style="width:30%">
+                                  <li>Illistrator</li>
+                                  <li>Photoshop</li>
+                                  <li>GIMP</li>
+                                  <li>Scribus</li>
+                                  <li>plus standard office</li>
+                              </td>
+                          </tr>
+                      </table>
+                    See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
+                 c("Software Tool development" = "",
+                   'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
 
 
 Referee = list(Name = "References",
@@ -111,4 +163,4 @@ Referee = list(Name = "References",
                  2751"))
 
 
-AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research, Referee)
+AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research, Skills, Referee)

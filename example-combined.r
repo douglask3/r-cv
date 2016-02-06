@@ -12,7 +12,7 @@ files = paste("temp/", files, sep = '')
 line = 'Referee = c("References",
                     "See bottom of extended CV")
         Name[3] = "Summary"
-        AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research, Referee)
+        AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research, Skills, Referee)
         Top = NULL'
 
 
@@ -25,4 +25,6 @@ line = 'Name = Name[1:3]
 
 write(line,file=files[2],append=TRUE)
 
-r2cv(file = files, NewPage = c('Douglas Kelley CV', '', 'douglas.i.kelley@gmail.com'))
+NewPage = c('Douglas Kelley - CV', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
+
+r2cv(file = files, NewPage = NewPage)
