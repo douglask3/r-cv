@@ -1,0 +1,41 @@
+html, body {background: #bbf;}
+
+.sectionTitle {
+	width: 18%
+}
+
+.sectionContent {
+	width: 77%;
+	margin-right: 2.5%;
+}
+
+
+#cv {
+	width: 288mm;
+	max-width: 288mm;
+	background: #f3f3f3;
+	height: 405mm;
+	margin-top: 8.5mm;
+	margin-left: 10mm;
+	margin-right: 10mm;
+	margin-bottom: 0;
+}
+
+#mainFoot {
+	height: 10mm;
+
+	width: 288mm;
+	max-width: 288mm;
+	background: #f3f3f3;
+	padding: 0;
+
+
+	margin-top: 0;
+	margin-left: 10mm;
+	margin-right: 10mm;
+	margin-bottom: 10mm;
+}
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
+font-size:102%;
+}

@@ -19,6 +19,9 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     ## template
     template = paste('template', template, sep = '/')
     index    = paste(template, 'index.r', sep = '/')
+    if (is.null(NewPage)) style2 = 'style-web.css'
+        else style2 = 'style-print.css'
+    styles = c('style.css', style2)
 
     outFile    = sapply(file   , function(i) tail(strsplit(i,'/')[[1]],1))
     outFile    = sapply(outFile, function(i) head(strsplit(i, '.', fixed = TRUE)[[1]],-1))
@@ -26,8 +29,8 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
 
     PAGES = 0
     for (nn in 1:2) {
-        cpInFiles  = paste(template, 'style.css', sep = '/')
-        cpOutFiles = 'style.css'
+        cpInFiles  = paste(template, styles, sep = '/')
+        cpOutFiles = styles
 
         doc0 = ''; headHtml = TRUE; PAGE = 0
         for (i in file) {
@@ -47,11 +50,8 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
 
 
         }
-        print('yay')
-        print(PAGE)
         PAGES = PAGE
         PAGES <<- PAGES
-        print(PAGES)
     }
 
 
