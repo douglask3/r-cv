@@ -24,7 +24,7 @@ Contact = c(email = "douglas.i.kelley@gmail.com",
 ###############################################################
 ## Additional Sections                                       ##
 ###############################################################
-Qualifications = list(Name = "Academic qualification",
+Qualifications = list(Name = "Academic qualifications",
         c("PhD Ecology" = "",
           "2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
@@ -62,7 +62,7 @@ Awards = list(Name = "Examples of Awards won",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           ""),
 
-        c("Post Graduate Research Fund (PGRF)" = "http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support",
+        c("Postgraduate Research Fund (PGRF)" = "http://www.hdr.mq.edu.au/information_for/current_candidates/financial_support",
           "2013",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           ""))
@@ -70,7 +70,7 @@ Awards = list(Name = "Examples of Awards won",
 Research = list(Name = "Current Research Interests",
                 Main = "Vegetation-climate dynamics and ecosystem modelling, including:",
                 list("Fire dynamics and fire-climate-vegetation interactions",
-                     "Wildfire impacts (on e.g vegetation, carbon-cycle, hydrology)",
+                     "Wildfire impacts (on i.e. vegetation, carbon-cycle, hydrology)",
                      "Vegetation disturbance resistance/protection and recovery",
                      "Vegetation model benchmarking and diagnosis",
                      "Plant resource allocation strategies<br>&nbsp;"))
@@ -120,11 +120,14 @@ Skills = list(Name = "Skills",
                                   <li>Photoshop</li>
                                   <li>GIMP</li>
                                   <li>Scribus</li>
-                                  <li>plus standard office</li>
+                                  <li>ms/open of office</li>
                               </td>
                           </tr>
                       </table>',
                     'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
+
+                 "New Page",
+
                  c("Software Tool development" = "",
                    'I have developed several software package tools related to my research, and to help track projecft work flows',
                    'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
