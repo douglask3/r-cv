@@ -1,19 +1,14 @@
 doc = c('')
 
-sectionTitle = "sectionTitle"
-if (!is.null(NewPage)) sectionTitle = paste(sectionTitle, "sectionTitlePdf")
-sectionTitle = paste('<div class="' ,sectionTitle ,'">')
 
-sectionContent = "sectionContent"
-if (!is.null(NewPage)) sectionContent = paste(sectionContent, "sectionContentPdf")
-sectionContent = paste('<div class="' ,sectionContent ,'">')
+sectionTitle = paste('<div class="sectionTitle">')
+
+sectionContent = paste('<div class="sectionContent">')
 
 addHeadInfo <- function() {
-	if (is.null(NewPage)) html = '<html>'
-		else html = '<html class = "bodyPDF">'
 	doc = c(doc, '
 		<!DOCTYPE html>
-		', html,'
+		<html>
 		<head>
 		<title>', Name[1], ' - Curriculum Vitae</title>
 
@@ -22,6 +17,7 @@ addHeadInfo <- function() {
 		<meta charset="UTF-8">
 
 		<link type="text/css" rel="stylesheet" href="style.css">
+		<link type="text/css" rel="stylesheet" href="', style2 ,'">
 		<link href="http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300" rel="stylesheet" type="text/css">
 
 		<!--[if lt IE 9]>
@@ -31,12 +27,8 @@ addHeadInfo <- function() {
 }
 
 addDocStart <- function(doc, top) {
-	if (is.null(NewPage)) body = '<body id="top">'
-		else body = '<body id="top" class = "bodyPDF">'
-	doc = c(doc, body)
-		if (is.null(NewPage))
-			doc = c(doc, '<div id="cv" class="instaFade">')
-		else doc = c(doc, '<div id="cv-print" class="instaFade">')
+	doc = c(doc, '<body id="top">
+		<div id="cv" class="instaFade">')
 				if (!is.null(top)) doc = c(doc, top)
 	return(doc)
 }
@@ -272,11 +264,13 @@ addNameMainArea <- function(doc, name, contact) {
 	}
 
 	add3Item <- function(sub, doc) {
+		if (substr(sub[2], nchar(sub[2])-7, nchar(sub[2])) == '</table>')
+			sep ='' else sep ='<br>'
 		c(doc, '
 			<article>
 				<h2>', hrefIndex(sub, 1), '</h2>
-				<p>', sub[2], '<br>
-				<small><i>', sub[3], '</i></small></p>
+				', sub[2], sep, '
+				<small><i>', sub[3], '</i></small><p></p?
 			</article>')
 	}
 
