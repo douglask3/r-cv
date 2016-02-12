@@ -110,13 +110,13 @@ Skills = list(Name = "Skills",
                                   <li>Markdown</li>
                               </td>
                               <td style="width:30%">
-                                  <li>Python/R for webpage generation</li>
+                                  <li>Python/R for web-page generation</li>
                                   <li>Wordpress</li>
                                   <li>Concrete5</li>
                                   <li>Latex</li>
                               </td>
                               <td style="width:30%">
-                                  <li>Illistrator</li>
+                                  <li>Illustrator</li>
                                   <li>Photoshop</li>
                                   <li>GIMP</li>
                                   <li>Scribus</li>
@@ -129,7 +129,7 @@ Skills = list(Name = "Skills",
                  "New Page",
 
                  c("Software Tool development" = "",
-                   'I have developed several software package tools related to my research, and to help track projecft work flows',
+                   'I have developed several software package tools related to my research, and to help track project work flows',
                    'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
 
 

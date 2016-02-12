@@ -82,7 +82,7 @@ Employment = list(Name = "Employment History",
         c("Research Assistant" = "",
           "Jun 2014-Sep 2014",
           " Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
-          "Modelling changes in past and future vegetation-fire dynamics, and its feedback on terrestial and atmospheric carbon."),
+          "Modelling changes in past and future vegetation-fire dynamics, and its feedback on terrestrial and atmospheric carbon."),
 
         c("Research Assistant" = "",
           "Sep 2008-Sep 2010",
@@ -149,7 +149,7 @@ Publications = list(Name = "Publications",
                     list("In Prep",
 
                          c("DI Kelley, M de Kauwe, B Medlyn",
-                           "Testing Allocation model assuptions in a simple ecosystem model",
+                           "Testing Allocation model assumptions in a simple ecosystem model",
                            "",
                            "",
                            "",
@@ -298,7 +298,7 @@ Research = list(Name = "Current Research Interests",
                 utilising experimental and satellite data for more
                 observation-driven vegetation model development and
                 benchmarking. Most of this has been exploring climate and
-                vegetative controls and fire, and the impact fire has on ecosystem, atmospheric emission and the carbon cycle, and vegetation-controlled hydrology. I am also involved in projects that explore plant resource allocation, phenology and drought recovery stratagies.
+                vegetative controls and fire, and the impact fire has on ecosystem, atmospheric emission and the carbon cycle, and vegetation-controlled hydrology. I am also involved in projects that explore plant resource allocation, phenology and drought recovery strategies.
                 &nbsp; <br><br>
                 My current research projects include:<br><br>",
                 list(
@@ -309,7 +309,7 @@ Research = list(Name = "Current Research Interests",
                        development of the LPX-DGVM-fire model to better
                        represent fire and fire-adapted vegetation in tropical
                        savanna ecosystems. Continued development strands include:
-                       <li> Improving fire-model performace for forest ecoystems </li>
+                       <li> Improving fire-model performance for forest ecosystems </li>
                        <li> Parameterization of the carbon cycle and trace gas emissions </li>
                        <li> Continued development of disturbance resilience and resistance traits - e.g. resprouting after fire and drought. </li>"),
 
@@ -317,7 +317,8 @@ Research = list(Name = "Current Research Interests",
                        "douglask3.github.io/vegetation-model-inter-comparison-benchmarking" = "http://douglask3.github.io/vegetation-model-inter-comparison-benchmarking.html",
                        " " = "",
                        'I am the main developer and maintainer of the most
-                       widely used vegetation-model benchmarking system, which qualitatively assesses model performance for a variety of vegetation and land surface processes. Current work includes:
+                       widely used vegetation-model benchmarking system, which
+                       qualitatively assesses model performance for a variety of vegetation and land surface processes. Current work includes:
                             <li> Incorporation of fire regime observations </li>
                             <li> Inter-model comparisons for the <a href="http://www.mpic.de/fileadmin/user_upload/images_presse/Projects/IBBI/pdfs/Hantson_FireMIP.pdf">fireMIP project</a></li>
                             <li> R software package development </li>'),
@@ -328,7 +329,7 @@ Research = list(Name = "Current Research Interests",
                        "I have been one of the lead collaborators on compiling
                        several databases describing site based disturbance
                        resistance and recovery traits across plant species,
-                       disturnace regimes and climate gradiants. These include:
+                       disturbance regimes and climate gradients. These include:
                             <li> Bark Thickness as protection against fire. </li>
                             <li> Resprouting as a recovery to extreme fire and drought disturbance. </li>
                             <li> Post-fire re-seeding strategies. </li>"),
@@ -338,10 +339,10 @@ Research = list(Name = "Current Research Interests",
                        " " = "",
                        "More recently, I have become involved in research
                        projects exploring wider vegetation dynamics and
-                       responses to enviromental change, including:
+                       responses to environmental change, including:
                            <li> The testing of conceptual carbon allocation
-                           stratagies in a vegetation model framework, and the
-                           response of these stratagies to changing climate and
+                           strategies in a vegetation model framework, and the
+                           response of these strategies to changing climate and
                            increasing CO<sub>2</sub> fertilization. </li>
                            <li> Development of a simple dry-season phenology
                            model for tropical grass and woodland ecosystems. </li>"),
@@ -446,11 +447,11 @@ Skills = list(Name = "Skills",
                          HTML/CSS, PHP and Markdown. I have also linked Markdown
                          with R and Python when sharing and presenting results
                          from model development and analysis.",
-                     'See <a href = "http://www.eppingdac.com.au/">eppingdac.com.au</a>, an example of a website I have developed using Concrete5 content managment system
+                     'See <a href = "http://www.eppingdac.com.au/">eppingdac.com.au</a>, an example of a website I have developed using Concrete5 content management system
                       <br> See <a href = "http://douglask3.gothub.io">douglask3.github.io </a>, an example of a website produced using a simple dynamic-site emulator.'),
 
                    c("Publishing" = "",
-                     'As well has publishing papers, I have also written manuals, reports and newletters using a variety of languages and software products, including (aside from standard office/open office):
+                     'As well has publishing papers, I have also written manuals, reports and newsletters using a variety of languages and software products, including (aside from standard office/open office):
                       <li> Latex - this includes my thesis, available at <a href="www.goo.gl/9YjwKw"> www.goo.gl/9YjwKw </a> </li>
                       <li> Scribus - my running club newsletter, available at <a href="http://www.eppingdac.com.au/news-and-views/newsletter/"> eppingdac.com.au/news-and-views/newsletter </a> </li>
                       <li> Photoshop/Illustrator and GIMP (the open source equivalent). See <a href = "http://flickr.com/doug_from_the_uk"> flickr.com/doug_from_the_uk </a> for examples of graphical art and photo "touch ups"/manipulation. </li>',
