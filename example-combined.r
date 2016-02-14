@@ -20,6 +20,7 @@ line = 'Referee = list(Name = "References",
 
               c("","Full contact information at end of Extended CV"))
         Name[3] = "Summary"
+        Name[4] = "docs/Epicormic.png"
         AdditionalSection = list(Qualifications, Employment, Publications, Awards,  Research, Skills, Referee)
         Top = NULL'
 
