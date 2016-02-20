@@ -33,12 +33,11 @@ Qualifications = list(Name = "Academic qualifications",
         c("MSc Earth System Science" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
           "2008",
           "University of Bristol, Department of Earth Sciences, UK" = "http://www.bristol.ac.uk/earthsciences/",
-          "Dissertation: Statistical modelling of global fire regimes."))
-
-#        c("BSc (Hons.) Physics" = "http://www2.warwick.ac.uk/study/undergraduate/courses/f300",
-#          "2007",
-#          "University of Warwick, Department of Physics, UK" = "http://www2.warwick.ac.uk/fac/sci/physics",
-#          "Dissertation: Modelling atmospheric effects on starlight"))
+          "Dissertation: Statistical modelling of global fire regimes."),
+        c("BSc (Hons.) Physics" = "http://www2.warwick.ac.uk/study/undergraduate/courses/f300",
+          "2007",
+          "University of Warwick, Department of Physics, UK" = "http://www2.warwick.ac.uk/fac/sci/physics",
+          "Dissertation: Modelling atmospheric effects on starlight"))
 
 Employment = list(Name = "Recent Employment History",
         c("Postdoctoral Research Assistant" = "",
