@@ -262,14 +262,14 @@ Conferences =  list(Name = "Conferences",
 
                          c("DI Kelley",
                            "Transient Biomization Scheme",
-                           "course seminar for Msc Earth Systems Science",
+                           "course seminar for MSc Earth Systems Science",
                            "Department of Earth Sciences, University of Bristol",
                            "Jul 2008",
                            ""),
 
                          c("DI Kelley, E Counce",
                            "Forest Fire simulator",
-                           "course seminar for Msc Earth Systems Science",
+                           "course seminar for MSc Earth Systems Science",
                            "Department of Earth Sciences, University of Bristol",
                            "Nov 2007",
                            "")))
@@ -505,6 +505,11 @@ ExtraCircular = list(Name = "Extra-Curricular",
                                       = "http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience/",
                        'Demonstrated department research during school tours of the University'),
 
+                     c('Demonstrator' = "",
+                       "2008 - 2009",
+                       "MSc Earth Systems Science and MSc natural hazards - <br> Modelling the Earth System" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
+                       "Conducted seminar on fire-vegetation modellings and running modelling tutorials"),
+
                      c('Student Union involvement' = "",
                        "2002-2009",
                        '<a href = "http://www.warwicksu.com/"> University of Warwick </a> and <a href = "http://www.ubu.org.uk/"> University of Bristol </a>',
@@ -550,7 +555,6 @@ Referee = list(Name = "References",
                 "Email: b.medlyn@westernsydney.edu.au" = "",
                 "Hawkesbury Institute for the Environment<br>
                 Western Sydney University<br>
-                Locked Bag 1797<br>
                 Penrith<br>
                 NSW<br>
                 Australia<br>

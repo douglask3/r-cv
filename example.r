@@ -99,6 +99,9 @@ Skills = list(Name = "Skills",
                     </table>',
                     'See examples at <a href="https://github.com/douglask3" target = "_blank"> github.com/douglask3 </a>
                     and <a href="https://bitbucket.org/douglask3/" target = "_blank"> bitbucket.org/douglask3 </a>'),
+
+                 "New Page",
+
                  c("Web Design & Publishing" = "",
                      '<table width="100%">
                           <tr>
@@ -124,8 +127,6 @@ Skills = list(Name = "Skills",
                           </tr>
                       </table>',
                     'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
-
-                 "New Page",
 
                  c("Software Tool development" = "",
                    'I have developed several software package tools related to my research, and to help track project work flows',
