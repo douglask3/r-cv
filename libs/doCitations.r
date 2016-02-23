@@ -1,29 +1,66 @@
 doCitations <- function(txt) {
     refs = openRefencesFile(txt)
-    refsIndex = rep(FALSE, length(refs))
 
-    txti = findCiteInfo(txt, 'cite')
+    c(txt, refsIndex1) := findAndReplaceCite('cite', c(''  , '' , '' , '' ), txt, refs)
+    c(txt, refsIndex2) := findAndReplaceCite('citep', c('(', '' , '' , ')'), txt, refs)
+    c(txt, refsIndex3) := findAndReplaceCite('citet', c('' , '(', ')', '' ), txt, refs)
 
+    refs = refs[unique(c(refsIndex1, refsIndex2, refsIndex3))]
+
+    refs = sapply(refs, function(i) i[[4]])
+    refs = sort(refs)
+    refs = paste('<div class = "refList">', refs, '</div>')
+    refs = paste(refs, collapse = '\n')
+    #refs = paste('\t', refs)
+
+
+    txt = findCiteInfo(txt, 'References')
+    txt[2] = refs
+    txt = paste(txt, collapse = '')
+    return(txt)
+}
+
+findAndReplaceCite <- function(cite, paras, txt, refs) {
+    txti = findCiteInfo(txt, cite)
+
+    if(length(txti) == 1) return(list(txti, NULL))
     index = seq(2, length(txti), 2)
     cites = txti[index]
 
-    for (i in 1:length(cites)) {
-        test = FALSE
-        for (j in 1:length(refs)) {
-            if (cites[i] == refs[[j]][[1]]) {
-                cites[i] = refs[[j]][[2]]
-                refsIndex[j] = TRUE
-            }
-        }
-    }
+    out = sapply(cites, ReplaceCite, refs, paras)
 
-    refs = refs[refsIndex]
-    refs = sapply(refs, function(i) i[[3]])
-    refs = paste(refs, collapse = '\n')
+    cites = unlist(out[1,])
+    refsIndex = unique(unlist(out[2,]))
 
     txti [index] = cites
     txti = paste(txti, collapse = ' ')
-    return(txti)
+
+    return(list(txti, refsIndex))
+}
+
+ReplaceCite <- function(cite, refs, paras) {
+    cite = strsplit(cite, ';')[[1]]
+    cite = sapply(cite, function(i) gsub(' ', '', i))
+    refsIndex = c()
+
+    for (i in 1:length(cite)) {
+        test = FALSE
+        for (j in 1:length(refs)) {
+            if (cite[i] == refs[[j]][[1]]) {
+                cite[i] = paste( refs[[j]][2], ' ',
+                                 paras[2], refs[[j]][3],
+                                 paras[3], sep = '')
+                refsIndex = c(refsIndex, j)
+                test = TRUE
+                break
+            }
+        }
+        if (!test) cite[i] = '??Cite Not Found??'
+    }
+
+    cite = paste(cite, collapse = '; ')
+    cite = paste( paras[1], cite, paras[4], sep = '')
+    return(list(cite, refsIndex))
 }
 
 findCiteInfo <- function(txt, command) {
@@ -67,11 +104,71 @@ sortRef <- function(ref) {
 
     Year = findFieldInfo('year', ref)
 
-    txtReplace = paste(author, Year)
+    referance = constructReference(ref, type, authors, Year)
 
-    referance = paste(c(authors, Year), collapse = ' ')
+    return(list(key, author, Year, referance))
+}
 
-    return(list(key, txtReplace, referance))
+
+constructReference <- function(ref, type, authors, year) {
+
+         if (type == "article") ref = constructArticleReference(ref)
+    else if (type == "inproceedings") ref = constructBookReference(ref)
+    else if (type == "book") ref = constructBookReference(ref)
+    else if (type == "incollection") ref = constructBookReference(ref)
+    else if (type == "phdthesis") ref = constructPhdthesisReference(ref)
+    else if (type == "manual") ref = constructArticleReference(ref)
+    else if (type == "misc") ref = constructArticleReference(ref)
+    else browser()
+
+    authors = makeAuthorList(authors)
+
+    ref = paste(authors, ' (', year, ') ', ref, sep = '')
+}
+
+makeAuthorList <- function(authors) {
+
+    makeAuthor <- function(author) {
+        author = strsplit(author, ',')[[1]]
+        firstName = substr(strsplit(author[2],' ')[[1]],1,1)
+        firstName = firstName[firstName != '']
+        firstName = paste(firstName, '. ', sep = '')
+        author = paste(c(author[1], firstName), collapse = ' ')
+        return(author)
+    }
+
+    authors = sapply(authors, makeAuthor)
+    authors = paste(authors, collapse = ', ')
+    return(authors)
+}
+
+constructPhdthesisReference <- function(ref)
+    constructArticleReference(ref, title = 'title', journal = 'type',
+                                          volume = 'school', number = 'pages')
+
+constructBookReference <- function(ref)
+    constructArticleReference(ref, title = 'title', journal = 'booktitle',
+                                          volume = 'publisher', number = 'pages')
+
+
+constructArticleReference <- function(ref, title = 'title', journal = 'journal',
+                                      volume = 'volume', number = 'number') {
+    title   = findFieldInfo(title  , ref)
+    journal = findFieldInfo(journal, ref)
+    volume  = findFieldInfo(volume , ref)
+    number  = findFieldInfo(number , ref)
+
+    if (volume == '') {
+        volume =  number
+        number =  ''
+    }
+
+    if (volume != "") volume = paste('', '-', volume)
+    if (number != "") number = paste(' (', number, ') ', sep = '')
+
+    ref = paste(title, '<i> ', journal, '</i> ', volume, number , sep = '')
+
+    return(ref)
 }
 
 findFieldInfo <- function(pattern, ref) {
@@ -81,7 +178,7 @@ findFieldInfo <- function(pattern, ref) {
 
     if (all(!test)) return('')
 
-    ref = strsplit(ref[test], '{', fixed = TRUE)[[1]][2]
+    ref = tail(strsplit(ref[test], '{', fixed = TRUE)[[1]], 1)
     return(strsplit(ref, '}')[[1]][1])
 }
 

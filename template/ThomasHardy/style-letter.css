@@ -9,3 +9,9 @@ h2 {
 	margin-left: 2px;
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 }
+
+
+.refList {
+	padding: 0 40px;
+    text-indent:-1.5em;
+}
