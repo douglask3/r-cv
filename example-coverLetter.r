@@ -23,7 +23,11 @@ AdditionalSection = '
 
     <b> Professor Richard Washington </b>
     School of Geography and the Environment,
-    University of Oxford
+    Oxford University Centre for the Environment,
+    University of Oxford,
+    South Parks Road,
+    Oxford, OX1 3QY,
+    United Kingdom
 
     <b> 24th Feburary 2016 </b>
 
@@ -36,7 +40,11 @@ Many of the climate controls and impacts are shared across Australia and East Af
 
 However, the impacts of climate change on water security in East Africa, and indeed most of the poorer regions of the world, are likely to be much worse (Grey and Sadoff, 2007; Vorosmarty et al. 2010).  The rural poor, who make up roughly 80% of the regions population (The Would Bank Group, 2016)  are already severely effected by periodic droughts and floods (Carter et al. 2007). The rapid economic development in some East African  countries (IMF, 2012) may, if unguided,  put added strain on water resources, as has happened in other parts of the world where increased urbanisation and, for some parts of society, wealth has lead to increased water demand through e.g. increased demand for energy and water-intensive agriculture, as well as decreases in the ability for environmental systems to hold and supply, through pollution and land use change (Falkenmark & Widstrand 1992).
 
-One way to mitigate possible harmful effects of climate change on water security is continued  development and implementation of “early warning systems” which allow countries to predict and prepare for future drought events or flood-prone seasons (Washington & Downing, 1999; Washington et al. 2006). These systems often take advantage of teleconnections with preceding climate indicators such as ocean temperatures/temperature gradients (e.g. ENSO, AMO, Indian Ocean Indices, shown to be particularly useful in East and Southern Africa; Todd & Washington, 2004; Mohino et al. 2011). However, these connections, and their resultant impacts, are likely to change with climate (Müller & Roeckner 2006; Stevenson 2011; Cai et al. 2014) and natural vegetation & land cover (Sitch et al. 2008; Harrison & Kelley submitted). This is perhaps of particular concern in East Africa where, for example, the transition from drought-prone north to flood-prone equatorial regions during EL Nino years has already proven to be hard to predict for even the current El Nino event (Bonifacio, 2015).
+One way to mitigate possible harmful effects of climate change on water security is continued  development and implementation of “early warning systems” which allow countries to predict and prepare for future drought events or flood-prone seasons (Washington & Downing, 1999; Washington et al. 2006). These systems often take advantage of teleconnections with preceding climate indicators such as ocean temperatures/temperature gradients (e.g. ENSO, AMO, Indian Ocean Indices, shown to be particularly useful in East and Southern Africa; Todd & Washington, 2004; Mohino et al. 2011). However, these connections, and their resultant impacts, are likely to change with climate (Müller & Roeckner 2006; Stevenson 2011; Cai et al. 2014)
+
+<NewPage>
+
+and natural vegetation & land cover (Sitch et al. 2008; Harrison & Kelley submitted). This is perhaps of particular concern in East Africa where, for example, the transition from drought-prone north to flood-prone equatorial regions during EL Nino years has already proven to be hard to predict for even the current El Nino event (Bonifacio, 2015).
 
 I would like the opportunity to apply skills and research experience from my time in Australia to a research team that can help develop warning and mitigation strategies, and directly influence development decisions that will help some of the world most vulnerable people adapt to climate change. I feel the REACH research program at Oxford is the ideal environment for this – the cross-disciplinary set-up will draw on the full range of expertise needed to tease apart the complex nature of the impact of climate variability on water security, whilst the groups social science component and the programs partnership with universities and institutes in Africa will help ensure research is directly applicable and relevant to the people the program is designed to help.
 
