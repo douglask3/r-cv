@@ -323,10 +323,16 @@ addEndSection <-function(doc, footer, credits = NULL) {
 }
 
 addLetter <- function(section, doc) {
-	section = gsub("\n", "<br>", section)
+
+	section = doCitations(section)
+
+	section = gsub("&", "<i>&</i>", section)
+	section = gsub("et al.", "<i>et al.</i>", section)
 	section = gsub("\t", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", section)
 	section = gsub("    ", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", section)
-	section = gsub("et al.", "<i>et al.</i>", section)
+	section = gsub("\n", "<br>", section)
+	section = gsub("CO2", "CO<sub>2</sub>", section)
+	section = gsub("21st", "21<sup>st</sup>", section)
 
 	section = strsplit(section, '<NewPage>')[[1]]
 
