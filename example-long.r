@@ -450,9 +450,11 @@ Skills = list(Name = "Skills",
                          dynamic-site emulator. Developing and maintaining these
                          sites has allowed me to become familiar with many web
                          design software packages and fluent in
-                         HTML/CSS, PHP and Markdown. I have also linked Markdown
+                         HTML/CSS, PHP and Markdown. I have also linked
+                         Markdown and html
                          with R and Python when sharing and presenting results
-                         from model development and analysis.",
+                         from model development and analysis. In fact, this CV
+                         has been made by generating HTML/CSS code using R.",
                      'See <a href = "http://www.eppingdac.com.au/">eppingdac.com.au</a>, an example of a website I have developed using Concrete5 content management system
                       <br> See <a href = "http://douglask3.gothub.io">douglask3.github.io </a>, an example of a website produced using a simple dynamic-site emulator.'),
 
