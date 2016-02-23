@@ -7,16 +7,18 @@ doCitations <- function(txt) {
 
     refs = refs[unique(c(refsIndex1, refsIndex2, refsIndex3))]
 
-    refs = sapply(refs, function(i) i[[4]])
-    refs = sort(refs)
-    refs = paste('<div class = "refList">', refs, '</div>')
-    refs = paste(refs, collapse = '\n')
-    #refs = paste('\t', refs)
+    if (length(refs) > 0) {
+        refs = sapply(refs, function(i) i[[4]])
+        refs = sort(refs)
+        refs = paste('<div class = "refList">', refs, '</div>')
+        refs = paste(refs, collapse = '\n')
+        #refs = paste('\t', refs)
 
 
-    txt = findCiteInfo(txt, 'References')
-    txt[2] = refs
-    txt = paste(txt, collapse = '')
+        txt = findCiteInfo(txt, 'References')
+        txt[2] = refs
+        txt = paste(txt, collapse = '')
+    }
     return(txt)
 }
 
