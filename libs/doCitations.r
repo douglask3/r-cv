@@ -85,10 +85,24 @@ openRefencesFile <- function(txt) {
     refs = strsplit(refs, '@')[[1]]
 
     refs = lapply(refs, sortRef)
+
+    refsID = lapply(refs, function(i) i[[6]])
+    refs = mapply(avoidRefRep, refs, 1:length(refs), MoreArgs = list(refsID),
+                  SIMPLIFY = FALSE)
+
+    refs = lapply(refs, constructReference)
+}
+
+avoidRefRep <- function(ref, i, refsID) {
+    index = which(ref[[6]]==refsID)
+    if (length(index) == 1) return(ref)
+    letter = letters[which(i == index)]
+    ref[[3]] = paste(ref[[3]], letter, sep ='')
+    return(ref)
 }
 
 sortRef <- function(ref) {
-    if (ref == "") return(c('','',''))
+    if (ref == "") return(rep('', 7))
     ref = strsplit(ref, "\n")[[1]]
 
     c(type, key) := strsplit(ref[1], '{', fixed = TRUE)[[1]]
@@ -106,26 +120,31 @@ sortRef <- function(ref) {
 
     Year = findFieldInfo('year', ref)
 
-    referance = constructReference(ref, type, authors, Year)
+    #referance = constructReference(ref, type, authors, Year)
+    refID = paste(c(author, Year), collapse = '')
 
-    return(list(key, author, Year, referance))
+    return(list(key, author, Year, type, authors, refID, ref))
 }
 
-
-constructReference <- function(ref, type, authors, year) {
-
-         if (type == "article") ref = constructArticleReference(ref)
-    else if (type == "inproceedings") ref = constructBookReference(ref)
-    else if (type == "book") ref = constructBookReference(ref)
-    else if (type == "incollection") ref = constructBookReference(ref)
-    else if (type == "phdthesis") ref = constructPhdthesisReference(ref)
-    else if (type == "manual") ref = constructArticleReference(ref)
-    else if (type == "misc") ref = constructArticleReference(ref)
+constructReference <- function(ref) {
+    referance = ref[[7]]
+    year = ref[[3]]
+    type = ref[[4]]
+    authors = ref[[5]]
+    #, type, authors, year
+         if (type == "") referance = ""
+    else if (type == "article") referance = constructArticleReference(referance)
+    else if (type == "inproceedings") referance = constructBookReference(referance)
+    else if (type == "book") referance = constructBookReference(referance)
+    else if (type == "incollection") referance = constructBookReference(referance)
+    else if (type == "phdthesis") referance = constructPhdthesisReference(referance)
+    else if (type == "manual") referance = constructArticleReference(referance)
+    else if (type == "misc") referance = constructArticleReference(referance)
     else browser()
 
     authors = makeAuthorList(authors)
-
-    ref = paste(authors, ' (', year, ') ', ref, sep = '')
+    ref[[4]] = paste(authors, ' (', year, ') ', referance, sep = '')
+    return(ref[1:4])
 }
 
 makeAuthorList <- function(authors) {
