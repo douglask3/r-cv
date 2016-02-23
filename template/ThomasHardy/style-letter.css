@@ -3,3 +3,9 @@ html, body {background: #fff;}
 .mainDetails {
 	background: #ddf;
 }
+
+h2 {
+	font-size: 150%;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+}
