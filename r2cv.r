@@ -14,13 +14,17 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.Rlist.r")
     Credits = 'Made using r2cv R package - <a href = "http://github.com/douglask3/r-cv", target = "_blank"> github.com/douglask3/r-cv </a>'
 
+    if (is.null(NewPage)) source(file[1], local = TRUE)
 
     ## File paths
     ## template
     template = paste('template', template, sep = '/')
     index    = paste(template, 'index.r', sep = '/')
+
     if (is.null(NewPage)) style2 = 'style-web.css'
         else style2 = 'style-print.css'
+
+    if (class(AdditionalSection) == "character" ) style2 = c(style2, 'style-letter.css')
     styles = c('style.css', style2)
 
     outFile    = sapply(file   , function(i) tail(strsplit(i,'/')[[1]],1))

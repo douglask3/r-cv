@@ -16,9 +16,11 @@ addHeadInfo <- function() {
 		<meta name="description" content="The Curriculum Vitae of ', Name[1], '"/>
 		<meta charset="UTF-8">
 
-		<link type="text/css" rel="stylesheet" href="style.css">
-		<link type="text/css" rel="stylesheet" href="', style2 ,'">
-		<link href="http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300" rel="stylesheet" type="text/css">
+		<link type="text/css" rel="stylesheet" href="style.css">\n')
+		for (i in style2) doc = c(doc, '<link type="text/css" rel="stylesheet" href="', i ,'">\n')
+
+		doc = c(doc,
+		'<link href="http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300" rel="stylesheet" type="text/css">
 
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,40 +35,43 @@ addDocStart <- function(doc, top) {
 	return(doc)
 }
 
-addNameMainArea <- function(doc, name, contact) {
-	doc = c(doc,'
-	<div class="mainDetails">')
-		if (length(name) > 3) {
+addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
+	if (addMain) {
+		doc = c(doc,'
+		<div class="mainDetails">')
+			if (length(name) > 3) {
+				doc = c(doc, '
+					<div id="headshot" class="quickFade">
+						<img src="', name[4], '" alt="', name[1], '" />
+					</div>
+					')
+			}
 			doc = c(doc, '
-				<div id="headshot" class="quickFade">
-					<img src="', name[4], '" alt="', name[1], '" />
-				</div>
-				')
-		}
-		doc = c(doc, '
-		<div id="name">
-			<h1 class="quickFade delayTwo">', name[1], '</h1>
-			<h2 class="quickFade delayThree">', name[2], '</h2>
-			<h3 class="quickFade delayThree">', name[3], '</h3>
-		</div>')
-		if (!is.null(contact)) {
-			 contact = c(
-				paste('e: <a href="mailto:', contact[1], '" target="_blank">',contact[1], '</a>'),
-				paste('w: <a href="', contact[3], '">', contact[3], '</a>'),
-				paste('m: ', contact[2]))
+			<div id="name">
+				<h1 class="quickFade delayTwo">', name[1], '</h1>
+				<h2 class="quickFade delayThree">', name[2], '</h2>
+				<h3 class="quickFade delayThree">', name[3], '</h3>
+			</div>')
+			if (!is.null(contact)) {
+				 contact = c(
+					paste('e: <a href="mailto:', contact[1], '" target="_blank">',contact[1], '</a>'),
+					paste('w: <a href="', contact[3], '">', contact[3], '</a>'),
+					paste('m: ', contact[2]))
+
+				doc = c(doc, '
+					<div id="contactDetails" class="quickFade delayFour">
+						<ul>
+							<li>', contact[1], '</li>
+							<li>', contact[2], '</li>
+							<li>', contact[3], '</li>
+						</ul>
+					</div>')
+			}
 
 			doc = c(doc, '
-				<div id="contactDetails" class="quickFade delayFour">
-					<ul>
-						<li>', contact[1], '</li>
-						<li>', contact[2], '</li>
-						<li>', contact[3], '</li>
-					</ul>
-				</div>')
+			<div class="clear"></div></div>')
 		}
-		doc = c(doc, '
-		<div class="clear"></div>
-	</div>
+	doc = c(doc,'
 	<div id="mainArea" class="quickFade delayFive">')
 
 	return(doc)
@@ -88,14 +93,15 @@ addNameMainArea <- function(doc, name, contact) {
 		#}
 	}
 
-	addNewPageSection <- function(doc) {
+	addNewPageSection <- function(doc, ...) {
 		if (is.null(NewPage)) return(doc)
 
 		doc = pageFooter(doc)
 		doc = addDocStart(doc, Top)
 
+
 		name = c(paste ('<small>', Name[3], '</small>'), "", "")
-		doc = addNameMainArea(doc,name,NULL)
+		doc = addNameMainArea(doc, name, NULL, ...)
 
 		return(doc)
 	}
@@ -316,14 +322,34 @@ addEndSection <-function(doc, footer, credits = NULL) {
 	return(doc)
 }
 
+addLetter <- function(section, doc) {
+	section = gsub("\n", "<br>", section)
+	section = gsub("\t", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", section)
+	section = gsub("    ", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ", section)
+	section = gsub("et al.", "<i>et al.</i>", section)
+
+	section = strsplit(section, '<NewPage>')[[1]]
+
+	addLetterContent <- function(i) c(doc,'<div class = "letterContent">\n', i, '\n</div>')
+	for (i in head(section, -1)) {
+		doc = addLetterContent(i)
+		doc = addNewPageSection(doc, FALSE)
+	}
+	doc = addLetterContent(tail(section, 1))
+	return(doc)
+}
+
 
 if (headHtml) doc =addHeadInfo()
 
 			  doc = addDocStart(doc, Top)
 		      doc = addNameMainArea(doc, Name, Contact)
 
-for (section in AdditionalSection) doc = addSection(section, doc)
-
+if (class(AdditionalSection) == "character") {
+	doc = addLetter(AdditionalSection,doc)
+} else {
+	for (section in AdditionalSection) doc = addSection(section, doc)
+}
 
 if (is.null(Footer)) {
 	if (!is.null(Contact)) {
