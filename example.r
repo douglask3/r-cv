@@ -15,7 +15,8 @@ Top = '
 ## Basic Infomation                                          ##
 ###############################################################
 Name    = c("Douglas Kelley", "Biosphere & Climate Dynamics Modelling",
-            'Summary - <a href = "http://douglask3.github.io/cv/long/example-long.html"> For Extended CV click here</a>', "docs/me.jpg")
+            'Summary - <a href = "http://douglask3.github.io/cv/long/example-long.html"> For Extended CV click here</a>',
+            "docs/me.jpg")
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
@@ -145,7 +146,7 @@ Referee = list(Name = "References",
                  RG6 6AB
                  UK"),
 
-               c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
+               c("Prof. Iain Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
                  "Chair of Biosphere and Climate Impacts",
                  "Email: c.prentice@imperial.ac.uk" = "",
                  "Grantham Institute for Climate Change and Department of Life Sciences
