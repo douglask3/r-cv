@@ -1,5 +1,5 @@
-doCitations <- function(txt) {
-    refs = openRefencesFile(txt)
+doCitations <- function(txt, Authors) {
+    c(refs, NewPageLetter) := openRefencesFile(txt)
 
     c(txt, refsIndex1) := findAndReplaceCite('cite', c(''  , '' , '' , '' ), txt, refs)
     c(txt, refsIndex2) := findAndReplaceCite('citep', c('(', '' , '' , ')'), txt, refs)
@@ -10,8 +10,20 @@ doCitations <- function(txt) {
     if (length(refs) > 0) {
         refs = sapply(refs, function(i) i[[4]])
         refs = sort(refs)
+
+        findNewPage <- function(i) {
+            Letters = substr(refs, 1, nchar(i))
+            Letters = which(Letters == i)[1]
+        }
+        Letters = sapply(NewPageLetter, findNewPage)
+        Letters = Letters + (1:length(Letters))-1
+        
+        refs = sapply(refs, BoldAuthors, Authors)
+
         refs = paste('<div class = "refList">', refs, '</div>')
-        refs = paste(refs, collapse = '\n')
+
+        for (i in Letters) refs = c(refs[1:(i-1)], "<NewPage>", refs[i:length(refs)])
+        refs = paste(refs, collapse = ' ')
         #refs = paste('\t', refs)
 
 
@@ -20,6 +32,18 @@ doCitations <- function(txt) {
         txt = paste(txt, collapse = '')
     }
     return(txt)
+}
+
+BoldAuthors <- function(ref, Authors) {
+    BoldAuthor <- function(Author) {
+        if (!grepl(Author,ref)) return(ref)
+        ref = strsplit(ref, Author)[[1]]
+        ref = paste(ref, collapse = paste('<b>', Author, '</b>'))
+        return(ref)
+    }
+    #browser()
+    for (i in Authors) ref = BoldAuthor(Authors)
+    return(ref)
 }
 
 findAndReplaceCite <- function(cite, paras, txt, refs) {
@@ -57,7 +81,7 @@ ReplaceCite <- function(cite, refs, paras) {
                 break
             }
         }
-        if (!test) cite[i] = '??Cite Not Found??'
+        if (!test) cite[i] = '((Cite Not Found))'
     }
 
     cite = paste(cite, collapse = '; ')
@@ -78,6 +102,11 @@ findCiteInfo <- function(txt, command) {
 
 openRefencesFile <- function(txt) {
     file = findCiteInfo(txt, 'References')[2]
+    file = findCiteInfo(file, 'NewPage')
+
+    NewPageLetter = file[-1]; file = file[1];
+    NewPageLetter = NewPageLetter[NewPageLetter!= " "]
+
     file = gsub(' ', '', file, fixed = TRUE)
 
     refs = readTxtFile(file)
@@ -91,6 +120,8 @@ openRefencesFile <- function(txt) {
                   SIMPLIFY = FALSE)
 
     refs = lapply(refs, constructReference)
+
+    return(list(refs, NewPageLetter))
 }
 
 avoidRefRep <- function(ref, i, refsID) {
@@ -112,10 +143,10 @@ sortRef <- function(ref) {
 
     if(length(authors) == 2) {
         author = sapply(authors, function(i) strsplit(i,',')[[1]])[1,]
-        paste(author, collapse = '&')
+        author = paste(author, collapse = ' & ')
     } else {
         author = strsplit(authors[1],',')[[1]][1]
-        if (length(author>1)) author = paste(author, 'et al.')
+        if (length(authors)>1) author = paste(author, 'et al.')
     }
 
     Year = findFieldInfo('year', ref)
@@ -151,10 +182,13 @@ makeAuthorList <- function(authors) {
 
     makeAuthor <- function(author) {
         author = strsplit(author, ',')[[1]]
-        firstName = substr(strsplit(author[2],' ')[[1]],1,1)
-        firstName = firstName[firstName != '']
-        firstName = paste(firstName, '. ', sep = '')
-        author = paste(c(author[1], firstName), collapse = ' ')
+        if (length(author) !=1) {
+            firstName = substr(strsplit(author[2],' ')[[1]],1,1)
+            firstName = firstName[firstName != '']
+            firstName = paste(firstName, '. ', sep = '')
+
+            author = paste(c(author[1], firstName), collapse = ' ')
+        }
         return(author)
     }
 

@@ -324,7 +324,7 @@ addEndSection <-function(doc, footer, credits = NULL) {
 
 addLetter <- function(section, doc) {
 
-	section = doCitations(section)
+	section = doCitations(section, Authors)
 
 	section = gsub("&", "<i>&</i>", section)
 	section = gsub("et al.", "<i>et al.</i>", section)
