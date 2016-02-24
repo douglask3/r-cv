@@ -12,6 +12,7 @@ h2 {
 
 
 .refList {
-	padding: 0 40px;
+	padding: 5px 40px;
     text-indent:-1.5em;
+	font-size: 85%;
 }
