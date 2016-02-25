@@ -97,7 +97,7 @@ Employment = list(Name = "Employment History",
         c("Widening Participation" = "",
           "Sep 2007-Sep 2008",
           "Widening Participation Office, University of Bristol, UK" = "http://www.bristol.ac.uk/sraa/uk-student-recruitment/student-support-team/",
-          "Working with students in primary and secondary education to encourage university attendance from low socio-economic backgrounds: helping organise & run University open days and campus tours; school presentations and career evenings."))
+          "Working with students in primary and secondary education to encourage university attendance from low socio-economic backgrounds: helping organise & run university open days and campus tours; school presentations and career evenings."))
 
 Published = MakePublicationDocument.Rlist(usrID, NULL)
 
@@ -305,7 +305,7 @@ Research = list(Name = "Current Research Interests",
                 observation-driven vegetation model development and
                 benchmarking in an effort to better constrain simulations of climate and
                 vegetative controls on disturbance regimes. I am also involved in projects that explore plant resource allocation, phenology and drought recovery strategies.
-                &nbsp; <br><br>
+                &nbsp; <br>
                 My current research projects include:<br><br>",
                 list(
                      c("Development of the LPX Dynamic Vegetation model" = "http://douglask3.github.io/lpx-dynamic-global-vegetation-model.html",
@@ -313,7 +313,7 @@ Research = list(Name = "Current Research Interests",
                        " " = "",
                        "Much of my thesis focussed on the assessment and
                        development of LPX-DGVM model to better
-                       represent fire and fire-adapted vegetation in tropical
+                       represent climate-vegetation-fire dynamics in tropical
                        savanna ecosystems. Continued development strands include:
                        <li> Using LPX to aid predictions of the impacts of future climate change on ecoystem resilience, hydrology & drought, and disturbance regimes </li>
                        <li> Improving fire-model performance for forest ecosystems </li>
@@ -321,13 +321,15 @@ Research = list(Name = "Current Research Interests",
                        <li> Continued development of disturbance resilience and resistance traits -
                             e.g. resprouting after fire and drought. </li>"),
 
+                     "New Page",
+
                      c("Vegetation model benchmarking and inter-comparison" = "http://douglask3.github.io/vegetation-model-inter-comparison-benchmarking.html",
                        "douglask3.github.io/vegetation-model-inter-comparison-benchmarking" = "http://douglask3.github.io/vegetation-model-inter-comparison-benchmarking.html",
                        " " = "",
                        'I am the main developer and maintainer of the most
                        widely used vegetation-model benchmarking system, which
                        qualitatively assesses model performance for a variety of vegetation and land surface processes. Current work includes:
-                            <li> Incorporation of htdrology and carbon stocks observations </li>
+                            <li> Incorporation of hydrology and carbon stocks observations </li>
                             <li> Inter-model comparisons for the <a href="http://www.mpic.de/fileadmin/user_upload/images_presse/Projects/IBBI/pdfs/Hantson_FireMIP.pdf">fireMIP project</a></li>
                             <li> R software package development </li>'),
 
@@ -339,8 +341,7 @@ Research = list(Name = "Current Research Interests",
                        resistance and recovery traits across plant species,
                        disturbance regimes and climate gradients. These include:
                             <li> Resprouting as a recovery to drought and fire disturbance. </li>
-                            <li> Bark Thickness as protection against fire. </li>
-                            <li> Post-fire re-seeding strategies. </li>"),
+                            <li> Bark thickness as protection against fire. </li>"),
 
                      c("Plant resource allocation strategies" = "",
                        " " = "http://douglask3.github.io/traits-for-resistance-and-recovery-to-disturbance.html",
@@ -366,8 +367,6 @@ Workshops = list(Name = "Workshops and Consultancy Visits",
                    "University of Queensland, Brisbane, QL, Australia" =
                         "https://www.uq.edu.au/",
                    'Data Synthesis workshop for fire resilience and response analysis'),
-
-                   "New Page",
 
                  c("Fire response traits database" = "https://bitbucket.org/teambcd/resprouting_workshop",
                    "",
@@ -432,6 +431,8 @@ Skills = list(Name = "Skills",
                      and to allow outputs to be easily analysed and plotted.",
                      'See <a href="http://douglask3.gitgub.io/LPX.html">douglask3.github.io/LPX</a> for more information.'),
 
+                     "New Page",
+
                    c("Statistical Programming" = "",
                      "Most of my research involves statistical analysis of large
                      datasets and model outputs. Collaboration on many of my
@@ -441,8 +442,6 @@ Skills = list(Name = "Skills",
                      statistical analysis using Fortran and C amongst others.",
                      'See <a href="http://douglask3.gitgub.io/my_best_plots.html">douglask3.github.io/my_best_plots</a> for examples of R plots from my PhD.
                       <br> See <a href="http://douglask3.gitgub.io/lpxbenchmarking.html">douglask3.github.io/lpxbenchmarking</a> for an example of statistical benchmarking of extensive model outputs again global raster and site-based datasets.'),
-
-                      "New Page",
 
                    c("Web Design" = "",
                      "In my spare time, I have developed dynamic websites using
@@ -491,6 +490,8 @@ ExtraCircular = list(Name = "Extra-Curricular",
                        "Epping and District Athletics Clubs North Epping, Hornsby, NSW, Australia" = "http://www.eppingdac.com.au/",
                        'Website development (<a href = "http://www.eppingdac.com.au/"> www.eppingdac.com.au </a>); designing, producing and distributing <a href = "http://www.eppingdac.com.au/newsletter"> newsletter </a> and e-publicity for local community running and athletics club'),
 
+                       "New Page",
+
                      c("RDA volunteer",
                         "Dec 2012 - Feb 2015",
                         "RDA - Riding for the Disabled, Ryde, NSW, Australia" = "http://rdaryde.org.au/",
@@ -500,8 +501,6 @@ ExtraCircular = list(Name = "Extra-Curricular",
                        "2011 - 2013",
                        "Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
                        'Organised and chaired group meetings and paper discussions'),
-
-                       "New Page",
 
                      c('Outreach volunteer' = "",
                        "2010 - 2011",
@@ -565,8 +564,8 @@ Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:doug
 
 
 AdditionalSection = list(ExtendingContact, Qualifications, Employment,
-                         Publications, Conferences, Awards, "New Page", Research, Workshops,
-                         Training, Skills, Software, ExtraCircular,
+                         Publications, Conferences, Awards, "New Page", Workshops,
+                         Training, Skills, Software, ExtraCircular, Research,
                          Referee)
 
 #AdditionalSection = list(Skills, Referee, ExtraCircular, Software, Training, Workshops, Research, Awards, Conferences, Publications,Qualifications,ExtendingContact, Employment)
