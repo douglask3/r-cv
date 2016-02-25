@@ -17,7 +17,7 @@ doCitations <- function(txt, Authors) {
         }
         Letters = sapply(NewPageLetter, findNewPage)
         Letters = Letters + (1:length(Letters))-1
-        
+
         refs = sapply(refs, BoldAuthors, Authors)
 
         refs = paste('<div class = "refList">', refs, '</div>')
@@ -170,7 +170,7 @@ constructReference <- function(ref) {
     else if (type == "incollection") referance = constructBookReference(referance)
     else if (type == "phdthesis") referance = constructPhdthesisReference(referance)
     else if (type == "manual") referance = constructArticleReference(referance)
-    else if (type == "misc") referance = constructArticleReference(referance)
+    else if (type == "misc") referance = constructArticleReference(referance, journal = 'url')
     else browser()
 
     authors = makeAuthorList(authors)
@@ -221,7 +221,7 @@ constructArticleReference <- function(ref, title = 'title', journal = 'journal',
     if (volume != "") volume = paste('', '-', volume)
     if (number != "") number = paste(' (', number, ') ', sep = '')
 
-    ref = paste(title, '<i> ', journal, '</i> ', volume, number , sep = '')
+    ref = paste(title, ', <i> ', journal, '</i> ', volume, number , sep = '')
 
     return(ref)
 }
