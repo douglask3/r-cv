@@ -15,8 +15,10 @@ doCitations <- function(txt, Authors) {
             Letters = substr(refs, 1, nchar(i))
             Letters = which(Letters == i)[1]
         }
+
         Letters = sapply(NewPageLetter, findNewPage)
-        Letters = Letters + (1:length(Letters))-1
+        if (length(Letters)> 0)
+            Letters = Letters + (1:length(Letters))-1
 
         refs = sapply(refs, BoldAuthors, Authors)
 
