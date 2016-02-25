@@ -6,17 +6,15 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ###############################################################
 ## Head                                                      ##
 ###############################################################
-Top = '
-<a href= "http://douglask3.github.io/cv/long/example-long.html", target = "_blank"> Open in new page, click here </a><br>
-<a href= "http://douglask3.github.io/docs/cv.pdf", target = "_blank"> Click here for PDF</a>'
+Top = NULL
 
 
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", "Biosphere & Climate Dynamics Modelling",
-            'Extended CV - <a href = "http://douglask3.github.io/cv/short/example.html"> For Summary click here</a>', "docs/me.jpg")
-
+Name    = c("Douglas Kelley",
+            "Climate Dynamics Modelling",
+            'Extended CV')
 
 Contact = NULL
 

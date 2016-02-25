@@ -2,6 +2,8 @@ source("r2cv.r")
 library('gitBasedProjects')
 setupProjectStructure()
 
+r2cv(file = "example-coverLetter.r")
+
 files = c('example.r', 'example-long.r')
 
 file.copy(files, "temp/", overwrite = TRUE)

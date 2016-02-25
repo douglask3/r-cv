@@ -19,6 +19,6 @@ Footer = '<p class = "subDetails"> <a href="mailto:douglas.i.kelley@gmail.com">d
 ###############################################################
 
 
-AdditionalSection = paste(readLines('example_statement.html'), collapse = '\n')
+AdditionalSection = paste(readLines('OxfordHydology/statement.html'), collapse = '\n')
 
 NewPage = c('Douglas Kelley', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')

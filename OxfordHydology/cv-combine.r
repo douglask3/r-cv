@@ -2,12 +2,14 @@ source("r2cv.r")
 library('gitBasedProjects')
 setupProjectStructure()
 
-r2cv(file = "example-coverLetter.r")
+r2cv(file = "OxfordHydology/coverLetter.r")
 
-files = c('example.r', 'example-long-oxfordHydology.r')
+files = c('example.r', 'OxfordHydology/cv-long.r')
 
-file.copy(files, "temp/", overwrite = TRUE)
-files = paste("temp/", files, sep = '')
+makeDir('temp/OxfordHydology/')
+filesT = paste("temp/", files, sep = '')
+yay = file.copy(files, filesT, overwrite = TRUE)
+
 
 
 line = 'Referee = list(Name = "References",
@@ -31,16 +33,8 @@ line = 'Referee = list(Name = "References",
         Top = NULL'
 
 
-write(line,file=files[1],append=TRUE)
-
-line = 'Name = Name[1:3]
-        Name[2] = "Climate Dynamics Modelling"
-        Name[3] = "Extended CV"
-        Top = NULL'
-
-
-write(line,file=files[2],append=TRUE)
+write(line,file=filesT[1],append=TRUE)
 
 NewPage = c('Douglas Kelley - CV', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
 
-r2cv(file = files, NewPage = NewPage)
+r2cv(file = filesT, NewPage = NewPage)
