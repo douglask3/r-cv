@@ -4,8 +4,7 @@
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", " ",
-            'Re: Postdoctoral Researcher in African Climate Science')
+Name    = c("Douglas Kelley", " ", post)
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
