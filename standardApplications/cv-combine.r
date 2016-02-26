@@ -2,17 +2,20 @@ source("r2cv.r")
 library('gitBasedProjects')
 setupProjectStructure()
 
-r2cv(file = "OxfordHydology/coverLetter.r")
+r2cv(file = "standardApplications/coverLetter.r")
 
-files = c('example.r', 'OxfordHydology/cv-long.r')
+cvLongFile = paste(dir, 'cv-long.r', sep = '/')
 
-makeDir('temp/OxfordHydology/')
+files = c('example.r', cvLongFile)
+
+makeDir(paste('temp', dir, sep = '/'))
 filesT = paste("temp/", files, sep = '')
-yay = file.copy(files, filesT, overwrite = TRUE)
+file.copy(files, filesT, overwrite = TRUE)
 
 
 
-line = 'Referee = list(Name = "References",
+line = paste(
+        'Referee = list(Name = "References",
               c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
                 "s.p.harrison@reading.ac.uk"),
 
@@ -23,14 +26,8 @@ line = 'Referee = list(Name = "References",
                 "b.medlyn@westernsydney.edu.au"),
 
               c("","Full contact information at end of Extended CV"))
-        Name[2] = "Climate Dynamics Modelling"
-        Name[3] = "Summary"
-        Name[4] = "docs/agua_png_by_eross_666-d56zr6u.png"
+        Top = NULL', shortCVchange, sep = '\n')
 
-        Skills[[3]] = c(Skills[[3]][c(1,3)], "New Page", Skills[[3]][4])
-
-        AdditionalSection = list(Qualifications, Employment, Publications, Awards, Skills, Referee)
-        Top = NULL'
 
 
 write(line,file=filesT[1],append=TRUE)
