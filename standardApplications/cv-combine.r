@@ -27,19 +27,7 @@ file.copy(files, filesT, overwrite = TRUE)
 
 
 
-line = paste(
-        'Referee = list(Name = "References",
-              c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
-                "s.p.harrison@reading.ac.uk"),
 
-              c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
-                "c.prentice@imperial.ac.uk"),
-
-              c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
-                "b.medlyn@westernsydney.edu.au"),
-
-              c("","Full contact information at end of Extended CV"))
-        Top = NULL', shrtCVchange, sep = '\n')
 
 
 
