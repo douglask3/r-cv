@@ -6,7 +6,12 @@ r2cv(file = "standardApplications/coverLetter.r")
 
 cvLongFile = paste(dir, 'cv-long.r', sep = '/')
 
-files = c('example.r', cvLongFile)
+if (!exists('cvShrtFile')) cvShrtFile = 'example.r'
+if (!exists('cvLongFile')) cvLongFile = 'example-long.r'
+
+if (!exists('shrtCVchange')) shrtCVchange = ''
+if (!exists('longCVchange')) longCVchange = ''
+files = c(cvShrtFile, cvLongFile)
 
 makeDir(paste('temp', dir, sep = '/'))
 filesT = paste("temp/", files, sep = '')
@@ -26,12 +31,14 @@ line = paste(
                 "b.medlyn@westernsydney.edu.au"),
 
               c("","Full contact information at end of Extended CV"))
-        Top = NULL', shortCVchange, sep = '\n')
+        Top = NULL', shrtCVchange, sep = '\n')
 
 
 
 write(line,file=filesT[1],append=TRUE)
 
 NewPage = c('Douglas Kelley - CV', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
+
+write(longCVchange,file=filesT[2],append=TRUE)
 
 r2cv(file = filesT, NewPage = NewPage)

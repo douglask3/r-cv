@@ -1,4 +1,4 @@
-shortCVchange = '
+shrtCVchange = '
     Name[2] = "Climate Dynamics Modelling"
     Name[3] = "Summary"
     Name[4] = "docs/agua_png_by_eross_666-d56zr6u.png"

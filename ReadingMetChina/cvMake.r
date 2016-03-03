@@ -2,7 +2,7 @@ dir = 'ReadingMetChina'
 post = 'Re: Research Scientist GE15229'
 
 
-shortCVchange = paste('
+shrtCVchange = paste('
     Name[2] = "', post, '"
     Name[3] = "CV - Summary"
     Name[4] = "docs/agua_png_by_eross_666-d56zr6u.png"
