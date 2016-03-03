@@ -4,13 +4,21 @@ setupProjectStructure()
 
 r2cv(file = "standardApplications/coverLetter.r")
 
-cvLongFile = paste(dir, 'cv-long.r', sep = '/')
+files = list.files(dir, full.names = TRUE)
 
-if (!exists('cvShrtFile')) cvShrtFile = 'example.r'
-if (!exists('cvLongFile')) cvLongFile = 'example-long.r'
+findCVsection <- function(name) {
+    file = files[grepl(name, files)]
+    if (length(file) == 0) file = paste('example', name, sep = '-')
+        else file = file[1]
+    return(file)
+}
+
+cvShrtFile = findCVsection('cv-short.r')
+cvLongFile = findCVsection('cv-long.r')
 
 if (!exists('shrtCVchange')) shrtCVchange = ''
 if (!exists('longCVchange')) longCVchange = ''
+
 files = c(cvShrtFile, cvLongFile)
 
 makeDir(paste('temp', dir, sep = '/'))

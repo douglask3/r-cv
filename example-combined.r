@@ -4,7 +4,7 @@ setupProjectStructure()
 
 r2cv(file = "example-coverLetter.r")
 
-files = c('example.r', 'example-long.r')
+files = c('example-cv-short.r', 'example-cv-long.r')
 
 file.copy(files, "temp/", overwrite = TRUE)
 files = paste("temp/", files, sep = '')
