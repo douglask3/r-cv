@@ -28,8 +28,8 @@ doCitations <- function(txt, Authors) {
         refs = paste(refs, collapse = ' ')
         #refs = paste('\t', refs)
 
-
         txt = findCiteInfo(txt, 'References')
+
         txt[2] = refs
         txt = paste(txt, collapse = '')
     }
@@ -61,7 +61,7 @@ findAndReplaceCite <- function(cite, paras, txt, refs) {
     refsIndex = unique(unlist(out[2,]))
 
     txti [index] = cites
-    txti = paste(txti, collapse = ' ')
+    txti = paste(txti, collapse = '')
 
     return(list(txti, refsIndex))
 }
