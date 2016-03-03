@@ -47,15 +47,15 @@ Qualifications = list(Name = "Academic qualification",
           "2010-2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
           'Benchmarking and developing the LPX Dynamic Global Vegetation Model
-          (DGVM) to improve the simulation of climate-vegetation-fire
+          (DGVM) to improve the simulation of climate impacts on vegetation-fire
           interaction. Using this new version of LPX to simulate
-          vegetation and carbon dynamics in Australia over the 21<sup>st</sup> century. Thesis can be downloaded from <a href="goo.gl/9YjwKw"> www.goo.gl/9YjwKw </a>'),
+          biosphere and climate dynamics in Australia over the 21<sup>st</sup> century using CMIP5 climate model outputs. <br><i> Thesis can be downloaded from <a href="goo.gl/9YjwKw"> www.goo.gl/9YjwKw </a> </i>'),
 
         c("MSc Earth System Science" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
           "Main dissertation: Wildfires as part of the global carbon cycle - quantitative analysis using data assimilation" = "",
           "2007-2008",
           "University of Bristol, Department of Earth Sciences, UK" = "http://www.bristol.ac.uk/earthsciences/",
-          "Other subjects covered: Climate and Earth system modelling; Natural hazards; Remote sensing & GIS; Isotopes and other Earth System tracers; Climate change science and policy"),
+          "Other subjects covered: Climate and Earth system modelling inc. atmospheric and ocean modelling; Extreme weather and Natural hazards; Remote sensing & GIS; Isotopes and other Earth System tracers; Climate change science and policy"),
 
         c("BSc (Hons.) Physics" = "http://www2.warwick.ac.uk/study/undergraduate/courses/f300",
           "Main dissertation: Modelling atmospheric effects on starlight" = "",
@@ -68,24 +68,29 @@ Employment = list(Name = "Employment History",
         c("Postdoctoral Research Assistant" = "",
           "Apr 2015-present",
           "Department of Geography & Environmental Science, University of Reading, UK" = "https://www.reading.ac.uk/geographyandenvironmentalscience/",
-          "Simulating the impacts of future climate change on vegetation using a coupled dynamic global vegetation model (DGVM)."),
+          "Simulating the impacts of future climate change on fire and vegetation using a coupled dynamic global vegetation model (DGVM)."),
 
         c("Postdoctoral Research Assistant" = "",
           "Oct 2014-Apr 2015",
           "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
-          "Testing conceptual phenology and plant carbon allocation models under changing climate and fertilization from elevated CO<sub>2</sub>."),
+          "Testing the impacts of climate change and fertilization from elevated
+           CO<sub>2</sub> on vegetation dynamics in conceptual phenology and
+           plant carbon allocation models."),
 
           "New Page",
 
         c("Research Assistant" = "",
           "Jun 2014-Oct 2014",
           "Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
-          "Modelling changes in past and future vegetation dynamics, and its feedback on terrestrial and atmospheric carbon."),
+          "Modelling the impacts of past and future climate change on vegetation
+          dynamics, and its feedback on atmospheric and terrestrial carbon."),
 
         c("Research Assistant" = "",
           "Sep 2008-Sep 2010",
           "Department of Geographical Sciences, University of Bristol, UK" = "http://www.bristol.ac.uk/geography/",
-          "Developing a coupled DGVM-fire model and applying the model to: test the effectiveness of different fire management techniques in current and future climates; and simulate paleo vegetation and carbon stocks."),
+          "Developing a coupled DGVM-fire model and applying the model to:
+           test the effectiveness of different fire management techniques in
+           current and future climates; and simulate paleo-climate vegetation and carbon stocks."),
 
         c("Earth System Science Summer School coordinator" = "http://www.greencycles.org/greencycles1/ES4%20flyer_2008.pdf",
           "Apr 2008-Sep 2008",
@@ -295,14 +300,16 @@ Awards = list(Name = "Awards",
 
 Research = list(Name = "Current Research Interests",
                 Main = "My research focuses on improving our understanding of
-                the interactions between vegetation and climate, and exploring
-                how these interactions may impact terrestrial ecosystem properties
-                such as composition, disturbance regimes, and carbon and
-                hydrological cycles under future climates. Much of this involves
+                the impacts of future climate change and climate extremes on terrestrial
+                biosphere dynamics, such as ecosystem vegetative composition,
+                disturbance regimes, carbon and
+                hydrological cycles. Much of this involves
                 utilising experimental and satellite data for more
-                observation-driven vegetation model development and
+                observation-driven model development and
                 benchmarking in an effort to better constrain simulations of climate and
-                vegetative controls on disturbance regimes. I am also involved in projects that explore plant resource allocation, phenology and drought recovery strategies.
+                vegetative controls on disturbance regimes. I am also involved
+                in projects that explore plant resource allocation, phenology
+                and drought recovery strategies.
                 &nbsp; <br>
                 My current research projects include:<br><br>",
                 list(
@@ -313,8 +320,10 @@ Research = list(Name = "Current Research Interests",
                        development of LPX-DGVM model to better
                        represent climate-vegetation-fire dynamics in tropical
                        savanna ecosystems. Continued development strands include:
-                       <li> Using LPX to aid predictions of the impacts of future climate change on ecoystem resilience, hydrology & drought, and disturbance regimes </li>
-                       <li> Improving fire-model performance for forest ecosystems </li>
+                       <li> Using LPX to aid predictions of the impacts of future climate change
+                            on ecoystem resilience, hydrology & drought,
+                            and disturbance regimes </li>
+                       <li> Improving model performance for forest ecosystems </li>
                        <li> Parameterization of the carbon cycle and trace gas emissions </li>
                        <li> Continued development of disturbance resilience and resistance traits -
                             e.g. resprouting after fire and drought. </li>"),
@@ -326,7 +335,9 @@ Research = list(Name = "Current Research Interests",
                        " " = "",
                        'I am the main developer and maintainer of the most
                        widely used vegetation-model benchmarking system, which
-                       qualitatively assesses model performance for a variety of vegetation and land surface processes. Current work includes:
+                       qualitatively assesses model performance for a variety of
+                       land surface processes. Current work includes:
+                            <li> Incorporation of a re-coded atmospheric transport model for better intergration into the benchmarking system</li>
                             <li> Incorporation of hydrology and carbon stocks observations </li>
                             <li> Inter-model comparisons for the <a href="http://www.mpic.de/fileadmin/user_upload/images_presse/Projects/IBBI/pdfs/Hantson_FireMIP.pdf">fireMIP project</a></li>
                             <li> R software package development </li>'),
@@ -337,7 +348,9 @@ Research = list(Name = "Current Research Interests",
                        "I have been one of the lead collaborators on compiling
                        several databases describing site based disturbance
                        resistance and recovery traits across plant species,
-                       disturbance regimes and climate gradients. These include:
+                       disturbance regimes and climate gradients. These databases
+                       are designed to aid development of vegetation trait
+                       development in vegetation models. These traits include:
                             <li> Resprouting as a recovery to drought and fire disturbance. </li>
                             <li> Bark thickness as protection against fire. </li>"),
 
@@ -420,7 +433,7 @@ Training = list(Name = "Training Courses",
 Skills = list(Name = "Skills",
               Main = "",
               list(
-                   c("Vegetation modelling" = "",
+                   c("Numerical modelling" = "",
                      "I have been lead developer on LPX - a high-complexity
                      coupled Dynamic Vegetation Model - since 2010. LPX has
                      both Fortran and C++ components for fast (relative to it's
@@ -428,8 +441,6 @@ Skills = list(Name = "Skills",
                      added a shell and R interface to facilitate parallisation
                      and to allow outputs to be easily analysed and plotted.",
                      'See <a href="http://douglask3.gitgub.io/LPX.html">douglask3.github.io/LPX</a> for more information.'),
-
-                     "New Page",
 
                    c("Statistical Programming" = "",
                      "Most of my research involves statistical analysis of large
@@ -440,6 +451,8 @@ Skills = list(Name = "Skills",
                      statistical analysis using Fortran and C amongst others.",
                      'See <a href="http://douglask3.gitgub.io/my_best_plots.html">douglask3.github.io/my_best_plots</a> for examples of R plots from my PhD.
                       <br> See <a href="http://douglask3.gitgub.io/lpxbenchmarking.html">douglask3.github.io/lpxbenchmarking</a> for an example of statistical benchmarking of extensive model outputs again global raster and site-based datasets.'),
+
+                   "New Page",
 
                    c("Web Design" = "",
                      "In my spare time, I have developed dynamic websites using
@@ -467,16 +480,18 @@ Skills = list(Name = "Skills",
 Software = c(Name = "Software Tools",
              list(Main = c('', "I have developed and maintained several software packages related to my research projects or to help organise work flow with collaborators. Some of the most used are:")),
             list(
-                c("Vegetation Benchmark Metrics" = "",
-                  "An R-package containing the metrics and basic statistical models relating to my work on Vegetation model benchmarking.",
+                c("Model Benchmark Metrics" = "",
+                  "An R-package containing the metrics and basic statistical models
+                  relating to my work on model benchmarking.",
                   'See <a href="http://douglask3.github.io/vegetation-model-benchmarking.html">douglask3.github.io/vegetation-model-benchmarking</a> for more information.'),
 
-                c("Git-based R project Tracking" = "",
+                c("Git-based R Project Tracking" = "",
                   "Tools for tracking r-projects version controlled by Git.",
                   'See <a href="http://douglask3.github.io/git-based-r-project-extras.html">douglask3.github.io/git-based-r-project-extras</a> for more information.'),
 
                 c("LPX" = "",
-                  "Running, storing, analysing and plotting the LPX-Dynamic Global Vegetation Model.",
+                  "Running, storing, analysing and plotting the LPX-Dynamic
+                  Global Vegetation Model.",
                   'See <a href="http://douglask3.github.io/lpx-dynamic-global-vegetation-model.html">douglask3.github.io/lpx-dynamic-global-vegetation-model</a> for more information.'),
 
                 c('', 'For a more comprehensive list, see <a href ="http://douglask3.github.io/pages/tools.html"> douglask3.github.io/pages/tools </a>')))
@@ -537,7 +552,8 @@ Referee = list(Name = "References",
                 School of Archaeology, Geography and Environmental Science<br>
                 The University of Reading<br>
                 Whiteknights<br>
-                Reading, RG6 6AB<br>
+                Reading<br>
+                RG6 6AB<br>
                 UK"),
 
               c("Prof. Iain Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
@@ -546,8 +562,11 @@ Referee = list(Name = "References",
                 "Grantham Institute for Climate Change and Department of Life Sciences<br>
                 Imperial College<br>
                 Silwood Park Campus<br>
-                Ascot, SL5 7PY<br>
+                Ascot<br>
+                SL5 7PY<br>
                 UK"),
+
+                "New Page",
 
               c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
                 "Climate and Forest Ecosystem Modelling",
@@ -555,15 +574,16 @@ Referee = list(Name = "References",
                 "Hawkesbury Institute for the Environment<br>
                 Western Sydney University<br>
                 Penrith<br>
-                NSW, 2751<br>
+                NSW <br>
+                2751<br>
                 Australia"))
 
 Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com </a> - <i> +44 (0) 7936 726 819 </i> - <a href = "douglask3.github.io"> douglask3.github.io</a></p><br>'
 
 
 AdditionalSection = list(ExtendingContact, Qualifications, Employment,
-                         Publications, Conferences, Awards, "New Page", Workshops,
-                         Training, Skills, Software, ExtraCircular, Research,
+                         Publications, Conferences, Skills, Awards, Workshops,
+                         "New Page", Training, Software, ExtraCircular, Research,
                          Referee)
 
 #AdditionalSection = list(Skills, Referee, ExtraCircular, Software, Training, Workshops, Research, Awards, Conferences, Publications,Qualifications,ExtendingContact, Employment)
