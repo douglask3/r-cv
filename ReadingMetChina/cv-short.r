@@ -103,13 +103,13 @@ Skills = list(Name = "Skills",
                                   <li>Photoshop</li>
                                   <li>GIMP</li>
                                   <li>Scribus</li>
-                                  <li>ms/open of office</li>
+                                  <li>ms/open office</li>
                               </td>
                           </tr>
                       </table>',
                     'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
 
-                 c("Software Tool development" = "",
+                 c("Software Tool Development" = "",
                    'I have developed several software package tools related to my research, and to help track project work flows',
                    'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
 
