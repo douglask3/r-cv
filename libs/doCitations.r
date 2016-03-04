@@ -229,10 +229,14 @@ constructArticleReference <- function(ref, title = 'title', journal = 'journal',
 }
 
 findFieldInfo <- function(pattern, ref) {
-    pattern2 = paste(pattern, '=')
-    pattern  = paste(pattern, '=', sep = '')
-    test = grepl(pattern, ref) | grepl(pattern2, ref)
 
+    pattern2 = paste(pattern, '=')
+    pattern1 = paste(pattern, '=', sep = '')
+    test = grepl(pattern1, ref) | grepl(pattern2, ref)
+
+    if (sum(test) > 1)
+        test[substr(ref, 1, nchar(pattern)) != pattern] = FALSE
+    
     if (all(!test)) return('')
 
     ref = tail(strsplit(ref[test], '{', fixed = TRUE)[[1]], 1)
