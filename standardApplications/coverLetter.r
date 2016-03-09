@@ -18,6 +18,7 @@ Footer = '<p class = "subDetails"> <a href="mailto:douglas.i.kelley@gmail.com">d
 ###############################################################
 
 statmentFile = paste(dir, 'statement.html', sep ='/')
+if (!file.exists(statmentFile)) statmentFile = 'example_statement.html'
 AdditionalSection = paste(readLines(statmentFile), collapse = '\n')
 
 NewPage = c('Douglas Kelley', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
