@@ -1,6 +1,8 @@
 doCitations <- function(txt, Authors) {
     c(refs, NewPageLetter) := openRefencesFile(txt)
 
+    if (is.null(refs)) return(txt)
+
     c(txt, refsIndex1) := findAndReplaceCite('cite', c(''  , '' , '' , '' ), txt, refs)
     c(txt, refsIndex2) := findAndReplaceCite('citep', c('(', '' , '' , ')'), txt, refs)
     c(txt, refsIndex3) := findAndReplaceCite('citet', c('' , '(', ')', '' ), txt, refs)
@@ -43,7 +45,7 @@ BoldAuthors <- function(ref, Authors) {
         ref = paste(ref, collapse = paste('<b>', Author, '</b>'))
         return(ref)
     }
-    #browser()
+
     for (i in Authors) ref = BoldAuthor(Authors)
     return(ref)
 }
@@ -103,7 +105,9 @@ findCiteInfo <- function(txt, command) {
 }
 
 openRefencesFile <- function(txt) {
+
     file = findCiteInfo(txt, 'References')[2]
+    if (is.na(file)) return(NULL)
     file = findCiteInfo(file, 'NewPage')
 
     NewPageLetter = file[-1]; file = file[1];
@@ -236,7 +240,7 @@ findFieldInfo <- function(pattern, ref) {
 
     if (sum(test) > 1)
         test[substr(ref, 1, nchar(pattern)) != pattern] = FALSE
-    
+
     if (all(!test)) return('')
 
     ref = tail(strsplit(ref[test], '{', fixed = TRUE)[[1]], 1)
