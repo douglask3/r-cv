@@ -26,12 +26,7 @@ filesT = paste("temp/", files, sep = '')
 file.copy(files, filesT, overwrite = TRUE)
 
 
-
-
-
-
-
-write(line,file=filesT[1],append=TRUE)
+write(shrtCVchange,file=filesT[1],append=TRUE)
 
 NewPage = c('Douglas Kelley - CV', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
 
