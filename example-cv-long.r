@@ -149,7 +149,7 @@ Publications = list(Name = "Publications",
                     list("In Prep",
 
                          c("DI Kelley, M de Kauwe, B Medlyn",
-                           "Testing allocation stratagies in a simple ecosystem model",
+                           "Testing allocation strategies in a simple ecosystem model",
                            "",
                            "",
                            "",
