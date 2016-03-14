@@ -134,7 +134,7 @@ Publications = list(Name = "Publications",
 
                     list("Submitted",
 
-                         c("SP Harrison, DI Kelley",
+                         c("SP Harrison, DI Kelley,",
                            "Projected changes in Australian fire regimes during the 21<sup>st</sup> century and consequences for ecosystems",
                            "International Journal of Wildland Fire",
                            "",
