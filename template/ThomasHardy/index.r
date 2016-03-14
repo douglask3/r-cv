@@ -53,9 +53,11 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 				<h3 class="quickFade delayThree">', name[3], '</h3>
 			</div>')
 			if (!is.null(contact)) {
+				if (substr(contact[3], 1, 7) == 'http://') web = contact[3]
+					else web = paste('http://', contact[3], sep = '')
 				 contact = c(
 					paste('e: <a href="mailto:', contact[1], '" target="_blank">',contact[1], '</a>'),
-					paste('w: <a href="', contact[3], '">', contact[3], '</a>'),
+					paste('w: <a href="', web, '" target = "_blank">', contact[3], '</a>'),
 					paste('m: ', contact[2]))
 
 				doc = c(doc, '
