@@ -33,3 +33,9 @@ NewPage = c('Douglas Kelley - CV', '', '<a href ="mailto:douglas.i.kelley@gmail.
 write(longCVchange,file=filesT[2],append=TRUE)
 
 r2cv(file = filesT, NewPage = NewPage)
+
+
+files = list.files(dir, full.names = TRUE)
+files = files[grepl('Extra', files)]
+
+if (length(files) > 0) for (i in files) r2cv(file = i, NewPage = NewPage)
