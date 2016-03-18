@@ -389,6 +389,11 @@ Training = list(Name = "Training Courses",
             economic, social and policy, and how to write impact summaries and
             "pathways to impact" for grant applications.'),
 
+        c("An Introduction to Unix for HPC" = "http://www.intersect.org.au/energy/training",
+          "May 2013",
+          "eMast/INTERSECT, Macquarie University, Ryde, NSW, Australia",
+          "Parallel processing techniques for solving complex computational problems on a HPC platform"),
+
         c("Software Carpentry" = "http://software-carpentry.org/",
           "Feb 2013",
           "",
