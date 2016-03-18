@@ -10,6 +10,13 @@ h2 {
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 }
 
+h3 {
+	font-size: 125%;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: italic;
+}
+
 
 .refList {
 	padding: 5px 40px;
