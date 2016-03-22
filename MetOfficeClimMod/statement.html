@@ -1,46 +1,26 @@
 
-
-
-
-    <b>xxx</b>
-    xxx
-    xxx
-    xxx
-    xxx
-    xxx
-
-    <b> 23<sup>rd</sup> March 2016 </b>
-
-
-Dear xxx
-
-
-
-My name is Douglas Kelley, and I would like to be considered for the position of “Frontiers of Global Climate Modelling” as part of the PRIMAVERA and HighResMIP projects, exploring high-resolution simulations of climate. I have recently completed a PhD in climate change, where I utilised experimental and satellite data to develop and constrain a complex numerical model of land-surface processes <citep>Kelley2014a</citep> to help improve our understanding of the interactions and feedbacks between climate and terrestrial biosphere dynamics <citep>kelley2014modelling</citep>. The research experience I gained during my PhD covers the skills outlined in the job specification, and my MSc in Earth Systems Science provides background knowledge of climate processes and climate dynamics. Below I have outlined the relevant skills I honed during my PhD and MSc, followed by my motivation for studying high-resolution climate science.
-
 <h2> Academic Attainment </h2>
 <h3>An honours degree in a physical science, mathematics or other related discipline
 for appointment at Scientist level A PhD or equivalent research experience in a relevant field is required </h3>
-
-
 I have recently completed a PhD in climate change were developed and constrained a complex numerical model of land-surface processes <citep>Kelley2014a</citep> to help improve our understanding of the interactions and feedbacks between climate and terrestrial biosphere dynamics <citep>kelley2014modelling</citep>.  The research experience I gained during my PhD covers the skills outlined in the job specification. My MSc in Earth System Science provided a broader overview of the Earth and climate system, with an emphasis on climate modelling and feedbacks. During my MSc, I was given the opportunity to write my own simple climate-box model and gained experience driving a GCM (MITgcm) and the ocean component of an Earth System Model (GENIE). The module on natural hazards also included the impact of climate variability of future change on the incidence of fire and storms.
 
 <h3>A PhD in Physical Science or Mathematics (or equivalent research experience in a relevant field)</h3>
-
 For my PhD in climate change I utilised satellite, ground-based and experimental observation to develop and constrain  models of terrestrial biosphere processes <citep>Kelley2013; kaminski2013bethy; Kelley2014a; Kelley</citep>. I have driven some of these models with present climate data and future climate outputs from CMIP5 models to explore the impacts of future climate change on biosphere dynamics, including ecosystem resilience, the carbon cycle <citep>Kelley2014b</citep>, fire/drought disturbances and resultant carbon emissions <citep>Kelley2008; Prentice2011; Zeppel2014; Harrisonc</citep>, and hydrology </citep>Ukkola</citep>. My thesis (available here: <a href ="http://douglask3.github.io/docs/thesis.pdf" target = "_blank"> douglask3.github.io/docs/thesis.pdf</a>) was well received by my examiners, who consistently stated that it fell into the “top 10%” they've ever assessed.
 
+<NewPage>
 
 <h2> Worky Stuff </h2>
 <h3>Evidence of a high capacity for innovative thought and problem solving </h3>
 
-<h3> Innovative research </h3>
+<b> Innovative research </b>
 For my PhD, I developed an explicit iterative approach to model development in the Land Processes and eXchanges (LPX: <cite>Prentice2011; Kelley2014a</cite>) dynamic global vegetation model (DGVM), in which benchmarking against observations is used to identify areas for new data-driven parameterizations and then subsequently used to evaluate whether the implementation of these new parameterizations produces an overall improvement in model performance. This approach contrasts with the general tendency within the vegetation modelling community to focus evaluation on new components, for example, the evaluation of fire treatments within DGVMs using only observations of burnt area and/or fire carbon fluxes (see e.g. <cite>Li2012; Pfeiffer2013 </cite>). One reason for this partial approach to evaluation was the lack of a comprehensive benchmarking system <cite>Luo2012</cite>). I, therefore, developed a comprehensive benchmarking system which allows quantitative evaluation of multiple aspects of simulated processes to identify specific model weaknesses and differences between model versions, allowing assessment of the overall impact of new parameterizations. This allowed me to target model development in my thesis . The system is now starting to be adopted by other modelling groups and is being used by a new Model Intercomparison Project to assess the impact of different fire modelling approaches <citep>Hantson</citep>, and to help guide the developmental direction of the fire-vegetation modelling community <citep>Hantson2016</citep>.
 
-<h3> Workflow </h3>
-The fundamentals of any computer programming project is the automation of tasks (imagine trying to solve the state and differential equations in any climate or Earth system model billions of times by hand!). However, this is a principle often forgotten in the vegetation modelling community. This was the case when I inherited the LPX-DGVM. Each new experiment had to be set-up individually - changing initial state conditions, input file names and paths by hand - and then having to manipulate outputs for analysis after the model had completed each run. Applications of LPX always involve multiple runs (e.g, spin-ups and transient runs for multiple climate model inputs in <cite>Ciais2011l; harrison2010impacts<cite>, multiple models, scenarios and CO2 concentrations in <cite>Kelley2014b; HarrisonFutures2010</cite>, or different LPX-setups in <cite> Kelley2014a </cite>). I solved this problem by introducing an R and Unix shell-based interface which allows 'switching' between different inputs and/or model configurations, and processing and basic analysis of model outputs based on a small number of interface inputs. This not only saves a huge amount of time, but drastically decreased the possibility of typos and mistakes into runs, and has helped make the model much easier for others to set up and run.
+<b> Workflow </b>
+The fundamentals of any computer programming project is the automation of tasks (imagine trying to solve the state and differential equations in any climate or Earth system model billions of times by hand!). However, this is a principle often forgotten in the vegetation modelling community. This was the case when I inherited the LPX-DGVM. Each new experiment had to be set-up individually - changing initial state conditions, input file names and paths by hand - and then having to manipulate outputs for analysis after the model had completed each run. Applications of LPX always involve multiple runs (e.g, spin-ups and transient runs for multiple climate model inputs in <cite>Ciais2011; Harrisonc<cite>, multiple models, scenarios and CO2 concentrations in <cite>Kelley2014b; Harrison2010</cite>, or different LPX-setups in <cite> Kelley2014a </cite>). I solved this problem by introducing an R and Unix shell-based interface which allows 'switching' between different inputs and/or model configurations, and processing and basic analysis of model outputs based on a small number of interface inputs. This not only saves a huge amount of time, but drastically decreased the possibility of typos and mistakes into runs, and has helped make the model much easier for others to set up and run.
 
-I now try and apply this principle of automation to al of my work. Any code I have developed that I am likely to use again I convert into easily imported libraries or software packages, which can also be easily shared with other people. For examples, <citet>Kelley2015</citet> has been picked up by a model intercomparison project (fireMIP, <cite>Hanson2016</cite>).
+I now try and apply this principle of automation to al of my work. Any code I have developed that I am likely to use again I convert into easily imported libraries or software packages, which can also be easily shared with other people. For examples, <citet>Kelley2015</citet> has been picked up by a model intercomparison project (fireMIP, <cite>Hantson2016</cite>).
 
+<NewPage>
 
 <h3>Evidence of capability to work in a highly collaborative environment both internally and externally, with good inter-personal skills </h3>
 During my PhD, I acted as chair for my research groups' paper and research discussion meetings. I was also an informal mentor for several students in the group who were new to statistical programming. and volunteered with the department's secondary school outreach programme, performing research demonstrations on school open days.
@@ -48,6 +28,8 @@ During my PhD, I acted as chair for my research groups' paper and research discu
 I have been involved in several inter-university and interdisciplinary collaborations during my PhD. I led the design of a vegetation model benchmarking system  <citep>Kelley2013</citep> which  involved liaising with remote sensing experts, statisticians, botanists and other modellers from three different institutions. This system has been widely adopted throughout the vegetation modelling community and is used by several other modelling groups. I have also worked on three vegetation disturbance-trait databases, two of which I was a lead collaborator on <citep>Kelley2014a; kelley2014modelling; harrisonusing; Harrison</citep>.
 
 Outside of my academic work, I was also involved in an international consultancy programme, performing climate change risk analysis for the Royal Society for the Conservation of Nature (RSCN) in Jordan. Modelling work I conducted for this project focussed on the impacts of predicted short and long-term changes in precipitation and rising temperature on ecosystem resilience and river flow, which was used by RSCN to determine areas of key ecological importance and relative stability suitable for nature reserves <citep>harrison2010impacts</citep>.
+
+<NewPage>
 
 <h2> Programming and Data Analysis Skills </h2>
 <h3>Good scientific computing skills, ideally with experience of automation through scripting languages (such as Perl and python) and of numerical analysis </h3>
@@ -60,32 +42,20 @@ Whilst working on the LPX model, I developed a Unix-shell to aid parallel proces
 As well as my experience driving vegetation and fire models using parallel computing, I have attended training courses on code structure and parallel processing techniques for solving complex computational problems on an HPC platform. I have applied the programming principles these courses introduced into my code development of projects (e.g. see ??GitHub?? for latest)
 
 <h3>Experience of working with and managing large data sets </h3>
-
 My work on developing and evaluating vegetation models has involved processing a range of climate/GIS data products, such as raw and processed satellite data (see e.g. <cite>Kelley2008; Prentice2011; Kelley2013; Kelley2014a; Kelley2014b</cite>); vector ground observation (<cite>Kelley2013; Kelley2014a; kelley2014modelling; Harrison</cite>); historical climate and climate reanalysis data <citep>Prentice2011; Kelley2014a; kelley2014modelling</citep>; and climate model data for past <citep>Ciais2011</citep> and future climates <citep>Kelley2014b; Harrisonc</citep>. Recent work on simulating future land-surface processes  provided the best example of managing large and complex datasets. Here, I initially drove the LPX-DGVM  with detrended historic climate data, pre-industrial land use and atmospheric compositions in order to spin-up the model. I then used historic climate, land use and atmospheric composition to drive the model up to the modern day. This then transitioned into 36 different climate realisations, based on 9 CMIP5 models from two different RCPs, and four atmospheric CO2 pathways. Each step involved processing and organising several GBs worth of data, and historic simulations involved model evaluation against remote sensed and ground-based observations in order to justify model use. This one project was all initially published in <citet>Kelley2014b</citet>, but has since spawned other papers (e.g. <cite>Harrisonc; Ukkola</cite>).
 
-
+<NewPage>
 
 <h2> Communication Skillls </h2>
 <h3> Evidence of good written and oral communication skills </h3>
-
 I completed my PhD just over one year ago,  and I have obtained 7 peer-reviewed publications – 3 of which I first authored - with a further 3 submitted and 3 near submission. One of these papers is in Nature Geoscience, and all the others are in high-impact journals for their field. I have also presented my research at a variety of conferences, visits, and internal departmental presentations. I was awarded “best presentation” at my department's annual postgraduate conference and won a travel grant to present simulations of future climate impacts at the AGU fall meeting <citep> kelley2013implications </citep>.
+
 
 <h2> Climate Science Knowledge Research Experience </h2>
 <h3> Understanding of climate projections and climate change </h3>
-
-Many of these predicted impacts fo my research have important consequences for mitigation <citep>Kelley2014b</citep> and adaptation <citep>Ukkola; Harrisonc</citep> policies. However, these impact "forecasts" still remain largely qualitative due to uncertainties in future climate variability and their impact on localised weather extremes (e.g. <cite>Friedlingstein2006; robson2010understanding; Harrisonc</cite>). I have taken into account uncertainty in climate "scenarios" in these studies by using multiple RCPs and providing impact projections tied to specific changes in radiative forcing. Process uncertainty is quantified through the inclusion of multiple models, providing a "range" of realisations for each RCP and the ability to test if changes in impacts are robust and/or significant <citep> Kelley2014; Harrisonc </citep>. However, there are two types of uncertainty important for future forecasts of disturbance that have not been accurately considered in my studies. The first, uncertainty in natural variations, is important only for near-term projections (e.g. <cite>Hawkins2008</cite>). The second, uncertainty in weather extremes ??Ref from fire paper??, provides a major source of uncertainty throughout the 21st century.
+Many of these predicted impacts fo my research have important consequences for mitigation <citep>Kelley2014b</citep> and adaptation <citep>Ukkola; Harrisonc</citep> policies. However, these impact "forecasts" still remain largely qualitative due to uncertainties in future climate variability and their impact on localised weather extremes (e.g. <cite>Friedlingstein2006; robson2010understanding; Harrisonc</cite>). I have taken into account uncertainty in climate "scenarios" in these studies by using multiple RCPs and providing impact projections tied to specific changes in radiative forcing. Process uncertainty is quantified through the inclusion of multiple models, providing a "range" of realisations for each RCP and the ability to test if changes in impacts are robust and/or significant <citep> Kelley2014a; Harrisonc </citep>. However, there are two types of uncertainty important for future forecasts of disturbance that have not been accurately considered in my studies. The first, uncertainty in natural variations, is important only for near-term projections (e.g. <cite>hawkins2009potential</cite>). The second, uncertainty in weather extremes ??Ref from fire paper??, provides a major source of uncertainty throughout the 21st century.
 
 A major reason why extreme weather is poorly resolved in climate models is because it is largely caused by sub-grid level processes compared to the resolution climate models are traditional ran at (i.e extreme lighting and rain from convective storms). However, recent advances in scientific understanding of unified weather and climate prediction, and computing power provide the opportunity to explore much finer scale regional future climate simulations which could provide invaluable information to aid adaptation strategies. I would relish the opportunity to apply the experience I gained from modelling climate change impacts to the challenge of improving our predictive understanding of changes in extreme weather - vital for climate change adaptations.
-
-
-Thank you for taking the time to review my application. I hope you agree that with my climate research and modelling experience, and my programming and climate data analysis skills, I am well suited to the role.
-
-Should you require any additional information, please do not hesitate to contact me on the phone number and/or email address listed above. I look forward to hearing from you.
-
-
-Kind regards,
-
-Douglas Kelley
 
 
 <!--
@@ -93,7 +63,7 @@ An open research question remains, however, regarding the ability of the current
 
 The Weather and Climate Research Programme (WCRP) Modelling Panel (WMP) recently concluded that “regional projections from the current generation of climate models were sufficiently uncertain to compromise the goal of providing society with reliable predictions of regional climate change. Therefore, a major recommendation by the group was that, to meet the expectations of society, it is both necessary and possible to revolutionise climate prediction.
 -->
-
+<NewPage>
 
 <h2> IT Skills & Experience </h2> <!--Many Met Office jobs need a certain level of IT/computer proficiency for the job to be performed effectively. As part of your suitability for a job, please give details of your IT skills and experience in space below.-->
 <h3> Modelling </h3>
@@ -105,15 +75,12 @@ See <a href="http://douglask3.gitgub.io/LPX.html">douglask3.github.io/LPX</a> fo
 Most of my research involve statistical analysis of large datasets and model outputs. Collaboration on many of my projects means I am fluent in most widely used statistical programming languages. Most of my work is in either R, Python or Matlab, but I have also performed graphical and statistical analysis using Fortran and C amongst others.
 
 See <a href="http://douglask3.gitgub.io/my_best_plots.html">douglask3.github.io/my_best_plots</a> for examples of R plots from my PhD.
-
 See <a href="http://douglask3.gitgub.io/lpxbenchmarking.html">douglask3.github.io/lpxbenchmarking</a> for an example of statistical benchmarking of model outputs against global raster and site-based datasets.
 
 <h3> Web Design </h3>
-
 In my spare time, I have developed dynamic websites using open source content management system (such as Concrete5 and Wordpress). Also, my personal site is on a static host but is maintained using a Python based dynamic-site emulator. Developing and maintaining these sites has allowed me to become familiar with many web design software packages and fluent in HTML/CSS, PHP and Markdown. I have also linked Markdown and HTML with R and Python when sharing and presenting results from model development and analysis.
 
 See <a href = "http://www.eppingdac.com.au/">eppingdac.com.au</a>, an example of a website I have developed using Concrete5 content management system.
-
 See <a href = "http://douglask3.gothub.io">douglask3.github.io </a>, an example of a website produced using a simple dynamic-site emulator.
 
 <h3> Publishing </h3>
@@ -123,9 +90,8 @@ As well has publishing papers, I have also written manuals, reports and newslett
    <li> Photoshop/Illustrator and GIMP (the open source equivalent). See <a href = "http://flickr.com/doug_from_the_uk"> flickr.com/doug_from_the_uk </a> for examples of graphical art and photo "touch ups"/manipulation. </li>
 
 <h3> Software Tool Development </h3>
-I have developed several software package tools related to my research, and to help track project workflows.
+I have developed several software package tools related to my research, and to help track project workflows. See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>
 
-See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>
-
+<NewPage>
 <h2> References </h2>
-<!--<References> OxfordPhysics/refList.bib <NewPage>Harrison S.  P. , Kelley D.  I. , Wang H.</NewPage></References>-->
+<References> MetOfficeClimMod/refList.bib <NewPage>Harrison S.  P. , Kelley D.  I. , Wang H.</NewPage></References>-->

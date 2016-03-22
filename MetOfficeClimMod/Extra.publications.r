@@ -165,6 +165,8 @@ Conferences =  list(Name = "Conferences",
                            "Nov 2012",
                            ""),
 
+                           "New Page",
+
                          c("DI Kelley",
                            "Development of lightning ignitions scheme in LPX-DGVM",
                            "Biosphere and Climate Dynamics brown bag seminars",
@@ -199,8 +201,6 @@ Conferences =  list(Name = "Conferences",
                            "Macquarie University, Ryde, Australia",
                            "Sep 2011",
                            ""),
-
-                           "New Page",
 
                          c("DI Kelley, SP Harrison, IC Prentice",
                            "The effects of climate change on Australian fire regimes",
