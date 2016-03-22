@@ -57,7 +57,7 @@ Publications = list(Name = "Publications",
                            "The status and challenge of global fire modelling",
                            "Biogeosciences",
                            "bg-2016-17",
-                           "",
+                           "2016",
                            ""),
 
                         "New Page",
@@ -97,7 +97,33 @@ Publications = list(Name = "Publications",
                            "",
                            "",
                            "")))
-
+Software    =  list(Name = "Software libraries and packages",
+                    list("Open source",
+                         c("DI Kelley, R. Whitley",
+                           "gitBasedProjects: Extra functions for integrating with git based projects",
+                           "R package version 3.10",
+                           "http://douglask3.github.io/tools",
+                           "2016",
+                           ""),
+                          c("DI Kelley",
+                            "benchmarkMetrics: Benchmark Metrics",
+                            "R package version 2.0",
+                            "http://douglask3.github.io/tools",
+                            "2015",
+                            "")),
+                    list("In Prep.",
+                         c("DI Kelley",
+                           "rasterExtras: Extra Raster Functions",
+                           "R package version 1.0",
+                           ""
+                           ""
+                           ""),
+                         c("DI Kelley",
+                           "rasterPlot: Raster Plotting functions",
+                           "R package version 1.0",
+                           ""
+                           ""
+                           "")))
 
 Conferences =  list(Name = "Conferences",
                     list("Conference Presentations & Posters",
@@ -197,4 +223,4 @@ Conferences =  list(Name = "Conferences",
                            "Nov 2007",
                            "")))
 
-AdditionalSection = list(Publications, Conferences)
+AdditionalSection = list(Publications, Software, Conferences)
