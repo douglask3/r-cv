@@ -115,14 +115,14 @@ Software    =  list(Name = "Software libraries and packages",
                          c("DI Kelley",
                            "rasterExtras: Extra Raster Functions",
                            "R package version 1.0",
-                           ""
-                           ""
+                           "",
+                           "",
                            ""),
                          c("DI Kelley",
                            "rasterPlot: Raster Plotting functions",
                            "R package version 1.0",
-                           ""
-                           ""
+                           "",
+                           "",
                            "")))
 
 Conferences =  list(Name = "Conferences",

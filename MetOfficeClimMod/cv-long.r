@@ -95,7 +95,7 @@ Employment = list(Name = "Employment History",
              (Kelley 2015; Kelley and Whitley 2016) and projects (http://douglask3.github.io/firemip).
              Reviewing model processes allowed me to become familiar with modelling and coding practices
              from several different modelling groups using different programming languages including FORTRAN,
-             c, c++ and python'.),
+             c, c++ and python.'),
 
         c("Postdoctoral Research Assistant" = "",
           "Oct 2014-Apr 2015",
