@@ -72,28 +72,28 @@ Employment = list(Name = "Employment History",
           "Apr 2015-present",
           "Department of Geography & Environmental Science, University of Reading, UK" = "https://www.reading.ac.uk/geographyandenvironmentalscience/",
           '1) Simulating the impacts of future climate change using a
-              dynamic global vegetation model (DGVM), and attributing impcts between
+              dynamic global vegetation model (DGVM), and attributing impacts between
               climate and vegetative drivers. This has lead to
-              two papers submitted for peer-review. Key conculsions includes
+              two papers submitted for peer-review. Key conclusions include
               counterintuitive but important results that policymakers need to take into account,
               such as: CO2-related increases in vegetation may have added pressure
               on available water supply in already dry and drying parts of Australia
               (Ukkola et al. submitted); and that the main driver for changes in fire,
-              and therefore fire-related impacts, will be almost entirely controlled
+              and, therefore, fire-related impacts will be almost entirely controlled
               by changes in vegetation cover rather than weather and climate
               (Harrison & Kelley submitted).
           2) Reviewing and evaluating vegetation-fire models for a model
              intercomparison project (fireMIP). My contribution included
              reviewing modelled processes in participation models to identify commonalities
-             between models (Hantson et al. 2016), and benchmarking and evaluatinng model outputs to identify
-             sources of model performance weaknesses and guide communuty model development prioriities (Hantson et al. in prep).
+             between models (Hantson et al. 2016), and benchmarking and evaluating model outputs to identify
+             sources of model performance weaknesses and guide community model development priorities (Hantson et al. in prep).
              This has resulted in one submitted paper and one near submission.
-             Benchmarking of models in this MIP is largley due to my involvment, uses a system
-             developed in my PhD thesis (Kelley et al. 2013), and as a result is increasingly being adpated by
-             the vegetation-fire modelling commnity. Work on model
-             benchmarking also allowed me to gain experiance in writing a sharing software libraries
+             Benchmarking of models in this MIP is largely due to my involvement, uses a system
+             developed in my PhD thesis (Kelley et al. 2013), and, as a result, is increasingly being adopted by
+             the vegetation-fire modelling community. Work on model
+             benchmarking also allowed me to gain experience in writing a sharing software libraries
              (Kelley 2015; Kelley and Whitley 2016) and projects (http://douglask3.github.io/firemip).
-             Reviewing model proccesses allowed me to become familar with modelling and coding practices
+             Reviewing model processes allowed me to become familiar with modelling and coding practices
              from several different modelling groups using different programming languages including FORTRAN,
              c, c++ and python'.),
 
@@ -103,11 +103,11 @@ Employment = list(Name = "Employment History",
           "Testing the impacts of climate change and fertilization from elevated
            CO<sub>2</sub> on vegetation dynamics in conceptual phenology and
            plant carbon allocation models. Here, I co-developed a mechanistic phenology model that
-           describes seasonal leaf and productivity cycles using a dampened harmonic ossilator
-           (Whitley et al. in prep), and devloped a framework for testing concetual
+           describes seasonal leaf and productivity cycles using a dampened harmonic oscillator
+           (Whitley et al. in prep), and developed a framework for testing conceptual
            plant sub-models within a more expensive land-surface model (Kelley et al. in prep). Part of
-           this project also involved helping recoding a python based model into C for faster
-           commputation times."),
+           this project also involved helping re-coding a python based model into C for faster
+           computation times."),
 
           "New Page",
 
@@ -118,13 +118,12 @@ Employment = list(Name = "Employment History",
                 "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
           "Modelling the impacts of past and future climate change on vegetation
           dynamics, and its feedback on terrestrial carbon.
-          Found that future carbon stocks in Australia are likley to be governed by
-          the distributuion of fire-adapted vegegation, with increased carbon uptake
-          possible through increased vegetative fertilzation from atmospheric CO2 despite increases in fire
-          severity because of local plants ability to recover from fire (Kelley et al. 2014). Work on this
-          project has sporned several other studies (including those described in
-          my work at the University of Reading), and invloved prganisation and analysis of
-          large scale past, present and future climate observations and climate model simulations,
+          Found that future carbon stocks in Australia are likely to be governed by
+          the distribution of fire-adapted vegetation, with increased carbon uptake
+          possible through increased vegetative fertilization from atmospheric CO2 despite increases in fire
+          severity because of local plants ability to recover from fire (Kelley et al. 2014). Work on this project has spawned several other studies (including those described in
+          my work at the University of Reading), and involved organisation and analysis of
+          large-scale past, present and future climate observations and climate model simulations,
           land-surface and atmospheric composition observational data."),
 
         c("Research Assistant" = "",
