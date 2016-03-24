@@ -17,8 +17,16 @@ Footer = '<p class = "subDetails"> <a href="mailto:douglas.i.kelley@gmail.com">d
 ## Additional Sections                                       ##
 ###############################################################
 
-statmentFile = paste(dir, 'statement.html', sep ='/')
-if (!file.exists(statmentFile)) statmentFile = 'example_statement.html'
-AdditionalSection = paste(readLines(statmentFile), collapse = '\n')
+statmentFiles =  list.files(dir, full.names=TRUE, pattern='statement')#paste(dir, 'statement.html', sep ='/')
+if (length(statmentFiles) == 0) statmentFiles = 'example_statement.html'
 
-NewPage = c('Douglas Kelley', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
+makeStatement <- function(statmentFile) {
+    AdditionalSection = paste(readLines(statmentFile), collapse = '\n')
+    outFile = tail(strsplit(statmentFile,'/')[[1]],1)
+    NewPage = c('Douglas Kelley', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
+    r2cv(Top = NULL, Name, Contact, AdditionalSection, Footer,
+                     file = NULL, template = "ThomasHardy", outPath = "output", outFile,
+                     NewPage, Authors)
+}
+
+lapply(statmentFiles, makeStatement)

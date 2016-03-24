@@ -2,7 +2,7 @@ source("r2cv.r")
 library('gitBasedProjects')
 setupProjectStructure()
 
-r2cv(file = "standardApplications/coverLetter.r")
+source("standardApplications/coverLetter.r")
 
 files = list.files(dir, full.names = TRUE)
 

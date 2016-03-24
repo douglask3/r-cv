@@ -1,6 +1,6 @@
 r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NULL,
                     Footer = NULL,
-                 file = "example-long.r", template = "ThomasHardy", outPath = "output",
+                 file = "example-long.r", template = "ThomasHardy", outPath = "output", outFile = NULL,
                  NewPage = NULL, Authors = NULL) {
 
     ###############################################################
@@ -28,9 +28,11 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     if (class(AdditionalSection) == "character" ) style2 = c(style2, 'style-letter.css')
     styles = c('style.css', style2)
 
-    outFile    = sapply(file   , function(i) tail(strsplit(i,'/')[[1]],1))
-    outFile    = sapply(outFile, function(i) head(strsplit(i, '.', fixed = TRUE)[[1]],-1))
-    outFile    = paste(c(outFile,'html'), collapse = '.')
+    if (is.null(outFile)) {
+        outFile    = sapply(file   , function(i) tail(strsplit(i,'/')[[1]],1))
+        outFile    = sapply(outFile, function(i) head(strsplit(i, '.', fixed = TRUE)[[1]],-1))
+        outFile    = paste(c(outFile,'html'), collapse = '.')
+    }
 
     PAGES = 0
     for (nn in 1:2) {
@@ -38,6 +40,7 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
         cpOutFiles = styles
 
         doc0 = ''; headHtml = TRUE; PAGE = 0
+        if (is.null(file)) source(index, local = TRUE)
         for (i in file) {
             source(i, local = TRUE)
 
