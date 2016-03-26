@@ -86,8 +86,7 @@ Employment = list(Name = "Employment History",
           "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
           "Testing the impacts of climate change and fertilization from elevated
            CO<sub>2</sub> on vegetation dynamics and vegetative carbon uptake
-           in conceptual phenology and
-           plant carbon allocation models."),
+           in conceptual phenology and plant carbon allocation models."),
 
           "New Page",
 
@@ -95,7 +94,7 @@ Employment = list(Name = "Employment History",
           "Jun 2014-Oct 2014",
           "Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
           "Modelling the impacts of past and future climate change on vegetation
-          dynamics, and its feedback on atmospheric and terrestrial carbon."),
+          dynamics, and its feedback on hydrology and terrestrial carbon stocks."),
 
         c("Research Assistant" = "",
           "Sep 2008-Sep 2010",
@@ -302,12 +301,14 @@ Awards = list(Name = "Awards",
           "2013",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           "Competitive award to enhance postgraduate research experience.
-          Funded attendance at the 2013 AGU fall conference in order to present DGVM development and future projection of terrestrial carbon stocks under climate change"),
+          Funded attendance at the 2013 AGU fall conference in order to present
+          DGVM development and future projection of terrestrial carbon stocks under climate change"),
 
         c("Biology Postgraduate Conference Best Presentation" = "",
           "2011",
           "Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
-          "Best presentation out of the departments 78 postgraduate students at the annual postgraduate conference.
+          "Best presentation out of the departments 78 postgraduate students at
+          the annual postgraduate conference.
           Awarded for presentation on a vegetation model benchmarking system"))
 
 
@@ -320,7 +321,7 @@ Research = list(Name = "Current Research Interests",
                 disturbance regimes, carbon stocks and
                 hydrological cycles. Much of this involves
                 utilising satellite and ground-based GIS data for more
-                observation-driven model development and
+                observation-driven model development and model
                 benchmarking in an effort to better constrain simulations of
                 climate and
                 vegetative controls on disturbance regimes. I am also involved
@@ -351,8 +352,6 @@ Research = list(Name = "Current Research Interests",
                        widely used vegetation-model benchmarking system, which
                        qualitatively assesses model performance for a variety of
                        land surface processes. Current work includes:
-                            <li> Incorporation of a re-coded atmospheric transport
-                                 model for better integration into the benchmarking system</li>
                             <li> Incorporation of hydrology and carbon stocks observations </li>
                             <li> Model inter-comparisons for the <a href="http://www.mpic.de/fileadmin/user_upload/images_presse/Projects/IBBI/pdfs/Hantson_FireMIP.pdf">fireMIP project</a></li>
                             <li> R software package development </li>'),
