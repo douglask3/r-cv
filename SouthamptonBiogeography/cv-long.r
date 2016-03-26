@@ -46,10 +46,10 @@ Qualifications = list(Name = "Academic Qualification",
           "Modelling Australian fire regimes" = "https://drive.google.com/file/d/0B6T4MHlQ-DuNS2ZsV09mdkdwYms/view?usp=sharing",
           "2010-2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
-          'Using remote sensed, ground-based GIS data to develope and benchmark
+          'Using remote sensed, ground-based GIS data to develop and benchmark
           the LPX Dynamic Global Vegetation Model
           (DGVM) to improve the simulation of climate impacts on vegetation-fire
-          interactions. Using this new version of LPX to simulate ecosystem resiliance,
+          interactions. Using this new version of LPX to simulate ecosystem resilience,
           carbon stocks, and vegetative impacts on water resources with changes in climate and
           fire regime over the 21<sup>st</sup> century in Australia.
           <br>
@@ -59,8 +59,8 @@ Qualifications = list(Name = "Academic Qualification",
           "Main dissertation: Wildfires as part of the global carbon cycle - quantitative analysis using data assimilation" = "",
           "2007-2008",
           "University of Bristol, Department of Earth Sciences, UK" = "http://www.bristol.ac.uk/earthsciences/",
-          "Other subjects covered:
-          <li> Ecoystem services </li>
+          "Subjects covered included:
+          <li> Ecosystem services </li>
           <li> Remote sensing & GIS </li>
           <li> Climate and Earth System modelling inc. atmospheric and ocean modelling</li>
           <li> Extreme weather and natural hazards</li>
