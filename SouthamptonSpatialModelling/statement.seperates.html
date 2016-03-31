@@ -1,72 +1,152 @@
-<h3> Please provide details of your PhD or equivalent qualifications and experience in Geography, Biology, Environmental Sciences, or related subject. </h3>
-<!-- PhD or equivalent qualifications and experience in Geography, Biology, Environmental Sciences, or related subject-->
-I completed my PhD in Climate Change Ecology just over a year ago (thesis available here: http://douglask3.github.io/docs/thesis.pdf) where I utilised remote sensed and ground based GIS observations and experimantal data to develop, constrain and evaluate Dynamic Global Vegetation Models (DGVMs) <citep>Prentice2011; Kelley2013; kaminski2013bethy; Hantson</citep> <!--to help improve our understanding of vegetation dynamics and vegetation-disturbance interactions in Australia <citep>kelley2014modelling</citep>.-->. I used one of these models, the LPX-DGVM <citep>Kelley2014a</citep>, to assess ecosystem resliance to disturbance regimes <citep>Kelley2014a; Zeppel2014</citep> and to project the impact of future climate change on ecosystem composiotion, processes and services. For my thesis, this focussed on changes in vegetation-modulated future fire regimes and their associated impacts <citep> kelley2014modelling; Harrisonc</cite>, but I have since explored potential changes in future ecosystem resilance, carbon stocks <citep> Kelley2014b </citep> and water rescources <citep>Ukkola</citep>. My thesis was well received by my examiners, who consistently stated that it fell into the “top 10%” they've ever assessed.
+<h3> Please provide details of your PhD or equivalent qualifications and experience in spatial and/or ecological modelling in a relevant subject (e.g. ecology, geography, demography, statistics, computer science, epidemiology etc). </h3>
+<!-- PhD or equivalent qualifications and experience in spatial and/or ecological modelling in a relevant subject (e.g. ecology, geography, demography, statistics, computer science, epidemiology etc).-->
+I completed my PhD in Climate Change Ecology just over a year ago (thesis available here: http://douglask3.github.io/docs/thesis.pdf) where I utilised remote sensed and ground based GIS observations and experimantal data to develop, constrain and evaluate Dynamic Global Vegetation Models (DGVMs) <citep>Prentice2011; Kelley2013; kaminski2013bethy; Hantson</citep> <!--to help improve our understanding of vegetation dynamics and vegetation-disturbance interactions in Australia <citep>kelley2014modelling</citep>.-->. I used one of these models, the LPX-DGVM <citep>Kelley2014a</citep>, to assess ecosystem resliance to disturbance regimes <citep>Kelley2014a; Zeppel2014</citep> and to project the impact of future climate change on ecosystem composiotion, processes and services. For my thesis, this focussed on changes in vegetation-modulated future fire regimes and their associated impacts <citep>kelley2014modelling; Harrisonc</citep>, but I have since used the model to explore potential changes in future ecosystem resilance, carbon stocks <citep>Kelley2014b</citep> and water rescources <citep>Ukkola</citep>. My thesis was well received by my examiners, who consistently stated that it fell into the “top 10%” they've ever assessed.
 
-The major theme of my MSc in Earth Systems Science was linking Earth System Processes to climate policy, mainly via ecosystem valuation - either via assigning monartary value, similar work by Bib Costana ??ref??, or though other metrics such as biodiversity or carbon storage <citep> Kelley2008 </citep>. I found this the most fascinating askpect of the masters programme, as it provided a direct link between ecological science and soical <<>>, and it played a major influance with the main aims of my PhD.
+The major theme of my MSc in Earth Systems Science was linking earth system processes to climate policy, mainly via ecosystem service valuation - both through assigning monartary value, similar work by <citet>costanza1997value</citet>, or though other metrics such as biodiversity or carbon storage <citep>Kelley2008</citep>. I found this the most fascinating aspect of the masters programme, as it provided a direct link between ecological science and soical policy, and it had a major influance with the main aims of my PhD.
+
+<h3> Please provide information to evidence your experience in spatial and/or ecological modelling. </h3>
+<!--Experience in spatial and/or ecological modelling -->
+I have been the lead developer of the LPX-DGVM for that last 6 years <citep>Prentice2011; Kelley2014a</citep>. This model is driven with spatially distributed monthly climate, land use and soils inputs as well as atompsheric CO2 concentrations in order to simulate terrestial bioshphere processes. Vegetation is split along descrete plant functioanl types (PFTS). These PFTS establish if climate is within their tolarated ranges, grow, compete with other established PFTs for resources, and are killed via light competition, carbon limitation, and disturbance (e.g. fire). The mix of PFTs found in each location allows assessment of broad vegetation types or biome <citep>Sitch2003</citep>. The model also simulates vegetation productivity, vegetation-driven carbon cycle, the impact of vegetation and climate on fire and the water cycle abnd many more processes. Most of my work with LPX has foccussed on development of the fire disturbance component and fire-vegetation interactions. This has involved parameterization of phyical processes such as incorporaton of a lighnting ignition algorithm and fuel drying times <citep>Kelley2014a</citep>, and ecological processes such as vegetation fuel production, fuel decomponsition, and modelling plant traits to for fire protection (such as evolutionary driven changes in bark thickness) and recovery (such as competation between rapidly estatilishing plants and resprouting plants) <citep>Kelley2014a; Harrisonc</citep>. As well as development of the fire component, I have also worked on competition between grass PFTs and plant root profiles in order to improve representation of vegetation in semi-arid ecosystem. Improvment of the model allowed me to assess and seperate climate and vegetation interactions with fire and hydrology. This included counter-intuitive but important results that policymakers need to take into account, such as: CO2-related increases in vegetation may have added pressure on available water supply in already dry and drying regions, further compounding predicted drought <citep>Ukkola</citep>; and that changes in the likelihood of fire events is dependent on the complex interactions between climate amd vegetation composition/productivity - not just climate by itself <citep>Kelley2014b; Harrisonc</citep>.
+
+I have experiance developing and using other spatial ecological models besides LPX (and its pre-curser, LPJ-GLOBFIRM: <cite>Sitch2003; Kelley2013</cite>). I have coded and driven the Simple Diognostic Biosphere Model (SDBM), which calculates productivity of and water use by vegetation based on simple relationships with remote-sensed vegetative land-surface propertises. I used this model as an evaulation tool of carbon and water-dynamics in more complex terrestial bioshophere models, as a away off asseing the impact of vegetation-parameter choice on ecosystem productivity <cite>Kelley2013</cite>, and to assess the affects of vegetetaion productivity and fuel moisture limitation on burnt area <citep>kelley2014modelling</citep>. I have also worked on the vegetation model (BETHY) in the Carbon Cycle Data Assimilation System (CCDAS) which calculates likely values of key ecologicl and Earth System model parameters based on piro estimates and model optimization against spatially-distributed remote sensed land-surface and site based carbon flux obsverations <citep>Kelley2008; kaminski2013bethy</citep>. Recently, I have been involved in projects exploreing plant allocation and phenology stratagies using a simple, site-based ecological model (GDAY: <<gitbhub>>).
+
+<!--
+LPX-DGVM
+How it works:
+
+    I drive this model with sptially distrubuted and temparollay varying climate, land use and soil observations in order to simulate dynamic
+    Uses spatially distributed climate and land used inputs
+    Outputs sptially and temporally dynamic vegetation
+
+What I deveoped
+    Veg-fire interactions
+    Vegetetaion impacts
+    Vegegtation traits analysis
+
+Wbat I used it for:
+    Future climate stuff
+-->
 
 
 
+<h3> Please provide information to evidence your experience in computer programming, preferably including within the R environment, but likely also in other relevant languages (e.g. Python, Java, C etc.) </h3>
+<!-- Experience in computer programming, preferably including within the R environment, but likely also in other relevant languages (e.g. Python, Java, C etc).  -->
+<!-- Strong skills in computer programming (e.g. in R, Matlab or Python) and statistics -->
+The LPX model combines FORTRAN (for the scientific component) and C++ (for the I/O component) with a UNIX-shell interface. I have also used and developed simple vegetation models in R, C, Python and Matlab <citep>Kelley2013; Kelley; Whitley</citep>, and have performed statistical analysis and plotting in R, Python, Matlab and, during my masters, in IDL.
 
-Please provide information to evidence your experience in using GIS (i.e ArcGIS) and statistical software (i.e. R) to analyse large geospatial datasets.
-<!--Proven experience in using GIS (i.e ArcGIS) and statistical software (i.e. R) to analyse large geospatial datasets -->
-<!-- Advanced skills in GIS and data handling -->
-<!-- some understanding of statistical analyses of large-scale datasets -->
+I have developed some of my R-code into software packages, now available for anyone to download and use (e.g. <cite>Kelley2015; Whitley2016</cite> – both available from http://douglask3.github.io/tools. See publication list for more details). One of my statistical packages (model benchmark metrics: <cite> Kelley2015 </cite>) has recently been adopted and applied to a new model inter-comparison project (fireMIP: <cite>Hantson2016; Hantson</cite>).
+
+
+
+<h3> Please provide information to evidence your expertise in advanced statistical analyses, ideally of spatial datasets. </h3>
+<!-- Some expertise in GIS and data handling -->
+<!-- Expertise in advanced statistical analyses, ideally of spatial datasets -->
 <!-- Expertise in data analysis, including large data-sets using appropriate software -->
-I have been the lead developer on the LPX-DGVM  for 6 years. Model development in the Land Processes and eXchanges (LPX: <cite>Prentice2011; Kelley2014a</cite>) dynamic global vegetation model (DGVM), in which benchmarking against observations is used to identify areas for new data-driven parameterizations and then subsequently used to evaluate whether the implementation of these new parameterizations produces an overall improvement in model performance. This approach contrasts with the general tendency within the vegetation modelling community to focus evaluation on new components, for example, the evaluation of fire treatments within DGVMs using only observations of burnt area and/or fire carbon fluxes (see e.g. <cite>Li2012; Pfeiffer2013 </cite>). One reason for this partial approach to evaluation was the lack of a comprehensive benchmarking system <cite>Luo2012</cite>). I therefore developed a comprehensive benchmarking system which allows quantitative evaluation of multiple aspects of simulated processes to identify specific model weaknesses and differences between model versions, allowing assessment of the overall impact of new parameterizations. This allowed me to target model development in my thesis . This system is now starting to be adopted by other modelling groups and is being used by a new Model Intercomparison Project to assess the impact of different fire modelling approaches <citep>Hantson</citep>, and to help guide the developmental direction of the fire-vegetation modelling community <citep>Hantson2016</citep>.
+
+As a major part of this thesis, I developed a comprehensive benchmarking system which allows evaluation of spatial and temporal patterns of multiple aspects of the simulated vegetation, hydrology, disturbance regimes and ecosystem fluxes in vegetation models <citep>Kelley2013</citep>. This system uses multiple spatial and temporal datasets - many of which I created from romote sensed observations - and applies statistical metrics (normalised mean (squared) error, taxi-cab and square chord distances plus metrics I designed myself to assess temporal performance) to quantify the "distance" between simulated and obsveraved variables. These metrics are normalised in such away as to allow comparison between model processes. I also designed two 'null' models to set benchmarks of minimum experected performance which aids interpretation of metrioc scores. This benchmarking system serves several purposes: (1) it quantifies how well a model performs across a comprehensive range of important processes; (2) it allows the identification of model weaknesses through comparison of the performance with respect to different benchmarks and thus facilitates the identification of processes that require improvement; (3) it quantifies the differences between model versions, which allows assessment of the overall impact of new parameterizations.
+
+Application of this benchmarking system to LPX identified key geographic areas and prcoesses of model weakness and formed the basis of model devlopment throughout the rest of my thesis. I have since made the metrics and null models into R-package a freely avaiable for anyone to download and use <citep>Kelley2015</citep>. The system has also been adopted by other modelling groups and is being used by a new Model Intercomparison Project to assess the impact of different fire modelling approaches <citep>Hantson</citep>, and to help guide the developmental direction of the fire-vegetation modelling community <citep>Hantson2016</citep>.
+
+<!--
+A major part of my thesis was the development of model benchmark system to qunatify vegetation model performance and indtify areas of model weankess.
+
+Hpw it works:
+    Benchmark data
+    Benchmark metrics
+    Null models
+
+    R-package coding
+    fireMIP
+    R project
+-->
+I was a lead collabrotator on a project that aimed to determine climate and disturbance controls on prevelance of plant resprouting ability (RS) and type <citep>kelley2014modelling; Harrisonc</citep>. This involved the creation of a database of site-based species inventories to determine indicies of RS abuncance and species richness. These indicies of abundance where compared against climate and disturbance variables which selcted after assessing co-correlation between variables using rundancy analysis. I used a Generalised Linear Model (GLM) approuch to indetify and quantify variables that control RS. This analysis demstrated the importance RS as a recovcery trait to intermediate-intensity and resonably frequant (10 - 100 years) fires, and was used to guide and evaluate incorpration of post-fire reprouting into LPX-DGVM <citep>Kelley2014a; Harrison</citep>. It also showed high abundance of specific types of RS in areas of highly variable and unreliable rainfall, which has spawning research into RS as a recovery adpatation to drought <citep>Zeppel2014</citep>.
+
+<!--
+prones as a respone
+Reulst from this  project aided the develolment of fire-recovery traits in LPX
+
+RS analysis
+    Site based speicies abundance and RS richness information
+    compared to climate and fire indicies extracted from ...
+    climate and fire redudancy analysis
+    GLM to determine main climate controls on RS
+    Aided development of RS in LPX
+    Analysis showed high RS in drought prone (i.e, areas of unreliable water supply),
+
+-->
+
+In the introduction of my thesis, I again used the GLM approuch with a simple statistical fire-limitation model  I developed to described the maximum expected byurnt area for three key components of fire: plant productivity (proxy for fuel load); aridity (for fuel moisture); and lightning (ignitions). I used the GLM to determine components and residuals of each of the three variables in order to map the contribution of each limitation (i.e, too little fuel, too wet, or too little ignitions) to the control of fire in Australia (Figure 1.6 - <cite>kelley2014modelling</cite>).
+
+<!--In the introduction of my thesis, I developed a simple statistical fire-limitation model which described the maximum expected fire for three key components of fire: plant productivity (proxy for fuel load); aridity (for fuel moisture); and lightning (ignitions). I applied the Generalised Linear Model (GLM) approuch to this model to determine components and residuals of each of the three variables, and to map the contribution of each limitation (i.e, too little fuel, too wet, or too little ignitions) to the control of fire in Australia (Figure 1.6 - <cite>kelley2014modelling</cite>).-->
+<!--
+combining
+Controls on fire:
+    Simple staistical fire model
+    Spatial productivity, arididity and lightnbing data
+    GLM for component plus residual
+    Mapped the reltive constribution of each variable
+-->
 
 
-<<Data driven development>>
-This involved site analysisng land cover, soil and climate controls on primary observations of plant and ecosystem traits, <<modelled surface>> <<proxy maps>>. I have therefore had extensive practice using ENVI and GIS softerware (inc. ArcGIS and its open source equivalents) in anyalysing remote sensed and land-surface GIS data. I have also used R and any of its GIS and statistical packages (and indeed have developed some R packages myself: <<link>>) for statitical analysis of ecosystem traits and modelled vegatation.
+
+<h3> Please provide details of your publications in peer-reviewed international journals in a relevant field. </h3>
+<!-- Publications in peer-reviewed international journals in a relevant field -->
+I completed my PhD just over one year ago,  and I have obtained 7 peer-reviewed publications – 3 of which I first authored - with a further 3 submitted and 3 near submission. All my papers are high impact, as demonstrated by my h-index of 6 despite the majority of my papers being published within the last 3 years. One of these papers is in Nature Geoscience, and all the others are in high-impact journals for their field (i.e Enviromental Research Letters, Biogeosciences, New Phytologist). Please see my attached publication list.
 
 
-My work on developing and evaluating vegetation models has involved processing a range of climate/GIS data products, such as raw and processed satellite data (see e.g. <cite>Kelley2008; Prentice2011; Kelley2013; Kelley2014a; Kelley2014b</cite>); vector ground observation (<cite>Kelley2013; Kelley2014a; kelley2014modelling; Harrison</cite>); historical climate and climate reanalysis data <citep>Prentice2011; Kelley2014a; kelley2014modelling</citep>; and climate model data for past <citep>Ciais2011</citep> and future climates <citep>Kelley2014b; Harrisonc</citep>.
+<h3> Please provide details of your experience (if any) in using GIS (i.e ArcGIS) to analyse large geospatial datasets. </h3>
+<!-- Some expertise in GIS and data handling -->
+<!-- Experience in using GIS (i.e ArcGIS) to analyse large geospatial datasets -->
+My work on developing and evaluating vegetation models has involved processing anad analysing many large-scale geospatial datasets wih a range of GIS software. Remote-sensed observations used in my vegetation model benchmark system were processed in R using raster, sp, maptools and rgeos packages and their dependancies. The benchmark software package I developed for statistical model comparisons (outlines above) incorporates the raster and sp packages into its statistical calculations. I have also used R spatial packages to extract data points of remote-sensed and climate data for incoprtation into the RS site database described above, and I used ArcGIS to extract vegetation and soil type information for these sites from vector datasets (the National Vegetation Information system and ASRIS Atlas of Australian Soils). I also used ArcGIS to construct maps of water-holding capcity, percolation rates and thermal diffusivity of soils based on ASRIS maps. I have since repeated this anaylysis using QGIS - an open source GIS software product.
+
+During a coarse on Natural Hazards as part of my MSc in Earth Systems Science, I analysed movmewnt and concebntrations of volcanic ash clouds with multi-spretrum, split-window techinques uning ENVI/IDL programming. I also used ENVI to detect and remove unwanted pixels (i.e, water and cload) and to construct multi-band fire indicies from MODIS burnt area products as part of my masters dissertation <citep> Kelley2008 </citep>.
+
+I developed a new lightning-fire start model during my PhD (<citep>Kelley2014a</citep>) by comparing remote sensed LIS lighting flash count data to ground, point-based lighting strikes observtations in order to determine if induvidual flashes where iter-cloud ot cloud to ground. This invloved determining location of strikes in sattalite data and matching point-based ground observations using matlabs HDF package. I have since repateated this anayalis using raster and GIS packages in R.
+
+<!--I have used ARCGIS to ... ... land-cover data products (NVIS: ; soils: ) as part of a collabrative effiorts to construct two vegetation trait databses <citep>Harrison; Harrisonc</citep>
+
+This involved site analysisng land cover, soil and climate controls on primary observations of plant and ecosystem traits, <<modelled surface>> <<proxy maps>>. I have therefore had extensive practice using ENVI and GIS softerware (inc. ArcGIS and its open source equivalents) in anyalysing remote sensed and land-surface GIS data. I
+-->
 
 
+<!--
+    a range of climate/GIS data products from raw and processed satellite data (see e.g. <cite>Kelley2008; Prentice2011; Kelley2013; Kelley2014a; Kelley2014b</cite>); vector ground observation (<cite>Kelley2013; Kelley2014a; kelley2014modelling; Harrison</cite>); historical climate and climate reanalysis data <citep>Prentice2011; Kelley2014a; kelley2014modelling</citep>; and climate model data for past <citep>Ciais2011</citep> and future climates <citep>Kelley2014b; Harrisonc</citep>.
+-->
+<!--
+<i> ArcGIS </i>
+NVIS
+Soils
+-->
+
+
+<!--<<Data driven development>>
 
 
     I did this by constraining a DGVM (particularly the siomulation of fire - one of the most important vegetative controls in Auystralia) using remote sensed and ground observations of land-surface properties, and driving this model with present and future climate and land use. Data and model output analysis involved use of ARCGID, ENVI, R and R statistic packages (some of which I have written and published myself: <<link>>). A major theme of my MSc in Earth Systems Science was linking Earth System Processes to climate policy, mainly via ecosystem valuation - either via assigning monartary value, similar to Bib Costanvas work, or though other metrics like biodiversity or carbon storage. I found this the most fascinating askpect of the masters programme, and it played a major influance with the main aims of my PhD.
 
 
+My work on developing and evaluating vegetation models has involved processing a range of climate/GIS data products, such as raw and processed satellite data (see e.g. <cite>Kelley2008; Prentice2011; Kelley2013; Kelley2014a; Kelley2014b</cite>); vector ground observation (<cite>Kelley2013; Kelley2014a; kelley2014modelling; Harrison</cite>); historical climate and climate reanalysis data <citep>Prentice2011; Kelley2014a; kelley2014modelling</citep>; and climate model data for past <citep>Ciais2011</citep> and future climates <citep>Kelley2014b; Harrisonc</citep>.
 
-<h3> Please provide details of your publications in peer-reviewed international journals in a relevant field. <h3>
-<!--Publications in peer-reviewed international journals in a relevant field-->
-<!--The ability to present research results and contribute to papers in high quality journals-->
-I completed my PhD just over one year ago,  and I have obtained 7 peer-reviewed publications – 3 of which I first authored - with a further 3 submitted and 3 near submission. One of these papers is in Nature Geoscience, and all the others are in high-impact journals for their field (i.e Enviromental Research Letters, Biogeosciences, New Phytologist). Please see my attached publication list.
+-->
 
 
 
 
 
-<h3> Please provide details of your experience (if any) in computer programming, preferably within the ArcGIS and/or R environment.
-<!-- Experience in computer programming, preferably within the ArcGIS and/or R environment -->
-<!-- Experience using remote sensing software (e.g. ENVI) -->
-<!-- Some knowledge of programming in the R and/or Python --> </h3>
-The LPX model, that I have been the lead developer on for 6 years, combines FORTRAN (for the scientific component) and C++ (for the I/O component) with a UNIX-shell interface. I have also used and developed simple vegetation models in Python, R and Matlab <citep>Kelley2013; Kelley; Whitley</citep>, and have performed statistical analysis and plotting in Python, R, Matlab and, during my masters, in IDL. I have developed some of my R-code into software packages, now available for anyone to download and use (e.g. <cite>Kelley2015; Whitley2016</cite> – both available from http://douglask3.github.io/tools. See publication list for more details). One of my statistical packages <citep> Kelley2015 </citep> has recently been adopted and applied to a new model inter-comparison project (fireMIP: <cite>Hantson2016; Hantson</cite>).
 
-My work on developing and evaluating vegetation models has involved processing a range of climate/GIS data products, from raw and processed satellite data (see e.g. <cite>Kelley2008; Prentice2011; Kelley2013; Kelley2014a; Kelley2014b</cite>); vector ground observation (<cite>Kelley2013; Kelley2014a; kelley2014modelling; Harrison</cite>); historical climate and climate reanalysis data <citep>Prentice2011; Kelley2014a; kelley2014modelling</citep>; and climate model data for past <citep>Ciais2011</citep> and future climates <citep>Kelley2014b; Harrisonc</citep>.
-
-<i> ArcGIS </i>
-NVIS
-Soils
-
-
-
-
-
-<h3> Please provide details of your experience (if any) of using remote sensing software (e.g. ENVI) </h3>
-I have had experiance on working with high-resolution remote-sensed observations on multiple software platforms. During a coarse on Natural Hazards as part of my MSc in Earth Systems Science, I analysed movmewnt and concebntrations of volcanic ash clouds with multi-spretrum, split-window techinques uning ENVI/IDL programming. I also derive fire indicies from MODIS burnt area products as part of my masters dissertation <citep> Kelley2008 </citep>. For this, I used ENVI to detect and remove unwanted pixels (i.e, water and cload) and to construct multi-band indicies.
-
-I developed a new lightning-fire start model during my PhD (<citep>Kelley2014a</citep>) by comparing remote sensed LIS lighting flash count data to ground, point-based lighting strikes observtations in order to determine if induvidual flashes where iter-cloud ot cloud to ground. This invloved determining location of strikes in sattalite data and matching point-based ground observations using matlabs HDF package. I have since repateated this anayalis using raster and GIS packages in R.
 
 <h3> Extra bits </h3>
 <!-- Expertise in designing research on spatial questions.  Able to organise own programme of work and resources to meet deadlines -->
-<!-- Experience of working closely in a small research team. -->
+<!-- Experience of working closely in a small research team.-->
 <!-- Able to motivate, train and enthuse students -->
-<!-- Excellent verbal and written communication and presentation skills. -->
-<!-- Able to address small and large groups and cross-disciplinary groups at projects meetings -->
-<!-- Able to synthesise information from meetings and write good notes. -->
+<!--Excellent verbal and written communication and presentation skills. -->
 
-<!-- Computer literacy.  Able to handle a range of software. -->
-<!-- Understanding of relevant Health & Safety issues -->
-<!-- Positive attitude to colleagues and students -->
-<!-- Availability to attend national and international conferences and meetings to present research results and a willingness to travel occasionally for up to a week at a time to meet project partners. -->
+<!--Able to address small and large groups and cross-disciplinary groups at projects meetings -->
+
+<!--The ability to present research results and contribute to papers in high quality journals -->
+
+<!--Able to synthesise information from meetings and write good notes. -->
+<!--Computer literacy.  Able to handle a range of software. -->
+<!--Understanding of relevant Health & Safety issues -->
+<!--Positive attitude to colleagues and students -->
+<!--Availability to attend national and international conferences and meetings to present research results and a willingness to travel occasionally for up to a week at a time to meet project partners. -->
