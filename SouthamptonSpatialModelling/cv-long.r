@@ -81,6 +81,8 @@ Employment = list(Name = "Employment History",
           "Simulating the impacts of future climate change on, vegetation-fire interactions
           using a coupled dynamic global vegetation model (DGVM)."),
 
+          "New Page",
+
         c("Postdoctoral Research Assistant" = "",
           "Oct 2014-Apr 2015",
           "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
@@ -88,7 +90,7 @@ Employment = list(Name = "Employment History",
            CO<sub>2</sub> on vegetation dynamics and vegetative carbon uptake
            in conceptual phenology and plant carbon allocation models."),
 
-          "New Page",
+
 
         c("Research Assistant" = "",
           "Jun 2014-Oct 2014",
@@ -132,7 +134,7 @@ replaceAuthor <- function(pub) {
 
 Published = lapply(Published, replaceAuthor)
 
-Published = c(Published[1:6], "New Page", Published[7:length(Published)])
+Published = c(Published[1:5], "New Page", Published[6:length(Published)])
 
 Publications = list(Name = "Publications",
                     Main = MakeUserProfile(usrID, 'unformatted'),
@@ -202,14 +204,14 @@ Conferences =  list(Name = "Conferences",
                            "Dec 2013",
                            ""),
 
+                           "New Page",
+
                          c("DI Kelley, SP Harrison",
                            "Comparison of simulated fire regimes at the Last Glacial Maximum and Mid-Holocene with charcoal data",
                            "QUEST: Quantifying and Understanding the Earth System Open Science Conference and Annual Science Meeting",
                            "Department of Earth Sciences, University of Bristol",
                            "Mar 2008",
                            "")),
-
-                           "New Page",
 
                     list("Visits and Internal Presentations",
 
@@ -466,7 +468,7 @@ Skills = list(Name = "Skills",
                       <br> See <a href="http://douglask3.gitgub.io/lpxbenchmarking.html">douglask3.github.io/lpxbenchmarking</a> for an example of statistical benchmarking of model outputs against global raster and site-based datasets.),
                       <br> See <a href="http://douglask3.gitgub.io/tools.html">douglask3.github.io/tools</a> for an example of R software packages I have developed.'),
 
-                  c("Numerical Modelling" = "",
+                  c("Vegetation Modelling" = "",
                     "I have been lead developer on LPX - a high-complexity
                     coupled Dynamic Vegetation Model - since 2010. LPX has
                     both Fortran and C++ components for fast (relative to it's
@@ -474,6 +476,8 @@ Skills = list(Name = "Skills",
                     added a shell and R interface to facilitate parallisation
                     and to allow outputs to be easily analysed and plotted.",
                     'See <a href="http://douglask3.gitgub.io/LPX.html">douglask3.github.io/LPX</a> for more information.'),
+
+                    "New Page",
 
                    c("Web Design" = "",
                      "In my spare time, I have developed dynamic websites using
@@ -603,7 +607,7 @@ Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:doug
 
 
 AdditionalSection = list(ExtendingContact, Qualifications, Employment,
-                         Publications, Conferences, Skills, Awards, Workshops,
+                         Skills, Awards, Workshops,
                          "New Page", Training, Software, ExtraCircular, Research,
                          Referee)
 

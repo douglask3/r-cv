@@ -8,8 +8,7 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ###############################################################
 Name    = c("Douglas Kelley",
             post,
-            "CV - Summary",
-            "docs/agua_png_by_eross_666-d56zr6u.png")
+            "CV - Summary")
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
