@@ -2,7 +2,7 @@ source("r2cv.r")
 library('gitBasedProjects')
 setupProjectStructure()
 
-r2cv(file = "standardApplications/coverLetter.r")
+source("standardApplications/coverLetter.r")
 
 files = list.files(dir, full.names = TRUE)
 
@@ -26,15 +26,16 @@ filesT = paste("temp/", files, sep = '')
 file.copy(files, filesT, overwrite = TRUE)
 
 
-
-
-
-
-
-write(line,file=filesT[1],append=TRUE)
+write(shrtCVchange,file=filesT[1],append=TRUE)
 
 NewPage = c('Douglas Kelley - CV', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
 
 write(longCVchange,file=filesT[2],append=TRUE)
 
 r2cv(file = filesT, NewPage = NewPage)
+
+
+files = list.files(dir, full.names = TRUE)
+files = files[grepl('Extra', files)]
+
+if (length(files) > 0) for (i in files) r2cv(file = i, NewPage = NewPage)
