@@ -99,7 +99,7 @@ Workshops = list(Name = "Workshops and Consultancy Visits",
                    "",
                    "May 2013",
                    "Macquarie University, Ryde, Australia" = "https://www.mq.edu.au/",
-                   'Construction of a database on distribution of different resprouting trait types in climate space."'),
+                   'Construction of a database on distribution of different resprouting trait types in climate space.'),
 
                  c("Technical Assistance for Climate Change" = "https://www.researchgate.net/publication/267995882_Impacts_of_Future_Climate_Change_on_Vegetation_Fire_and_Runoff_in_Jordan",
                    "",
@@ -223,14 +223,14 @@ Referee = list(Name = "References",
                  </tr>
              </table>'),
 
-             c("",'<i> Please see
-             <a href="http://douglask3.github.io/cvCEH">
+             c("",'Please see
+             <a href="http://douglask3.github.io/docs/cvCEH.pdf">
              http://douglask3.github.io/docs/cvCEH.pdf </a> for a full academic CV, including:
-                   <li> extended qualifications, employment, extra-curricular,
+                   <li> Extended qualifications, employment, extra-curricular,
                         awards and training history </li>
-                   <li> skills, software development, research interests information </li>
+                   <li> Skills, software development, research interests information </li>
                    <li> Full references contacts details</li>
-                   </i>'))
+                   '))
 
 Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com </a> - <i> +44 (0) 7936 726 819 </i> - <a href = "douglask3.github.io"> douglask3.github.io</a></p><br>'
 
