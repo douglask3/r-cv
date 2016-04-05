@@ -25,7 +25,7 @@ cvExtraFile = list.files(dir, pattern='cv-', full.names = TRUE)
 cvExtraFile = cvExtraFile[!apply(sapply(cvFileNames, grepl, cvExtraFile),1,any)]
 
 files = c(cvShrtFile, cvLongFile, cvExtraFile)
-
+files = files[sapply(files, readLines, n = 1) != "Skip"]
 makeDir(paste('temp', dir, sep = '/'))
 filesT = paste("temp/", files, sep = '')
 file.copy(files, filesT, overwrite = TRUE)
