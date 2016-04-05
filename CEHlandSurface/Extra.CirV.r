@@ -21,11 +21,28 @@ Authors = c("DI Kelley", "D Kelley")
 ###############################################################
 ## Additional Sections                                       ##
 ###############################################################
-ExtendingContact = c("Contact Information",
-                        "Home Address"   = "Flat 40, 18 Oxford Road, Reading, RG1 7LB, UK",
-                        "Email"          = '<a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com</a>',
-                        "Web"            = '<a href="http://douglask3.github.io/" target="_blank">douglask3.github.io</a>',
-                        "Phone"          = "+44 (0) 7936 726 819")
+ExtendingContact = list(Name = "Contact Information",
+                        c('','
+                        <table width="100%">
+                             <tr>
+                                 <td style="width:7%">
+                                     <b>Home Address:<br>
+                                        Email:<br>
+                                        Web:<br>
+                                        Phone:</b>
+                                 </td>
+                                 <td style="width:33%">
+                                     Flat 40,
+                                          18 Oxford Road,
+                                          Reading,
+                                          RG1 7LB,
+                                          UK
+                                     <br><a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com</a>
+                                     <br><a href="http://douglask3.github.io/" target="_blank">douglask3.github.io</a>
+                                     <br> +44 (0) 7936 726 819
+                                 </td>
+                                 </tr>
+                                 </table>'))
 
 Qualifications = list(Name = "Academic qualifications",
         c("PhD Climate Change Ecology" = "",
