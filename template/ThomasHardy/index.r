@@ -46,12 +46,18 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 					</div>
 					')
 			}
+			if (is.null(name[3]) || is.na(name[3])) {
+				name2 = c('<h3 class="quickFade delayThree">', name[2], '</h3>')
+				name3 = ''
+			} else {
+				name2 = c('<h2 class="quickFade delayThree">', name[2], '</h2>')
+				name3 = c('<h3 class="quickFade delayThree">', name[3], '</h3>')
+			}
+
 			doc = c(doc, '
 			<div id="name">
-				<h1 class="quickFade delayTwo">', name[1], '</h1>
-				<h2 class="quickFade delayThree">', name[2], '</h2>
-				<h3 class="quickFade delayThree">', name[3], '</h3>
-			</div>')
+				<h1 class="quickFade delayTwo">', name[1], '</h1>',
+				name2, name3, '</div>')
 			if (!is.null(contact)) {
 				if (substr(contact[3], 1, 7) == 'http://') web = contact[3]
 					else web = paste('http://', contact[3], sep = '')
@@ -102,7 +108,9 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		doc = addDocStart(doc, Top)
 
 
-		name = c(paste ('<small>', Name[3], '</small>'), "", "")
+		if (!is.na(Name[3]))
+			name = c(paste ('<small>', Name[3], '</small>'), "", "")
+		else name = NULL
 		doc = addNameMainArea(doc, name, NULL, ...)
 
 		return(doc)
