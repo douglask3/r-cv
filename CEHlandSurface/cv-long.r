@@ -112,11 +112,6 @@ Training = list(Name = "Relevant Training Courses",
             = "http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience",
           "Sep 2011",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
-          ""),
-
-        c("Planning and Writing Journal Articles" = "",
-          "Nov 2009",
-          "University of Bristol, UK" = "http://www.bristol.ac.uk/earthsciences/",
           ""))
 
 
@@ -193,21 +188,32 @@ ExtraCircular = list(Name = "Relavent Extra-Curricular",
                        "Conducted seminar on fire-vegetation modellings and running modelling tutorials"))
 
 Referee = list(Name = "References",
-             c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
-               "s.p.harrison@reading.ac.uk"),
+            c(' ' = ' ',
+            '<table width="100%">
+                 <tr>
+                     <td style="width:30%">
+                         <h2><a href = "http://www.reading.ac.uk/s-p-harrison.aspx">Prof. Sandy<br>Harrison</a>
+                         </h2><small>s.p.harrison@reading.ac.uk</small>
+                     </td>
+                     <td style="width:30%">
+                         <h2><a href = "http://www.imperial.ac.uk/people/c.prentice">Prof. Colin<br>Prentice</a>
+                         </h2><small>c.prentice@imperial.ac.uk</small>
+                     </td>
+                     <td style="width:30%">
+                         <h2><a href = "https://bmedlyn.wordpress.com/">Prof. Belinda<br>Medlyn</a>
+                         </h2><small>b.medlyn@westernsydney.edu.au</small>
+                     </td>
+                 </tr>
+             </table>'),
 
-             c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
-               "c.prentice@imperial.ac.uk"),
-
-             c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
-               "b.medlyn@westernsydney.edu.au"),
-
-             c("",'<b> For a full academic CV, including:
+             c("",'<i> Please see
+             <a href="http://douglask3.github.io/cvCEH">
+             http://douglask3.github.io/cvCEH </a> for a full academic CV, including:
                    <li> extended qualifications, employment, extra-curricular,
                         awards and training history </li>
                    <li> skills, software development, research interests information </li>
-                   <li> Full references contacts </li>
-                   Please see <a href="http://douglask3.github.io/cvCEH"> http://douglask3.github.io/cvCEH </a></b>'))
+                   <li> Full references contacts details</li>
+                   </i>'))
 
 Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com </a> - <i> +44 (0) 7936 726 819 </i> - <a href = "douglask3.github.io"> douglask3.github.io</a></p><br>'
 
