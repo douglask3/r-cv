@@ -2,6 +2,8 @@ source("r2cv.r")
 library('gitBasedProjects')
 setupProjectStructure()
 
+cvFileNames = c(short = 'cv-short.r', long = 'cv-long.r')
+
 source("standardApplications/coverLetter.r")
 
 files = list.files(dir, full.names = TRUE)
@@ -13,13 +15,16 @@ findCVsection <- function(name) {
     return(file)
 }
 
-cvShrtFile = findCVsection('cv-short.r')
-cvLongFile = findCVsection('cv-long.r')
+cvShrtFile = findCVsection(cvFileNames['short'])
+cvLongFile = findCVsection(cvFileNames['long'])
 
 if (!exists('shrtCVchange')) shrtCVchange = ''
 if (!exists('longCVchange')) longCVchange = ''
 
-files = c(cvShrtFile, cvLongFile)
+cvExtraFile = list.files(dir, pattern='cv-', full.names = TRUE)
+cvExtraFile = cvExtraFile[!apply(sapply(cvFileNames, grepl, cvExtraFile),1,any)]
+
+files = c(cvShrtFile, cvLongFile, cvExtraFile)
 
 makeDir(paste('temp', dir, sep = '/'))
 filesT = paste("temp/", files, sep = '')
