@@ -208,7 +208,7 @@ Referee = list(Name = "References",
 
              c("",'<i> Please see
              <a href="http://douglask3.github.io/cvCEH">
-             http://douglask3.github.io/cvCEH </a> for a full academic CV, including:
+             http://douglask3.github.io/docs/cvCEH.pdf </a> for a full academic CV, including:
                    <li> extended qualifications, employment, extra-curricular,
                         awards and training history </li>
                    <li> skills, software development, research interests information </li>
