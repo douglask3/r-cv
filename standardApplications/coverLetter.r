@@ -25,7 +25,7 @@ makeStatement <- function(statmentFile) {
     outFile = tail(strsplit(statmentFile,'/')[[1]],1)
     NewPage = c('Douglas Kelley', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
     r2cv(Top = NULL, Name, Contact, AdditionalSection, Footer,
-                     file = NULL, template = "ThomasHardy", outPath = "output", outFile,
+                     file = NULL, template = "ThomasHardy", outPath = "outputs", outFile,
                      NewPage, Authors)
 }
 
