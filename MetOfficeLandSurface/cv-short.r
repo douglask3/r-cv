@@ -6,10 +6,12 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
+Top = '
+<a href= "http://douglask3.github.io/", target = "_blank"> Return to Website </a><br>'
+
 Name    = c("Douglas Kelley",
             post,
-            "CV - Summary",
-            "docs/agua_png_by_eross_666-d56zr6u.png")
+            "CV - Summary")
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
@@ -45,7 +47,7 @@ Employment = list(Name = "Recent Employment History",
           ""))
 
 
-Publications = list(Name = "Publication Statistics",
+Publications = list(Name = "Publications",
                     Main = MakeUserProfile(usrID, 'unformatted'))
 
 Awards = list(Name = "Examples of Awards won",
@@ -110,20 +112,29 @@ Skills = list(Name = "Skills",
                     'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
 
                  c("Software Tool Development" = "",
-                   'I have developed several software package tools related to my research, and to help track project work flows',
+                   'I have developed several software package tools related to my research',
                    'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
 
 
 Referee = list(Name = "References",
-             c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
-               "s.p.harrison@reading.ac.uk"),
+            c(' ' = ' ',
+            '<table width="100%">
+                 <tr>
+                     <td style="width:33%">
+                         <h2><a href = "http://www.reading.ac.uk/s-p-harrison.aspx">Prof. Sandy Harrison</a>
+                         </h2><small>s.p.harrison@reading.ac.uk</small>
+                     </td>
+                     <td style="width:33%">
+                         <h2><a href = "http://www.imperial.ac.uk/people/c.prentice">Prof. Colin Prentice</a>
+                         </h2><small>c.prentice@imperial.ac.uk</small>
+                     </td>
+                     <td style="width:33%">
+                         <h2><a href = "https://bmedlyn.wordpress.com/">Prof. Belinda Medlyn</a>
+                         </h2><small>b.medlyn@westernsydney.edu.au</small>
+                     </td>
+                 </tr>
+             </table>'),
 
-             c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
-               "c.prentice@imperial.ac.uk"),
+             c('<div style = "margin-top: -15px;"><small>Full contact information at end of Extended CV</small></div>',""))
 
-             c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
-               "b.medlyn@westernsydney.edu.au"),
-
-             c("","Full contact information at end of Extended CV"))
-
-AdditionalSection = list(Qualifications, Employment, Publications, Awards, Skills, "New Page", Referee)
+AdditionalSection = list(Qualifications, Employment, Publications, Awards, Skills, Referee)

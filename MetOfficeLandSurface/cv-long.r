@@ -46,19 +46,27 @@ Qualifications = list(Name = "Academic Qualification",
           "Modelling Australian fire regimes" = "https://drive.google.com/file/d/0B6T4MHlQ-DuNS2ZsV09mdkdwYms/view?usp=sharing",
           "2010-2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
-          'Benchmarking and developing the LPX Dynamic Global Vegetation Model
+          'Using remote sensed, ground-based and experimental data to develop and benchmark
+          the LPX Dynamic Global Vegetation Model
           (DGVM) to improve the simulation of climate impacts on vegetation-fire
-          interactions. Using this new version of LPX to simulate
-          biosphere and climate dynamics in Australia over the 21<sup>st</sup>
-          century using CMIP5 climate model outputs. <br><i> Thesis can be
-          downloaded from <a href="goo.gl/9YjwKw"> www.goo.gl/9YjwKw </a> </i>'),
+          interactions. Using this new version of LPX to simulate fire regimes,
+          ecosystem resilience,
+          carbon stocks and vegetative impacts on water resources with
+          changes in climate and CO<sub>2</sub> fertilization over the 21<sup>st</sup> century in Australia.
+          <br>
+          <i> Thesis can be downloaded from <a href="goo.gl/9YjwKw"> www.goo.gl/9YjwKw </a> </i>'),
 
         c("MSc Earth System Science" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
           "Main dissertation: Wildfires as part of the global carbon cycle - quantitative analysis using data assimilation" = "",
           "2007-2008",
           "University of Bristol, Department of Earth Sciences, UK" = "http://www.bristol.ac.uk/earthsciences/",
-          "Other subjects covered: Climate and Earth System modelling inc.
-          atmospheric and ocean modelling; Extreme weather and natural hazards; Remote sensing & GIS; Isotopes and other Earth System tracers; Climate change science and policy"),
+          "Subjects covered included:
+          <li> Earth System modelling inc. land surface-atmospheric interactions, atomospheric physics and ocean modelling</li>
+          <li> Remote sensing & GIS </li>
+          <li> Ecosystem services </li>
+          <li> Extreme weather and natural hazards</li>
+          <li> Isotopes and other Earth System tracers </li>
+          <li> Climate change science and policy </li>"),
 
         c("BSc (Hons.) Physics" = "http://www2.warwick.ac.uk/study/undergraduate/courses/f300",
           "Main dissertation: Modelling atmospheric effects on starlight" = "",
@@ -71,60 +79,27 @@ Employment = list(Name = "Employment History",
         c("Postdoctoral Research Assistant" = "",
           "Apr 2015-present",
           "Department of Geography & Environmental Science, University of Reading, UK" = "https://www.reading.ac.uk/geographyandenvironmentalscience/",
-          '1) Simulating the impacts of future climate change using a
-              dynamic global vegetation model (DGVM), and attributing impacts between
-              climate and vegetative drivers. This has lead to
-              two papers submitted for peer-review. Key conclusions include
-              counterintuitive but important results that policymakers need to take into account,
-              such as: CO2-related increases in vegetation may have added pressure
-              on available water supply in already dry and drying parts of Australia
-              (Ukkola et al. submitted); and that the main driver for changes in fire,
-              and, therefore, fire-related impacts will be almost entirely controlled
-              by changes in vegetation cover rather than weather and climate
-              (Harrison & Kelley submitted).
-          2) Reviewing and evaluating vegetation-fire models for a model
-             intercomparison project (fireMIP). My contribution included
-             reviewing modelled processes in participation models to identify commonalities
-             between models (Hantson et al. 2016), and benchmarking and evaluating model outputs to identify
-             sources of model performance weaknesses and guide community model development priorities (Hantson et al. in prep).
-             This has resulted in one submitted paper and one near submission.
-             Benchmarking of models in this MIP is largely due to my involvement, uses a system
-             developed in my PhD thesis (Kelley et al. 2013), and, as a result, is increasingly being adopted by
-             the vegetation-fire modelling community. Work on model
-             benchmarking also allowed me to gain experience in writing a sharing software libraries
-             (Kelley 2015; Kelley and Whitley 2016) and projects (http://douglask3.github.io/firemip).
-             Reviewing model processes allowed me to become familiar with modelling and coding practices
-             from several different modelling groups using different programming languages including FORTRAN,
-             c, c++ and python.'),
+          "Simulating the impacts of future climate change on vegetation-fire
+          interactions
+          using a coupled dynamic global vegetation model (DGVM).
+          Evaluating and benchmarking multiple DGVM outputs for the fireMIP project."),
+
+          "New Page",
 
         c("Postdoctoral Research Assistant" = "",
           "Oct 2014-Apr 2015",
           "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
-          "Testing the impacts of climate change and fertilization from elevated
-           CO<sub>2</sub> on vegetation dynamics in conceptual phenology and
-           plant carbon allocation models. Here, I co-developed a mechanistic phenology model that
-           describes seasonal leaf and productivity cycles using a dampened harmonic oscillator
-           (Whitley et al. in prep), and developed a framework for testing conceptual
-           plant sub-models within a more expensive land-surface model (Kelley et al. in prep). Part of
-           this project also involved helping re-coding a python based model into C for faster
-           computation times."),
+          "Testing the impacts of climate change and fertilisation from elevated
+           CO<sub>2</sub> on vegetation dynamics and vegetative carbon uptake
+           in conceptual phenology and plant carbon allocation models."),
 
-          "New Page",
+
 
         c("Research Assistant" = "",
           "Jun 2014-Oct 2014",
-          "Biosphere & Climate Dynamics, Department of Biological Sciences,
-                Macquarie University, Ryde, NSW, Australia" =
-                "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
+          "Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
           "Modelling the impacts of past and future climate change on vegetation
-          dynamics, and its feedback on terrestrial carbon.
-          Found that future carbon stocks in Australia are likely to be governed by
-          the distribution of fire-adapted vegetation, with increased carbon uptake
-          possible through increased vegetative fertilization from atmospheric CO2 despite increases in fire
-          severity because of local plants ability to recover from fire (Kelley et al. 2014). Work on this project has spawned several other studies (including those described in
-          my work at the University of Reading), and involved organisation and analysis of
-          large-scale past, present and future climate observations and climate model simulations,
-          land-surface and atmospheric composition observational data."),
+          dynamics, and its feedback on hydrology and terrestrial carbon stocks."),
 
         c("Research Assistant" = "",
           "Sep 2008-Sep 2010",
@@ -136,13 +111,189 @@ Employment = list(Name = "Employment History",
         c("Earth System Science Summer School Coordinator" = "http://www.greencycles.org/greencycles1/ES4%20flyer_2008.pdf",
           "Apr 2008-Sep 2008",
           "Department of Earth Sciences, University of Bristol, UK" = "http://www.bristol.ac.uk/earthsciences/",
-          "Publicity; lecture and seminar timetabling; finding and organising guest lectures; general admin."),
+          "Publicity; lecture and seminar timetabling; finding and organising
+          guest lectures; general admin."),
 
         c("Widening Participation" = "",
           "Sep 2007-Sep 2008",
           "Widening Participation Office, University of Bristol, UK" = "http://www.bristol.ac.uk/sraa/uk-student-recruitment/student-support-team/",
-          "Working with students in primary and secondary education to encourage university attendance from low socio-economic backgrounds: helping organise & run university open days and campus tours; school presentations and career evenings."))
+          "Working with students in primary and secondary education to
+          encourage university attendance from low socio-economic backgrounds: helping organise & run university open days and campus tours; school presentations and career evenings."))
 
+Published = MakePublicationDocument.Rlist(usrID, NULL)
+
+replaceAuthor <- function(pub) {
+    if (pub[1] == "P Ciais, A Tagliabue, M Cuntz, L Bopp, M Scholze, G Hoffmann, ...")
+        pub[1] =  "P Ciais, A Tagliabue, M Cuntz, L Bopp, Marko Scholze, G Hoffmann, A Lourantou, Sandy P Harrison, IC Prentice, DI Kelley, C Koven, SL Piao"
+
+    if (pub[1] == "T Kaminski, W Knorr, G Schürmann, M Scholze, PJ Rayner, S Zaehle, ...")
+        pub[1] =  "T Kaminski, W Knorr, G Schürmann, M Scholze, PJ Rayner, S Zaehle, S Blessing, W Dorigo, V Gayler, R Giering, N Gobron, JP Grant, M Heimann, A Hooker‐Stroud, S Houweling, T Kato, J Kattge, DI Kelley, S Kemp, EN Koffi, C Köstler, P‐P Mathieu, B Pinty, C H Reick, C Rödenbeck, R Schnur, K Scipal, C Sebald, T Stacke, A Terwisscha Scheltinga, M Vossbeck, H Widmann, T Ziehn"
+
+    if (pub[1] == "S Harrison, J Midgley, B Hoffmann, I Radford, C Nano, B Murphy10, ...")
+        pub[1] =  "S Harrison, J Midgley, B Hoffmann, I Radford, C Nano, B Murphy, R Gunton, D Kelley, G Hempson"
+
+    return(pub)
+}
+
+Published = lapply(Published, replaceAuthor)
+
+Published = c(Published[1:5], "New Page", Published[6:length(Published)])
+
+Publications = list(Name = "Publications",
+                    Main = MakeUserProfile(usrID, 'unformatted'),
+                    c("Published Papers",
+                         Published),
+
+                    list("Submitted",
+
+                         c("SP Harrison, DI Kelley,",
+                           "Projected changes in Australian fire regimes during the 21<sup>st</sup> century and consequences for ecosystems",
+                           "International Journal of Wildland Fire",
+                           "",
+                           "",
+                           ""),
+
+                         c("S Hantson, A Arneth, SP Harrison, DI Kelley, IC Prentice, SS Rabin, S Archibald. ...",
+                           "The status and challenge of global fire modelling",
+                           "Biogeosciences",
+                           "bg-2016-17",
+                           "",
+                           ""),
+
+                         c("A Ukkola, T Keenan, DI Kelley, IC Prentice",
+                           "Vegetation buffers the water-resource impacts of environmental change in regions with declining precipitation",
+                           "Environmental Research Letters",
+                           "ERL-102203",
+                           "",
+                           "")),
+
+                    list("In Prep",
+
+                         c("DI Kelley, M de Kauwe, B Medlyn",
+                           "Testing allocation strategies in a simple ecosystem model",
+                           "",
+                           "",
+                           "",
+                           ""),
+
+                         c("SP Harrison, DI Kelley, H Wang, A Herbert, G Li, R Bradstock, J Fontaine, N Enright, BP Murphy, BK Pekin, T Penman, J Russell-Smith, RS Wittkuhn",
+                           "Patterns in the abundance of post-fire resprouting in Australia based on plot-level measurements.",
+                           "",
+                           "",
+                           "",
+                           ""),
+
+                         c("R Whitley, DI Kelley, M de Kauwe, TF Keenan",
+                           "Phendulum - A first principles model of describing savanna phenology",
+                           "",
+                           "",
+                           "",
+                           ""),
+                         c("S Hantson, SP Harrison, DI Kelley, ...",
+                           "The Fire Modeling Intercomparison Project (FireMIP): Observational comparisons and model evaluation",
+                           "",
+                           "",
+                           "",
+                           "")))
+
+
+Conferences =  list(Name = "Conferences",
+                    list("Conference Presentations & Posters",
+
+                         c("DI Kelley, SP Harrison, IC Prentice",
+                           "Implications of introducing realistic fire response traits in a Dynamic Global Vegetation Model",
+                           "AGU Fall Meeting - Presentation Abstracts",
+                           "1,  p.6.",
+                           "Dec 2013",
+                           ""),
+
+                           "New Page",
+
+                         c("DI Kelley, SP Harrison",
+                           "Comparison of simulated fire regimes at the Last Glacial Maximum and Mid-Holocene with charcoal data",
+                           "QUEST: Quantifying and Understanding the Earth System Open Science Conference and Annual Science Meeting",
+                           "Department of Earth Sciences, University of Bristol",
+                           "Mar 2008",
+                           "")),
+
+                    list("Visits and Internal Presentations",
+
+                         c("DI Kelley, SP Harrison, IC Prentice, BE Medlyn",
+                           "Modelling Australian Fire Regimes",
+                           "Thesis completion seminar",
+                           "Macquarie University, Ryde, Australia",
+                           "Mar 2015",
+                           ""),
+
+                         c("DI Kelley, SP Harrison, IC Prentice",
+                           "The LPX fire-enabled Vegetation Model",
+                           "visit to Centre for Environmental Risk Management of Bushfires",
+                           "University of Wollongong, NSW, Australia",
+                           "May 2013",
+                           ""),
+
+                         c("DI Kelley, SP Harrison, IC Prentice, B Medlyn",
+                           "The effects of climate change on Australian fire regimes",
+                           "Postgraduate supplementary conference",
+                           "Macquarie University, Ryde, Australia",
+                           "Nov 2012",
+                           ""),
+
+                         c("DI Kelley",
+                           "Development of lightning ignitions scheme in LPX-DGVM",
+                           "Biosphere and Climate Dynamics brown bag seminars",
+                           "Macquarie University, Ryde, Australia",
+                           "Sep 2012",
+                           ""),
+
+                         c("DI Kelley",
+                           "Benchmarking the LPX-DGVM",
+                           "Biosphere and Climate Dynamics brown bag seminars",
+                           "Macquarie University, Ryde, Australia",
+                           "Mar 2012",
+                           ""),
+
+                         c("DI Kelley, IC Prentice, H Wang, K Wills, SP Harrison",
+                           "A comprehensive benchmarking system for evaluating global vegetation models",
+                           "Climate Futures Forum",
+                           "Macquarie University, Ryde, Australia",
+                           "Dec 2011",
+                           ""),
+
+                         c("DI Kelley, IC Prentice, H Wang, K Wills, SP Harrison",
+                           "A comprehensive benchmarking system for evaluating global vegetation models",
+                           "Postgraduate supplementary conference",
+                           "Macquarie University, Ryde, Australia",
+                           "Nov 2011",
+                           ""),
+
+                         c("DI Kelley",
+                           "Benchmark data-sets for assessing DGVM performance",
+                           "Biosphere and Climate Dynamics brown bag seminars",
+                           "Macquarie University, Ryde, Australia",
+                           "Sep 2011",
+                           ""),
+
+                         c("DI Kelley, SP Harrison, IC Prentice",
+                           "The effects of climate change on Australian fire regimes",
+                           "Postgraduate supplementary conference",
+                           "Macquarie University, Ryde, Australia",
+                           "Nov 2010",
+                           ""),
+
+                         c("DI Kelley",
+                           "Transient Biomization Scheme",
+                           "course seminar for MSc Earth Systems Science",
+                           "Department of Earth Sciences, University of Bristol",
+                           "Jul 2008",
+                           ""),
+
+                         c("DI Kelley, E Counce",
+                           "Forest Fire simulator",
+                           "course seminar for MSc Earth Systems Science",
+                           "Department of Earth Sciences, University of Bristol",
+                           "Nov 2007",
+                           "")))
 
 Awards = list(Name = "Awards",
 
@@ -156,8 +307,7 @@ Awards = list(Name = "Awards",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           "Competitive award to enhance postgraduate research experience.
           Funded attendance at the 2013 AGU fall conference in order to present
-          DGVM development and future projection of terrestrial carbon stocks
-          under climate change"),
+          DGVM development and future projection of terrestrial carbon stocks under climate change"),
 
         c("Biology Postgraduate Conference Best Presentation" = "",
           "2011",
@@ -170,13 +320,15 @@ Awards = list(Name = "Awards",
 
 Research = list(Name = "Current Research Interests",
                 Main = "My research focuses on improving our understanding of
-                the impacts of future climate change and climate extremes on terrestrial
-                biosphere dynamics such as
-                disturbance regimes, carbon and
+                the impacts of future climate change on
+                terrestrial biosphere dynamics, such as
+                ecosystem vegetative composition and resilience,
+                disturbance regimes, carbon stocks and
                 hydrological cycles. Much of this involves
-                utilising experimental and satellite data for more
-                observation-driven model development and
-                benchmarking in an effort to better constrain simulations of climate and
+                utilising satellite and ground-based data for more
+                observation-driven model development and model
+                benchmarking in an effort to better constrain simulations of
+                climate and
                 vegetative controls on disturbance regimes. I am also involved
                 in projects that explore plant resource allocation, phenology
                 and drought recovery strategies.
@@ -187,17 +339,13 @@ Research = list(Name = "Current Research Interests",
                        "douglask3.github.io/lpx-dynamic-global-vegetation-model" = "http://douglask3.github.io/lpx-dynamic-global-vegetation-model.html",
                        " " = "",
                        "Much of my thesis focussed on the assessment and
-                       development of LPX-DGVM model to better
-                       represent climate-vegetation-fire dynamics.
-                       Continued development strands include:
-                       <li> Improving interface to aid model compiliation and parraellisation of the model for use on HPCs </li>
+                       development of the LPX-DGVM model to better
+                       represent climate-vegetation-fire dynamics. Continued development strands include:
                        <li> Using LPX to aid predictions of the impacts of future climate change
-                            on ecosystem resilience, hydrology & drought,
+                            on ecosystem resilience, carbon cycle, hydrology & drought,
                             and disturbance regimes </li>
                        <li> Improving model performance for forest ecosystems </li>
-                       <li> Parameterization of the carbon cycle and trace gas emissions </li>
-                       <li> Continued development of disturbance resilience
-                            and resistance traits -
+                       <li> Continued development of disturbance resilience and resistance traits -
                             e.g. resprouting after fire and drought. </li>"),
 
                      "New Page",
@@ -209,7 +357,6 @@ Research = list(Name = "Current Research Interests",
                        widely used vegetation-model benchmarking system, which
                        qualitatively assesses model performance for a variety of
                        land surface processes. Current work includes:
-                            <li> Incorporation of a re-coded atmospheric transport model for better integration into the benchmarking system</li>
                             <li> Incorporation of hydrology and carbon stocks observations </li>
                             <li> Model inter-comparisons for the <a href="http://www.mpic.de/fileadmin/user_upload/images_presse/Projects/IBBI/pdfs/Hantson_FireMIP.pdf">fireMIP project</a></li>
                             <li> R software package development </li>'),
@@ -221,7 +368,7 @@ Research = list(Name = "Current Research Interests",
                        several databases describing site based disturbance
                        resistance and recovery traits across plant species,
                        disturbance regimes and climate gradients. These databases
-                       are designed to aid the development of vegetation trait
+                       are designed to aid vegetation trait
                        development in vegetation models. These traits include:
                             <li> Resprouting as a recovery to drought and fire disturbance. </li>
                             <li> Bark thickness as protection against fire. </li>"),
@@ -273,10 +420,12 @@ Training = list(Name = "Training Courses",
             economic, social and policy, and how to write impact summaries and
             "pathways to impact" for grant applications.'),
 
+
         c("An Introduction to Unix for HPC" = "http://www.intersect.org.au/energy/training",
           "May 2013",
           "eMast/INTERSECT, Macquarie University, Ryde, NSW, Australia",
-          "Parallel processing techniques for solving complex computational problems on a HPC platform"),
+          "Parallel processing techniques for solving complex computational
+          problems on a HPC platform"),
 
         c("Software Carpentry" = "http://software-carpentry.org/",
           "Feb 2013",
@@ -310,26 +459,28 @@ Training = list(Name = "Training Courses",
 Skills = list(Name = "Skills",
               Main = "",
               list(
-                   c("Modelling" = "",
-                     "I have been lead developer on LPX - a high-complexity
-                     coupled Dynamic Vegetation Model - since 2010. LPX has
-                     both Fortran and C++ components for fast (relative to it's
-                     complexity) computational times. I have recently
-                     added a shell and R interface to facilitate parallisation
-                     and to allow outputs to be easily analysed and plotted.",
-                     'See <a href="http://douglask3.gitgub.io/LPX.html">douglask3.github.io/LPX</a> for more information.'),
-
                    c("Statistical Programming" = "",
-                     "Most of my research involves statistical analysis of large
+                     "Most of my research involves statistical analysis of
+                     large GIS, climate and experimental
                      datasets and model outputs. Collaboration on many of my
                      projects means I am fluent in most widely used statistical
                      programming languages. Most of my work is in either R,
                      Python or Matlab, but I have also performed graphical and
                      statistical analysis using Fortran and C amongst others.",
                      'See <a href="http://douglask3.gitgub.io/my_best_plots.html">douglask3.github.io/my_best_plots</a> for examples of R plots from my PhD.
-                      <br> See <a href="http://douglask3.gitgub.io/lpxbenchmarking.html">douglask3.github.io/lpxbenchmarking</a> for an example of statistical benchmarking of model outputs against global raster and site-based datasets.'),
+                      <br> See <a href="http://douglask3.gitgub.io/lpxbenchmarking.html">douglask3.github.io/lpxbenchmarking</a> for an example of statistical benchmarking of model outputs against global raster and site-based datasets.),
+                      <br> See <a href="http://douglask3.gitgub.io/tools.html">douglask3.github.io/tools</a> for an example of R software packages I have developed.'),
 
-                   "New Page",
+                  c("Vegetation Modelling" = "",
+                    "I have been lead developer on LPX - a high-complexity
+                    coupled Dynamic Vegetation Model - since 2010. LPX has
+                    both Fortran and C++ components for fast (relative to it's
+                    complexity) computational times. I have recently
+                    added a shell and R interface to facilitate parallisation
+                    and to allow outputs to be easily analysed and plotted.",
+                    'See <a href="http://douglask3.gitgub.io/LPX.html">douglask3.github.io/LPX</a> for more information.'),
+
+                    "New Page",
 
                    c("Web Design" = "",
                      "In my spare time, I have developed dynamic websites using
