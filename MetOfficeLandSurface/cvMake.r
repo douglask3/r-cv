@@ -1,3 +1,3 @@
 dir = 'MetOfficeClimMod/'
-post = 'Re: Frontiers of Global Climate Modelling'
+post = 'Re: Scientific Software Engineer - Land surface model development'
 source('standardApplications/cv-combine.r')
