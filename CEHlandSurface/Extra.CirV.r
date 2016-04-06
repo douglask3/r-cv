@@ -48,9 +48,13 @@ Qualifications = list(Name = "Academic qualifications",
         c("PhD Climate Change Ecology" = "",
           "2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
-          'Thesis: <a href="www.goo.gl/9YjwKw">Modelling Australian fire regimes. Available: goo.gl/9YjwKw </a> <!--
-           DGVM model development; Land surface model benchamrking; Simulating vegetation-fire interactions under future climates
-          <i> avaiable here: <a href=""> www.goo.gl/9YjwKw </a> </i>-->'),
+          'Thesis: <a href="http://douglask3.github.io/docs/thesis.pdf">
+            Modelling Australian fire regimes. Available: http://douglask3.github.io/docs/thesis.pdf </a> <!--
+           DGVM model development;
+           Benchamrking modelled land surface processes;
+           Simulating vegetation-fire interactions under future climates
+          <i> avaiable at
+            <a href="http://douglask3.github.io/docs/thesis.pdf"> http://douglask3.github.io/docs/thesis.pdf </a> </i>-->'),
 
         c("MSc Earth System Science" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
           "2008",
@@ -65,12 +69,15 @@ Employment = list(Name = "Recent Employment History",
 
         c("Postdoctoral Research Assistant" = "",
           "Apr 2015-present",
-          "Department of Geography & Environmental Science, University of Reading, UK" = "https://www.reading.ac.uk/geographyandenvironmentalscience/",
+          "Department of Geography & Environmental Science, University of Reading, UK" =
+            "https://www.reading.ac.uk/geographyandenvironmentalscience/",
           ""),
 
         c("Research Assistant/Postdoctoral Research Assistant" = "",
           "Jun 2014-Apr 2015",
-          "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
+          "Cafe M Research Group, Department of Biological Sciences,
+                Macquarie University, Ryde, NSW, Australia" =
+                    "https://bmedlyn.wordpress.com/",
           ""))
 
 
@@ -99,7 +106,7 @@ Workshops = list(Name = "Workshops and Consultancy Visits",
                    "",
                    "May 2013",
                    "Macquarie University, Ryde, Australia" = "https://www.mq.edu.au/",
-                   'Construction of a database on distribution of different resprouting trait types in climate space.'),
+                   'Construction of a database on the distribution of different resprouting trait types in climate space.'),
 
                  c("Technical Assistance for Climate Change" = "https://www.researchgate.net/publication/267995882_Impacts_of_Future_Climate_Change_on_Vegetation_Fire_and_Runoff_in_Jordan",
                    "",
@@ -125,7 +132,7 @@ Training = list(Name = "Relevant Training Courses",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           ""),
 
-        c("Genses2Geoscience: Database construction using sql"
+        c("Genses2Geoscience: Database construction using SQL"
             = "http://www.mq.edu.au/research/research-centres,-groups-and-facilities/secure-planet/centres/centre-for-genes-to-geoscience",
           "Sep 2011",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
@@ -183,11 +190,11 @@ Training = list(Name = "Relevant Training Courses",
                       'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
 
                    c("Software Tool Development" = "",
-                     'I have developed several software package tools related to my research, and to help track project work flows',
+                     'I have developed several software package tools related to my research, and to help track project workflows',
                      'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
 
 
-ExtraCircular = list(Name = "Relavent Extra-Curricular",
+ExtraCircular = list(Name = "Relevant Extra-Curricular",
                      c('Group Discussion Chair' = "",
                        "2011 - 2013",
                        "Biosphere & Climate Dynamics, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "http://www.mq.edu.au/about/about-the-university/faculties-and-departments/faculty-of-science-and-engineering/departments-and-centres/department-of-biological-sciences",
@@ -229,7 +236,7 @@ Referee = list(Name = "References",
                    <li> Extended qualifications, employment, extra-curricular,
                         awards and training history </li>
                    <li> Skills, software development, research interests information </li>
-                   <li> Full references contacts details</li>
+                   <li> Full references contact details</li>
                    '))
 
 Footer = '<p class = "subDetails"> <b> Douglas Kelley <b> - <a href="mailto:douglas.i.kelley@gmail.com">douglas.i.kelley@gmail.com </a> - <i> +44 (0) 7936 726 819 </i> - <a href = "douglask3.github.io"> douglask3.github.io</a></p><br>'

@@ -46,12 +46,13 @@ Qualifications = list(Name = "Academic Qualification",
           "Modelling Australian fire regimes" = "https://drive.google.com/file/d/0B6T4MHlQ-DuNS2ZsV09mdkdwYms/view?usp=sharing",
           "2010-2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
-          'Using remote sensed, ground-based GIS data to develop and benchmark
+          'Using remote sensed, ground-based and experimental data to develop and benchmark
           the LPX Dynamic Global Vegetation Model
           (DGVM) to improve the simulation of climate impacts on vegetation-fire
-          interactions. Using this new version of LPX to simulate ecosystem resilience,
-          carbon stocks, and vegetative impacts on water resources with changes in climate and
-          fire regime over the 21<sup>st</sup> century in Australia.
+          interactions. Using this new version of LPX to simulate fire regimes,
+          ecosystem resilience,
+          carbon stocks and vegetative impacts on water resources with
+          changes in climate and CO<sub>2</sub> fertilization over the 21<sup>st</sup> century in Australia.
           <br>
           <i> Thesis can be downloaded from <a href="goo.gl/9YjwKw"> www.goo.gl/9YjwKw </a> </i>'),
 
@@ -60,9 +61,9 @@ Qualifications = list(Name = "Academic Qualification",
           "2007-2008",
           "University of Bristol, Department of Earth Sciences, UK" = "http://www.bristol.ac.uk/earthsciences/",
           "Subjects covered included:
-          <li> Ecosystem services </li>
+          <li> Earth System modelling inc. land surface-atmospheric interactions, atomospheric physics and ocean modelling</li>
           <li> Remote sensing & GIS </li>
-          <li> Climate and Earth System modelling inc. atmospheric and ocean modelling</li>
+          <li> Ecosystem services </li>
           <li> Extreme weather and natural hazards</li>
           <li> Isotopes and other Earth System tracers </li>
           <li> Climate change science and policy </li>"),
@@ -78,15 +79,17 @@ Employment = list(Name = "Employment History",
         c("Postdoctoral Research Assistant" = "",
           "Apr 2015-present",
           "Department of Geography & Environmental Science, University of Reading, UK" = "https://www.reading.ac.uk/geographyandenvironmentalscience/",
-          "Simulating the impacts of future climate change on, vegetation-fire interactions
-          using a coupled dynamic global vegetation model (DGVM)."),
+          "Simulating the impacts of future climate change on vegetation-fire
+          interactions
+          using a coupled dynamic global vegetation model (DGVM).
+          Evaluating and benchmarking multiple DGVM outputs for the fireMIP project."),
 
           "New Page",
 
         c("Postdoctoral Research Assistant" = "",
           "Oct 2014-Apr 2015",
           "Cafe M Research Group, Department of Biological Sciences, Macquarie University, Ryde, NSW, Australia" = "https://bmedlyn.wordpress.com/",
-          "Testing the impacts of climate change and fertilization from elevated
+          "Testing the impacts of climate change and fertilisation from elevated
            CO<sub>2</sub> on vegetation dynamics and vegetative carbon uptake
            in conceptual phenology and plant carbon allocation models."),
 
@@ -318,11 +321,11 @@ Awards = list(Name = "Awards",
 Research = list(Name = "Current Research Interests",
                 Main = "My research focuses on improving our understanding of
                 the impacts of future climate change on
-                terrestrial biosphere dynamics and services, such as
-                ecosystem vegetative composition,
+                terrestrial biosphere dynamics, such as
+                ecosystem vegetative composition and resilience,
                 disturbance regimes, carbon stocks and
                 hydrological cycles. Much of this involves
-                utilising satellite and ground-based GIS data for more
+                utilising satellite and ground-based data for more
                 observation-driven model development and model
                 benchmarking in an effort to better constrain simulations of
                 climate and
@@ -336,7 +339,7 @@ Research = list(Name = "Current Research Interests",
                        "douglask3.github.io/lpx-dynamic-global-vegetation-model" = "http://douglask3.github.io/lpx-dynamic-global-vegetation-model.html",
                        " " = "",
                        "Much of my thesis focussed on the assessment and
-                       development of LPX-DGVM model to better
+                       development of the LPX-DGVM model to better
                        represent climate-vegetation-fire dynamics. Continued development strands include:
                        <li> Using LPX to aid predictions of the impacts of future climate change
                             on ecosystem resilience, carbon cycle, hydrology & drought,
