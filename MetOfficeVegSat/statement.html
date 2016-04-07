@@ -1,25 +1,47 @@
 <h2> Essentials </h2>
 
 <h3> Bachelor’s degree (2:1 or above) and PhD or equivalent experience in a
-physical or biological science relevant to satellite observations and/or Earth System Modelling </h3>
+physical or biological science relevant to satellite observations and/or Earth
+System Modelling </h3>
+I completed my PhD in Climate Change Ecology just over a year ago (thesis available here: http://douglask3.github.io/docs/thesis.pdf) where I utilised satallite, ground-based observations and experimental data to develop, constrain and evaluate Dynamic Global Vegetation Models (DGVMs) <citep>Prentice2011; Kelley2013; kaminski2013bethy; Hantson</citep>. I used one of these models, the Land Processes and eXchanges (LPX) DGVM <citep>Kelley2014a</citep>, to explore the influences of climate and atmospheric CO2 fertilisation on historic and future vegetation modulated fire regimes, ecosystem resilience, carbon stocks, drought mortality and recovery, and hydrology. I have also recently collaborated on the modelling of resource allocation and phenology strategies in a simple vegetation model.
+
+My MSc in Earth System Science provides a broader overview of the Earth and climate system, with an emphasis on feedbacks between bioshphere and climate. I was given the opportunity to write my own simple climate-box model and gained experience driving a GCM (MITgcm) and an Earth System Model (GENIE).<hr>
+<hr>
 
 
 <h3> Experience of land surface remote sensing and/or modelling </h3>
+In my thesis, I developed an explicit iterative approach to model development in LPX <citep>Prentice2011; Kelley2014a; kelley2014modelling</citep>, in which benchmarking against observations was used to identify areas for new data-driven model development, and then subsequently to evaluate whether the implementation of these new developments produces an overall improvement in model performance. This approach contrasts with the general tendency within the vegetation-fire modelling community to focus evaluation on new components, for example, the evaluation of fire treatments within DGVMs using only observations of burnt area and/or fire carbon fluxes. One reason for this partial approach to evaluation was the lack of a comprehensive benchmarking system <citep>Kelley2013</citep>. I therefore developed such a system which allows quantitative evaluation of multiple aspects of simulated land surface processes to identify specific model weaknesses, and differences between model versions, allowing assessment of the overall impact of new parameterizations. This involved processing a range of large-scale data products including raw and processed satellite data, vector ground observation including carbon flux site information <citep>Kelley2013</citep>; and constructing two site-based plant trait databases <citep>Kelley2014a; kelley2014modelling; Harrison</citep>.--> I have developed this system into a freely available statistical software package <citep>Kelley2015</citep>. The system is now being adopted by other modelling groups and is being used by a new Model Intercomparison Project to assess the impact of different fire modelling approaches <citep>Hantson</citep>, and to help guide the developmental direction of the fire-vegetation modelling community <citep>Hantson2016</citep>. Application of this benchmarking system to LPX identified key areas of model weakness and formed the basis of data-driven model development throughout the rest of my thesis.
+
+I also have experience in using and developing other vegetation, climate and Earth System models. I have recently been working with the GDAY simple vegetation model, developing a way to incorporate and evaluate a number of different conceptual carbon and nitrogen allocation models <citep>Kelley</citep>. Recently, I have helped in the development of a new grassland phenology model <citep>Whitley</citep>. In the dissertation for my MSc in Earth Systems Science, I incorporated a fire model into CCDAS -  a data assimilation system used to constrain physically based parameters for use in an Earth System Model framework -  using land-surface satellite observations <citep>Kelley2008; kaminski2013bethy</citep>. In addition, during my Masters, I gained experience working with MITgcm General Circulation Model and the GENIE Earth System Model.
+<hr>
 
 
 <h3> Knowledge of the strengths and weaknesses of satellite-derived products
 for understanding earth system processes </h3>
+<<Strengths>>
 
+<<Missing observations>>
+<<Period Length>> - In my own work, fire.
+<<Underground processes>>
+<<limited detail>> - such as hard to determine e.g. species or trait inventories.
 
+In some instances, ground-based or experimental obsrvations can help fill some of these shortcomings. This is why I have .. .. FOr examples, when evaultaing LPXs performance at simulating fire in woodland areas - something the benchmarking system outlined aboive identified as a weakness in the origina model, I used data products constructed from remote sensing from light aircraft and grouind observations of fire to extend the period of comparison by ???. When re-paramterizing the root profiles in LPX, I used published site-based root mass measurements. And when developing the modelling framework for two new fire-adpative traits, I led collabrotrations of constructing expwerimental and site-based databases on these traits, combined with enviromental and climate information (some of which were extracted from satalite products) to determine trait controls and provide a way of benchmarking simulation of trait abundances.
+
+<<Ground observations for truthing lightning>>
+
+<hr>
 <h3> Technical expertise managing and processing large datasets </h3>
+My work on developing and evaluating vegetation models has involved processing a range of climate/GIS data products, such as raw and processed satellite data (see e.g. <cite>Kelley2008; Prentice2011; Kelley2013; Kelley2014a; Kelley2014b</cite>); vector ground observation (<cite>Kelley2013; Kelley2014a; kelley2014modelling; Harrison</cite>); historical climate and climate reanalysis data <citep>Prentice2011; Kelley2014a; kelley2014modelling</citep>; and climate model data for past <citep>Ciais2011</citep> and future climates <citep>Kelley2014b; Harrisonc</citep>. Recent work on simulating future land-surface processes  provided the best example of managing large and complex datasets. Here, I initially drove the LPX-DGVM  with detrended historic climate data, pre-industrial land use and atmospheric compositions in order to spin-up the model. I then used historic climate, land use and atmospheric composition to drive the model up to the modern day. This then transitioned into 36 different climate realisations, based on 9 CMIP5 models from two different RCPs, and four atmospheric CO2 pathways. Each step involved processing and organising several GBs worth of data, and historic simulations involved model evaluation against remote sensed and ground-based observations in order to justify model use. This one project was all initially published in <citet>Kelley2014b</citet>, but has since spawned other papers (e.g. <cite>Harrisonc; Ukkola</cite>).
+
 
 
 <h3> Experience programming in high level languages, such as Python, R or
 FORTRAN </h3>
-
+The LPX model <citep> Prentice2011; Kelley2014a </citep>, that I have been the lead developer on for 6 years, combines FORTRAN (for the scientific component) and C++ (for the I/O component) and can be driven by large-scale climate datasets in either NetCDF or CSV format. Handling the data used to constrain and drive this model has provided a wealth of experience with shell scripting for data file organisation, and statistical programming for analysis (e.g Python, R, Matlab, IDL). I have published some of my statistical code independently as software packages available for anyone to download and use (e.g. <cite>Kelley2015; Whitley2016</cite> – both available from <a href ="http://douglask3.github.io/tools" target ="_blank">http://douglask3.github.io/tools</a>), one of which has recently been adopted and applied to a new model inter-comparison project (fireMIP: <cite>Hantson2016; Hantson</cite>).
 
 <h3> Evidence of effective science communications, including appropriate
 publication record for stage in career </h3>
+I completed my PhD just over one year ago,  and I have obtained 7 peer-reviewed publications – 3 of which I first authored - with a further 3 submitted and 3 near submission. One of these papers is in Nature Geoscience, and all the others are in high-impact journals for their field. I have also presented my research at a variety of conferences, visits, and internal departmental presentations. I was awarded “best presentation” at my department's annual postgraduate conference and won a travel grant to present simulations of future climate impacts at the AGU fall meeting <citep> kelley2013implications </citep>.
 
 
 <h3> High level of self-motivation, ability to work independently on scientific
@@ -33,12 +55,31 @@ projects, and aptitude for team work. </h3>
 produce satellite data products for Land Surface and/or Earth System Model
 evaluation  </h3>
 
+Model development focussed on improved simulation of fire and fire-vegetation interactions <citep>Kelley2014a</citep> including: a new lightning ignition algorithm; plant functional (PFT) and tissue type (i.e. heartwood, stem, branch, leaf/grass) dependant litter decomposition and drying schemes; parameterization of root profiles; finding and fixing coding "bugs" associated with grassland PFT competition; and incorporation of evolutionary driven adaptive bark thickness (for protection against fire) and post-disturbance resprouting traits (for recovery from fire) <citep>Kelley2014a;Harrison</citep>.
+
+
 
 <h3> Experience of designing experiments with Land Surface and/or Earth System
 Models to answer clearly defined scientific questions. This includes setting up,
 running, analysing, and publishing results  </h3>
 
+I concluded my thesis by using the improved version of LPX to perform three model-based experiments to attribute the chnages in vegetation dyanmics in Australia to three possible and inter-connected causes: climate, CO2 fterlization and vegetative adaptions to changing fire conditions. This involved a full model experiment, experientants holding aspects of model inputs constant (i.e CO2 or climate) and experiments switiching on or off different model components (i.e plant reprouting ability or changes in fire regimes).
+For each experiment, I initially drove LPX with detrended historic climate data, pre-industrial land use and atmospheric CO2 concentrations in order to spin-up the model. I then used historic climate, land use and atmospheric CO2 to drive the model up to the modern day. This then transitioned into 18 different climate realisations, based on outputs from 9 CMIP5 models, two different RCPs. This one project was all initially published in <citet>Kelley2014b</citet>, but has since spawned other papers (e.g. <cite>Harrisonc; Ukkola</cite>).
+
+<<fire managment>>
+
 <h3> Experience writing successful grant applications  </h3>
+<<PGRF>>
+
 
 <h3> Experience providing scientific/technical leadership or mentoring to
 colleagues. </h3>
+During my PhD, I acted as chair for my research groups' paper and research discussion meetings. I was also an informal mentor for several students in the group who were new to statistical programming, including a student who started their PhD as the result of a knowledge exchange initiative from the conclusion of the consultancy work conducted with the RSCN in Jordon, outlined above. This student has recently completed and passed their PhD. I also volunteered with the department's secondary school outreach programme, performing research demonstrations on school open days.
+
+Whilst working as a research assistant at Bristol, I was involved in the teaching of the MSc Earth Systems Science masters programme, giving seminars and running modelling workshops on programming for beginners.
+
+What these examples show is that I am a team-orientated person, who enjoys using my skills and knowledge for the benefit of the research group as a whole, which would make me a great addition to your team!
+
+
+<h2> References </h2>
+<References> MetOfficeVegSat/refList.bib </References>
