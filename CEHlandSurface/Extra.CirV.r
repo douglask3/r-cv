@@ -191,7 +191,7 @@ Training = list(Name = "Relevant Training Courses",
 
                    c("Software Tool Development" = "",
                      'I have developed several software package tools related to my research, and to help track project workflows',
-                     'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
+                     'See examples at <a href="http://douglask3.github.io/tools.html" target = "_blank"> douglask3.github.io/tools </a>')))
 
 
 ExtraCircular = list(Name = "Relevant Extra-Curricular",
