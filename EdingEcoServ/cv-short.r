@@ -21,7 +21,7 @@ Qualifications = list(Name = "Academic qualifications",
         c("PhD Climate Change Ecology" = "",
           "2014",
           "Macquarie University, Department of Biological Sciences, Ryde, NSW, Australia" = "https://bitbucket.org/teambcd/",
-          'Thesis: <a href="">Modelling Australian fire regimes</a>'),
+          ''),
 
         c("MSc Earth System Science" = "http://www.bristol.ac.uk/cabot/postgrad/msc-ccsp.html",
           "2008",
@@ -59,71 +59,80 @@ Awards = list(Name = "Examples of Awards won",
           "Macquarie University, Ryde, NSW, Australia" = "https://www.mq.edu.au/",
           ""))
 
-Skills = list(Name = "Skills",
-              Main = "",
-              list(
-                 c("Programming",
-                   '<table width="100%">
-                        <tr>
-                            <td style="width:30%">
-                                <li>Fortran</li>
-                                <li>C++</li>
-                                <li>C</li>
-                            </td>
-                            <td style="width:30%">
-                                <li>R</li>
-                                <li>Python</li>
-                                <li>Matlab</li>
-                            </td>
-                            <td style="width:30%">
-                                <li>ArcGIS and open source equivalents</li>
-                                <li>Shell</li>
-                            </td>
-                        </tr>
-                    </table>',
-                    'See examples at <a href="https://github.com/douglask3" target = "_blank"> github.com/douglask3 </a>
-                    and <a href="https://bitbucket.org/douglask3/" target = "_blank"> bitbucket.org/douglask3 </a>'),
-                 c("Web Design & Publishing" = "",
-                     '<table width="100%">
-                          <tr>
-                              <td style="width:30%">
-                                  <li>html</li>
-                                  <li>CSS</li>
-                                  <li>PHP</li>
-                                  <li>Markdown</li>
-                              </td>
-                              <td style="width:30%">
-                                  <li>Python/R for web-page generation</li>
-                                  <li>Wordpress</li>
-                                  <li>Concrete5</li>
-                                  <li>Latex</li>
-                              </td>
-                              <td style="width:30%">
-                                  <li>Illustrator</li>
-                                  <li>Photoshop</li>
-                                  <li>GIMP</li>
-                                  <li>Scribus</li>
-                                  <li>ms/open office</li>
-                              </td>
-                          </tr>
-                      </table>',
-                    'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
+          Skills = list(Name = "Skills",
+                        Main = "",
+                        list(
+                           c("Programming",
+                             '<table width="100%">
+                                  <tr>
+                                      <td style="width:30%">
+                                          <li>Fortran</li>
+                                          <li>C++</li>
+                                          <li>C</li>
+                                      </td>
+                                      <td style="width:30%">
+                                          <li>R</li>
+                                          <li>Python</li>
+                                          <li>Matlab</li>
+                                      </td>
+                                      <td style="width:30%">
+                                          <li>Shell</li>
+                                      </td>
+                                  </tr>
+                              </table>',
+                              'See examples at <a href="https://github.com/douglask3" target = "_blank"> github.com/douglask3 </a>
+                              and <a href="https://bitbucket.org/douglask3/" target = "_blank"> bitbucket.org/douglask3 </a>'),
+                           c("Web Design & Publishing" = "",
+                               '<table width="100%">
+                                    <tr>
+                                        <td style="width:30%">
+                                            <li>html</li>
+                                            <li>CSS</li>
+                                            <li>PHP</li>
+                                            <li>Markdown</li>
+                                        </td>
+                                        <td style="width:30%">
+                                            <li>Python/R for web-page generation</li>
+                                            <li>Wordpress</li>
+                                            <li>Concrete5</li>
+                                            <li>Latex</li>
+                                        </td>
+                                        <td style="width:30%">
+                                            <li>Illustrator</li>
+                                            <li>Photoshop</li>
+                                            <li>GIMP</li>
+                                            <li>Scribus</li>
+                                            <li>ms/open office</li>
+                                        </td>
+                                    </tr>
+                                </table>',
+                              'See examples at <a href="http://douglask3.github.io/pages/websites.html" target = "_blank"> douglask3.github.io/pages/websites </a>'),
 
-                 c("Software Tool Development" = "",
-                   'I have developed several software package tools related to my research, and to help track project work flows',
-                   'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
+                           c("Software Tool Development" = "",
+                             'I have developed several software package tools related to my research',
+                             'See examples at <a href="http://douglask3.github.io/pages/tools.html" target = "_blank"> douglask3.github.io/pages/tools </a>')))
+
 
 
 Referee = list(Name = "References",
-             c("Prof. Sandy Harrison" = "http://www.reading.ac.uk/s-p-harrison.aspx",
-               "s.p.harrison@reading.ac.uk"),
+           c(' ' = ' ',
+           '<table width="100%">
+                <tr>
+                    <td style="width:33%">
+                        <h2><a href = "http://www.reading.ac.uk/s-p-harrison.aspx">Prof. Sandy Harrison</a>
+                        </h2><small>s.p.harrison@reading.ac.uk</small>
+                    </td>
+                    <td style="width:33%">
+                        <h2><a href = "http://www.imperial.ac.uk/people/c.prentice">Prof. Colin Prentice</a>
+                        </h2><small>c.prentice@imperial.ac.uk</small>
+                    </td>
+                    <td style="width:33%">
+                        <h2><a href = "https://bmedlyn.wordpress.com/">Prof. Belinda Medlyn</a>
+                        </h2><small>b.medlyn@westernsydney.edu.au</small>
+                    </td>
+                </tr>
+            </table>'),
 
-             c("Prof. Colin Prentice" = "http://www.imperial.ac.uk/people/c.prentice",
-               "c.prentice@imperial.ac.uk"),
+            c('<div style = "margin-top: -15px;"><small>Full contact information at end of Extended CV</small></div>',""))
 
-             c("Prof. Belinda Medlyn" = "https://bmedlyn.wordpress.com/",
-               "b.medlyn@westernsydney.edu.au"),
-
-             c("","Full contact information at end of Extended CV"))
-
-AdditionalSection = list(Qualifications, Employment, Publications, Awards, Skills, "New Page", Referee)
+AdditionalSection = list(Qualifications, Employment, Publications, Awards, Skills,  Referee)
