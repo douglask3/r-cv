@@ -31,7 +31,7 @@ addHeadInfo <- function() {
 addDocStart <- function(doc, top) {
 	doc = c(doc, '<body id="top">
 		<div id="cv" class="instaFade">')
-				if (!is.null(top)) doc = c(doc, top)
+				if (!is.null(top) && !is.na(top) && top!='NaN') doc = c(doc, top)
 	return(doc)
 }
 
@@ -105,7 +105,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		if (is.null(NewPage)) return(doc)
 
 		doc = pageFooter(doc)
-		doc = addDocStart(doc, Top)
+		doc = addDocStart(doc, Top[2])
 
 
 		if (!is.na(Name[3]))
@@ -217,7 +217,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 			</section>')
 
 		doc = pageFooter(doc, Credits)
-		doc = addDocStart(doc, Top)
+		doc = addDocStart(doc, Top[2])
 
 		name = c(paste ('<small>', Name[3], '</small>'), "", "")
 		doc = addNameMainArea(doc,name,NULL)
@@ -350,16 +350,16 @@ addLetter <- function(section, doc) {
 	addLetterContent <- function(i) c(doc,'<div class = "letterContent">\n', i, '\n</div>')
 	for (i in head(section, -1)) {
 		doc = addLetterContent(i)
-		doc = addNewPageSection(doc, FALSE)
+		doc = addNewPageSection(doc, TRUE)
 	}
 	doc = addLetterContent(tail(section, 1))
 	return(doc)
 }
 
 
-if (headHtml) doc =addHeadInfo()
+if (headHtml) doc = addHeadInfo()
 
-			  doc = addDocStart(doc, Top)
+			  doc = addDocStart(doc, Top[1])
 		      doc = addNameMainArea(doc, Name, Contact)
 
 if (class(AdditionalSection) == "character") {

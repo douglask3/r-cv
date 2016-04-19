@@ -4,7 +4,11 @@
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
-Name    = c("Douglas Kelley", " ", post)
+if (!exists("presName")) presName = " "
+if (!exists("presHead")) presHead = " "
+
+Name    = list(c("Douglas Kelley", " ", post),
+               c("Douglas Kelley", presName, post))
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
@@ -16,17 +20,23 @@ Footer = '<p class = "subDetails"> <a href="mailto:douglas.i.kelley@gmail.com">d
 ###############################################################
 ## Additional Sections                                       ##
 ###############################################################
+makeType <- function(Name, pattern = 'statement',
+                     example = 'example_statement.html', ...) {
+    statmentFiles =  list.files(dir, full.names=TRUE, pattern = pattern)#paste(dir, 'statement.html', sep ='/')
+    if (length(statmentFiles) == 0) statmentFiles = example
 
-statmentFiles =  list.files(dir, full.names=TRUE, pattern='statement')#paste(dir, 'statement.html', sep ='/')
-if (length(statmentFiles) == 0) statmentFiles = 'example_statement.html'
+    makeStatement <- function(statmentFile) {
+        AdditionalSection = paste(readLines(statmentFile), collapse = '\n')
+        outFile = tail(strsplit(statmentFile,'/')[[1]],1)
+        NewPage = c('Douglas Kelley', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
+        r2cv(Top = NULL, Name, Contact, AdditionalSection, Footer,
+                         file = NULL, template = "ThomasHardy",
+                         outPath = "outputs", outFile,
+                         NewPage, Authors,...)
+    }
 
-makeStatement <- function(statmentFile) {
-    AdditionalSection = paste(readLines(statmentFile), collapse = '\n')
-    outFile = tail(strsplit(statmentFile,'/')[[1]],1)
-    NewPage = c('Douglas Kelley', '', '<a href ="mailto:douglas.i.kelley@gmail.com"> douglas.i.kelley@gmail.com </a>')
-    r2cv(Top = NULL, Name, Contact, AdditionalSection, Footer,
-                     file = NULL, template = "ThomasHardy", outPath = "outputs", outFile,
-                     NewPage, Authors)
+    lapply(statmentFiles, makeStatement)
 }
 
-lapply(statmentFiles, makeStatement)
+makeType(Name[[1]], isLetter = TRUE)
+makeType(Name[[2]], 'presentation', NULL, isPresentation = TRUE)

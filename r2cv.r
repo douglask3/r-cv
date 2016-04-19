@@ -1,7 +1,8 @@
 r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NULL,
                     Footer = NULL,
                  file = "example-long.r", template = "ThomasHardy", outPath = "outputs", outFile = NULL,
-                 NewPage = NULL, Authors = NULL) {
+                 NewPage = NULL, Authors = NULL,
+                 isLetter = FALSE, isPresentation = FALSE) {
 
     ###############################################################
     ## Cfg                                                       ##
@@ -25,7 +26,9 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     if (is.null(NewPage)) style2 = 'style-web.css'
         else style2 = 'style-print.css'
 
-    if (class(AdditionalSection) == "character" ) style2 = c(style2, 'style-letter.css')
+    if (isLetter)       style2 = c(style2, 'style-letter.css')
+    if (isPresentation) style2 = c(style2, 'style-presentation.css')
+
     styles = c('style.css', style2)
 
     if (is.null(outFile)) {
