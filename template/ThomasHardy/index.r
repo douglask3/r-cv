@@ -92,6 +92,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 										return(addNewPageSection(doc))
 			 if (ls == 1              ) return(addParaSection(c("", section), doc))
 		lsSub = length(section[[2]])
+		
 		     if (ls == 2 && lsSub == 1) return(addParaSection    (section, doc))
 		else if (ls == 3 && lsSub == 1) return(addParaListSection(section, doc))
 		else                            return(addListedSection  (section, doc))
@@ -345,7 +346,8 @@ addLetter <- function(section, doc) {
 	section = gsub("CO2", "CO<sub>2</sub>", section)
 	section = gsub("21st", "21<sup>st</sup>", section)
 
-	section = strsplit(section, '<NewPage>')[[1]]
+	section = strsplit(section, '################################################################################')[[1]]
+	section = unlist(strsplit(section, '<NewPage>'))
 
 	addLetterContent <- function(i) c(doc,'<div class = "letterContent">\n', i, '\n</div>')
 	for (i in head(section, -1)) {
