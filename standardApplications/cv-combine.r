@@ -37,10 +37,12 @@ NewPage = c('Douglas Kelley - CV', '', '<a href ="mailto:douglas.i.kelley@gmail.
 
 write(longCVchange,file=filesT[2],append=TRUE)
 
-r2cv(file = filesT, NewPage = NewPage)
+#r2cv(file = filesT, NewPage = NewPage)
 
 
-files = list.files(dir, full.names = TRUE)
-files = files[grepl('Extra', files)]
+files  = list.files(dir, full.names = TRUE)
+files  = files[grepl('Extra', files)]
+isPres = grepl('pres',files)
 
-if (length(files) > 0) for (i in files) r2cv(file = i, NewPage = NewPage)
+if (length(files) > 0) for (i in 1:length(files))
+    r2cv(file = files[i], NewPage = NewPage, isPresentation = isPres[i])

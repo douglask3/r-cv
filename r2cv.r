@@ -2,7 +2,8 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
                     Footer = NULL,
                  file = "example-long.r", template = "ThomasHardy", outPath = "outputs", outFile = NULL,
                  NewPage = NULL, Authors = NULL,
-                 isLetter = FALSE, isPresentation = FALSE) {
+                 isLetter = FALSE,
+                 isPresentation = FALSE, Images = NULL, ImagesPath = NULL) {
 
     ###############################################################
     ## Cfg                                                       ##
@@ -21,7 +22,7 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     ## template
     template = paste('template', template, sep = '/')
     index    = paste(template, 'index.r', sep = '/')
-
+    #if(!is.null(files))   source(file[1], local = TRUE)
     if (is.null(NewPage)) source(file[1], local = TRUE)
     if (is.null(NewPage)) style2 = 'style-web.css'
         else style2 = 'style-print.css'
@@ -47,12 +48,14 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
         for (i in file) {
             source(i, local = TRUE)
 
-            if (length(Name) > 3) {
-                cpInFiles  = c(cpInFiles , Name[4])
-                Name[4]    = tail(strsplit(Name[4], '/')[[1]],1)
-                cpOutFiles = c(cpOutFiles, Name[4])
+            Images = paste(ImagesPath, '/', Images, sep = '')
+            
+            if (length(Name) > 3)  Images = c(Name[4], Images)
+            if (!is.null(Images)) {
+                cpInFiles  = c(cpInFiles , Images)
+                Images     = sapply(Images, function(i) tail(strsplit(i,'/')[[1]],1))
+                cpOutFiles = c(cpOutFiles, Images)
             }
-
 
             source(index, local = TRUE)
             doc  = c(doc0, doc)

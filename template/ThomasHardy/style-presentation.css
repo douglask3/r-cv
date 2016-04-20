@@ -36,6 +36,77 @@ html, body {background: #bbf;}
 	margin-bottom: 10mm;
 }
 
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,strong,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
-font-size:102%;
+.sectionTitle {
+	float: center;
+	width: 100%;
+}
+
+.sectionTitle h1 {
+	text-align: center;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: bold;
+	font-size: 400%;
+	color: #cf8a05;
+	background-color: rgba(255, 255, 255, .8);
+}
+
+.sectionContent {
+	float: right;
+	width: 100%;
+}
+
+.sectionContent h2 {
+	text-align: center;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: bold;
+	font-size: 300%;
+	margin-top: 20px;
+	margin-bottom: -2px;
+	color: #840;
+}
+
+.sectionContent h3 {
+	text-align: center;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: bold;
+	font-size: 200%;
+	margin-bottom: -2px;
+	color: #A70;
+}
+
+
+centre {
+    position: absolute;
+    left: 100mm;
+    width: 50mm;
+}
+
+
+h2 {
+	font-size: 150%;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+}
+
+h3 {
+	font-size: 125%;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: italic;
+}
+
+li {
+	font-size: 150%;
+}
+
+
+
+#mainArea {
+	padding: 0 40px;
+	height: 150mm;
+}
+
+html,body,div,span,object,iframe,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,ins,kbd,q,samp,strong,var,b,i,dl,dt,dd,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
+	font-size:102%;
+	vertical-align: baseline;
 }

@@ -6,6 +6,7 @@ sectionTitle = paste('<div class="sectionTitle">')
 sectionContent = paste('<div class="sectionContent">')
 
 addHeadInfo <- function() {
+
 	doc = c(doc, '
 		<!DOCTYPE html>
 		<html>
@@ -91,15 +92,190 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 			 if (ls == 1 && section == "New Page")
 										return(addNewPageSection(doc))
 			 if (ls == 1              ) return(addParaSection(c("", section), doc))
+			 if (section[[1]] == "slide")return(addSlide(section[-1], doc))
 		lsSub = length(section[[2]])
-		
+
 		     if (ls == 2 && lsSub == 1) return(addParaSection    (section, doc))
 		else if (ls == 3 && lsSub == 1) return(addParaListSection(section, doc))
 		else                            return(addListedSection  (section, doc))
-		#else {
-		#	warning("section not identifiable. Skipping over")
-		#	return(doc)
-		#}
+	}
+
+	addSlideH1 <- function(bit) {
+		out = c(
+			'
+				<table style="height: 100%;">
+					<tr><th height="33%"></th></tr>
+					<tr>
+						<td><div class="sectionTitle"><h1>',bit[1],'</h1></div></td>
+					</tr>
+					<tr><th></th></tr>
+				</table>
+			')
+		return(list(out,0))
+	}
+
+	listIfy <- function(sec) {
+		if (!is.null(sec)) {
+			if (length(sec) == 1) return(sec)
+			else return(paste('<li>', sec, '</li>'))
+		} else return('')
+	}
+
+	addSlideCenterImage <- function(bit) {
+		#return(list('',0))
+		out = c('
+			<div class = "sectionContent">
+				<table style="width: 100%;">
+					<col width="25%">
+					<col width="50%">
+					<col width="25%">
+
+  					<tr><td colspan="3" height = "70mm">
+						<h2>',bit$Title,'</h2>
+					</td></tr>
+					<tr>
+						<td colspan="3">
+							<h3>',listIfy(bit$Sub),'</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>',listIfy(bit$Left),'</td>
+						<td>
+						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%">
+						&nbsp;</td>
+						<td>',listIfy(bit$Right),'</td>
+					</tr>
+					<tr>
+						<td colspan="3">',listIfy(bit$Footer),'</td>
+					</tr>
+				</table>
+			</div>')
+		return(list(out,0))
+	}
+
+	addSlideRightImage <- function(bit) {
+		#return(list('',0))
+		out = c('
+			<div class = "sectionContent">
+				<table style="width: 100%;">
+					<col width="38.2%">
+					<col width="61.8%">
+
+  					<tr><td colspan="2" height = "70mm">
+						<h2>',bit$Title,'</h2>
+					</td></tr>
+					<tr>
+						<td colspan="2">
+							<h3>',listIfy(bit$Sub),'</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>',listIfy(bit$Text),'</td>
+						<td>
+						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%">
+						&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2">',listIfy(bit$Footer),'</td>
+					</tr>
+				</table>
+			</div>')
+		return(list(out,0))
+	}
+
+	addSlideLeftImage <- function(bit) {
+		#return(list('',0))
+		out = c('
+			<div class = "sectionContent">
+				<table style="width: 100%;">
+					<col width="61.8%">
+					<col width="38.2%">
+
+  					<tr><td colspan="2" height = "70mm">
+						<h2>',bit$Title,'</h2>
+					</td></tr>
+					<tr>
+						<td colspan="2">
+							<h3>',listIfy(bit$Sub),'</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%">
+						&nbsp;</td>
+						<td>',listIfy(bit$Text),'</td>
+					</tr>
+					<tr>
+						<td colspan="2">',listIfy(bit$Footer),'</td>
+					</tr>
+				</table>
+			</div>')
+		return(list(out,0))
+	}
+
+	addSlideImage <- function(bit) {
+		#return(list('',0))
+		out = c('
+			<div class = "sectionContent">
+			<table style="height: 100%;">
+				<tr><th height="33%">
+					<h2>',bit$Title,'</h2>
+				</th></tr>
+				<tr>
+					<td>
+						<h3>',listIfy(bit$Sub),'</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						&nbsp;
+						<img src="',bit$Image,'"  align="middle" width = "100%">
+						&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td>',listIfy(bit$Footer),'</td>
+				</tr>
+			</table>
+			</div>')
+		return(list(out,0))
+	}
+
+	addSlideHTML <- function(bit) {
+		out = c('
+			<div class = "sectionContent">
+			<table style="height: 100%; width: 100%;">
+				<tr><th height="33%">
+					<h2>',bit$Title,'</h2>
+				</th></tr>
+				<tr>
+					<td>',listIfy(bit$html),'</td>
+				</tr>
+			</table>
+			</div>')
+		return(list(out,0))
+	}
+
+	addSlide <- function(section, doc) {
+		nms = names(section)
+		addSlidebgImage <- function(bit) {
+			out = c('<div style="height: 100%; background-size: contain; background-image: url(', bit[1], '";">')
+			return(list(out,1))
+
+		}
+		#browser()
+
+		addSlideBit <- function(nm, bit) {
+			funName = paste('addSlide',nm, sep = '')
+			if (!exists(funName)) browser()
+			return( do.call(funName, args = list(bit)))
+		}
+
+		outs = mapply(addSlideBit, nms, section)
+
+		doc = c(doc, unlist(outs[1,]))
+		for (i in 1:sum(unlist(outs[2,]))) doc = c(doc, '</div>')
+		return(doc)
 	}
 
 	addNewPageSection <- function(doc, ...) {
