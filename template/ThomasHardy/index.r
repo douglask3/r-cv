@@ -90,7 +90,9 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 	addSection <- function(section, doc) {
 		ls = length(section)
 			 if (ls == 1 && section == "New Page")
-										return(addNewPageSection(doc))
+										return(addNewPageSection(doc, TRUE))
+			 if (ls == 1 && section == "New Slide")
+										return(addNewPageSection(doc, FALSE))
 			 if (ls == 1              ) return(addParaSection(c("", section), doc))
 			 if (section[[1]] == "slide")return(addSlide(section[-1], doc))
 		lsSub = length(section[[2]])
@@ -217,7 +219,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		#return(list('',0))
 		out = c('
 			<div class = "sectionContent">
-			<table style="height: 100%;">
+			<table style="height: 100%; width: 100%;">
 				<tr><th height="33%">
 					<h2>',bit$Title,'</h2>
 				</th></tr>
@@ -232,6 +234,29 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 						<img src="',bit$Image,'"  align="middle" width = "100%">
 						&nbsp;
 					</td>
+				</tr>
+				<tr>
+					<td>',listIfy(bit$Footer),'</td>
+				</tr>
+			</table>
+			</div>')
+		return(list(out,0))
+	}
+
+	addSlideList <- function(bit) {
+		out = c('
+			<div class = "sectionContent">
+			<table style="height: 100%; width: 100%;">
+				<tr><th height="33%">
+					<h2>',bit$Title,'</h2>
+				</th></tr>
+				<tr>
+					<td>
+						<h3>',listIfy(bit$SubHead),'</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>',listIfy(bit$Text),'</td>
 				</tr>
 				<tr>
 					<td>',listIfy(bit$Footer),'</td>
@@ -278,10 +303,10 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		return(doc)
 	}
 
-	addNewPageSection <- function(doc, ...) {
+	addNewPageSection <- function(doc, addPage,...) {
 		if (is.null(NewPage)) return(doc)
 
-		doc = pageFooter(doc)
+		doc = pageFooter(doc, addPage)
 		doc = addDocStart(doc, Top[2])
 
 
@@ -356,15 +381,18 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 	}
 
 	addItem <- function(sub, doc) {
-		if (is.list(sub))      return(addMultItem(sub, doc))
-		if (length(sub) == 1 && sub[1] == "New Page" )
-							   return(addNewPageItem(sub, doc))
-		if (length(sub) == 1 ) return(addListItem(sub, doc))
-		if (length(sub) == 2 ) return(add2Item   (sub, doc))
-		if (length(sub) == 3 ) return(add3Item   (sub, doc))
-		if (length(sub) == 4 ) return(add4Item   (sub, doc))
-		if (length(sub) == 5 ) return(add5Item   (sub, doc))
-		if (length(sub) == 6 ) return(addPubs    (sub, doc))
+		lSub = length(sub)
+		if (is.list(sub)) return(addMultItem(sub, doc))
+		if (lSub == 1 && sub[1] == "New Page" )
+						  return(addNewPageItem(sub, doc, TRUE))
+		if (lSub == 1 && sub[1] == "New Slide" )
+						  return(addNewPageItem(sub, doc, FALSE))
+		if (lSub == 1 )   return(addListItem(sub, doc))
+		if (lSub == 2 )   return(add2Item   (sub, doc))
+		if (lSub == 3 )   return(add3Item   (sub, doc))
+		if (lSub == 4 )   return(add4Item   (sub, doc))
+		if (lSub == 5 )   return(add5Item   (sub, doc))
+		if (lSub == 6 )   return(addPubs    (sub, doc))
 		for (i in sub) doc = addListItem(i, doc)
 		return(doc)
 	}
@@ -376,24 +404,26 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		return(doc)
 	}
 
-	pageFooter <- function (doc, ...) {
+	pageFooter <- function (doc, addPage, ...) {
 
-		PAGE = PAGE +1
-		PAGE <<- PAGE
+		if (addPage)  {
+			PAGE = PAGE +1
+			PAGE <<- PAGE
+		}
 		NewPage[NewPage == ""] = paste('page ', PAGE, '/', PAGES)
 		footer = paste('<p class = "subDetailsPage"><left>', NewPage[1],'</left><centre>', NewPage[2], '</centre><right>', NewPage[3], '</right></p><br>')
 	 	addEndSection(doc, footer, ...)
 	}
 
 
-	addNewPageItem <- function(sub, doc) {
+	addNewPageItem <- function(sub, doc, addPage,...) {
 		if (is.null(NewPage)) return(doc)
 		doc = c(doc, '
 				</div>
 				<div class="clear"></div>
 			</section>')
 
-		doc = pageFooter(doc, Credits)
+		doc = pageFooter(doc, addPage, Credits, ...)
 		doc = addDocStart(doc, Top[2])
 
 		name = c(paste ('<small>', Name[3], '</small>'), "", "")
@@ -528,7 +558,7 @@ addLetter <- function(section, doc) {
 	addLetterContent <- function(i) c(doc,'<div class = "letterContent">\n', i, '\n</div>')
 	for (i in head(section, -1)) {
 		doc = addLetterContent(i)
-		doc = addNewPageSection(doc, TRUE)
+		doc = addNewPageSection(doc, TRUE, TRUE)
 	}
 	doc = addLetterContent(tail(section, 1))
 	return(doc)
@@ -555,4 +585,4 @@ if (is.null(Footer)) {
 	} else Footer = c("", "")
 }
 
-if (is.null(NewPage)) doc = addEndSection(doc,Footer, Credits) else doc = pageFooter(doc, Credits)
+if (is.null(NewPage)) doc = addEndSection(doc,Footer, Credits) else doc = pageFooter(doc, TRUE, Credits)

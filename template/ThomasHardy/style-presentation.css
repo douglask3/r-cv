@@ -96,10 +96,35 @@ h3 {
 }
 
 li {
-	font-size: 150%;
+	font-size: 200%;
+	margin: 0.67em 0;
 }
 
+li.dashed {
+	margin: 0;
+}
 
+ul {
+  margin: 0;
+}
+
+ul.dashed {
+font-size: 45%;
+  list-style-type: none;
+}
+
+ul.dashed > li {
+  text-indent: -5px;
+}
+
+ul.dashed > li:before {
+  content: "-";
+  text-indent: -5px;
+}
+
+img {
+  max-height: 140mm;
+}
 
 #mainArea {
 	padding: 0 40px;
