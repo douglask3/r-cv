@@ -16,45 +16,12 @@ Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
             web   = "douglask3.github.io")
 
-Images = c(Title = 'TreeProtractor.png',
-           ThesisSummary = 'ThesisStructure.png',
-           Structure1    = 'PresStructure_slide1.png',
-           Structure2    = 'PresStructure_slide2.png',
-           Structure3    = 'PresStructure_slide3.png',
-           Structure4    = 'PresStructure_slide4.png',
-           Structure5    = 'PresStructure_slide5.png',
-           Structure6    = 'PresStructure_slide6.png',
-           Index1        = 'PresStructure_index1.png',
-           Index2        = 'PresStructure_index2.png',
-           Index3        = 'PresStructure_index3.png',
-           Index4        = 'PresStructure_index4.png',
-           Index5        = 'PresStructure_index5.png',
-           Datasets      = "BenchmarkDatasets.png",
-           NME1          = "NME1.png",
-           NME2          = "NME2.png",
-           NME3          = "NME3.png",
-           NMEIAV1       = "NMEIAV1.png",
-           NMEIAV2       = "NMEIAV2.png",
-           NMEIAV        = "NMEIAV.png",
-           NME           = "NMEFull.png",
-           MM1           = "MM1.png",
-           MM2           = "MM2.png",
-           MM3           = "MM3.png",
-           MM4           = "MM4.png",
-           MM5           = "MM5.png",
-           MM6           = "MM6.png",
-           MM            = "MMFull.png",
-           MPD1          = "MPD1.png",
-           MPD2A         = "MPD2A.png",
-           MPD2B         = "MPD2B.png",
-           MPD3          = "MPD3.png",
-           MPD4          = "MPD4.png",
-           MPD5          = "MPD5.png",
-           MPD6          = "MPD6.png",
-           MPD7          = "MPD7.png",
-           MPD8          = "MPD8.png",
-           MPD9          = "MPD9.png",
-           MPD           = "MPDFull.png")
+Images.index = c(Index1        = 'PresStructure_index1.png',
+                 Index2        = 'PresStructure_index2.png',
+                 Index3        = 'PresStructure_index3.png',
+                 Index4        = 'PresStructure_index4.png',
+                 Index5        = 'PresStructure_index5.png')
+
 
 ImagesPath = 'CEHlandSurface/images/'
 
@@ -65,6 +32,8 @@ ImagesPath = 'CEHlandSurface/images/'
 ###############################################################
 ## Title                                                     ##
 ###############################################################
+Images.title = c(Title = 'TreeProtractor.png')
+
 TopPage   = list("slide",
                  List = list(
                      Title = "Recent work pertinent to modelling
@@ -75,7 +44,7 @@ TopPage   = list("slide",
                      ))
 
 TitlePage = list("slide",
-                 bgImage = Images['Title'],
+                 bgImage = Images.title['Title'],
                  H1 = "Recent work pertinent to modelling and
                          environmental science")
 
@@ -87,12 +56,20 @@ TitlePage = list(TopPage, "New Slide", TitlePage, "New Slide", TitlePage2)
 ###############################################################
 ## Introduction                                              ##
 ###############################################################
+Images.Intro = c(ThesisSummary = 'ThesisStructure.png',
+                 Structure1    = 'PresStructure_slide1.png',
+                 Structure2    = 'PresStructure_slide2.png',
+                 Structure3    = 'PresStructure_slide3.png',
+                 Structure4    = 'PresStructure_slide4.png',
+                 Structure5    = 'PresStructure_slide5.png',
+                 Structure6    = 'PresStructure_slide6.png')
+
 
 Introduction1 = list("slide",
                     Image = list(
                         Title = "Introduction",
                         SubHead = "Iterative Model Development",
-                        Image = Images['Structure1'],
+                        Image = Images.Intro['Structure1'],
                         Footer = "Kelley 2014"
                         ))
 
@@ -100,27 +77,55 @@ Introduction2 = Introduction3 = Introduction4 =
     Introduction5 = Introduction6 = Introduction7 =
         Introduction1
 
-Introduction2$Image$Image = Images['Structure2']
-Introduction3$Image$Image = Images['Structure3']
-Introduction4$Image$Image = Images['Structure4']
-Introduction5$Image$Image = Images['Structure5']
-Introduction6$Image$Image = Images['Structure6']
+Introduction2$Image$Image = Images.Intro['Structure2']
+Introduction3$Image$Image = Images.Intro['Structure3']
+Introduction4$Image$Image = Images.Intro['Structure4']
+Introduction5$Image$Image = Images.Intro['Structure5']
+Introduction6$Image$Image = Images.Intro['Structure6']
 
 Introduction = list(Introduction1, "New Page",
-    Introduction2, "New Slide",
-    Introduction3, "New Slide",
-    Introduction4, "New Slide",
-    Introduction5, "New Slide",
-    Introduction6)
+                    Introduction2, "New Slide",
+                    Introduction3, "New Slide",
+                    Introduction4, "New Slide",
+                    Introduction5, "New Slide",
+                    Introduction6)
 
 ###############################################################
 ## Benchmarking                                              ##
 ###############################################################
+Images.Bench = c(Datasets      = "BenchmarkDatasets.png",
+                 NME1          = "NME1.png",
+                 NME2          = "NME2.png",
+                 NME3          = "NME3.png",
+                 NMEIAV1       = "NMEIAV1.png",
+                 NMEIAV2       = "NMEIAV2.png",
+                 NMEIAV        = "NMEIAV.png",
+                 NME           = "NMEFull.png",
+                 MM1           = "MM1.png",
+                 MM2           = "MM2.png",
+                 MM3           = "MM3.png",
+                 MM4           = "MM4.png",
+                 MM5           = "MM5.png",
+                 MM6           = "MM6.png",
+                 MM            = "MMFull.png",
+                 MPD1          = "MPD1.png",
+                 MPD2A         = "MPD2A.png",
+                 MPD2B         = "MPD2B.png",
+                 MPD3          = "MPD3.png",
+                 MPD4          = "MPD4.png",
+                 MPD5          = "MPD5.png",
+                 MPD6          = "MPD6.png",
+                 MPD7          = "MPD7.png",
+                 MPD8          = "MPD8.png",
+                 MPD9          = "MPD9.png",
+                 MPD           = "MPDFull.png")
+
+
 BenchmarkingTitle = list("slide",
                     Image = list(
                         Title = "Benchmarking System",
                         SubHead = "",
-                        Image = Images['Index1'],
+                        Image = Images.index['Index1'],
                         Footer = ""
                         ))
 
@@ -157,13 +162,15 @@ BenchmarkingOverview2[[2]]$Text = c('
              'Uses specifically designed metrics to quantify
              differences between model and observation')
 
-
 BenchmarkingDatasets = list("slide",
                         Image = list(
                             Title = "Benchmarking",
                             SubHead = "Datasets",
-                            Image = Images["Datasets"]))
+                            Image = Images.Bench["Datasets"]))
 
+################################################################################
+## Metrics                                                                    ##
+################################################################################
 BenchmarkingMetrics = list("slide",
                         Image = list(
                             Title = "Benchmarking",
@@ -174,63 +181,70 @@ BenchmarkingNME     = list("slide",
                             Title = "Benchmarking",
                             SubHead = "Metrics<br>
                                 <small> Normalised Mean Error (NME) </small>",
-                            Image = Images["NME"]))
+                            Image = Images.Bench["NME"]))
 
 BenchmarkingNME1 = BenchmarkingNME2 = BenchmarkingNME3 =
     BenchmarkingNMEIAV = BenchmarkingNME
 
-BenchmarkingNME1[[2]]$Image = Images["NME1"]
-BenchmarkingNME2[[2]]$Image = Images["NME2"]
-BenchmarkingNME3[[2]]$Image = Images["NME3"]
+BenchmarkingNME1[[2]]$Image = Images.Bench["NME1"]
+BenchmarkingNME2[[2]]$Image = Images.Bench["NME2"]
+BenchmarkingNME3[[2]]$Image = Images.Bench["NME3"]
 
 BenchmarkingNMEIAV[[2]]$SubHead = "Metrics<br>
                             <small> NME - Inter-annual Variability (NME - IAV)</small>"
 
-BenchmarkingNMEIAV[[2]]$Image = Images["NMEIAV"]
+BenchmarkingNMEIAV[[2]]$Image = Images.Bench["NMEIAV"]
 
 BenchmarkingNMEIAV1 = BenchmarkingNMEIAV2 = BenchmarkingNMEIAV
 
-BenchmarkingNMEIAV1[[2]]$Image = Images["NMEIAV1"]
-BenchmarkingNMEIAV2[[2]]$Image = Images["NMEIAV2"]
+BenchmarkingNMEIAV1[[2]]$Image = Images.Bench["NMEIAV1"]
+BenchmarkingNMEIAV2[[2]]$Image = Images.Bench["NMEIAV2"]
 
 BenchmarkingMM      = list("slide",
                         Image = list(
                             Title = "Benchmarking",
                             SubHead = "Metrics<br>
                                 <small> Manhattan Metric (MM) </small>",
-                            Image = Images["MM"]))
+                            Image = Images.Bench["MM"]))
 
 BenchmarkingMM1 = BenchmarkingMM2 = BenchmarkingMM3 = BenchmarkingMM4 =
     BenchmarkingMM5 = BenchmarkingMM6 = BenchmarkingMM
 
-BenchmarkingMM1[[2]]$Image = Images["MM1"]
-BenchmarkingMM2[[2]]$Image = Images["MM2"]
-BenchmarkingMM3[[2]]$Image = Images["MM3"]
-BenchmarkingMM4[[2]]$Image = Images["MM4"]
-BenchmarkingMM5[[2]]$Image = Images["MM5"]
-BenchmarkingMM6[[2]]$Image = Images["MM6"]
+BenchmarkingMM1[[2]]$Image = Images.Bench["MM1"]
+BenchmarkingMM2[[2]]$Image = Images.Bench["MM2"]
+BenchmarkingMM3[[2]]$Image = Images.Bench["MM3"]
+BenchmarkingMM4[[2]]$Image = Images.Bench["MM4"]
+BenchmarkingMM5[[2]]$Image = Images.Bench["MM5"]
+BenchmarkingMM6[[2]]$Image = Images.Bench["MM6"]
 
 BenchmarkingMPD      = list("slide",
                         Image = list(
                             Title = "Benchmarking",
                             SubHead = "Metrics<br>
                                 <small> Seasonality & Mean Phase Difference (MPD) </small>",
-                            Image = Images["MPD"]))
+                            Image = Images.Bench["MPD"]))
 
 BenchmarkingMPD1 = BenchmarkingMPD2A = BenchmarkingMPD2B = BenchmarkingMPD3 =
     BenchmarkingMPD4 = BenchmarkingMPD5 = BenchmarkingMPD6 = BenchmarkingMPD7 =
     BenchmarkingMPD8 = BenchmarkingMPD9 = BenchmarkingMPD
 
-BenchmarkingMPD1[[2]]$Image = Images["MPD1"]
-BenchmarkingMPD2A[[2]]$Image = Images["MPD2A"]
-BenchmarkingMPD2B[[2]]$Image = Images["MPD2B"]
-BenchmarkingMPD3[[2]]$Image = Images["MPD3"]
-BenchmarkingMPD4[[2]]$Image = Images["MPD4"]
-BenchmarkingMPD5[[2]]$Image = Images["MPD5"]
-BenchmarkingMPD6[[2]]$Image = Images["MPD6"]
-BenchmarkingMPD7[[2]]$Image = Images["MPD7"]
-BenchmarkingMPD8[[2]]$Image = Images["MPD8"]
-BenchmarkingMPD9[[2]]$Image = Images["MPD9"]
+BenchmarkingMPD1[[2]]$Image = Images.Bench["MPD1"]
+BenchmarkingMPD2A[[2]]$Image = Images.Bench["MPD2A"]
+BenchmarkingMPD2B[[2]]$Image = Images.Bench["MPD2B"]
+BenchmarkingMPD3[[2]]$Image = Images.Bench["MPD3"]
+BenchmarkingMPD4[[2]]$Image = Images.Bench["MPD4"]
+BenchmarkingMPD5[[2]]$Image = Images.Bench["MPD5"]
+BenchmarkingMPD6[[2]]$Image = Images.Bench["MPD6"]
+BenchmarkingMPD7[[2]]$Image = Images.Bench["MPD7"]
+BenchmarkingMPD8[[2]]$Image = Images.Bench["MPD8"]
+BenchmarkingMPD9[[2]]$Image = Images.Bench["MPD9"]
+
+################################################################################
+## Null Models                                                                ##
+################################################################################
+
+
+
 
 Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
                     "New Slide", BenchmarkingOverview2, "New Slide",
@@ -252,5 +266,10 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
                         BenchmarkingMPD8, "New Slide", BenchmarkingMPD9, "New Slide",
                         BenchmarkingMPD)
 
+################################################################################
+## Collate                                                                    ##
+################################################################################
+
+Images = c(Images.index, Images.title, Images.Intro, Images.Bench)
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
                       Benchmarking)
