@@ -120,6 +120,7 @@ Images.Bench = c(Datasets      = "BenchmarkDatasets.png",
                  MPD8          = "MPD8.png",
                  MPD9          = "MPD9.png",
                  MPD           = "MPDFull.png",
+                 Metrics       = "Metrics.png",
                  Null1         = "NullModels1.png",
                  Null2         = "NullModels2.png",
                  Null3         = "NullModels3.png",
@@ -181,7 +182,8 @@ BenchmarkingDatasets = list("slide",
 BenchmarkingMetrics = list("slide",
                         Image = list(
                             Title = "Benchmarking",
-                            SubHead = "Metrics"))
+                            SubHead = "Metrics",
+                            Image = Images.Bench["Metrics"]))
 
 BenchmarkingNME     = list("slide",
                         Image = list(
@@ -247,6 +249,7 @@ BenchmarkingMPD7[[2]]$Image = Images.Bench["MPD7"]
 BenchmarkingMPD8[[2]]$Image = Images.Bench["MPD8"]
 BenchmarkingMPD9[[2]]$Image = Images.Bench["MPD9"]
 
+
 ################################################################################
 ## Null Models                                                                ##
 ################################################################################
@@ -267,26 +270,27 @@ BenchmarkingNULL5[[2]]$Image = Images.Bench["Null5"]
 
 
 Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
-                    "New Slide", BenchmarkingOverview2, "New Slide",
-                    BenchmarkingDatasets, "New Slide",
+                        "New Slide", BenchmarkingOverview2, "New Slide",
+                        BenchmarkingDatasets, "New Slide",
                     BenchmarkingMetrics, "New Page",
-                    BenchmarkingNME1, "New Slide", BenchmarkingNME2, "New Slide",
+                    BenchmarkingNME1, "New Page", BenchmarkingNME2, "New Slide",
                         BenchmarkingNME3, "New Slide", BenchmarkingNME, "New Slide",
-                        BenchmarkingSteps, "New Slide",
-                    BenchmarkingNMEIAV1, "New Slide", BenchmarkingNMEIAV2, "New Slide",
+                        BenchmarkingSteps, "New Page",
+                    BenchmarkingNMEIAV1, "New Page", BenchmarkingNMEIAV2, "New Slide",
                         BenchmarkingNMEIAV, "New Slide",
-                    BenchmarkingMM1, "New Slide", BenchmarkingMM2,
+                    BenchmarkingMM1, "New Page", BenchmarkingMM2,
                         "New Slide", BenchmarkingMM3, "New Slide",
                         BenchmarkingMM4, "New Slide", BenchmarkingMM5,
                         "New Slide", BenchmarkingMM6, "New Slide",
                         BenchmarkingMM, "New Slide",
-                    BenchmarkingMPD1, "New Slide", BenchmarkingMPD2A, "New Slide",
+                    BenchmarkingMPD1, "New Page", BenchmarkingMPD2A, "New Slide",
                         BenchmarkingMPD2B, "New Slide", BenchmarkingMPD3, "New Slide",
                         BenchmarkingMPD4, "New Slide", BenchmarkingMPD5, "New Slide",
                         BenchmarkingMPD6, "New Slide", BenchmarkingMPD7, "New Slide",
                         BenchmarkingMPD8, "New Slide", BenchmarkingMPD9, "New Slide",
                         BenchmarkingMPD, "New Slide",
-                    BenchmarkingNULL1, "New Slide", BenchmarkingNULL2,"New Slide",
+                    BenchmarkingMetrics, "New Page",
+                    BenchmarkingNULL1, "New Page", BenchmarkingNULL2,"New Slide",
                         BenchmarkingNULL3,"New Slide", BenchmarkingNULL5,
                         "New Slide", BenchmarkingNULL)
 
