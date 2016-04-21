@@ -101,6 +101,7 @@ Images.Bench = c(Datasets      = "BenchmarkDatasets.png",
                  NMEIAV2       = "NMEIAV2.png",
                  NMEIAV        = "NMEIAV.png",
                  NME           = "NMEFull.png",
+                 Steps         = "Step123.png",
                  MM1           = "MM1.png",
                  MM2           = "MM2.png",
                  MM3           = "MM3.png",
@@ -118,7 +119,13 @@ Images.Bench = c(Datasets      = "BenchmarkDatasets.png",
                  MPD7          = "MPD7.png",
                  MPD8          = "MPD8.png",
                  MPD9          = "MPD9.png",
-                 MPD           = "MPDFull.png")
+                 MPD           = "MPDFull.png",
+                 Null1         = "NullModels1.png",
+                 Null2         = "NullModels2.png",
+                 Null3         = "NullModels3.png",
+                 Null4         = "NullModels4.png",
+                 Null5         = "NullModels5.png",
+                 Null          = "NullModels.png")
 
 
 BenchmarkingTitle = list("slide",
@@ -183,12 +190,13 @@ BenchmarkingNME     = list("slide",
                                 <small> Normalised Mean Error (NME) </small>",
                             Image = Images.Bench["NME"]))
 
-BenchmarkingNME1 = BenchmarkingNME2 = BenchmarkingNME3 =
+BenchmarkingNME1 = BenchmarkingNME2 = BenchmarkingNME3 = BenchmarkingSteps =
     BenchmarkingNMEIAV = BenchmarkingNME
 
 BenchmarkingNME1[[2]]$Image = Images.Bench["NME1"]
 BenchmarkingNME2[[2]]$Image = Images.Bench["NME2"]
 BenchmarkingNME3[[2]]$Image = Images.Bench["NME3"]
+BenchmarkingSteps[[2]]$Image = Images.Bench["Steps"]
 
 BenchmarkingNMEIAV[[2]]$SubHead = "Metrics<br>
                             <small> NME - Inter-annual Variability (NME - IAV)</small>"
@@ -243,7 +251,19 @@ BenchmarkingMPD9[[2]]$Image = Images.Bench["MPD9"]
 ## Null Models                                                                ##
 ################################################################################
 
+BenchmarkingNULL     = list("slide",
+                        Image = list(
+                            Title = "Benchmarking",
+                            SubHead = "Null Models",
+                            Image = Images.Bench["Null"]))
 
+BenchmarkingNULL1 = BenchmarkingNULL2 = BenchmarkingNULL3 =
+    BenchmarkingNULL5 = BenchmarkingNULL
+
+BenchmarkingNULL1[[2]]$Image = Images.Bench["Null1"]
+BenchmarkingNULL2[[2]]$Image = Images.Bench["Null2"]
+BenchmarkingNULL3[[2]]$Image = Images.Bench["Null3"]
+BenchmarkingNULL5[[2]]$Image = Images.Bench["Null5"]
 
 
 Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
@@ -252,6 +272,7 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
                     BenchmarkingMetrics, "New Page",
                     BenchmarkingNME1, "New Slide", BenchmarkingNME2, "New Slide",
                         BenchmarkingNME3, "New Slide", BenchmarkingNME, "New Slide",
+                        BenchmarkingSteps, "New Slide",
                     BenchmarkingNMEIAV1, "New Slide", BenchmarkingNMEIAV2, "New Slide",
                         BenchmarkingNMEIAV, "New Slide",
                     BenchmarkingMM1, "New Slide", BenchmarkingMM2,
@@ -264,7 +285,10 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
                         BenchmarkingMPD4, "New Slide", BenchmarkingMPD5, "New Slide",
                         BenchmarkingMPD6, "New Slide", BenchmarkingMPD7, "New Slide",
                         BenchmarkingMPD8, "New Slide", BenchmarkingMPD9, "New Slide",
-                        BenchmarkingMPD)
+                        BenchmarkingMPD, "New Slide",
+                    BenchmarkingNULL1, "New Slide", BenchmarkingNULL2,"New Slide",
+                        BenchmarkingNULL3,"New Slide", BenchmarkingNULL5,
+                        "New Slide", BenchmarkingNULL)
 
 ################################################################################
 ## Collate                                                                    ##
