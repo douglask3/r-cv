@@ -105,12 +105,12 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 	addSlideH1 <- function(bit) {
 		out = c(
 			'
-				<table style="height: 100%;">
-					<tr><th height="33%"></th></tr>
+				<table  class = "table2" style="height: 100%;">
+					<tr><td height="33%"></td></tr>
 					<tr>
 						<td><div class="sectionTitle"><h1>',bit[1],'</h1></div></td>
 					</tr>
-					<tr><th></th></tr>
+					<tr><td></td></tr>
 				</table>
 			')
 		return(list(out,0))
@@ -127,7 +127,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		#return(list('',0))
 		out = c('
 			<div class = "sectionContent">
-				<table style="width: 100%;">
+				<table  class = "table2" style="width: 100%;">
 					<col width="25%">
 					<col width="50%">
 					<col width="25%">
@@ -155,13 +155,15 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		return(list(out,0))
 	}
 
-	addSlideRightImage <- function(bit) {
+	addSlideRightNarrowImage <- function(...) addSlideRightImage(..., wImg = 38.2)
+
+	addSlideRightImage <- function(bit, wImg = 61.8) {
 		#return(list('',0))
 		out = c('
 			<div class = "sectionContent">
-				<table style="width: 100%;">
-					<col width="38.2%">
-					<col width="61.8%">
+				<table  class = "table2"  style="width: 100%;">
+					<col width="',100-wImg,'%">
+					<col width="',    wImg,'%">
 
   					<tr><td colspan="2" height = "70mm">
 						<h2>',bit$Title,'</h2>
@@ -174,7 +176,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 					<tr>
 						<td>',listIfy(bit$Text),'</td>
 						<td>
-						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%">
+						<small>&nbsp;</small><img src="',bit$Image,'"  align="middle" width = "100%" style="margin-Top:-20mm">
 						&nbsp;</td>
 					</tr>
 					<tr>
@@ -185,13 +187,15 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		return(list(out,0))
 	}
 
-	addSlideLeftImage <- function(bit) {
+	addSlideLeftNarrowImage <- function(...) addSlideLeftImage(..., wImg = 38.2)
+
+	addSlideLeftImage <- function(bit, wImg = 61.8) {
 		#return(list('',0))
 		out = c('
 			<div class = "sectionContent">
-				<table style="width: 100%;">
-					<col width="61.8%">
-					<col width="38.2%">
+				<table  class = "table2"  style="width: 100%;">
+					<col width="',    wImg,'%">
+					<col width="',100-wImg,'%">
 
   					<tr><td colspan="2" height = "70mm">
 						<h2>',bit$Title,'</h2>
@@ -203,7 +207,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 					</tr>
 					<tr>
 						<td>
-						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%">
+						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%"  style="margin-Top:-20mm">
 						&nbsp;</td>
 						<td>',listIfy(bit$Text),'</td>
 					</tr>
@@ -219,10 +223,10 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		#return(list('',0))
 		out = c('
 			<div class = "sectionContent">
-			<table style="height: 100%; width: 100%;">
-				<tr><th height="33%">
+			<table class = "table2" style="height: 100%; width: 100%;">
+				<tr><td height="33%">
 					<h2>',bit$Title,'</h2>
-				</th></tr>
+				</td></tr>
 				<tr>
 					<td>
 						<h3>',listIfy(bit$Sub),'</h3>
@@ -231,7 +235,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 				<tr>
 					<td>
 						&nbsp;
-						<img src="',bit$Image,'"  align="middle" width = "100%">
+						<img src="',bit$Image,'"  align="middle" width = "100%"  style="margin-Top:-5mm">
 						&nbsp;
 					</td>
 				</tr>
@@ -243,13 +247,35 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 		return(list(out,0))
 	}
 
+	addSlideText <- function(bit) {
+		#return(list('',0))
+		out = c('
+			<div class = "sectionContent">
+			<table class = "table2" style="height: 100%; width: 100%;">
+				<tr><td height="33%">
+					<h2>',bit$Title,'</h2>
+				</td></tr>
+				<tr>
+					<td>
+						<h3>',listIfy(bit$Sub),'</h3>
+					</td>
+				</tr>
+				<tr><td>',listIfy(bit$Text),'</td></tr>
+				<tr>
+					<td>',listIfy(bit$Footer),'</td>
+				</tr>
+			</table>
+			</div>')
+		return(list(out,0))
+	}
+
 	addSlideList <- function(bit) {
 		out = c('
 			<div class = "sectionContent">
-			<table style="height: 100%; width: 100%;">
-				<tr><th height="33%">
+			<table class = "table2" style="height: 100%; width: 100%;">
+				<tr><td height="33%">
 					<h2>',bit$Title,'</h2>
-				</th></tr>
+				</td></tr>
 				<tr>
 					<td>
 						<h3>',listIfy(bit$SubHead),'</h3>
@@ -269,10 +295,10 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 	addSlideHTML <- function(bit) {
 		out = c('
 			<div class = "sectionContent">
-			<table style="height: 100%; width: 100%;">
-				<tr><th height="33%">
+			<table class = "table2" style="height: 100%; width: 100%;">
+				<tr><td height="33%">
 					<h2>',bit$Title,'</h2>
-				</th></tr>
+				</td></tr>
 				<tr>
 					<td>',listIfy(bit$html),'</td>
 				</tr>

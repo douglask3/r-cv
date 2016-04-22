@@ -123,7 +123,7 @@ ul.dashed > li:before {
 }
 
 img {
-  max-height: 140mm;
+  max-height: 145mm;
 }
 
 #mainArea {
@@ -131,7 +131,28 @@ img {
 	height: 150mm;
 }
 
-html,body,div,span,object,iframe,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,ins,kbd,q,samp,strong,var,b,i,dl,dt,dd,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
+
+table.table1 th {
+	background-color: #840;
+	font-size:160%;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: bold;
+	color: white;
+	padding: 3mm;
+}
+
+table.table1 tr:nth-child(even) {
+	background: #bbf;
+	font-size:140%;
+}
+table.table1 tr:nth-child(odd) {
+	background: #FFF;
+	font-size:140%;
+}
+
+
+
+html,body,div,span,object,iframe,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,ins,kbd,q,samp,strong,var,b,i,dl,dt,dd,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
 	font-size:102%;
 	vertical-align: baseline;
 }

@@ -300,19 +300,217 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
 
 
 ################################################################################
-## Improvment                                                                 ##
+## Development                                                                ##
 ################################################################################
+Images.Devlp = c(LPX       = "LPX_diagram.png",
+                 Lightn    = "Lightn.png",
+                 Lightn1   = "Lightn1.png",
+                 Lightn2   = "Lightn2.png",
+                 Lightn3   = "Lightn3.png",
+                 Lightn4   = "Lightn4.png",
+                 Lightn5   = "Lightn5.png",
+                 Root      = "Root.png",
+                 Decomp    = "Decomposition.png",
+                 Dry       = "Dry.png",
+                 Dry1      = "Dry1.png",
+                 RS1       = "RS1.png",
+                 RS2       = "RS2.png",
+                 RS3       = "RS3.png",
+                 RS        = "RS.png",
+                 BT        = "BT.png",
+                 BTscheme1 = "BTscheme1.png",
+                 BTscheme2 = "BTscheme2.png",
+                 BTscheme  = "BTscheme.png")
+
+SectionTitle = "Model Development"
+
+DevelopmentTitle = list("slide",
+                 Image = list(
+                     Title = SectionTitle,
+                     SubHead = "",
+                     Image = Images.index['Index3'],
+                     Footer = ""
+                     ))
+
+DevelopmentOverview = list("slide",
+                List = list(
+                    Title   = SectionTitle,
+                    SubHead = "Overview",
+                    Text    = c('Lightning ignition',
+                                'Fuel drying time',
+                                'Fuel decomposition',
+                                'Rooting depth',
+                                'Bark thickness',
+                                'Resprouting')))
+
 ## Lightning Scheme
+# https://www.flickr.com/photos/thelightningman/7233369438/in/photolist-c2bUJb-fpE79S-cAiwJW-2PUGt3-rmYzPX-vJUYX9-9CAhAH-9S5VG8-nCgx9M-hAqaWs-nAvznR-51Qf1g-eNit1X-4SwcXG-pks9rr-g8HeP5-nRYoxq-fLfM2d-nzaKRr-5mJGv6-6RnwTa-om8cCt-5hieMx-c91J4f-bwg48v-aEBd4Q-cM3N47-njNShm-eajqsB-af4qhG-brjU6p-5k6Xuj-oUNnea-rJuckS-96p7PZ-9RXP2o-qNT35r-aExkWT-afaEei-cEzC2q-oiQrgD-sHqv4R-6tAo8f-aDbNpr-omzh5o-6PcfUk-en4R3Q-oaGm2v-emMi3b-r7oDjr
+# https://commons.wikimedia.org/wiki/File:Scottobear_-_051231_sun_%28by-sa%29.jpg
+DevelopmentLightn = list("slide",
+                 Image = list(
+                     Title = SectionTitle,
+                     SubHead = "Lightning ignition",
+                     Image = Images.Devlp["Lightn"],
+                     Footer = "Kelley et al. 2014"))
+
+DevelopmentLightn1 = DevelopmentLightn2 = DevelopmentLightn3 = DevelopmentLightn4 =
+    DevelopmentLightn5 = DevelopmentLightn
+
+DevelopmentLightn1[[2]]$Image = Images.Devlp["Lightn1"]
+DevelopmentLightn2[[2]]$Image = Images.Devlp["Lightn2"]
+DevelopmentLightn3[[2]]$Image = Images.Devlp["Lightn3"]
+DevelopmentLightn4[[2]]$Image = Images.Devlp["Lightn4"]
+DevelopmentLightn5[[2]]$Image = Images.Devlp["Lightn5"]
 
 ## Rooting Depth
+DevelopmentRoot = list("slide",
+                 LeftImage = list(
+                     Title = SectionTitle,
+                     SubHead = "Rooting Depth",
+                     Text = '<table class = "table1">
+                       <tr><th>PFT</th><th>Original LPX</th><th>Modified LPX</th></tr>
+                       <tr><td>TBE</td><td>0.85        </td><td>0.82        </td></tr>
+                       <tr><td>TBD</td><td>0.5         </td><td>0.73        </td></tr>
+                       <tr><td>tNE</td><td>0.6         </td><td>0.84        </td></tr>
+                       <tr><td>tBE</td><td>0.5         </td><td>0.82        </td></tr>
+                       <tr><td>tBD</td><td>0.7         </td><td>0.81        </td></tr>
+                       <tr><td>BNE</td><td>0.9         </td><td>0.84        </td></tr>
+                       <tr><td>BND</td><td>0.9         </td><td>0.81        </td></tr>
+                       <tr><td>C3</td><td>0.9          </td><td>0.90        </td></tr>
+                       <tr><td>C4</td><td>0.7          </td><td>0.86        </td></tr>
+                     </table>',
+                     Image = Images.Devlp["Root"],
+                     Footer = "Kelley et al. 2014"))
+
 
 ## Fuel Drying
+DevelopmentFuelDrying = list("slide",
+                 Text = list(
+                     Title = SectionTitle,
+                     SubHead = "Fuel Drying Time",
+                     Text = '
+                     &nbsp<br>
+                     &nbsp<br>
+                     <div align = "center">
+                     <table class = "table1">
+                       <tr>
+                         <th>Fuel Type</th>
+                         <th>Original LPX</th>
+                         <th>Modified LPX</th>
+                       </tr>
+                       <tr>
+                         <td>Fine<br>1hr</td>
+                         <td>25 hours</td>
+                         <td>1 hour</td>
+                       </tr>
+                       <tr>
+                         <td>Small twigs<br>10hr</td>
+                         <td>460 hrs<br>(~20 days)</td>
+                         <td>10 hour</td>
+                       </tr>
+                       <tr>
+                         <td>Branch<br>100hr</td>
+                         <td>1700 hrs<br>(&gt;2 months)</td>
+                         <td>100 hours<br>(~4 days)</td>
+                       </tr>
+                       <tr>
+                         <td>Log<br>1000hr</td>
+                         <td>25,000 hrs<br>(~3 years)</td>
+                         <td>1000 hours<br>(~1 1/2 months)</td>
+                       </tr>
+                     </table></div>',
+                     Footer = "Kelley et al. 2014"))
+
+DevelopmentFuelDrying1 = list("slide",
+                 Image = list(
+                     Title = SectionTitle,
+                     SubHead = "Fuel Drying Time",
+                     Image = Images.Devlp["Dry1"],
+                     Footer = "Kelley et al. 2014"))
+
+DevelopmentFuelDrying2 = DevelopmentFuelDrying1
+DevelopmentFuelDrying2[[2]]$Image = Images.Devlp["Dry"]
+
 
 ## Fuel Decay
-
-## Adpative Bark Thickness
+DevelopmentFuelDecomp = list("slide",
+            RightNarrowImage = list(
+                     Title = SectionTitle,
+                     SubHead = "Litter Decomposition Rate",
+                     Text = c('<b>Original LPX</b>: Decomposition same across all litter',
+                              '<b>Modified LPX</b>: Varying across
+                                    <ul class="dashed">
+                                        <li class = "dashed"> PFTs </li>
+                                        <li class = "dashed"> Fine vs Coarse </li>
+                                        <li class = "dashed"> Tempuratures </li>
+                                    </ul>'),
+                     Image = Images.Devlp["Decomp"],
+                     Footer = "Kelley et al. 2014"))
 
 ## resprouting
+DevelopmentRS = list("slide",
+            Image = list(
+                     Title = SectionTitle,
+                     SubHead = "Resprouting",
+                     Image = Images.Devlp["RS"],
+                     Footer = "Kelley et al. 2014"))
+
+DevelopmentRS1 = DevelopmentRS2 = DevelopmentRS3 = DevelopmentRS
+
+DevelopmentRS1[[2]]$Image = Images.Devlp["RS1"]
+DevelopmentRS2[[2]]$Image = Images.Devlp["RS2"]
+DevelopmentRS3[[2]]$Image = Images.Devlp["RS3"]
+
+## Adpative Bark Thickness
+DevelopmentBT = list("slide",
+            LeftImage = list(
+                     Title = SectionTitle,
+                     SubHead = "Bark Thickness",
+                     Text = c('<small>Original LPX:
+                                    <ul class="dashed">
+                                        <li class = "dashed"> Parameterized per PFT </li>
+                                        <li class = "dashed"> Linearly increases with tree size </li>
+                                    </ul>',
+                              'Missed key aspects:
+                                    <ul class="dashed">
+                                        <li class = "dashed"> Within PFT variability. </li>
+                                        <li class = "dashed"> Differences between plants with fire-adapted and fire-prone trait </li>
+                                    </ul></small>'),
+                     Image = Images.Devlp["BT"],
+                     Footer = "Kelley et al. 2014"))
+
+DevelopmentBTscheme = list("slide",
+            LeftNarrowImage = list(
+                     Title = SectionTitle,
+                     SubHead = "Adaptive Bark Thickness",
+                     Text = c('In fire:
+                                    <ul class="dashed">
+                                        <li class = "dashed"> Individuals with thin bark are more likely to be killed off. </li>
+                                        <li class = "dashed"> New Bark Thickness distribution calculated from survivors </li>
+                                    </ul>',
+                              'In Establishment:
+                                    <ul class="dashed">
+                                        <li class = "dashed"> Trees establish based on inital distribution. </li>
+                                        <li class = "dashed"> New distribution from weighted average of survivors and established </li>
+                                    </ul>'),
+                     Image = Images.Devlp["BTscheme"],
+                     Footer = "Kelley et al. 2014"))
+
+DevelopmentBTscheme1 = DevelopmentBTscheme2 = DevelopmentBTscheme
+
+DevelopmentBTscheme1[[2]]$Image = Images.Devlp["BTscheme1"]
+DevelopmentBTscheme2[[2]]$Image = Images.Devlp["BTscheme2"]
+
+Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide",
+                   DevelopmentLightn1, "New Page", DevelopmentLightn2, "New Slide",
+                        DevelopmentLightn3, "New Slide", DevelopmentLightn4, "New Slide",
+                        DevelopmentLightn5, "New Slide",DevelopmentLightn, "New Slide",
+                   DevelopmentRoot, "New Slide",DevelopmentFuelDrying,
+                   "New Slide", DevelopmentFuelDrying1, "New Slide", DevelopmentFuelDrying2,
+                   "New Slide", DevelopmentFuelDecomp, "New Slide",
+                   DevelopmentRS1, "New Slide", DevelopmentRS2, "New Slide",
+                   DevelopmentRS3, "New Slide", DevelopmentRS, "New Slide",
+                   DevelopmentBT, "New Slide", DevelopmentBTscheme1, "New Slide", DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
 
 
 ################################################################################
@@ -343,6 +541,6 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
 ## Collate                                                                    ##
 ################################################################################
 
-Images = c(Images.index, Images.title, Images.Intro, Images.Bench)
+Images = c(Images.index, Images.title, Images.Intro, Images.Bench, Images.Devlp)
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
-                      Benchmarking)
+                      Benchmarking, "New Slide", Development)
