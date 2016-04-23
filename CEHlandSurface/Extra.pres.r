@@ -382,8 +382,8 @@ ErrorOverviewAus = list("slide",
                                 </tr>
                                 <tr>
                                 <td>Tree Cover</td>
-                                <td>0.45</td>
-                                <td>0.56</td>
+                                <td>0.71</td>
+                                <td>0.89</td>
                                 <td>0.77</td>
                                 </tr>
                                 <tr>
@@ -411,7 +411,7 @@ ErrorOverviewAus = list("slide",
                                 <td>1.05</td>
                                 </tr>
                                 <tr>
-                                <td>    - variance removed</td>
+                                <td>    - variance</td>
                                 <td>1.00</td>
                                 <td>1.33</td>
                                 <td>1.43</td>
@@ -645,6 +645,115 @@ Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide
                    DevelopmentRS3, "New Slide", DevelopmentRS, "New Slide",
                    DevelopmentBT, "New Slide", DevelopmentBTscheme1, "New Slide", DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
 
+################################################################################
+## Evaluation                                                                 ##
+################################################################################
+Images.Evalu = c(CompFPC  = 'LPXMv1FPC.png',
+                 CompFire = 'LPXMv1Fire.png',
+                 FPCvClim = 'LPXMv1FPCvClimate.png',
+                 DistRev  = 'LPXMv1Rec.png')
+
+SectionTitle = "Model Evaluation"
+
+EvaluationTitle = list("slide",
+                 Image = list(
+                     Title = SectionTitle,
+                     SubHead = "",
+                     Image = Images.index['Index4'],
+                     Footer = ""
+                     ))
+
+EvaluationInital = ErrorOverviewAus
+EvaluationInital[[2]]$SubHead = 'Inital'
+
+EvaluationOverview1 = list("slide",
+                 LeftImage = list(
+                     Title = SectionTitle,
+                     SubHead = "Fire",
+                     Image = Images.Evalu['CompFire'],
+                     Text = '<table  class = "table1">
+                                <tr>
+                                <th></th>
+                                    <th>Mean</th>
+                                    <th>Rand</th>
+                                    <th>LPX</th>
+                                    <th>LPX-Mv1</th>
+                                </tr>
+                                <tr>
+                                    <td>Tree Cover</td>
+                                    <td>0.71</td>
+                                    <td>0.89</td>
+                                    <td>0.77</td>
+                                    <td>0.58</td>
+                                </tr>
+                                <tr>
+                                    <td>Burnt Area</td>
+                                    <td>1.00</td>
+                                    <td>1.25</td>
+                                    <td>1.29</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>    - mean</td>
+                                    <td>1.00</td>
+                                    <td>1.25</td>
+                                    <td>1.09</td>
+                                    <td>0.89</td>
+                                </tr>
+                                <tr>
+                                    <td>    - variance</td>
+                                    <td>1.00</td>
+                                    <td>1.26</td>
+                                    <td>1.32</td>
+                                    <td>1.09</td>
+                                </tr>
+                                <tr>
+                                    <td>Inter-annual Burnt Area</td>
+                                    <td>1.00</td>
+                                    <td>1.35</td>
+                                    <td>1.05</td>
+                                    <td>0.68</td>
+                                </tr>
+                                <tr>
+                                    <td>    - variance</td>
+                                    <td>1.00</td>
+                                    <td>1.33</td>
+                                    <td>1.43</td>
+                                    <td>0.90</td>
+                                </tr>
+                                <tr>
+                                    <td>Fire season</td>
+                                    <td>0.44</td>
+                                    <td>0.47</td>
+                                    <td>0.50</td>
+                                    <td>0.44</td>
+                                </tr>
+                                </table>',
+                     Footer = "Kelley et al. 2014"
+                     ))
+
+EvaluationOverview2 = EvaluationOverview1
+EvaluationOverview2[[2]]$SubHead = "Tree Cover"
+EvaluationOverview2[[2]]$Image   = Images.Evalu['CompFPC']
+
+EvaluationFPC = list("slide",
+                     Image = list(
+                     Title = SectionTitle,
+                     SubHead = "Fractional Cover vs Climate",
+                              Image = Images.Evalu["FPCvClim"],
+                              Footer = "Kelley et al. 2014"))
+
+EvaluationRec = list("slide",
+                    Image = list(Title = SectionTitle,
+                              SubHead = "Disturbance Recovery Speed",
+                              Image = Images.Evalu["DistRev"],
+                              Footer = "Kelley et al. 2014"))
+
+
+Evaluation=list(EvaluationTitle, "New Page", EvaluationInital,
+                "New Slide", EvaluationOverview1, "New Slide",
+                EvaluationOverview2, "New Slide", EvaluationFPC,
+                "New Slide", EvaluationRec)
 
 ################################################################################
 ## Application                                                                ##
@@ -675,6 +784,7 @@ Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide
 ################################################################################
 
 Images = c(Images.index, Images.title, Images.Intro, Images.Bench, Images.Error,
-           Images.Devlp)
+           Images.Devlp, Images.Evalu)
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
-                      Benchmarking, "New Slide", Error, "New Slide", Development)
+                      Benchmarking, "New Slide", Error, "New Slide",
+                      Development, "New Slide", Evaluation)
