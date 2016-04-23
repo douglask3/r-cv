@@ -134,7 +134,7 @@ img {
 
 table.table1 th {
 	background-color: #840;
-	font-size:160%;
+	font-size:150%;
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 	font-style: bold;
 	color: white;
@@ -143,11 +143,11 @@ table.table1 th {
 
 table.table1 tr:nth-child(even) {
 	background: #bbf;
-	font-size:140%;
+	font-size:125%;
 }
 table.table1 tr:nth-child(odd) {
 	background: #FFF;
-	font-size:140%;
+	font-size:125%;
 }
 
 
