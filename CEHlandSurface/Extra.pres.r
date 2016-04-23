@@ -7,16 +7,18 @@ usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
 ## Basic Infomation                                          ##
 ###############################################################
 Top = NULL
+TalkTitle = "Data Driven Iterative Model Development"
 
 Name    = c("Douglas Kelley",
             "Recent work pertinent to<br>modelling and environmental science",
-            "Iterative Model Development")
+            TalkTitle)
 
 Contact = c(email = "douglas.i.kelley@gmail.com",
             phone = "+44 (0) 7936 726 819",
             web   = "douglask3.github.io")
 
-Images.index = c(Index1        = 'PresStructure_index1.png',
+Images.index = c(Index0        = 'PresStructure_index0.png',
+                 Index1        = 'PresStructure_index1.png',
                  Index2        = 'PresStructure_index2.png',
                  Index3        = 'PresStructure_index3.png',
                  Index4        = 'PresStructure_index4.png',
@@ -50,8 +52,8 @@ TitlePage = list("slide",
                          <h2>Douglas Kelley<h2>")
 
 TitlePage2 = TitlePage
-TitlePage2$H1 = "Iterative Model Development<br>
-                <h2>Douglas Kelley<h2>"
+TitlePage2$H1 = paste(TalkTitle,"<br>
+                <h2>Douglas Kelley<h2>")
 
 TitlePage = list(TopPage, "New Slide", TitlePage, "New Slide", TitlePage2)
 
@@ -108,13 +110,13 @@ Solution = list("slide",
                                 <ul class = "dashed">
                                     <li class = "dashed"> Find model weaknesses </li>
                                     <li class = "dashed"> Assess model development </li>
-                                    <li class = "dashed"> Justify model application </li>',
+                                    <li class = "dashed"> Justify model application </li></ul>',
                               'Paramterize model development')))
 
 Introduction1 = list("slide",
                     Image = list(
                         Title = "Introduction",
-                        SubHead = "Iterative Model Development",
+                        SubHead = TalkTitle,
                         Image = Images.Intro['Structure1'],
                         Footer = "Kelley 2014"
                         ))
@@ -139,6 +141,37 @@ Introduction = list(Problem, "New Page", Problem1, "New Slide",
                         Introduction5, "New Slide",
                         Introduction6)
 
+###############################################################
+## LPX                                              ##
+###############################################################
+Images.LPX = c(LPX       = "LPX_diagram.png")
+
+LPXTitle = list("slide",
+                    Image = list(
+                        Title = "LPX",
+                        SubHead = "",
+                        Image = Images.index['Index0'],
+                        Footer = ""
+                        ))
+
+LPXOverview = list("slide",
+                RightNarrowImage = list(Title = "LPX-DGVM",
+                            SubHead = "Overview",
+                            Image = Images.LPX['LPX'],
+                            Text = c('Plant Functional Trait (PFT) based model',
+                                     'Climate, Soil, CO<sub>2</sub> Inputs',
+                                     'PFTs Establish',
+                                     'PFTs compete for resources',
+                                     'PFTs are killed off',
+                                     'LPX includes process based fire model for fire
+                                        mortality and fire impacts of carbon cycle')))
+
+LPXScheme = list("slide",
+                Image = list(Title = "LPX-DGVM",
+                            SubHead = "Fire",
+                            Image = Images.LPX['LPX']))
+
+LPX = list(LPXTitle, "New Page", LPXOverview, "New Slide", LPXScheme)
 ###############################################################
 ## Benchmarking                                              ##
 ###############################################################
@@ -348,7 +381,21 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
 ################################################################################
 Images.Error = c(Comp     = 'LPXcompGlob.png',
                  CompAus  = 'LPXcompAus.png',
-                 CompAus1 = 'LPXcompAus.png')
+                 CompAus1 = 'LPXcompAus1.png')
+
+Images.Smiley = c(Laugh = 'Laugh.png',
+                  Smile = 'Smile.png',
+                  Indif = 'Indif.png',
+                  Sad   = 'Sad.png',
+                  Cry   = 'Cry.png'
+                  )
+
+SmileySize = 35
+
+SmileyImage <- function(nm)
+    paste('<img src="',Images.Smiley[nm],'"
+          style="width:',SmileySize,'px;height:',SmileySize,'px;">', sep ='')
+
 SectionTitle = "Error Identification"
 
 ErrorTitle = list("slide",
@@ -396,7 +443,7 @@ ErrorOverview = list("slide",
                                     <td>0.99</td>
                                   </tr>
                                   <tr>
-                                    <td>Inter-annual Burnt Area</td>
+                                    <td>Inter-annual Burnt</td>
                                     <td>1.00</td>
                                     <td>1.35</td>
                                     <td>0.63</td>
@@ -416,6 +463,60 @@ ErrorOverview = list("slide",
                                 </table>',
                      Footer = "Kelley et al. 2013"
                      ))
+
+
+ErrorOverviewSmiley = ErrorOverview
+
+ErrorOverviewSmiley[[2]]$Text =paste('<table  class = "table1">
+                 <tr>
+                   <th></th>
+                   <th>Mean</th>
+                   <th>Rand</th>
+                   <th>LPX</th>
+                 </tr>
+                 <tr>
+                   <td>Tree Cover</td>
+                   <td>0.45</td>
+                   <td>0.56</td>
+                   <td>',SmileyImage(4),'</td>
+                 </tr>
+                 <tr>
+                   <td>Burnt Area</td>
+                   <td>1.00</td>
+                   <td>1.02</td>
+                   <td>',SmileyImage(1),'</td>
+                 </tr>
+                 <tr>
+                   <td>    - mean</td>
+                   <td>1.00</td>
+                   <td>1.09</td>
+                   <td>',SmileyImage(1),'</td>
+                 </tr>
+                 <tr>
+                   <td>    -variance </td>
+                   <td>1.00</td>
+                   <td>1.14</td>
+                   <td>',SmileyImage(1),'</td>
+                 </tr>
+                 <tr>
+                   <td>Inter-annual Burnt</td>
+                   <td>1.00</td>
+                   <td>1.35</td>
+                   <td>',SmileyImage(1),'</td>
+                 </tr>
+                 <tr>
+                   <td>-variance </td>
+                   <td>1.00</td>
+                   <td>1.39</td>
+                   <td>',SmileyImage(1),'</td>
+                 </tr>
+                 <tr>
+                   <td>Fire season</td>
+                   <td>0.74</td>
+                   <td>0.47</td>
+                   <td>',SmileyImage(3),'</td>
+                 </tr>
+               </table>')
 
 ErrorOverviewAus = list("slide",
                  LeftImage = list(
@@ -454,7 +555,7 @@ ErrorOverviewAus = list("slide",
                                 <td>1.32</td>
                                 </tr>
                                 <tr>
-                                <td>Inter-annual Burnt Area</td>
+                                <td>Inter-annual Burnt</td>
                                 <td>1.00</td>
                                 <td>1.35</td>
                                 <td>1.05</td>
@@ -475,12 +576,71 @@ ErrorOverviewAus = list("slide",
                      Footer = "Kelley et al. 2013"
                      ))
 
+ErrorOverviewAusSmiley = ErrorOverviewAus
+
+ErrorOverviewAusSmiley[[2]]$Text =paste(
+'<table  class = "table1">
+           <tr>
+           <th></th>
+           <th>Mean</th>
+           <th>Rand</th>
+           <th>LPX</th>
+           </tr>
+           <tr>
+           <td>Tree Cover</td>
+           <td>0.71</td>
+           <td>0.89</td>
+           <td>',SmileyImage(3),'</td>
+           </tr>
+           <tr>
+           <td>Burnt Area</td>
+           <td>1.00</td>
+           <td>1.25</td>
+           <td>',SmileyImage(5),'</td>
+           </tr>
+           <tr>
+           <td>    - mean</td>
+           <td>1.00</td>
+           <td>1.25</td>
+           <td>',SmileyImage(3),'</td>
+           </tr>
+           <tr>
+           <td>    - variance</td>
+           <td>1.00</td>
+           <td>1.26</td>
+           <td>',SmileyImage(5),'</td>
+           </tr>
+           <tr>
+           <td>Inter-annual Burnt</td>
+           <td>1.00</td>
+           <td>1.35</td>
+           <td>',SmileyImage(3),'</td>
+           </tr>
+           <tr>
+           <td>    - variance</td>
+           <td>1.00</td>
+           <td>1.33</td>
+           <td>',SmileyImage(4),'</td>
+           </tr>
+           <tr>
+           <td>Fire season</td>
+           <td>0.44</td>
+           <td>0.47</td>
+           <td>',SmileyImage(5),'</td>
+           </tr>
+           </table>')
+
 ErrorOverviewAus1 = ErrorOverviewAus
 ErrorOverviewAus1[[2]]$Image = Images.Error['CompAus1']
 
+ErrorOverviewAus1Smiley = ErrorOverviewAusSmiley
+ErrorOverviewAus1Smiley[[2]]$Image = Images.Error['CompAus1']
+
 
 Error = list(ErrorTitle, "New Page", ErrorOverview, "New Slide",
-                ErrorOverviewAus1, "New Slide", ErrorOverviewAus)
+             ErrorOverviewSmiley, "New Slide",
+             ErrorOverviewAus1, "New Slide", ErrorOverviewAus1Smiley,
+             "New Slide", ErrorOverviewAusSmiley)
 ################################################################################
 ## Development                                                                ##
 ################################################################################
@@ -757,7 +917,7 @@ EvaluationOverview1 = list("slide",
                                     <td>1.09</td>
                                 </tr>
                                 <tr>
-                                    <td>Inter-annual Burnt Area</td>
+                                    <td>Inter-annual Burnt</td>
                                     <td>1.00</td>
                                     <td>1.35</td>
                                     <td>1.05</td>
@@ -771,7 +931,7 @@ EvaluationOverview1 = list("slide",
                                     <td>0.90</td>
                                 </tr>
                                 <tr>
-                                    <td>Fire season</td>
+                                    <td>Season</td>
                                     <td>0.44</td>
                                     <td>0.47</td>
                                     <td>0.50</td>
@@ -784,6 +944,66 @@ EvaluationOverview1 = list("slide",
 EvaluationOverview2 = EvaluationOverview1
 EvaluationOverview2[[2]]$SubHead = "Tree Cover"
 EvaluationOverview2[[2]]$Image   = Images.Evalu['CompFPC']
+EvaluationOverview2[[2]]$Text    = paste('<table  class = "table1">
+           <tr>
+           <th></th>
+               <th>Mean</th>
+               <th>Rand</th>
+               <th>LPX</th>
+               <th>LPX-Mv1</th>
+           </tr>
+           <tr>
+               <td>Tree Cover</td>
+               <td>0.71</td>
+               <td>0.89</td>
+               <td>',SmileyImage(3),'</td>
+               <td>',SmileyImage(1),'</td>
+           </tr>
+           <tr>
+               <td>Burnt Area</td>
+               <td>1.00</td>
+               <td>1.25</td>
+               <td>',SmileyImage(5),'</td>
+               <td>',SmileyImage(1),'</td>
+           </tr>
+           <tr>
+               <td>    - mean</td>
+               <td>1.00</td>
+               <td>1.25</td>
+               <td>',SmileyImage(3),'</td>
+               <td>',SmileyImage(1),'</td>
+           </tr>
+           <tr>
+               <td>    - variance</td>
+               <td>1.00</td>
+               <td>1.26</td>
+               <td>',SmileyImage(5),'</td>
+               <td>',SmileyImage(3),'</td>
+           </tr>
+           <tr>
+               <td>Inter-annual Burnt</td>
+               <td>1.00</td>
+               <td>1.35</td>
+               <td>',SmileyImage(3),'</td>
+               <td>',SmileyImage(1),'</td>
+           </tr>
+           <tr>
+               <td>    - variance</td>
+               <td>1.00</td>
+               <td>1.33</td>
+               <td>',SmileyImage(5),'</td>
+               <td>',SmileyImage(1),'</td>
+           </tr>
+           <tr>
+               <td>Season</td>
+               <td>0.44</td>
+               <td>0.47</td>
+               <td>',SmileyImage(5),'</td>
+               <td>',SmileyImage(2),'</td>
+           </tr>
+           </table>'
+
+    )
 
 EvaluationFPC = list("slide",
                      Image = list(
@@ -948,10 +1168,10 @@ Application = list(ApplicationTitle, "New Page", ApplicationOverview,
 ## Collate                                                                    ##
 ################################################################################
 
-Images = c(Images.index, Images.title, Images.Intro, Images.Bench, Images.Error,
-           Images.Devlp, Images.Evalu, Images.Applc)
+Images = c(Images.index, Images.title, Images.Intro, Images.LPX, Images.Bench, Images.Error,
+           Images.Devlp, Images.Evalu, Images.Applc, Images.Smiley)
 
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
-                      Benchmarking, "New Slide", Error, "New Slide",
+                      LPX, "New Slide", Benchmarking, "New Slide", Error, "New Slide",
                       Development, "New Slide", Evaluation, "New Slide",
                       Application)
