@@ -105,7 +105,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 	addSlideH1 <- function(bit) {
 		out = c(
 			'
-				<table  class = "table2" style="height: 100%;">
+				<table  class = "table2" style="width:100%;height: 100%;">
 					<tr><td height="33%"></td></tr>
 					<tr>
 						<td><div class="sectionTitle"><h1>',bit[1],'</h1></div></td>
@@ -207,7 +207,7 @@ addNameMainArea <- function(doc, name, contact, addMain = TRUE) {
 					</tr>
 					<tr>
 						<td>
-						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%"  style="margin-Top:-20mm">
+						&nbsp;<img src="',bit$Image,'"  align="middle" width = "100%"  style="margin-Top:-15mm">
 						&nbsp;</td>
 						<td>',listIfy(bit$Text),'</td>
 					</tr>
