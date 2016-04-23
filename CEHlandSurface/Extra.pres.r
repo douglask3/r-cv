@@ -46,10 +46,12 @@ TopPage   = list("slide",
 TitlePage = list("slide",
                  bgImage = Images.title['Title'],
                  H1 = "Recent work pertinent to modelling and
-                         environmental science")
+                         environmental science<br>
+                         <h2>Douglas Kelley<h2>")
 
 TitlePage2 = TitlePage
-TitlePage2$H1 = "Iterative Model Development"
+TitlePage2$H1 = "Iterative Model Development<br>
+                <h2>Douglas Kelley<h2>"
 
 TitlePage = list(TopPage, "New Slide", TitlePage, "New Slide", TitlePage2)
 
@@ -62,8 +64,52 @@ Images.Intro = c(ThesisSummary = 'ThesisStructure.png',
                  Structure3    = 'PresStructure_slide3.png',
                  Structure4    = 'PresStructure_slide4.png',
                  Structure5    = 'PresStructure_slide5.png',
-                 Structure6    = 'PresStructure_slide6.png')
+                 Structure6    = 'PresStructure_slide6.png',
+                 LPXcomp       = 'Prentice2011.png',
+                 LPXapp        = 'FutureFire2010.png')
+SectionTitle = "Introduction"
 
+Problem = list("slide",
+            Image = list(
+                    Title = SectionTitle,
+                    SubHead = "Old-style model development",
+                    Image = Images.Intro['LPXcomp'],
+                    Footer = "Prentice et al. 2011"
+                ))
+
+Problem1 = list("slide",
+            Image = list(
+                    Title = SectionTitle,
+                    SubHead = "Old-style model development",
+                    Image = Images.Intro['LPXapp'],
+                    Footer = "Harrison et al. 2011"
+                ))
+
+Problem2 = list("slide",
+            Text = list(
+                    Title = SectionTitle,
+                    SubHead = "Old-style model development",
+                    Text = c('"Blind" Model Development',
+                             'Development focussed on sub-model incoporation
+                                rather than paramterization',
+                             'Model tuning to get right results with wrong
+                                process-representation',
+                             'Unknown "uncertainty" in model results',
+                             'Hard to understand drivers of change for e.g. future predictions',
+                             'Due to a lack of comprehensive benchmarking system')))
+
+Solution = list("slide",
+            Text = list(
+                    Title = SectionTitle,
+                    SubHead = "Old-style model development",
+                    Text = c('Recent advances in remote sensing and communications
+                              means there is a lot more data<div>&nbsp',
+                             'Develope a benchmark system to:
+                                <ul class = "dashed">
+                                    <li class = "dashed"> Find model weaknesses </li>
+                                    <li class = "dashed"> Assess model development </li>
+                                    <li class = "dashed"> Justify model application </li>',
+                              'Paramterize model development')))
 
 Introduction1 = list("slide",
                     Image = list(
@@ -83,12 +129,15 @@ Introduction4$Image$Image = Images.Intro['Structure4']
 Introduction5$Image$Image = Images.Intro['Structure5']
 Introduction6$Image$Image = Images.Intro['Structure6']
 
-Introduction = list(Introduction1, "New Page",
-                    Introduction2, "New Slide",
-                    Introduction3, "New Slide",
-                    Introduction4, "New Slide",
-                    Introduction5, "New Slide",
-                    Introduction6)
+Introduction = list(Problem, "New Page", Problem1, "New Slide",
+                        Problem2, "New Slide",
+                        Solution, "New Slide",
+                    Introduction1, "New Page",
+                        Introduction2, "New Slide",
+                        Introduction3, "New Slide",
+                        Introduction4, "New Slide",
+                        Introduction5, "New Slide",
+                        Introduction6)
 
 ###############################################################
 ## Benchmarking                                              ##
@@ -758,12 +807,123 @@ Evaluation=list(EvaluationTitle, "New Page", EvaluationInital,
 ################################################################################
 ## Application                                                                ##
 ################################################################################
+Images.Applc = c(Bench = 'FuturesBenchmarking.png',
+                 Fire  = 'FutureFire2016.png',
+                 Hydrol= 'FutureRunoff2016.png')
+
+SectionTitle = "Model Application"
+
+ApplicationTitle = list("slide",
+                 Image = list(
+                     Title = SectionTitle,
+                     SubHead = "",
+                     Image = Images.index['Index4'],
+                     Footer = ""))
 
 ## Introduction: Carbon, ecosystem composition, fire, hydrology
+ApplicationOverview = list("slide",
+                List = list(
+                    Title   = SectionTitle,
+                    SubHead = "Overview",
+                    Text    = c('Simulating the impact of future climate change
+                                 on vegetation dynamics:
+                                 <small><table><tr>
+                                     <th align="left"><ul class="dashed">
+                                        <li class = "dashed"> Carbon Storage </li>
+                                        <li class = "dashed"> Ecosystem Composition </li>
+                                    </ul></th><th align="left"><ul class = "dashed">
+                                        <li class = "dashed"> Fire </li>
+                                        <li class = "dashed"> Hydrology </li>
+                                    </ul></th></tr></table></small>',
+                                 'Driving LPX-Mv1 with CMIP5 climate model outputs upto 2100',
+                                 'Running different model configuration experiments to attribute changes',
+                                 'Using Benchmark System to demostrate model is
+                                 "fit for purpose"')))
 
-## Fit For purpose
+ApplicationBenchmarking = list("slide",
+                LeftImage = list(
+                    Title = SectionTitle,
+                    SubHead = "Benchmarking (again)",
+                    Image = Images.Applc['Bench'],
+                    Text = '<small><table class = "table1">
+                              <tr>
+                                <th></th>
+                                <th>NPP<br></th>
+                                <th>R<sub>h</sub>&nbsp &nbsp &nbsp &nbsp </th>
+                                <th>Fire Flux</th>
+                                <th>Biomass Carbon</th>
+                                <th>Fuel load</th>
+                              </tr>
+                              <tr>
+                                <td></td>
+                                <td colspan="4" align = "center">g C/m<sup>2</sup></td>
+                                <td>g/m<sup>2</sup></td>
+                              </tr>
+                              <tr>
+                                <td>Haverd</td>
+                                <td>-2210 <br>&plusmn; 398</td>
+                                <td>2029 <br>&plusmn; 342</td>
+                                <td>127 <br>&plusmn; 22</td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>GFED</td>
+                                <td></td>
+                                <td></td>
+                                <td>182 <br>&plusmn; 43</td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>CDIAC</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>2388</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>VAST</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>230</td>
+                              </tr>
+                              <tr>
+                                <td>LPX-Mv1</td>
+                                <td>-2191</td>
+                                <td>1868</td>
+                                <td>176</td>
+                                <td>3481</td>
+                                <td>202</td>
+                              </tr>
+                              <tr>
+                                <td>Metric Score</td>
+                                <td>0.75</td>
+                                <td>0.82</td>
+                                <td>0.92</td>
+                                <td>0.94</td>
+                                <td>0.73</td>
+                              </tr>
+                            </table></small>'))
 
-## Results
+ApplicationFire = list("slide",
+                    LeftImage = list(
+                        Title = SectionTitle,
+                        SubHead = "Future Fire",
+                        Image = Images.Applc['Fire']))
+
+ApplicationHydology = list("slide",
+                    Image = list(
+                        Title = SectionTitle,
+                        SubHead = "Future Runoff",
+                        Image = Images.Applc['Hydrol']))
+
+Application = list(ApplicationTitle, "New Page", ApplicationOverview,
+                    "New Page", ApplicationBenchmarking, "New Page",
+                    ApplicationFire, "New Page", ApplicationHydology)
 
 ################################################################################
 ## FireMip                                                                    ##
@@ -772,6 +932,11 @@ Evaluation=list(EvaluationTitle, "New Page", EvaluationInital,
 ## Breif Descriotion
 
 ## Inital results
+
+################################################################################
+## Conclusions                                                             ##
+################################################################################
+
 
 ################################################################################
 ## Allocation and Pheneology                                                  ##
@@ -784,7 +949,9 @@ Evaluation=list(EvaluationTitle, "New Page", EvaluationInital,
 ################################################################################
 
 Images = c(Images.index, Images.title, Images.Intro, Images.Bench, Images.Error,
-           Images.Devlp, Images.Evalu)
+           Images.Devlp, Images.Evalu, Images.Applc)
+
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
                       Benchmarking, "New Slide", Error, "New Slide",
-                      Development, "New Slide", Evaluation)
+                      Development, "New Slide", Evaluation, "New Slide",
+                      Application)
