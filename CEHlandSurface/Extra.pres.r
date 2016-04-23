@@ -295,10 +295,143 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
                         "New Slide", BenchmarkingNULL)
 
 ################################################################################
-## Evalution                                                                  ##
+## Error Identification                                                       ##
 ################################################################################
+Images.Error = c(Comp     = 'LPXcompGlob.png',
+                 CompAus  = 'LPXcompAus.png',
+                 CompAus1 = 'LPXcompAus.png')
+SectionTitle = "Error Identification"
+
+ErrorTitle = list("slide",
+                 Image = list(
+                     Title = SectionTitle,
+                     SubHead = "",
+                     Image = Images.index['Index2'],
+                     Footer = ""
+                     ))
+
+ErrorOverview = list("slide",
+                 LeftImage = list(
+                     Title = SectionTitle,
+                     SubHead = "Global",
+                     Image = Images.Error['Comp'],
+                     Text = '<table  class = "table1">
+                                  <tr>
+                                    <th></th>
+                                    <th>Mean</th>
+                                    <th>Rand</th>
+                                    <th>LPX</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Tree Cover</td>
+                                    <td>0.45</td>
+                                    <td>0.56</td>
+                                    <td>0.56</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Burnt Area</td>
+                                    <td>1.00</td>
+                                    <td>1.02</td>
+                                    <td>0.85</td>
+                                  </tr>
+                                  <tr>
+                                    <td>    - mean</td>
+                                    <td>1.00</td>
+                                    <td>1.09</td>
+                                    <td>0.91</td>
+                                  </tr>
+                                  <tr>
+                                    <td>    -variance </td>
+                                    <td>1.00</td>
+                                    <td>1.14</td>
+                                    <td>0.99</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Inter-annual Burnt Area</td>
+                                    <td>1.00</td>
+                                    <td>1.35</td>
+                                    <td>0.63</td>
+                                  </tr>
+                                  <tr>
+                                    <td>-variance </td>
+                                    <td>1.00</td>
+                                    <td>1.39</td>
+                                    <td>0.77</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Fire season</td>
+                                    <td>0.74</td>
+                                    <td>0.47</td>
+                                    <td>0.10</td>
+                                  </tr>
+                                </table>',
+                     Footer = "Kelley et al. 2013"
+                     ))
+
+ErrorOverviewAus = list("slide",
+                 LeftImage = list(
+                     Title = SectionTitle,
+                     SubHead = "Australia",
+                     Image = Images.Error['CompAus'],
+                     Text = '<table  class = "table1">
+                                <tr>
+                                <th></th>
+                                <th>Mean</th>
+                                <th>Rand</th>
+                                <th>LPX</th>
+                                </tr>
+                                <tr>
+                                <td>Tree Cover</td>
+                                <td>0.45</td>
+                                <td>0.56</td>
+                                <td>0.77</td>
+                                </tr>
+                                <tr>
+                                <td>Burnt Area</td>
+                                <td>1.00</td>
+                                <td>1.25</td>
+                                <td>1.29</td>
+                                </tr>
+                                <tr>
+                                <td>    - mean</td>
+                                <td>1.00</td>
+                                <td>1.25</td>
+                                <td>1.09</td>
+                                </tr>
+                                <tr>
+                                <td>    - variance</td>
+                                <td>1.00</td>
+                                <td>1.26</td>
+                                <td>1.32</td>
+                                </tr>
+                                <tr>
+                                <td>Inter-annual Burnt Area</td>
+                                <td>1.00</td>
+                                <td>1.35</td>
+                                <td>1.05</td>
+                                </tr>
+                                <tr>
+                                <td>    - variance removed</td>
+                                <td>1.00</td>
+                                <td>1.33</td>
+                                <td>1.43</td>
+                                </tr>
+                                <tr>
+                                <td>Fire season</td>
+                                <td>0.44</td>
+                                <td>0.47</td>
+                                <td>0.50</td>
+                                </tr>
+                                </table>',
+                     Footer = "Kelley et al. 2013"
+                     ))
+
+ErrorOverviewAus1 = ErrorOverviewAus
+ErrorOverviewAus1[[2]]$Image = Images.Error['CompAus1']
 
 
+Error = list(ErrorTitle, "New Page", ErrorOverview, "New Slide",
+                ErrorOverviewAus1, "New Slide", ErrorOverviewAus)
 ################################################################################
 ## Development                                                                ##
 ################################################################################
@@ -541,6 +674,7 @@ Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide
 ## Collate                                                                    ##
 ################################################################################
 
-Images = c(Images.index, Images.title, Images.Intro, Images.Bench, Images.Devlp)
+Images = c(Images.index, Images.title, Images.Intro, Images.Bench, Images.Error,
+           Images.Devlp)
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
-                      Benchmarking, "New Slide", Development)
+                      Benchmarking, "New Slide", Error, "New Slide", Development)
