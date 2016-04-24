@@ -9,6 +9,9 @@ html, body {background: #bbf;}
 	margin-right: 2.5%;
 }
 
+section {
+	padding: 0;
+}
 
 #cv {
 	width: 288mm;
@@ -50,6 +53,15 @@ html, body {background: #bbf;}
 	background-color: rgba(255, 255, 255, .8);
 }
 
+.sectionTitle h2 {
+	text-align: center;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	font-style: bold;
+	font-size: 300%;
+	color: #840;
+	background-color: rgba(255, 255, 255, .8);
+}
+
 .sectionContent {
 	float: right;
 	width: 100%;
@@ -61,7 +73,7 @@ html, body {background: #bbf;}
 	font-style: bold;
 	font-size: 300%;
 	margin-top: 20px;
-	margin-bottom: -2px;
+	margin-bottom: -10px;
 	color: #840;
 }
 
@@ -97,7 +109,7 @@ h3 {
 
 li {
 	font-size: 200%;
-	margin: 0.67em 0;
+	margin: 0.5em 0;
 }
 
 li.dashed {
@@ -123,7 +135,9 @@ ul.dashed > li:before {
 }
 
 img {
-  max-height: 145mm;
+  max-height: 140mm;
+	display: inline-block;
+	vertical-align:middle;
 }
 
 #mainArea {
@@ -131,10 +145,14 @@ img {
 	height: 150mm;
 }
 
+table.table2 {
+	height: 180mm;
+	width: 100%;
+}
 
 table.table1 th {
 	background-color: #840;
-	font-size:150%;
+	font-size:130%;
 	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
 	font-style: bold;
 	color: white;
@@ -143,14 +161,22 @@ table.table1 th {
 
 table.table1 tr:nth-child(even) {
 	background: #bbf;
-	font-size:125%;
+	font-size:115%;
+	height: 40px;
 }
+
 table.table1 tr:nth-child(odd) {
 	background: #FFF;
-	font-size:125%;
+	font-size:115%;
+	height: 40px;
 }
 
-
+div.foot {
+    position: relative;
+    bottom: 15mm;
+    right: 0;
+    width: 100%;
+}
 
 html,body,div,span,object,iframe,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,ins,kbd,q,samp,strong,var,b,i,dl,dt,dd,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
 	font-size:102%;

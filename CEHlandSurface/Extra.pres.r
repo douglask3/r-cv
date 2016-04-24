@@ -27,6 +27,25 @@ Images.index = c(Index0        = 'PresStructure_index0.png',
 
 ImagesPath = 'CEHlandSurface/images/'
 
+Cite = c(Prentice2011 = "Prentice, IC, <b>Kelley, DI</b>, et al. (2011). Modeling fire and the terrestrial carbon balance. Global Biogeochemical Cycles, 25(3)",
+         Prentice2011b = "Prentice, IC, <b>Kelley, DI</b>, et al. (2011). Modeling fire & terrestrial carbon balance. GBC",
+         Harrison2011 = "Harrison, SP, Marlon, J, Bartlein, PJ (2010). Fire in the Earth system. In Changing climates, earth systems and society",
+         Kelley2014   = "<b>Kelley, DI</b> (2014). Modelling Australia Fire Regimes",
+         HarrisonSub  = 'Harrison, SP, &
+                         <b>Kelley, DI</b> (submitted). Projected changes in
+                         Australian fire regimes during the 21st century.',
+        Kelley2013 = "<b>Kelley, DI</b>, et al. (2013). A comprehensive
+                      benchmarking system for evaluating global
+                      vegetation models. Biogeosciences, 9(11)",
+        Kelley2014a = "<b>Kelley, DI</b>, Harrison, SP, & Prentice, IC (2014).
+                       Improved simulation of fire–vegetation interactions in
+                       the LPX-Mv1. GMD, 7(5)",
+        Kelley2014b = "<b>Kelley, DI</b>, & Harrison, SP (2014). Enhanced
+                       Australian carbon sink despite increased wildfire during
+                       the 21st century. ERL, 9(10)",
+        UkkolaSub   = "Ukkola, A, Keenan, T, <b>Kelley, DI</b>, et sal
+                      (submitted). Vegetation buffers declining precipitation. ERL")
+
 ###############################################################
 ## Slide                                                     ##
 ###############################################################
@@ -37,12 +56,12 @@ ImagesPath = 'CEHlandSurface/images/'
 Images.title = c(Title = 'TreeProtractor.png')
 
 TopPage   = list("slide",
-                 List = list(
+                 Text = list(
                      Title = "Recent work pertinent to modelling
                                 and environmental science",
                        SubHead = "Made in project: r-cv",
-                       Text = c(paste("Project URL:", gitRemoteURL()),
-                                paste("Git version:", gitVersionNumber()))
+                       Text = paste(paste("Project URL:", gitRemoteURL()),
+                                paste("Git version:", gitVersionNumber()), sep ="<br>")
                      ))
 
 TitlePage = list("slide",
@@ -55,7 +74,7 @@ TitlePage2 = TitlePage
 TitlePage2$H1 = paste(TalkTitle,"<br>
                 <h2>Douglas Kelley<h2>")
 
-TitlePage = list(TopPage, "New Slide", TitlePage, "New Slide", TitlePage2)
+TitlePage = list(TopPage, "New Slide", "New Slide", TitlePage, "New Slide", TitlePage2)
 
 ###############################################################
 ## Introduction                                              ##
@@ -70,27 +89,27 @@ Images.Intro = c(ThesisSummary = 'ThesisStructure.png',
                  LPXcomp       = 'Prentice2011.png',
                  LPXapp        = 'FutureFire2010.png')
 SectionTitle = "Introduction"
-
+SubHead = "Old-school model development"
 Problem = list("slide",
             Image = list(
                     Title = SectionTitle,
-                    SubHead = "Old-style model development",
+                    SubHead = SubHead,
                     Image = Images.Intro['LPXcomp'],
-                    Footer = "Prentice et al. 2011"
+                    Footer = Cite['Prentice2011']
                 ))
 
 Problem1 = list("slide",
             Image = list(
                     Title = SectionTitle,
-                    SubHead = "Old-style model development",
+                    SubHead = SubHead,
                     Image = Images.Intro['LPXapp'],
-                    Footer = "Harrison et al. 2011"
+                    Footer = Cite['Harrison2011']
                 ))
 
 Problem2 = list("slide",
             Text = list(
                     Title = SectionTitle,
-                    SubHead = "Old-style model development",
+                    SubHead = SubHead,
                     Text = c('"Blind" Model Development',
                              'Development focussed on sub-model incoporation
                                 rather than paramterization',
@@ -118,7 +137,7 @@ Introduction1 = list("slide",
                         Title = "Introduction",
                         SubHead = TalkTitle,
                         Image = Images.Intro['Structure1'],
-                        Footer = "Kelley 2014"
+                        Footer = Cite["Kelley2014"]
                         ))
 
 Introduction2 = Introduction3 = Introduction4 =
@@ -144,7 +163,14 @@ Introduction = list(Problem, "New Page", Problem1, "New Slide",
 ###############################################################
 ## LPX                                              ##
 ###############################################################
-Images.LPX = c(LPX       = "LPX_diagram.png")
+Images.LPX = c(LPX       = "LPX_diagram.png",
+               DGVM1     = "DGVM1.png",
+               DGVM2     = "DGVM2.png",
+               DGVM3     = "DGVM3.png",
+               DGVM4     = "DGVM4.png",
+               DGVM5     = "DGVM5.png",
+               DGVM6     = "DGVM6.png",
+               DGVM7     = "DGVM7.png")
 
 LPXTitle = list("slide",
                     Image = list(
@@ -154,24 +180,36 @@ LPXTitle = list("slide",
                         Footer = ""
                         ))
 
-LPXOverview = list("slide",
-                RightNarrowImage = list(Title = "LPX-DGVM",
+LPXOverview1 = list("slide",
+                Image = list(Title = "LPX-DGVM",
                             SubHead = "Overview",
-                            Image = Images.LPX['LPX'],
-                            Text = c('Plant Functional Trait (PFT) based model',
-                                     'Climate, Soil, CO<sub>2</sub> Inputs',
-                                     'PFTs Establish',
-                                     'PFTs compete for resources',
-                                     'PFTs are killed off',
-                                     'LPX includes process based fire model for fire
-                                        mortality and fire impacts of carbon cycle')))
+                            Image = Images.LPX['DGVM1']))
+LPXOverview2 = LPXOverview3 = LPXOverview4 = LPXOverview5 = LPXOverview6 =
+    LPXOverview7 = LPXOverview1
+
+LPXOverview2[[2]]$Image = Images.LPX['DGVM2']
+LPXOverview3[[2]]$Image = Images.LPX['DGVM3']
+LPXOverview4[[2]]$Image = Images.LPX['DGVM4']
+LPXOverview5[[2]]$Image = Images.LPX['DGVM5']
+LPXOverview6[[2]]$Image = Images.LPX['DGVM6']
+LPXOverview7[[2]]$Image = Images.LPX['DGVM7']
+
 
 LPXScheme = list("slide",
                 Image = list(Title = "LPX-DGVM",
                             SubHead = "Fire",
-                            Image = Images.LPX['LPX']))
+                            Image = Images.LPX['LPX'],
+                            Footer = Cite["HarrisonSub"]))
 
-LPX = list(LPXTitle, "New Page", LPXOverview, "New Slide", LPXScheme)
+LPX = list(LPXTitle, "New Page",
+            LPXOverview1, "New Slide",
+            LPXOverview2, "New Slide",
+            LPXOverview3, "New Slide",
+            LPXOverview4, "New Slide",
+            LPXOverview5, "New Slide",
+            LPXOverview6, "New Slide",
+            LPXOverview7, "New Slide",
+             LPXScheme)
 ###############################################################
 ## Benchmarking                                              ##
 ###############################################################
@@ -220,7 +258,7 @@ BenchmarkingTitle = list("slide",
                         ))
 
 BenchmarkingOverview1 = list("slide",
-                       List = list(
+                       Text = list(
                            Title   = "Benchmarking System",
                            SubHead = "Overview",
                            Text    = c('Quantify how well a model performs
@@ -256,7 +294,8 @@ BenchmarkingDatasets = list("slide",
                         Image = list(
                             Title = "Benchmarking",
                             SubHead = "Datasets",
-                            Image = Images.Bench["Datasets"]))
+                            Image = Images.Bench["Datasets"],
+                            Footer = Cite['Kelley2013']))
 
 ################################################################################
 ## Metrics                                                                    ##
@@ -265,7 +304,8 @@ BenchmarkingMetrics = list("slide",
                         Image = list(
                             Title = "Benchmarking",
                             SubHead = "Metrics",
-                            Image = Images.Bench["Metrics"]))
+                            Image = Images.Bench["Metrics"],
+                            Footer = Cite['Kelley2013']))
 
 BenchmarkingNME     = list("slide",
                         Image = list(
@@ -461,7 +501,7 @@ ErrorOverview = list("slide",
                                     <td>0.10</td>
                                   </tr>
                                 </table>',
-                     Footer = "Kelley et al. 2013"
+                     Footer = Cite['Kelley2013']
                      ))
 
 
@@ -573,7 +613,7 @@ ErrorOverviewAus = list("slide",
                                 <td>0.50</td>
                                 </tr>
                                 </table>',
-                     Footer = "Kelley et al. 2013"
+                     Footer = Cite['Kelley2013']
                      ))
 
 ErrorOverviewAusSmiley = ErrorOverviewAus
@@ -693,17 +733,18 @@ DevelopmentLightn = list("slide",
                      Title = SectionTitle,
                      SubHead = "Lightning ignition",
                      Image = Images.Devlp["Lightn"],
-                     Footer = "Kelley et al. 2014"))
+                     Footer = Cite['Kelley2014a']))
 
 DevelopmentLightn1 = DevelopmentLightn2 = DevelopmentLightn3 = DevelopmentLightn4 =
     DevelopmentLightn5 = DevelopmentLightn
 
 DevelopmentLightn1[[2]]$Image = Images.Devlp["Lightn1"]
+DevelopmentLightn1[[2]]$Footer = Cite['Prentice2011b']
 DevelopmentLightn2[[2]]$Image = Images.Devlp["Lightn2"]
 DevelopmentLightn3[[2]]$Image = Images.Devlp["Lightn3"]
 DevelopmentLightn4[[2]]$Image = Images.Devlp["Lightn4"]
 DevelopmentLightn5[[2]]$Image = Images.Devlp["Lightn5"]
-
+DevelopmentLightn[[2]]$Footer = ''
 ## Rooting Depth
 DevelopmentRoot = list("slide",
                  LeftImage = list(
@@ -722,7 +763,7 @@ DevelopmentRoot = list("slide",
                        <tr><td>C4</td><td>0.7          </td><td>0.86        </td></tr>
                      </table>',
                      Image = Images.Devlp["Root"],
-                     Footer = "Kelley et al. 2014"))
+                     Footer = Cite['Kelley2014a']))
 
 
 ## Fuel Drying
@@ -741,34 +782,36 @@ DevelopmentFuelDrying = list("slide",
                          <th>Modified LPX</th>
                        </tr>
                        <tr>
-                         <td>Fine<br>1hr</td>
+                         <td>Fine<br>1hr<br>&nbsp</td>
                          <td>25 hours</td>
                          <td>1 hour</td>
                        </tr>
                        <tr>
-                         <td>Small twigs<br>10hr</td>
+                         <td>Small twigs<br>10hr<br>&nbsp</td>
                          <td>460 hrs<br>(~20 days)</td>
                          <td>10 hour</td>
                        </tr>
                        <tr>
-                         <td>Branch<br>100hr</td>
+                         <td>Branch<br>100hr<br>&nbsp</td>
                          <td>1700 hrs<br>(&gt;2 months)</td>
                          <td>100 hours<br>(~4 days)</td>
                        </tr>
                        <tr>
-                         <td>Log<br>1000hr</td>
+                         <td>Log<br>1000hr<br>&nbsp</td>
                          <td>25,000 hrs<br>(~3 years)</td>
                          <td>1000 hours<br>(~1 1/2 months)</td>
                        </tr>
-                     </table></div>',
-                     Footer = "Kelley et al. 2014"))
+                     </table></div>
+                     &nbsp<br>
+                     &nbsp<br>',
+                     Footer = Cite['Kelley2014a']))
 
 DevelopmentFuelDrying1 = list("slide",
                  Image = list(
                      Title = SectionTitle,
                      SubHead = "Fuel Drying Time",
                      Image = Images.Devlp["Dry1"],
-                     Footer = "Kelley et al. 2014"))
+                     Footer = Cite['Kelley2014a']))
 
 DevelopmentFuelDrying2 = DevelopmentFuelDrying1
 DevelopmentFuelDrying2[[2]]$Image = Images.Devlp["Dry"]
@@ -776,7 +819,7 @@ DevelopmentFuelDrying2[[2]]$Image = Images.Devlp["Dry"]
 
 ## Fuel Decay
 DevelopmentFuelDecomp = list("slide",
-            RightNarrowImage = list(
+            RightImage = list(
                      Title = SectionTitle,
                      SubHead = "Litter Decomposition Rate",
                      Text = c('<b>Original LPX</b>: Decomposition same across all litter',
@@ -787,7 +830,7 @@ DevelopmentFuelDecomp = list("slide",
                                         <li class = "dashed"> Tempuratures </li>
                                     </ul>'),
                      Image = Images.Devlp["Decomp"],
-                     Footer = "Kelley et al. 2014"))
+                     Footer = Cite['Kelley2014a']))
 
 ## resprouting
 DevelopmentRS = list("slide",
@@ -795,7 +838,7 @@ DevelopmentRS = list("slide",
                      Title = SectionTitle,
                      SubHead = "Resprouting",
                      Image = Images.Devlp["RS"],
-                     Footer = "Kelley et al. 2014"))
+                     Footer = Cite['Kelley2014a']))
 
 DevelopmentRS1 = DevelopmentRS2 = DevelopmentRS3 = DevelopmentRS
 
@@ -819,7 +862,7 @@ DevelopmentBT = list("slide",
                                         <li class = "dashed"> Differences between plants with fire-adapted and fire-prone trait </li>
                                     </ul></small>'),
                      Image = Images.Devlp["BT"],
-                     Footer = "Kelley et al. 2014"))
+                     Footer = Cite['Kelley2014a']))
 
 DevelopmentBTscheme = list("slide",
             LeftNarrowImage = list(
@@ -836,12 +879,13 @@ DevelopmentBTscheme = list("slide",
                                         <li class = "dashed"> New distribution from weighted average of survivors and established </li>
                                     </ul>'),
                      Image = Images.Devlp["BTscheme"],
-                     Footer = "Kelley et al. 2014"))
+                     Footer = Cite['Kelley2014a']))
 
 DevelopmentBTscheme1 = DevelopmentBTscheme2 = DevelopmentBTscheme
 
 DevelopmentBTscheme1[[2]]$Image = Images.Devlp["BTscheme1"]
 DevelopmentBTscheme2[[2]]$Image = Images.Devlp["BTscheme2"]
+DevelopmentBTscheme[[2]]$Footer = ''
 
 Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide",
                    DevelopmentLightn1, "New Page", DevelopmentLightn2, "New Slide",
@@ -938,7 +982,7 @@ EvaluationOverview1 = list("slide",
                                     <td>0.44</td>
                                 </tr>
                                 </table>',
-                     Footer = "Kelley et al. 2014"
+                     Footer = Cite['Kelley2014a']
                      ))
 
 EvaluationOverview2 = EvaluationOverview1
@@ -1010,13 +1054,13 @@ EvaluationFPC = list("slide",
                      Title = SectionTitle,
                      SubHead = "Fractional Cover vs Climate",
                               Image = Images.Evalu["FPCvClim"],
-                              Footer = "Kelley et al. 2014"))
+                              Footer = Cite['Kelley2014a']))
 
 EvaluationRec = list("slide",
                     Image = list(Title = SectionTitle,
                               SubHead = "Disturbance Recovery Speed",
                               Image = Images.Evalu["DistRev"],
-                              Footer = "Kelley et al. 2014"))
+                              Footer = Cite['Kelley2014a']))
 
 
 Evaluation=list(EvaluationTitle, "New Page", EvaluationInital,
@@ -1127,19 +1171,22 @@ ApplicationBenchmarking = list("slide",
                                 <td>0.94</td>
                                 <td>0.73</td>
                               </tr>
-                            </table></small>'))
+                            </table></small>',
+                        Footer = Cite["Kelley2014b"]))
 
 ApplicationFire = list("slide",
                     LeftImage = list(
                         Title = SectionTitle,
                         SubHead = "Future Fire",
-                        Image = Images.Applc['Fire']))
+                        Image = Images.Applc['Fire'],
+                    Footer = Cite["Kelley2014b"]))
 
 ApplicationHydology = list("slide",
                     Image = list(
                         Title = SectionTitle,
                         SubHead = "Future Runoff",
-                        Image = Images.Applc['Hydrol']))
+                        Image = Images.Applc['Hydrol'],
+                    Footer = Cite["UkkolaSub"]))
 
 Application = list(ApplicationTitle, "New Page", ApplicationOverview,
                     "New Page", ApplicationBenchmarking, "New Page",
