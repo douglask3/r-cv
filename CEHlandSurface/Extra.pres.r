@@ -149,12 +149,12 @@ Solution4 = list("slide",
                             evaluation (e.g CEHs JULES, cLamb, iLamb)',
                             'Recent advances in remote sensing and communications
                               means there is a lot more data<div>&nbsp',
-                             'Develope a benchmark system to:
+                             'Develop a benchmark system to:
                                 <ul class = "dashed">
                                     <li class = "dashed"> Find model weaknesses </li>
                                     <li class = "dashed"> Assess model development </li>
                                     <li class = "dashed"> Justify model application </li></ul>',
-                              'Data driven model paramertization')))
+                              'Data-driven model parameterization')))
 
 Solution1 = Solution2 = Solution3 = Solution4
 Solution1[[2]]$Text[2:4] = makeInvisable(Solution1[[2]]$Text[2:4])
@@ -294,7 +294,10 @@ Images.Bench = c(Datasets      = "BenchmarkDatasets.png",
                  Null3         = "NullModels3.png",
                  Null4         = "NullModels4.png",
                  Null5         = "NullModels5.png",
-                 Null          = "NullModels.png")
+                 Null          = "NullModels.png",
+                 Numbers1      = "Scores1.png",
+                 Numbers2      = "Scores2.png",
+                 Numbers3      = "Scores3.png")
 
 
 BenchmarkingTitle = list("slide",
@@ -335,6 +338,7 @@ List = c('Lots of datasets to evaluate multiple key
                      <li class = "dashed"> Production </li>
                  </ul></th>
                  <th align="left"><ul class="dashed">
+                     <li class = "dashed"> Fire </li>
                      <li class = "dashed"> Height </li>
                      <li class = "dashed"> CO<sub>2</sub> fluxes </li>
                      <li class = "dashed"> Hydrology </li>
@@ -448,209 +452,16 @@ BenchmarkingNULL3[[2]]$Image = Images.Bench["Null3"]
 BenchmarkingNULL5[[2]]$Image = Images.Bench["Null5"]
 
 BenchmarkingNumbers1 = list("slide",
-                             Text = list(
+                             Image = list(
                                  Title = SectionTitle,
                                  SubHead = "Interpreting Numbers",
-                                 Text = '
-                                 <table class = "table1" style = "width:100%;">
-                                      <tr>
-                                        <th>Result</th>
-                                        <th>NME</th>
-                                        <th>MM</th>
-                                        <th>MPD</th>
-                                        <th><div class = "invis">Smiley</div></th>
-                                      </tr>
-                                      <tr>
-                                        <td>Comparisons</td>
-                                        <td>Spatial<br>Inter annual<br>Site<br>Season Length</td>
-                                        <td>Item-based</td>
-                                        <td>Season Time<br>Inter-annual oscillation</td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <td>Perfect</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <td><div class = "invis">Better than Mean</div></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <td><div class = "invis">Mean</div></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <td><div class = "invis">Better than random</div></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <td><div class = "invis">Random</div></td>
-                                        <td><div class = "invis">~1.2-1.4</div></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <td><div class = "invis">Worse than random</div></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <td>Worse score possible</td>
-                                        <td>&infin;</td>
-                                        <td>2</td>
-                                        <td>1 or 6 months</td>
-                                        <td></td>
-                                      </tr>
-                                    </table>'))
+                                 Image = Images.Bench['Numbers1']))
 
 BenchmarkingNumbers3 = BenchmarkingNumbers2 = BenchmarkingNumbers1
 
-BenchmarkingNumbers3[[2]]$Text = paste('<table class = "table1" style = "width:100%;">
-                                     <tr>
-                                       <th>Result</th>
-                                       <th>NME</th>
-                                       <th>MM</th>
-                                       <th>MPD</th>
-                                       <th>Smiley</th>
-                                     </tr>
-                                     <tr>
-                                       <td>Comparisons</td>
-                                       <td>Spatial<br>Inter annual<br>Site<br>Season Length</td>
-                                       <td>Item-based</td>
-                                       <td>Season Time<br>Inter-annual oscillation</td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Perfect</td>
-                                       <td>0</td>
-                                       <td>0</td>
-                                       <td>0</td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Better than Mean</td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td>',SmileyImage(1),'</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Mean</td>
-                                       <td>1</td>
-                                       <td>~1</td>
-                                       <td>-</td>
-                                       <td>',SmileyImage(2),'</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Better than random</td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td>',SmileyImage(3),'</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Random</td>
-                                       <td>~1.2-1.4</td>
-                                       <td>-</td>
-                                       <td>-</td>
-                                       <td>',SmileyImage(4),'</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Worse than random</td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td>',SmileyImage(5),'</td>
-                                     </tr>
-                                     <tr>
-                                       <td>Worse score possible</td>
-                                       <td>&infin;</td>
-                                       <td>2</td>
-                                       <td>1 or 6 months</td>
-                                       <td></td>
-                                     </tr>
-                                   </table>')
+BenchmarkingNumbers2[[2]]$Image = Images.Bench['Numbers2']
+BenchmarkingNumbers3[[2]]$Image = Images.Bench['Numbers3']
 
-BenchmarkingNumbers2[[2]]$Text = '<table class = "table1" style = "width:100%;">
-                                     <tr>
-                                       <th>Result</th>
-                                       <th>NME</th>
-                                       <th>MM</th>
-                                       <th>MPD</th>
-                                       <th><div class = "invis">Smiley</div></th>
-                                     </tr>
-                                     <tr>
-                                       <td>Comparisons</td>
-                                       <td>Spatial<br>Inter annual<br>Site<br>Season Length</td>
-                                       <td>Item-based</td>
-                                       <td>Season Time<br>Inter-annual oscillation</td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Perfect</td>
-                                       <td>0</td>
-                                       <td>0</td>
-                                       <td>0</td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Better than Mean</td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Mean</td>
-                                       <td>1</td>
-                                       <td>~1</td>
-                                       <td>-</td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Better than random</td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Random</td>
-                                       <td>~1.2-1.4</td>
-                                       <td>-</td>
-                                       <td>-</td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Worse than random</td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                       <td></td>
-                                     </tr>
-                                     <tr>
-                                       <td>Worse score possible</td>
-                                       <td>&infin;</td>
-                                       <td>2</td>
-                                       <td>1 or 6 months</td>
-                                       <td></td>
-                                     </tr>
-                                   </table>'
 
 Benchmarking = list(BenchmarkingTitle, "New Page",
                         BenchmarkingOverview1A, "New Slide",
@@ -677,10 +488,10 @@ Benchmarking = list(BenchmarkingTitle, "New Page",
                         BenchmarkingMPD6, "New Slide", BenchmarkingMPD7, "New Slide",
                         BenchmarkingMPD8, "New Slide", BenchmarkingMPD9, "New Slide",
                         BenchmarkingMPD, "New Slide",
-                    BenchmarkingMetrics, "New Page",
-                    BenchmarkingNULL1, "New Page", BenchmarkingNULL2,"New Slide",
+                    BenchmarkingMetrics, "New Page",BenchmarkingNumbers1, "New Page",
+                    BenchmarkingNULL1, "New Slide", BenchmarkingNULL2,"New Slide",
                         BenchmarkingNULL3,"New Slide", BenchmarkingNULL5,
-                        "New Slide", BenchmarkingNULL)
+                        "New Slide", BenchmarkingNULL, "New Slide", BenchmarkingNumbers2)
 
 Benchmarking = list(BenchmarkingTitle, "New Page",
                         BenchmarkingOverview2A, "New Slide",
@@ -690,14 +501,14 @@ Benchmarking = list(BenchmarkingTitle, "New Page",
                     BenchmarkingNumbers1, "New Page",
                     BenchmarkingNULL3,
                         "New Slide", BenchmarkingNULL, "New Slide",
-                    BenchmarkingNumbers2)
+                        BenchmarkingNumbers2)
 
 ################################################################################
 ## Error Identification                                                       ##
 ################################################################################
 Images.Error = c(Comp     = 'LPXcompGlob.png',
-                 CompAus  = 'LPXcompAus.png',
-                 CompAus1 = 'LPXcompAus1.png',
+                 CompAus1 = 'LPXcompAus2.png',
+                 CompAus2 = 'LPXcompAus1.png',
                  BenchNos = 'BecnhmarkingNumbers.png')
 
 
@@ -832,7 +643,7 @@ ErrorOverviewAus = list("slide",
                  LeftImage = list(
                      Title = SectionTitle,
                      SubHead = "Australia",
-                     Image = Images.Error['CompAus'],
+                     Image = Images.Error['CompAus1'],
                      Text = '<table  class = "table1">
                                 <tr>
                                 <th></th>
@@ -941,10 +752,10 @@ ErrorOverviewAusSmiley[[2]]$Text =paste(
            </table>')
 
 ErrorOverviewAus1 = ErrorOverviewAus
-ErrorOverviewAus1[[2]]$Image = Images.Error['CompAus1']
+ErrorOverviewAus1[[2]]$Image = Images.Error['CompAus2']
 
 ErrorOverviewAus1Smiley = ErrorOverviewAusSmiley
-ErrorOverviewAus1Smiley[[2]]$Image = Images.Error['CompAus1']
+ErrorOverviewAus1Smiley[[2]]$Image = Images.Error['CompAus2']
 
 
 Error = list(ErrorTitle, "New Page", ErrorNos, "New Slide", ErrorOverview, "New Slide",
@@ -992,7 +803,7 @@ DevelopmentOverview = list("slide",
                 List = list(
                     Title   = SectionTitle,
                     SubHead = "Overview",
-                    Text    = c('Benchmarking system identified areas for improvment',
+                    Text    = c('Benchmarking system identified areas for improvement',
                                 'Lightning ignition scheme',
                                 'Fuel drying time',
                                 'Fuel decomposition',
@@ -1160,7 +971,8 @@ DevelopmentBTscheme = list("slide",
                                     </ul>',
                               'In Establishment:
                                     <ul class="dashed">
-                                        <li class = "dashed"> Trees establish based on inital distribution. </li>
+                                        <li class = "dashed"> Trees establish
+                                            based on initial distribution. </li>
                                         <li class = "dashed"> New distribution from weighted average of survivors and established </li>
                                     </ul>'),
                      Image = Images.Devlp["BTscheme"],
@@ -1205,8 +1017,8 @@ Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide
 ################################################################################
 ## Evaluation                                                                 ##
 ################################################################################
-Images.Evalu = c(CompFPC  = 'LPXMv1FPC.png',
-                 CompFire = 'LPXMv1Fire.png',
+Images.Evalu = c(CompFPC  = 'LPXcompAus3.png',
+                 CompFire = 'LPXcompAus3.png',
                  FPCvClim = 'LPXMv1FPCvClimate.png',
                  DistRev  = 'LPXMv1Rec.png')
 
@@ -1226,7 +1038,7 @@ EvaluationInital[[2]]$SubHead = 'Inital'
 EvaluationOverview1 = list("slide",
                  LeftImage = list(
                      Title = SectionTitle,
-                     SubHead = "Fire",
+                     SubHead = "New",
                      Image = Images.Evalu['CompFire'],
                      Text = '<table  class = "table1">
                                 <tr>
@@ -1290,7 +1102,6 @@ EvaluationOverview1 = list("slide",
                      ))
 
 EvaluationOverview2 = EvaluationOverview1
-EvaluationOverview2[[2]]$SubHead = "Tree Cover"
 EvaluationOverview2[[2]]$Image   = Images.Evalu['CompFPC']
 EvaluationOverview2[[2]]$Text    = paste('<table  class = "table1">
            <tr>
@@ -1390,7 +1201,7 @@ ApplicationTitle = list("slide",
                      Footer = ""))
 
 ## Introduction: Carbon, ecosystem composition, fire, hydrology
-ApplicationOverview = list("slide",
+ApplicationOverview4 = list("slide",
                 List = list(
                     Title   = SectionTitle,
                     SubHead = "Overview",
@@ -1404,10 +1215,16 @@ ApplicationOverview = list("slide",
                                         <li class = "dashed"> Fire </li>
                                         <li class = "dashed"> Hydrology </li>
                                     </ul></th></tr></table></small>',
-                                 'Driving LPX-Mv1 with CMIP5 climate model outputs upto 2100',
+                                 'Driving LPX-Mv1 with CMIP5 climate model outputs up to 2100',
                                  'Running different model configuration experiments to attribute changes',
-                                 'Using Benchmark System to demostrate model is
+                                 'Using Benchmark System to demonstrate model is
                                  "fit for purpose"')))
+
+ApplicationOverview1 = ApplicationOverview2 = ApplicationOverview3 = ApplicationOverview4
+
+ApplicationOverview1[[2]]$Text[2:4] = makeInvisable(ApplicationOverview1[[2]]$Text[2:4])
+ApplicationOverview2[[2]]$Text[3:4] = makeInvisable(ApplicationOverview2[[2]]$Text[3:4])
+ApplicationOverview3[[2]]$Text[4:4] = makeInvisable(ApplicationOverview3[[2]]$Text[4:4])
 
 ApplicationBenchmarking = list("slide",
                 LeftImage = list(
@@ -1479,6 +1296,72 @@ ApplicationBenchmarking = list("slide",
                             </table></small>',
                         Footer = Cite["Kelley2014b"]))
 
+ApplicationBenchmarkingSmiley = ApplicationBenchmarking
+ApplicationBenchmarkingSmiley[[2]]$Text = paste(
+    '<small><table class = "table1">
+          <tr>
+            <th></th>
+            <th>NPP<br></th>
+            <th>R<sub>h</sub>&nbsp &nbsp &nbsp &nbsp </th>
+            <th>Fire Flux</th>
+            <th>Biomass Carbon</th>
+            <th>Fuel load</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="4" align = "center">g C/m<sup>2</sup></td>
+            <td>g/m<sup>2</sup></td>
+          </tr>
+          <tr>
+            <td>Haverd</td>
+            <td>-2210 <br>&plusmn; 398</td>
+            <td>2029 <br>&plusmn; 342</td>
+            <td>127 <br>&plusmn; 22</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>GFED</td>
+            <td></td>
+            <td></td>
+            <td>182 <br>&plusmn; 43</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CDIAC</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>2388</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>VAST</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>230</td>
+          </tr>
+          <tr>
+            <td>LPX-Mv1</td>
+            <td>-2191</td>
+            <td>1868</td>
+            <td>176</td>
+            <td>3481</td>
+            <td>202</td>
+          </tr>
+          <tr>
+            <td>Metric Score</td>
+            <td>',SmileyImage(1),'</td>
+            <td>',SmileyImage(1),'</td>
+            <td>',SmileyImage(1),'</td>
+            <td>',SmileyImage(1),'</td>
+            <td>',SmileyImage(1),'</td>
+          </tr>
+        </table></small>')
+
 ApplicationFire = list("slide",
                     Image = list(
                         Title = SectionTitle,
@@ -1500,10 +1383,22 @@ ApplicationCarbon = list("slide",
                         Image = Images.Applc['Carbon'],
                     Footer = Cite["UkkolaSub"]))
 
-Application = list(ApplicationTitle, "New Page", ApplicationOverview,
-                    "New Page", ApplicationBenchmarking, "New Page",
+Application = list( ApplicationTitle, "New Page",
+                    ApplicationOverview1, "New Page",
+                        ApplicationOverview2, "New Slide",
+                        ApplicationOverview3, "New Slide",
+                        ApplicationOverview4,   "New Slide",
+                    ApplicationBenchmarking, "New Page", ApplicationBenchmarkingSmiley, "New Slide",
                     ApplicationCarbon, "New Page",
                     ApplicationFire, "New Page", ApplicationHydology)
+
+Application = list( ApplicationTitle, "New Page",
+                    ApplicationOverview1, "New Page",
+                        ApplicationOverview2, "New Slide",
+                        ApplicationOverview3, "New Slide",
+                        ApplicationOverview4,   "New Slide",
+                    ApplicationBenchmarking, "New Page", ApplicationBenchmarkingSmiley, "New Slide",
+                    ApplicationCarbon)
 
 ################################################################################
 ## FireMip                                                                    ##
