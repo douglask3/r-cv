@@ -24,6 +24,19 @@ Images.index = c(Index0        = 'PresStructure_index0.png',
                  Index4        = 'PresStructure_index4.png',
                  Index5        = 'PresStructure_index5.png')
 
+Images.Smiley = c(Laugh = 'Laugh.png',
+                  Smile = 'Smile.png',
+                  Indif = 'Indif.png',
+                  Sad   = 'Sad.png',
+                  Cry   = 'Cry.png'
+               )
+
+SmileySize = 35
+
+SmileyImage <- function(nm)
+   paste('<img src="',Images.Smiley[nm],'"
+         style="width:',SmileySize,'px;height:',SmileySize,'px;">', sep ='')
+
 
 ImagesPath = 'CEHlandSurface/images/'
 
@@ -43,7 +56,7 @@ Cite = c(Prentice2011 = "Prentice, IC, <b>Kelley, DI</b>, et al. (2011). Modelin
         Kelley2014b = "<b>Kelley, DI</b>, & Harrison, SP (2014). Enhanced
                        Australian carbon sink despite increased wildfire during
                        the 21st century. ERL, 9(10)",
-        UkkolaSub   = "Ukkola, A, Keenan, T, <b>Kelley, DI</b>, et sal
+        UkkolaSub   = "Ukkola, A, Keenan, T, <b>Kelley, DI</b>, et al
                       (submitted). Vegetation buffers declining precipitation. ERL")
 
 ###############################################################
@@ -105,32 +118,48 @@ Problem1 = list("slide",
                     Image = Images.Intro['LPXapp'],
                     Footer = Cite['Harrison2011']
                 ))
+List = c('Focussed on incorporating sub-model
+            rather than parameterization',
+         'Model tuning to get right results with wrong
+            process-representation',
+         'No test for model degradation',
+         'Unknown "uncertainty" in model results',
+         'Hard to understand drivers of change for e.g. future predictions',
+         'Due to a lack of comprehensive benchmarking system')
 
-Problem2 = list("slide",
+Problem2F = list("slide",
             Text = list(
                     Title = SectionTitle,
                     SubHead = SubHead,
-                    Text = c('"Blind" Model Development',
-                             'Development focussed on sub-model incoporation
-                                rather than paramterization',
-                             'Model tuning to get right results with wrong
-                                process-representation',
-                             'Unknown "uncertainty" in model results',
-                             'Hard to understand drivers of change for e.g. future predictions',
-                             'Due to a lack of comprehensive benchmarking system')))
+                    Text = List))
 
-Solution = list("slide",
+Problem2A = Problem2B = Problem2C = Problem2D = Problem2E = Problem2F
+makeInvisable <- function(txt) paste('<div class = "invis">', txt, '</div>')
+Problem2A[[2]]$Text[2:6] = makeInvisable(Problem2A[[2]]$Text[2:6])
+Problem2B[[2]]$Text[3:6] = makeInvisable(Problem2A[[2]]$Text[3:6])
+Problem2C[[2]]$Text[4:6] = makeInvisable(Problem2A[[2]]$Text[4:6])
+Problem2D[[2]]$Text[5:6] = makeInvisable(Problem2A[[2]]$Text[5:6])
+Problem2E[[2]]$Text[6:6] = makeInvisable(Problem2A[[2]]$Text[6:6])
+
+Solution4 = list("slide",
             Text = list(
                     Title = SectionTitle,
-                    SubHead = "Old-style model development",
-                    Text = c('Recent advances in remote sensing and communications
+                    SubHead = "New approuch model development",
+                    Text = c('Call from community for more comprehensive model
+                            evaluation (e.g CEHs JULES, cLamb, iLamb)',
+                            'Recent advances in remote sensing and communications
                               means there is a lot more data<div>&nbsp',
                              'Develope a benchmark system to:
                                 <ul class = "dashed">
                                     <li class = "dashed"> Find model weaknesses </li>
                                     <li class = "dashed"> Assess model development </li>
                                     <li class = "dashed"> Justify model application </li></ul>',
-                              'Paramterize model development')))
+                              'Data driven model paramertization')))
+
+Solution1 = Solution2 = Solution3 = Solution4
+Solution1[[2]]$Text[2:4] = makeInvisable(Solution1[[2]]$Text[2:4])
+Solution2[[2]]$Text[3:4] = makeInvisable(Solution1[[2]]$Text[3:4])
+Solution3[[2]]$Text[4:4] = makeInvisable(Solution1[[2]]$Text[4:4])
 
 Introduction1 = list("slide",
                     Image = list(
@@ -151,8 +180,16 @@ Introduction5$Image$Image = Images.Intro['Structure5']
 Introduction6$Image$Image = Images.Intro['Structure6']
 
 Introduction = list(Problem, "New Page", Problem1, "New Slide",
-                        Problem2, "New Slide",
-                        Solution, "New Slide",
+                        Problem2A, "New Slide",
+                        Problem2B, "New Slide",
+                        Problem2C, "New Slide",
+                        Problem2D, "New Slide",
+                        Problem2E, "New Slide",
+                        Problem2F, "New Slide",
+                        Solution1, "New Slide",
+                        Solution2, "New Slide",
+                        Solution3, "New Slide",
+                        Solution4, "New Slide",
                     Introduction1, "New Page",
                         Introduction2, "New Slide",
                         Introduction3, "New Slide",
@@ -210,9 +247,20 @@ LPX = list(LPXTitle, "New Page",
             LPXOverview6, "New Slide",
             LPXOverview7, "New Slide",
              LPXScheme)
+
+LPX = list(LPXTitle, "New Page",
+            LPXOverview1, "New Slide",
+            LPXOverview2, "New Slide",
+            LPXOverview3, "New Slide",
+            LPXOverview4, "New Slide",
+            LPXOverview5, "New Slide",
+            LPXOverview6, "New Slide",
+            LPXOverview7)
 ###############################################################
 ## Benchmarking                                              ##
 ###############################################################
+SectionTitle = "Benchmarking System"
+
 Images.Bench = c(Datasets      = "BenchmarkDatasets.png",
                  NME1          = "NME1.png",
                  NME2          = "NME2.png",
@@ -251,65 +299,75 @@ Images.Bench = c(Datasets      = "BenchmarkDatasets.png",
 
 BenchmarkingTitle = list("slide",
                     Image = list(
-                        Title = "Benchmarking System",
+                        Title = SectionTitle,
                         SubHead = "",
                         Image = Images.index['Index1'],
                         Footer = ""
                         ))
-
-BenchmarkingOverview1 = list("slide",
+List = c('Quantify how well a model performs
+             across a comprehensive range of important
+             processes',
+             'Allows identification of model weaknesses
+             and processes that require improvement',
+             'Quantifies the differences between
+             model version and impact of new
+             parameterizations',
+             'Allows model inter-comparison')
+BenchmarkingOverview1D = list("slide",
                        Text = list(
-                           Title   = "Benchmarking System",
+                           Title   = SectionTitle,
                            SubHead = "Overview",
-                           Text    = c('Quantify how well a model performs
-                                        across a comprehensive range of important
-                                        processes',
-                                        'Allows identification of model weaknesses
-                                        and processes that require improvement',
-                                        'Quantifies the differences between
-                                        model version and impact of new
-                                        parameterizations',
-                                        'Allows model inter-comparison')))
+                           Text    = List))
 
-BenchmarkingOverview2 = BenchmarkingOverview1
-BenchmarkingOverview2[[2]]$Text = c('
-            Lots of datasets to evaluate multiple key
+BenchmarkingOverview1A = BenchmarkingOverview1B = BenchmarkingOverview1C =
+    BenchmarkingOverview1D
+
+BenchmarkingOverview1A[[2]]$Text[2:4] = makeInvisable(BenchmarkingOverview1A[[2]]$Text[2:4])
+BenchmarkingOverview1B[[2]]$Text[3:4] = makeInvisable(BenchmarkingOverview1A[[2]]$Text[3:4])
+BenchmarkingOverview1C[[2]]$Text[4:4] = makeInvisable(BenchmarkingOverview1A[[2]]$Text[4:4])
+
+List = c('Lots of datasets to evaluate multiple key
              processes:
              <table><tr>
                  <th align="left"><ul class="dashed">
+                     <li class = "dashed"> Vegetation Cover </li>
                      <li class = "dashed"> Photosynthesis </li>
-                     <li class = "dashed"> Respiration </li>
-                     <li class = "dashed"> Growth </li>
+                     <li class = "dashed"> Production </li>
                  </ul></th>
                  <th align="left"><ul class="dashed">
-                     <li class = "dashed"> Competition </li>
-                     <li class = "dashed"> Fire disturbance </li>
+                     <li class = "dashed"> Height </li>
+                     <li class = "dashed"> CO<sub>2</sub> fluxes </li>
                      <li class = "dashed"> Hydrology </li>
                  </ul></th>
              </tr></table>',
              'Uses specifically designed metrics to quantify
              differences between model and observation')
+BenchmarkingOverview2B = BenchmarkingOverview1D
+BenchmarkingOverview2B[[2]]$Text = List
+BenchmarkingOverview2A = BenchmarkingOverview2B
+BenchmarkingOverview2A[[2]]$Text[2] = makeInvisable(BenchmarkingOverview2A[[2]]$Text[2])
 
 BenchmarkingDatasets = list("slide",
                         Image = list(
-                            Title = "Benchmarking",
+                            Title = SectionTitle,
                             SubHead = "Datasets",
                             Image = Images.Bench["Datasets"],
                             Footer = Cite['Kelley2013']))
+
 
 ################################################################################
 ## Metrics                                                                    ##
 ################################################################################
 BenchmarkingMetrics = list("slide",
                         Image = list(
-                            Title = "Benchmarking",
+                            Title = SectionTitle,
                             SubHead = "Metrics",
                             Image = Images.Bench["Metrics"],
                             Footer = Cite['Kelley2013']))
 
 BenchmarkingNME     = list("slide",
                         Image = list(
-                            Title = "Benchmarking",
+                            Title = SectionTitle,
                             SubHead = "Metrics<br>
                                 <small> Normalised Mean Error (NME) </small>",
                             Image = Images.Bench["NME"]))
@@ -334,7 +392,7 @@ BenchmarkingNMEIAV2[[2]]$Image = Images.Bench["NMEIAV2"]
 
 BenchmarkingMM      = list("slide",
                         Image = list(
-                            Title = "Benchmarking",
+                            Title = SectionTitle,
                             SubHead = "Metrics<br>
                                 <small> Manhattan Metric (MM) </small>",
                             Image = Images.Bench["MM"]))
@@ -351,7 +409,7 @@ BenchmarkingMM6[[2]]$Image = Images.Bench["MM6"]
 
 BenchmarkingMPD      = list("slide",
                         Image = list(
-                            Title = "Benchmarking",
+                            Title = SectionTitle,
                             SubHead = "Metrics<br>
                                 <small> Seasonality & Mean Phase Difference (MPD) </small>",
                             Image = Images.Bench["MPD"]))
@@ -375,10 +433,9 @@ BenchmarkingMPD9[[2]]$Image = Images.Bench["MPD9"]
 ################################################################################
 ## Null Models                                                                ##
 ################################################################################
-
 BenchmarkingNULL     = list("slide",
                         Image = list(
-                            Title = "Benchmarking",
+                            Title = SectionTitle,
                             SubHead = "Null Models",
                             Image = Images.Bench["Null"]))
 
@@ -390,11 +447,220 @@ BenchmarkingNULL2[[2]]$Image = Images.Bench["Null2"]
 BenchmarkingNULL3[[2]]$Image = Images.Bench["Null3"]
 BenchmarkingNULL5[[2]]$Image = Images.Bench["Null5"]
 
+BenchmarkingNumbers1 = list("slide",
+                             Text = list(
+                                 Title = SectionTitle,
+                                 SubHead = "Interpreting Numbers",
+                                 Text = '
+                                 <table class = "table1" style = "width:100%;">
+                                      <tr>
+                                        <th>Result</th>
+                                        <th>NME</th>
+                                        <th>MM</th>
+                                        <th>MPD</th>
+                                        <th><div class = "invis">Smiley</div></th>
+                                      </tr>
+                                      <tr>
+                                        <td>Comparisons</td>
+                                        <td>Spatial<br>Inter annual<br>Site<br>Season Length</td>
+                                        <td>Item-based</td>
+                                        <td>Season Time<br>Inter-annual oscillation</td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Perfect</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td><div class = "invis">Better than Mean</div></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td><div class = "invis">Mean</div></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td><div class = "invis">Better than random</div></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td><div class = "invis">Random</div></td>
+                                        <td><div class = "invis">~1.2-1.4</div></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td><div class = "invis">Worse than random</div></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Worse score possible</td>
+                                        <td>&infin;</td>
+                                        <td>2</td>
+                                        <td>1 or 6 months</td>
+                                        <td></td>
+                                      </tr>
+                                    </table>'))
 
-Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
-                        "New Slide", BenchmarkingOverview2, "New Slide",
+BenchmarkingNumbers3 = BenchmarkingNumbers2 = BenchmarkingNumbers1
+
+BenchmarkingNumbers3[[2]]$Text = paste('<table class = "table1" style = "width:100%;">
+                                     <tr>
+                                       <th>Result</th>
+                                       <th>NME</th>
+                                       <th>MM</th>
+                                       <th>MPD</th>
+                                       <th>Smiley</th>
+                                     </tr>
+                                     <tr>
+                                       <td>Comparisons</td>
+                                       <td>Spatial<br>Inter annual<br>Site<br>Season Length</td>
+                                       <td>Item-based</td>
+                                       <td>Season Time<br>Inter-annual oscillation</td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Perfect</td>
+                                       <td>0</td>
+                                       <td>0</td>
+                                       <td>0</td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Better than Mean</td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td>',SmileyImage(1),'</td>
+                                     </tr>
+                                     <tr>
+                                       <td>Mean</td>
+                                       <td>1</td>
+                                       <td>~1</td>
+                                       <td>-</td>
+                                       <td>',SmileyImage(2),'</td>
+                                     </tr>
+                                     <tr>
+                                       <td>Better than random</td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td>',SmileyImage(3),'</td>
+                                     </tr>
+                                     <tr>
+                                       <td>Random</td>
+                                       <td>~1.2-1.4</td>
+                                       <td>-</td>
+                                       <td>-</td>
+                                       <td>',SmileyImage(4),'</td>
+                                     </tr>
+                                     <tr>
+                                       <td>Worse than random</td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td>',SmileyImage(5),'</td>
+                                     </tr>
+                                     <tr>
+                                       <td>Worse score possible</td>
+                                       <td>&infin;</td>
+                                       <td>2</td>
+                                       <td>1 or 6 months</td>
+                                       <td></td>
+                                     </tr>
+                                   </table>')
+
+BenchmarkingNumbers2[[2]]$Text = '<table class = "table1" style = "width:100%;">
+                                     <tr>
+                                       <th>Result</th>
+                                       <th>NME</th>
+                                       <th>MM</th>
+                                       <th>MPD</th>
+                                       <th><div class = "invis">Smiley</div></th>
+                                     </tr>
+                                     <tr>
+                                       <td>Comparisons</td>
+                                       <td>Spatial<br>Inter annual<br>Site<br>Season Length</td>
+                                       <td>Item-based</td>
+                                       <td>Season Time<br>Inter-annual oscillation</td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Perfect</td>
+                                       <td>0</td>
+                                       <td>0</td>
+                                       <td>0</td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Better than Mean</td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Mean</td>
+                                       <td>1</td>
+                                       <td>~1</td>
+                                       <td>-</td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Better than random</td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Random</td>
+                                       <td>~1.2-1.4</td>
+                                       <td>-</td>
+                                       <td>-</td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Worse than random</td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                       <td></td>
+                                     </tr>
+                                     <tr>
+                                       <td>Worse score possible</td>
+                                       <td>&infin;</td>
+                                       <td>2</td>
+                                       <td>1 or 6 months</td>
+                                       <td></td>
+                                     </tr>
+                                   </table>'
+
+Benchmarking = list(BenchmarkingTitle, "New Page",
+                        BenchmarkingOverview1A, "New Slide",
+                        BenchmarkingOverview1B, "New Slide",
+                        BenchmarkingOverview1C, "New Slide",
+                        BenchmarkingOverview1D, "New Slide",
+                        BenchmarkingOverview2A, "New Slide",
                         BenchmarkingDatasets, "New Slide",
-                    BenchmarkingMetrics, "New Page",
+                        BenchmarkingOverview2B, "New Slide",
+                    BenchmarkingMetrics, "New Slide",
                     BenchmarkingNME1, "New Page", BenchmarkingNME2, "New Slide",
                         BenchmarkingNME3, "New Slide", BenchmarkingNME, "New Slide",
                         BenchmarkingSteps, "New Page",
@@ -416,25 +682,24 @@ Benchmarking = list(BenchmarkingTitle, "New Page", BenchmarkingOverview1,
                         BenchmarkingNULL3,"New Slide", BenchmarkingNULL5,
                         "New Slide", BenchmarkingNULL)
 
+Benchmarking = list(BenchmarkingTitle, "New Page",
+                        BenchmarkingOverview2A, "New Slide",
+                        BenchmarkingDatasets, "New Slide",
+                        BenchmarkingOverview2B, "New Slide",
+                    BenchmarkingMetrics, "New Slide",
+                    BenchmarkingNumbers1, "New Page",
+                    BenchmarkingNULL3,
+                        "New Slide", BenchmarkingNULL, "New Slide",
+                    BenchmarkingNumbers2)
+
 ################################################################################
 ## Error Identification                                                       ##
 ################################################################################
 Images.Error = c(Comp     = 'LPXcompGlob.png',
                  CompAus  = 'LPXcompAus.png',
-                 CompAus1 = 'LPXcompAus1.png')
+                 CompAus1 = 'LPXcompAus1.png',
+                 BenchNos = 'BecnhmarkingNumbers.png')
 
-Images.Smiley = c(Laugh = 'Laugh.png',
-                  Smile = 'Smile.png',
-                  Indif = 'Indif.png',
-                  Sad   = 'Sad.png',
-                  Cry   = 'Cry.png'
-                  )
-
-SmileySize = 35
-
-SmileyImage <- function(nm)
-    paste('<img src="',Images.Smiley[nm],'"
-          style="width:',SmileySize,'px;height:',SmileySize,'px;">', sep ='')
 
 SectionTitle = "Error Identification"
 
@@ -445,6 +710,11 @@ ErrorTitle = list("slide",
                      Image = Images.index['Index2'],
                      Footer = ""
                      ))
+ErrorNos = list("slide",
+                Image = list(
+                    Title = SectionTitle,
+                    Image = Images.Error['BenchNos']
+                    ))
 
 ErrorOverview = list("slide",
                  LeftImage = list(
@@ -677,8 +947,8 @@ ErrorOverviewAus1Smiley = ErrorOverviewAusSmiley
 ErrorOverviewAus1Smiley[[2]]$Image = Images.Error['CompAus1']
 
 
-Error = list(ErrorTitle, "New Page", ErrorOverview, "New Slide",
-             ErrorOverviewSmiley, "New Slide",
+Error = list(ErrorTitle, "New Page", ErrorNos, "New Slide", ErrorOverview, "New Slide",
+            BenchmarkingNumbers3, "New Slide", ErrorOverviewSmiley, "New Slide",
              ErrorOverviewAus1, "New Slide", ErrorOverviewAus1Smiley,
              "New Slide", ErrorOverviewAusSmiley)
 ################################################################################
@@ -695,11 +965,15 @@ Images.Devlp = c(LPX       = "LPX_diagram.png",
                  Decomp    = "Decomposition.png",
                  Dry       = "Dry.png",
                  Dry1      = "Dry1.png",
+                 RSDat     = "RSdata.png",
                  RS1       = "RS1.png",
                  RS2       = "RS2.png",
                  RS3       = "RS3.png",
-                 RS        = "RS.png",
-                 BT        = "BT.png",
+                 RS4       = "RS.png",
+                 BT1       = "BT1.png",
+                 BT2       = "BT2.png",
+                 BT3       = "BT.png",
+                 BT4       = "BT4.png",
                  BTscheme1 = "BTscheme1.png",
                  BTscheme2 = "BTscheme2.png",
                  BTscheme  = "BTscheme.png")
@@ -718,12 +992,13 @@ DevelopmentOverview = list("slide",
                 List = list(
                     Title   = SectionTitle,
                     SubHead = "Overview",
-                    Text    = c('Lightning ignition',
+                    Text    = c('Benchmarking system identified areas for improvment',
+                                'Lightning ignition scheme',
                                 'Fuel drying time',
                                 'Fuel decomposition',
                                 'Rooting depth',
-                                'Bark thickness',
-                                'Resprouting')))
+                                '<b>Bark thickness</b>',
+                                '<b>Resprouting<b>')))
 
 ## Lightning Scheme
 # https://www.flickr.com/photos/thelightningman/7233369438/in/photolist-c2bUJb-fpE79S-cAiwJW-2PUGt3-rmYzPX-vJUYX9-9CAhAH-9S5VG8-nCgx9M-hAqaWs-nAvznR-51Qf1g-eNit1X-4SwcXG-pks9rr-g8HeP5-nRYoxq-fLfM2d-nzaKRr-5mJGv6-6RnwTa-om8cCt-5hieMx-c91J4f-bwg48v-aEBd4Q-cM3N47-njNShm-eajqsB-af4qhG-brjU6p-5k6Xuj-oUNnea-rJuckS-96p7PZ-9RXP2o-qNT35r-aExkWT-afaEei-cEzC2q-oiQrgD-sHqv4R-6tAo8f-aDbNpr-omzh5o-6PcfUk-en4R3Q-oaGm2v-emMi3b-r7oDjr
@@ -833,21 +1108,24 @@ DevelopmentFuelDecomp = list("slide",
                      Footer = Cite['Kelley2014a']))
 
 ## resprouting
+
+
 DevelopmentRS = list("slide",
             Image = list(
                      Title = SectionTitle,
                      SubHead = "Resprouting",
-                     Image = Images.Devlp["RS"],
+                     Image = Images.Devlp["RSDat"],
                      Footer = Cite['Kelley2014a']))
 
-DevelopmentRS1 = DevelopmentRS2 = DevelopmentRS3 = DevelopmentRS
+DevelopmentRS1 = DevelopmentRS2 = DevelopmentRS3 = DevelopmentRS4 = DevelopmentRS
 
 DevelopmentRS1[[2]]$Image = Images.Devlp["RS1"]
 DevelopmentRS2[[2]]$Image = Images.Devlp["RS2"]
 DevelopmentRS3[[2]]$Image = Images.Devlp["RS3"]
+DevelopmentRS4[[2]]$Image = Images.Devlp["RS4"]
 
 ## Adpative Bark Thickness
-DevelopmentBT = list("slide",
+DevelopmentBT4 = list("slide",
             LeftImage = list(
                      Title = SectionTitle,
                      SubHead = "Bark Thickness",
@@ -861,8 +1139,15 @@ DevelopmentBT = list("slide",
                                         <li class = "dashed"> Within PFT variability. </li>
                                         <li class = "dashed"> Differences between plants with fire-adapted and fire-prone trait </li>
                                     </ul></small>'),
-                     Image = Images.Devlp["BT"],
+                     Image = Images.Devlp["BT4"],
                      Footer = Cite['Kelley2014a']))
+
+DevelopmentBT1 = DevelopmentBT2 = DevelopmentBT3 = DevelopmentBT4
+DevelopmentBT1[[2]]$Image = Images.Devlp["BT1"]
+DevelopmentBT2[[2]]$Image = Images.Devlp["BT2"]
+DevelopmentBT3[[2]]$Image = Images.Devlp["BT3"]
+
+DevelopmentBT1[[2]]$Text[2] = makeInvisable(DevelopmentBT1[[2]]$Text[2])
 
 DevelopmentBTscheme = list("slide",
             LeftNarrowImage = list(
@@ -891,12 +1176,31 @@ Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide
                    DevelopmentLightn1, "New Page", DevelopmentLightn2, "New Slide",
                         DevelopmentLightn3, "New Slide", DevelopmentLightn4, "New Slide",
                         DevelopmentLightn5, "New Slide",DevelopmentLightn, "New Slide",
-                   DevelopmentRoot, "New Slide",DevelopmentFuelDrying,
-                   "New Slide", DevelopmentFuelDrying1, "New Slide", DevelopmentFuelDrying2,
-                   "New Slide", DevelopmentFuelDecomp, "New Slide",
-                   DevelopmentRS1, "New Slide", DevelopmentRS2, "New Slide",
-                   DevelopmentRS3, "New Slide", DevelopmentRS, "New Slide",
-                   DevelopmentBT, "New Slide", DevelopmentBTscheme1, "New Slide", DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
+                   DevelopmentRoot, "New Page",
+                   DevelopmentFuelDrying, "New Page", DevelopmentFuelDrying1,
+                        "New Slide", DevelopmentFuelDrying2, "New Slide",
+                   DevelopmentFuelDecomp, "New Page",
+                   DevelopmentRS,  "New Page",
+                       DevelopmentRS1, "New Slide",  DevelopmentRS2, "New Slide",
+                            DevelopmentRS3,
+                            "New Slide", DevelopmentRS4, "New Slide",
+                   DevelopmentBT1, "New Page",
+                        DevelopmentBT2, "New Slide",
+                        DevelopmentBT3, "New Slide",
+                        DevelopmentBT4, "New Slide",
+                        DevelopmentBTscheme1, "New Slide",
+                        DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
+
+Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide",
+                    DevelopmentRS,  "New Page",
+                        DevelopmentRS1, "New Slide",  DevelopmentRS2, "New Slide",
+                             DevelopmentRS3, "New Slide", DevelopmentRS4, "New Slide",
+                         DevelopmentBT1, "New Page",
+                              DevelopmentBT2, "New Slide",
+                              DevelopmentBT3, "New Slide",
+                              DevelopmentBT4, "New Slide",
+                        DevelopmentBTscheme1, "New Slide",
+                        DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
 
 ################################################################################
 ## Evaluation                                                                 ##
@@ -1065,14 +1369,15 @@ EvaluationRec = list("slide",
 
 Evaluation=list(EvaluationTitle, "New Page", EvaluationInital,
                 "New Slide", EvaluationOverview1, "New Slide",
-                EvaluationOverview2, "New Slide", EvaluationFPC,
-                "New Slide", EvaluationRec)
+                EvaluationOverview2, "New Slide", EvaluationRec,
+                "New Slide", EvaluationFPC)
 
 ################################################################################
 ## Application                                                                ##
 ################################################################################
 Images.Applc = c(Bench = 'FuturesBenchmarking.png',
                  Fire  = 'FutureFire2016.png',
+                 Carbon = 'FutureCarbon.png',
                  Hydrol= 'FutureRunoff2016.png')
 
 SectionTitle = "Model Application"
@@ -1081,7 +1386,7 @@ ApplicationTitle = list("slide",
                  Image = list(
                      Title = SectionTitle,
                      SubHead = "",
-                     Image = Images.index['Index4'],
+                     Image = Images.index['Index5'],
                      Footer = ""))
 
 ## Introduction: Carbon, ecosystem composition, fire, hydrology
@@ -1175,7 +1480,7 @@ ApplicationBenchmarking = list("slide",
                         Footer = Cite["Kelley2014b"]))
 
 ApplicationFire = list("slide",
-                    LeftImage = list(
+                    Image = list(
                         Title = SectionTitle,
                         SubHead = "Future Fire",
                         Image = Images.Applc['Fire'],
@@ -1188,8 +1493,16 @@ ApplicationHydology = list("slide",
                         Image = Images.Applc['Hydrol'],
                     Footer = Cite["UkkolaSub"]))
 
+ApplicationCarbon = list("slide",
+                    Image = list(
+                        Title = SectionTitle,
+                        SubHead = "Future Carbon",
+                        Image = Images.Applc['Carbon'],
+                    Footer = Cite["UkkolaSub"]))
+
 Application = list(ApplicationTitle, "New Page", ApplicationOverview,
                     "New Page", ApplicationBenchmarking, "New Page",
+                    ApplicationCarbon, "New Page",
                     ApplicationFire, "New Page", ApplicationHydology)
 
 ################################################################################
@@ -1203,22 +1516,62 @@ Application = list(ApplicationTitle, "New Page", ApplicationOverview,
 ################################################################################
 ## Conclusions                                                             ##
 ################################################################################
+Images.Concl = "BenchmarkingR.png"
 
+BenchmarkingR = list ("slide",
+                    Image = list(
+                        Title = "Benchmarking Metrics Package",
+                        SubHead = "douglask3.github.io/tools",
+                        Image = Images.Concl))
 
+Conclusions = list(BenchmarkingTitle, "New Slide",
+                        BenchmarkingOverview1A, "New Slide",
+                        BenchmarkingOverview1B, "New Slide",
+                        BenchmarkingOverview1C, "New Slide",
+                        BenchmarkingOverview1D, "New Slide",
+                        BenchmarkingR)
 ################################################################################
 ## Allocation and Pheneology                                                  ##
 ################################################################################
+Images.CafeM = c(PhendulumStep1 = 'PhendulumStep1.png',
+                 PhendulumStep2 = 'PhendulumStep2.png',
+                 PhendulumStep3 = 'PhendulumStep3.png',
+                 PhendulumStep4 = 'PhendulumStep4.png',
+                 Phendulum      = 'Phendulum.png',
+                 Allocation     = 'Allocation.png')
 
+Phendulum1 = list("slide",
+                Image = list(
+                    Title = "Phendulum",
+                    Image = Images.CafeM['PhendulumStep1']
+                    ))
 
+PhendulumResults = Phendulum2 = Phendulum3 = Phendulum4 = Phendulum1
+
+Phendulum2[[2]]$Image = Images.CafeM['PhendulumStep2']
+Phendulum3[[2]]$Image = Images.CafeM['PhendulumStep3']
+Phendulum4[[2]]$Image = Images.CafeM['PhendulumStep4']
+PhendulumResults[[2]]$Image = Images.CafeM['Phendulum']
+
+Allocation = list("slide",
+                Image = list(
+                    Title = "Allocation Model Testing",
+                    Image = Images.CafeM['Allocation']
+                    ))
+
+CafeM = list(Phendulum1, "New Page", Phendulum2, "New Slide", Phendulum3,
+             "New Slide", Phendulum4, "New Slide",
+             PhendulumResults, "New Page", Allocation)
 
 ################################################################################
 ## Collate                                                                    ##
 ################################################################################
 
 Images = c(Images.index, Images.title, Images.Intro, Images.LPX, Images.Bench, Images.Error,
-           Images.Devlp, Images.Evalu, Images.Applc, Images.Smiley)
+           Images.Devlp, Images.Evalu, Images.Applc, Images.Smiley, Images.Concl,
+           Images.CafeM)
 
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
                       LPX, "New Slide", Benchmarking, "New Slide", Error, "New Slide",
                       Development, "New Slide", Evaluation, "New Slide",
-                      Application)
+                      Application, "New Slide", Conclusions, "New Slide", CafeM)
