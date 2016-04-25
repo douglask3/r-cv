@@ -61,8 +61,7 @@ HtmlSlide = list("slide",
                         Title = "Introduction",
                         html  = "<p>This is a paragraph.</p>
                                  <p>This is a paragraph.</p>
-                                 <p>This is a paragraph.</p>"
-                        ))
+                                 <p>This is a paragraph.</p>"))
 
 TheSlideAfter = TheNextSlide
 names(TheSlideAfter)[2]="LeftImage"
