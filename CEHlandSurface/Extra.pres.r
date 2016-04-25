@@ -149,7 +149,7 @@ Solution4 = list("slide",
                             evaluation (e.g CEHs JULES, cLamb, iLamb)',
                             'Recent advances in remote sensing and communications
                               means there is a lot more data<div>&nbsp',
-                             'Develop a benchmark system to:
+                             'Developed a benchmark system to:
                                 <ul class = "dashed">
                                     <li class = "dashed"> Find model weaknesses </li>
                                     <li class = "dashed"> Assess model development </li>
@@ -196,6 +196,23 @@ Introduction = list(Problem, "New Page", Problem1, "New Slide",
                         Introduction4, "New Slide",
                         Introduction5, "New Slide",
                         Introduction6)
+
+if (Short) {
+    Introduction = list(Problem, "New Page", Problem1, "New Slide",
+                            Problem2B, "New Slide",
+                            Problem2C, "New Slide",
+                            Problem2E, "New Slide",
+                            Solution1, "New Slide",
+                            Solution2, "New Slide",
+                            Solution3, "New Slide",
+                            Solution4, "New Slide",
+                        Introduction1, "New Page",
+                            Introduction2, "New Slide",
+                            Introduction3, "New Slide",
+                            Introduction4, "New Slide",
+                            Introduction5, "New Slide",
+                            Introduction6)
+}
 
 ###############################################################
 ## LPX                                              ##
@@ -496,14 +513,12 @@ Benchmarking = list(BenchmarkingTitle, "New Page",
                         "New Slide", BenchmarkingNULL, "New Slide", BenchmarkingNumbers2)
 if (Short) {
     Benchmarking = list(BenchmarkingTitle, "New Page",
-                            BenchmarkingOverview2A, "New Slide",
                             BenchmarkingDatasets, "New Slide",
-                            BenchmarkingOverview2B, "New Slide",
                         BenchmarkingMetrics, "New Slide",
                         BenchmarkingNumbers1, "New Page",
                         BenchmarkingNULL3,
                             "New Slide", BenchmarkingNULL, "New Slide",
-                            BenchmarkingNumbers2)
+                            BenchmarkingNumbers2, "New Slide", BenchmarkingNumbers3)
 }
 ################################################################################
 ## Error Identification                                                       ##
@@ -761,7 +776,7 @@ ErrorOverviewAus1Smiley[[2]]$Image = Images.Error['CompAus2']
 
 
 Error = list(ErrorTitle, "New Page", ErrorNos, "New Slide", ErrorOverview, "New Slide",
-            BenchmarkingNumbers3, "New Slide", ErrorOverviewSmiley, "New Slide",
+            ErrorOverviewSmiley, "New Slide",
              ErrorOverviewAus1, "New Slide", ErrorOverviewAus1Smiley,
              "New Slide", ErrorOverviewAusSmiley)
 ################################################################################
