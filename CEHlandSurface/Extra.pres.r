@@ -2,7 +2,7 @@
 ## Cfg                                                       ##
 ###############################################################
 usrID       = c('Douglas Kelley' = 'AJKyfI4AAAAJ')
-
+Short       = TRUE
 ###############################################################
 ## Basic Infomation                                          ##
 ###############################################################
@@ -248,14 +248,16 @@ LPX = list(LPXTitle, "New Page",
             LPXOverview7, "New Slide",
              LPXScheme)
 
-LPX = list(LPXTitle, "New Page",
-            LPXOverview1, "New Slide",
-            LPXOverview2, "New Slide",
-            LPXOverview3, "New Slide",
-            LPXOverview4, "New Slide",
-            LPXOverview5, "New Slide",
-            LPXOverview6, "New Slide",
-            LPXOverview7)
+if (Short) {
+    LPX = list(LPXTitle, "New Page",
+                LPXOverview1, "New Slide",
+                LPXOverview2, "New Slide",
+                LPXOverview3, "New Slide",
+                LPXOverview4, "New Slide",
+                LPXOverview5, "New Slide",
+                LPXOverview6, "New Slide",
+                LPXOverview7)
+}
 ###############################################################
 ## Benchmarking                                              ##
 ###############################################################
@@ -492,17 +494,17 @@ Benchmarking = list(BenchmarkingTitle, "New Page",
                     BenchmarkingNULL1, "New Slide", BenchmarkingNULL2,"New Slide",
                         BenchmarkingNULL3,"New Slide", BenchmarkingNULL5,
                         "New Slide", BenchmarkingNULL, "New Slide", BenchmarkingNumbers2)
-
-Benchmarking = list(BenchmarkingTitle, "New Page",
-                        BenchmarkingOverview2A, "New Slide",
-                        BenchmarkingDatasets, "New Slide",
-                        BenchmarkingOverview2B, "New Slide",
-                    BenchmarkingMetrics, "New Slide",
-                    BenchmarkingNumbers1, "New Page",
-                    BenchmarkingNULL3,
-                        "New Slide", BenchmarkingNULL, "New Slide",
-                        BenchmarkingNumbers2)
-
+if (Short) {
+    Benchmarking = list(BenchmarkingTitle, "New Page",
+                            BenchmarkingOverview2A, "New Slide",
+                            BenchmarkingDatasets, "New Slide",
+                            BenchmarkingOverview2B, "New Slide",
+                        BenchmarkingMetrics, "New Slide",
+                        BenchmarkingNumbers1, "New Page",
+                        BenchmarkingNULL3,
+                            "New Slide", BenchmarkingNULL, "New Slide",
+                            BenchmarkingNumbers2)
+}
 ################################################################################
 ## Error Identification                                                       ##
 ################################################################################
@@ -1003,17 +1005,18 @@ Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide
                         DevelopmentBTscheme1, "New Slide",
                         DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
 
-Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide",
-                    DevelopmentRS,  "New Page",
-                        DevelopmentRS1, "New Slide",  DevelopmentRS2, "New Slide",
-                             DevelopmentRS3, "New Slide", DevelopmentRS4, "New Slide",
-                         DevelopmentBT1, "New Page",
-                              DevelopmentBT2, "New Slide",
-                              DevelopmentBT3, "New Slide",
-                              DevelopmentBT4, "New Slide",
-                        DevelopmentBTscheme1, "New Slide",
-                        DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
-
+if (Short) {
+    Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide",
+                        DevelopmentRS,  "New Page",
+                            DevelopmentRS1, "New Slide",  DevelopmentRS2, "New Slide",
+                                 DevelopmentRS3, "New Slide", DevelopmentRS4, "New Slide",
+                             DevelopmentBT1, "New Page",
+                                  DevelopmentBT2, "New Slide",
+                                  DevelopmentBT3, "New Slide",
+                                  DevelopmentBT4, "New Slide",
+                            DevelopmentBTscheme1, "New Slide",
+                            DevelopmentBTscheme2, "New Slide", DevelopmentBTscheme)
+}
 ################################################################################
 ## Evaluation                                                                 ##
 ################################################################################
@@ -1392,14 +1395,15 @@ Application = list( ApplicationTitle, "New Page",
                     ApplicationCarbon, "New Page",
                     ApplicationFire, "New Page", ApplicationHydology)
 
-Application = list( ApplicationTitle, "New Page",
-                    ApplicationOverview1, "New Page",
-                        ApplicationOverview2, "New Slide",
-                        ApplicationOverview3, "New Slide",
-                        ApplicationOverview4,   "New Slide",
-                    ApplicationBenchmarking, "New Page", ApplicationBenchmarkingSmiley, "New Slide",
-                    ApplicationCarbon)
-
+if (Short) {
+    Application = list( ApplicationTitle, "New Page",
+                        ApplicationOverview1, "New Page",
+                            ApplicationOverview2, "New Slide",
+                            ApplicationOverview3, "New Slide",
+                            ApplicationOverview4,   "New Slide",
+                        ApplicationBenchmarking, "New Page", ApplicationBenchmarkingSmiley, "New Slide",
+                        ApplicationCarbon)
+}
 ################################################################################
 ## FireMip                                                                    ##
 ################################################################################
@@ -1425,6 +1429,11 @@ Conclusions = list(BenchmarkingTitle, "New Slide",
                         BenchmarkingOverview1C, "New Slide",
                         BenchmarkingOverview1D, "New Slide",
                         BenchmarkingR)
+
+if (Short) {
+    Conclusions = list(BenchmarkingTitle, "New Slide",
+                            BenchmarkingR)
+}
 ################################################################################
 ## Allocation and Pheneology                                                  ##
 ################################################################################
