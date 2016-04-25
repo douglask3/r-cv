@@ -178,6 +178,10 @@ div.foot {
     width: 100%;
 }
 
+div.invis {
+    opacity: 0.0;
+}
+
 html,body,div,span,object,iframe,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,ins,kbd,q,samp,strong,var,b,i,dl,dt,dd,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video, left, centre, right {
 	font-size:102%;
 	vertical-align: baseline;
