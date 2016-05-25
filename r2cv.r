@@ -10,10 +10,13 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     ###############################################################
     library(gitBasedProjects)
     sourceAllLibs()
-    source("../webpageGenerator/libs/googleScholarGrab/MakeUserProfile.r")
-    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.r")
-    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.list.r")
-    source("../webpageGenerator/libs/googleScholarGrab/MakePublicationDocument.Rlist.r")
+    sourceScholar<- function(file)
+	 source(paste("../googleScholarGrab/", file, sep =''))
+
+    sourceScholar("MakeUserProfile.r")
+    sourceScholar("MakePublicationDocument.r")
+    sourceScholar("MakePublicationDocument.list.r")
+    sourceScholar("MakePublicationDocument.Rlist.r")
     Credits = 'Made using r2cv R package - <a href = "http://github.com/douglask3/r-cv", target = "_blank"> github.com/douglask3/r-cv </a>'
 
 
