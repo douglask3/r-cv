@@ -39,16 +39,16 @@ Cite = c(Prentice2011 = "Prentice, IC, <b>Kelley, DI</b>, et al. (2011). Modelin
                          benchmarking system for evaluating global
                          vegetation models. Biogeosciences, 9(11)",
          Kelley2014a  = "<b>Kelley, DI</b>, Harrison, SP, & Prentice, IC (2014).
-                         Improved simulation of fire–vegetation interactions in the LPX-Mv1. 
+                         Improved simulation of fire–vegetation interactions in the LPX-Mv1.
                          GMD, 7(5)",
          Kelley2014b  = "<b>Kelley, DI</b>, & Harrison, SP (2014). Enhanced
-                         Australian carbon sink despite increased wildfire during the 
+                         Australian carbon sink despite increased wildfire during the
 		         21st century. ERL, 9(10)",
 	 Archibald2013= "Archibald, S, Lehmann, CER, Gomez-Dans, JL, Bradstock, RA (2014)
                          Defining pyromes and global syndromes of fire regimes. PNAS 110(16)",
-	 Lehmann2011  = "Lehmann, CER, Archibald, S, Hoffmann, WA and Bond, WJ (2011), 
+	 Lehmann2011  = "Lehmann, CER, Archibald, S, Hoffmann, WA and Bond, WJ (2011),
 			 Deciphering the distribution of the savanna biome. New Phyt., 191",
-         Bond         = "Bond, WJ, Woodward, FI, Midgley, GF (2005), The global distribution 
+         Bond         = "Bond, WJ, Woodward, FI, Midgley, GF (2005), The global distribution
 			 of ecosystems in a world without fire. New Phyt., 165")
 
 ###############################################################
@@ -71,7 +71,7 @@ TopPage   = list("slide",
 
 TitlePage = list("slide",
                  bgImage = Images.title['Title'],
-                 H1 = paste("<br><br>",TalkTitle, "<br>
+                 H1 = paste(TalkTitle, "<br>
                          <h2>Douglas Kelley<h2>"))
 
 TitlePage = list(TopPage, "New Slide", "New Slide", TitlePage)
@@ -102,8 +102,10 @@ TitlePage = list(TopPage, "New Slide", "New Slide", TitlePage)
 ###############################################################
 # 3- 4 Mm2 area burn every year
 # 2.8 PgC/year
-Images.Importance = c(CarbonFlux1 = "CarbonFlux1.png",
-		      CarbonFlux2 = "CarbonFlux2.png")
+Images.Importance = c(CarbonFlux1      = "CarbonFlux1.png",
+		              CarbonFlux2      = "CarbonFlux2.png",
+                      worldWithoutFire = "withoutFire.png",
+                      Cost             = "cost.png")
 
 SectionTitle = "Why is fire important"
 
@@ -125,7 +127,7 @@ Importance = list("slide",
                     Title = SectionTitle,
                     Text = List))
 
-Importance1 = Importance2 = Importance3 = Importance4 = 
+Importance1 = Importance2 = Importance3 = Importance4 =
 	Importance5 = Importance6 = Importance
 
 Importance1[[2]]$Text[2:6] = makeInvisable(Importance1[[2]]$Text[2:6])
@@ -142,15 +144,24 @@ Carbon1[[2]]$Footer = Cite['Kelley2014']
 Carbon2 = Carbon1
 Carbon2[[2]]$Image = Images.Importance['CarbonFlux2']
 
+vegImpacts = ImageSlide
+vegImpacts[[2]]$SubHead = 'A world without fire'
+vegImpacts[[2]]$Image   = Images.Importance['worldWithoutFire']
+vegImpacts[[2]]$Footer  = Cite['Bond']
 
+cost = ImageSlide
+cost[[2]]$SubHead = 'Cost of fire'
+cost[[2]]$Image   = Images.Importance['Cost']
+cost[[2]]$Footer  = Cite['Harrison2011']
 
-
-Importance = list(Importance1, "New Page", Carbon1, "New Slide", 
+Importance = list(Importance1, "New Page", Carbon1, "New Slide",
                       Importance2, "New Slide",Carbon2, "New Slide",
-		  Importance3, "New Page", 
-		  Importance4, "New Page")
+		  Importance3, "New Page",
+		  Importance4, "New Page", vegImpacts, "New Slide",
+          Importance5, "New Page",
+          Importance6, "New Slide", cost)
 ###############################################################
-## Where						     ##
+## Where						                             ##
 ###############################################################
 # Africa: 40% of global fire
 
