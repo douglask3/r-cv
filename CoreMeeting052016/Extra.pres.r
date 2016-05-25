@@ -125,7 +125,7 @@ Importance = list("slide",
                     Title = SectionTitle,
                     Text = List))
 
-Importance1 = Importance2 = Importance3 = Importanc4 = 
+Importance1 = Importance2 = Importance3 = Importance4 = 
 	Importance5 = Importance6 = Importance
 
 Importance1[[2]]$Text[2:6] = makeInvisable(Importance1[[2]]$Text[2:6])
