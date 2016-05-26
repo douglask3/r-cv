@@ -44,12 +44,22 @@ Cite = c(Prentice2011 = "Prentice, IC, <b>Kelley, DI</b>, et al. (2011). Modelin
          Kelley2014b  = "<b>Kelley, DI</b>, & Harrison, SP (2014). Enhanced
                          Australian carbon sink despite increased wildfire during the
 		         21st century. ERL, 9(10)",
-	 Archibald2013= "Archibald, S, Lehmann, CER, Gomez-Dans, JL, Bradstock, RA (2014)
+         Archibald2013= "Archibald, S, Lehmann, CER, Gomez-Dans, JL, Bradstock, RA (2014)
                          Defining pyromes and global syndromes of fire regimes. PNAS 110(16)",
-	 Lehmann2011  = "Lehmann, CER, Archibald, S, Hoffmann, WA and Bond, WJ (2011),
+         Lehmann2011  = "Lehmann, C, Archibald, S, Hoffmann, W, Bond, W (2011),
 			 Deciphering the distribution of the savanna biome. New Phyt., 191",
          Bond         = "Bond, WJ, Woodward, FI, Midgley, GF (2005), The global distribution
-			 of ecosystems in a world without fire. New Phyt., 165")
+			 of ecosystems in a world without fire. New Phyt., 165",
+         Murphy2013 = "Murphy, BP, et al. (2013) Fire regimes of Australia: a
+                       pyrogeographic model system. Journal of Biogeography 40(6)",
+         Knorr2014  = "Knorr, W et al. (2014) Impact of human population density
+                        on fire frequency at the global scale. Biogeosciences 11(4)",
+         Archibald2009 = "Archibald, S, et al.
+                         (2009), What limits fire? An examination of drivers of
+                         burnt area in Southern Africa. GCB",
+          Bistinas2013 = "Bistinas, I, et al. (2014).
+                          Causal relationships versus emergent patterns in the
+                          global controls of fire frequency. Biogeosciences")
 
 ###############################################################
 ## Slide                                                     ##
@@ -116,7 +126,7 @@ List = c("Inter-annual Variablity in CO<sub>2</sub>",
 	 "Vegetation adpatations",
 	 "Cost")
 
-ImageSlide = Problem0 = list("slide",
+ImageSlide = list("slide",
             Image = list(
                     Title = SectionTitle,
                     SubHead = "Carbon Flux"
@@ -164,12 +174,161 @@ Importance = list(Importance1, "New Page", Carbon1, "New Slide",
 ## Where						                             ##
 ###############################################################
 # Africa: 40% of global fire
+Images.where = c(Where1 = "Where1.png",
+		         Where2 = "Where2.png")
+
+SectionTitle = "Where they occur"
+
+Where1 = list("slide",
+            Image = list(
+                    Title = SectionTitle,
+                    SubHead = "Mapped",
+                    Image = Images.where['Where1'],
+                    Footer = Cite['Prentice2011b']
+                ))
+
+Where2 = Where1
+Where2[[2]]$SubHead = "Vegetation Types"
+Where2[[2]]$Image   = Images.where['Where2']
+Where2[[2]]$Footer  = Cite['Kelley2014']
+
+Where = list(Where1, "New Page", Where2)
+
+###############################################################
+## Controls on fire                                          ##
+###############################################################
+Images.Controls = c("NPPmoist1" = "NPP_moist_control1.png",
+                    "NPPmoist2" = "NPP_moist_control2.png",
+                    "NPPmoist3" = "NPP_moist_control3.png",
+                    "NPPmoist4" = "NPP_moist_control4.png",
+                    "NPPmoist5" = "NPP_moist_control5.png",
+                    "NPPmoist6" = "NPP_moist_control6.png",
+                    "HumanVsLightn" = "HumanFireStarts.png",
+                    "Arch2009"      = "ArchControls.png",
+                    "SimFire"       = "KnorrPop.png",
+                    "Yannis1"       = "Yannis1.png",
+                    "Yannis2"       = "Yannis2.png",
+                    "WhatIsFire"    = "WhatIsFire.png")
+# Controls on fire
+SectionTitle = "Controls on fire"
+
+NPPmoist5 = list("slide",
+            Image = list(
+                    Title = SectionTitle,
+                    SubHead = "Unimodal relationship",
+                    Image = Images.Controls['NPPmoist5']
+                ))
+NPPmoist1 = NPPmoist3 = NPPmoist5
+
+NPPmoist1[[2]]$SubHead = "Net Primary Production"
+NPPmoist1[[2]]$Image   = Images.Controls['NPPmoist1']
+
+NPPmoist2 = NPPmoist1
+NPPmoist2[[2]]$Image   = Images.Controls['NPPmoist2']
+NPPmoist1[[2]]$Footer = Cite['Murphy2013']
+
+NPPmoist3[[2]]$SubHead = "Precipitation"
+NPPmoist3[[2]]$Image   = Images.Controls["NPPmoist3"]
+
+NPPmoist4 = NPPmoist3
+NPPmoist4[[2]]$Image   = Images.Controls["NPPmoist4"]
+NPPmoist3[[2]]$Footer  = Cite['Lehmann2011']
 
 
+FireStarts = list("slide",
+            Image = list(
+                    Title = SectionTitle,
+                    SubHead = "What starts fires?",
+                    Image = Images.Controls['HumanVsLightn']
+                ))
+
+HumanStartsInModels = list("slide",
+                        Text = list(
+                            Title = SectionTitle,
+                            SubHead = "Models with human impact on burnt areas",
+                            Text = c("P&S", "CTEM1", "CTEM2", "Li", "REGFIRM",
+                                     "SPITFIRE", "LmFire","2/3 of Models since 2009")
+                            ))
+HumanFire1 = list("slide",
+                Image = list(
+                        Title = SectionTitle,
+                        SubHead = "Direct Human Impact on fire",
+                        Image = Images.Controls['Arch2009'],
+                        Footer = Cite['Archibald2009']
+                    ))
+
+HumanFire2 = HumanFire3 = HumanFire1
+
+HumanFire2[[2]]$Image = Images.Controls['SimFire']
+HumanFire2[[2]]$Footer = Cite['Knorr2014']
+
+HumanFire3[[2]]$Image = Images.Controls['Yannis1']
+HumanFire3[[2]]$Footer = Cite['Bistinas2013']
+
+HumanFire4 = HumanFire3
+HumanFire4[[2]]$Image = Images.Controls['Yannis2']
+
+WhatIsFire = list("slide",
+            Image = list(
+                    Title = "What is fire?",
+                    SubHead = "Fire Regimes",
+                    Image = Images.Controls['WhatIsFire']
+                ))
+
+Controls = list(NPPmoist1, "New Page", NPPmoist2, "New Slide",
+                    NPPmoist3, "New Slide", NPPmoist4, "New Slide",
+                    NPPmoist5, "New Slide",
+                FireStarts, "New Page", HumanStartsInModels, "New Slide",
+                HumanFire1, "New Page", HumanFire2, "New Slide",
+                    HumanFire3, "New Slide", HumanFire4, "New Slide",
+                WhatIsFire)
+
+###############################################################
+## Adaptations                                               ##
+###############################################################
+Images.Adaptations = c("BT"  = "BT.png",
+                    "RS1" = "RS1.png",
+                    "RS2" = "RS2.png")
+# Controls on fire
+SectionTitle = "Adaptations and Carbon Cycle impacts"
+
+BT = list("slide",
+            Image = list(
+                    Title = SectionTitle,
+                    SubHead = "Plant Protection",
+                    Image = Images.Adaptations['BT']
+                ))
+
+RS1 = list("slide",
+            Image = list(
+                    Title = SectionTitle,
+                    SubHead = "Plant Recovery",
+                    Image = Images.Adaptations['RS1'],
+                    Footer = Cite['Kelley2014']
+                ))
+
+RS2 = RS1
+RS2[[2]]$Image  = Images.Adaptations['RS2']
+RS2[[2]]$Footer = Cite['Kelley2014a']
+
+Adpatations = list(BT,"New Page", RS1,"New Slide", RS2)
+
+# What is fire
+    # Fire regimes
+# Vegetation adpatations (carbon)
+# Modelling fire
+    # FireMIP
+    # Simple Model
+    # Process based model
 ###############################################################
 ## Collate                                                   ##
 ###############################################################
 
-Images = c(Images.index, Images.title, Images.Importance)
+Images = c(Images.index, Images.title, Images.Importance, Images.where,
+           Images.Controls, Images.Adaptations)
 
-AdditionalSection = c(TitlePage, "New Slide", Importance)
+AdditionalSection = c(TitlePage, "New Slide",
+                      Importance, "New Slide",
+                      Where, "New Slide",
+                      Controls, "New Page",
+                      Adpatations)
