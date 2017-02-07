@@ -782,7 +782,7 @@ Error = list(ErrorTitle, "New Page", ErrorNos, "New Slide", ErrorOverview, "New 
 ################################################################################
 ## Development                                                                ##
 ################################################################################
-Images.Devlp = c(LPX       = "LPX_diagram.png",
+Images.LPXRS = c(LPX       = "LPX_diagram.png",
                  Lightn    = "Lightn.png",
                  Lightn1   = "Lightn1.png",
                  Lightn2   = "Lightn2.png",
@@ -835,18 +835,18 @@ DevelopmentLightn = list("slide",
                  Image = list(
                      Title = SectionTitle,
                      SubHead = "Lightning ignition",
-                     Image = Images.Devlp["Lightn"],
+                     Image = Images.LPXRS["Lightn"],
                      Footer = Cite['Kelley2014a']))
 
 DevelopmentLightn1 = DevelopmentLightn2 = DevelopmentLightn3 = DevelopmentLightn4 =
     DevelopmentLightn5 = DevelopmentLightn
 
-DevelopmentLightn1[[2]]$Image = Images.Devlp["Lightn1"]
+DevelopmentLightn1[[2]]$Image = Images.LPXRS["Lightn1"]
 DevelopmentLightn1[[2]]$Footer = Cite['Prentice2011b']
-DevelopmentLightn2[[2]]$Image = Images.Devlp["Lightn2"]
-DevelopmentLightn3[[2]]$Image = Images.Devlp["Lightn3"]
-DevelopmentLightn4[[2]]$Image = Images.Devlp["Lightn4"]
-DevelopmentLightn5[[2]]$Image = Images.Devlp["Lightn5"]
+DevelopmentLightn2[[2]]$Image = Images.LPXRS["Lightn2"]
+DevelopmentLightn3[[2]]$Image = Images.LPXRS["Lightn3"]
+DevelopmentLightn4[[2]]$Image = Images.LPXRS["Lightn4"]
+DevelopmentLightn5[[2]]$Image = Images.LPXRS["Lightn5"]
 DevelopmentLightn[[2]]$Footer = ''
 ## Rooting Depth
 DevelopmentRoot = list("slide",
@@ -865,7 +865,7 @@ DevelopmentRoot = list("slide",
                        <tr><td>C3</td><td>0.9          </td><td>0.90        </td></tr>
                        <tr><td>C4</td><td>0.7          </td><td>0.86        </td></tr>
                      </table>',
-                     Image = Images.Devlp["Root"],
+                     Image = Images.LPXRS["Root"],
                      Footer = Cite['Kelley2014a']))
 
 
@@ -913,11 +913,11 @@ DevelopmentFuelDrying1 = list("slide",
                  Image = list(
                      Title = SectionTitle,
                      SubHead = "Fuel Drying Time",
-                     Image = Images.Devlp["Dry1"],
+                     Image = Images.LPXRS["Dry1"],
                      Footer = Cite['Kelley2014a']))
 
 DevelopmentFuelDrying2 = DevelopmentFuelDrying1
-DevelopmentFuelDrying2[[2]]$Image = Images.Devlp["Dry"]
+DevelopmentFuelDrying2[[2]]$Image = Images.LPXRS["Dry"]
 
 
 ## Fuel Decay
@@ -932,7 +932,7 @@ DevelopmentFuelDecomp = list("slide",
                                         <li class = "dashed"> Fine vs Coarse </li>
                                         <li class = "dashed"> Tempuratures </li>
                                     </ul>'),
-                     Image = Images.Devlp["Decomp"],
+                     Image = Images.LPXRS["Decomp"],
                      Footer = Cite['Kelley2014a']))
 
 ## resprouting
@@ -942,15 +942,15 @@ DevelopmentRS = list("slide",
             Image = list(
                      Title = SectionTitle,
                      SubHead = "Resprouting",
-                     Image = Images.Devlp["RSDat"],
+                     Image = Images.LPXRS["RSDat"],
                      Footer = Cite['Kelley2014a']))
 
 DevelopmentRS1 = DevelopmentRS2 = DevelopmentRS3 = DevelopmentRS4 = DevelopmentRS
 
-DevelopmentRS1[[2]]$Image = Images.Devlp["RS1"]
-DevelopmentRS2[[2]]$Image = Images.Devlp["RS2"]
-DevelopmentRS3[[2]]$Image = Images.Devlp["RS3"]
-DevelopmentRS4[[2]]$Image = Images.Devlp["RS4"]
+DevelopmentRS1[[2]]$Image = Images.LPXRS["RS1"]
+DevelopmentRS2[[2]]$Image = Images.LPXRS["RS2"]
+DevelopmentRS3[[2]]$Image = Images.LPXRS["RS3"]
+DevelopmentRS4[[2]]$Image = Images.LPXRS["RS4"]
 
 ## Adpative Bark Thickness
 DevelopmentBT4 = list("slide",
@@ -967,13 +967,13 @@ DevelopmentBT4 = list("slide",
                                         <li class = "dashed"> Within PFT variability. </li>
                                         <li class = "dashed"> Differences between plants with fire-adapted and fire-prone trait </li>
                                     </ul></small>'),
-                     Image = Images.Devlp["BT4"],
+                     Image = Images.LPXRS["BT4"],
                      Footer = Cite['Kelley2014a']))
 
 DevelopmentBT1 = DevelopmentBT2 = DevelopmentBT3 = DevelopmentBT4
-DevelopmentBT1[[2]]$Image = Images.Devlp["BT1"]
-DevelopmentBT2[[2]]$Image = Images.Devlp["BT2"]
-DevelopmentBT3[[2]]$Image = Images.Devlp["BT3"]
+DevelopmentBT1[[2]]$Image = Images.LPXRS["BT1"]
+DevelopmentBT2[[2]]$Image = Images.LPXRS["BT2"]
+DevelopmentBT3[[2]]$Image = Images.LPXRS["BT3"]
 
 DevelopmentBT1[[2]]$Text[2] = makeInvisable(DevelopmentBT1[[2]]$Text[2])
 
@@ -992,13 +992,13 @@ DevelopmentBTscheme = list("slide",
                                             based on initial distribution. </li>
                                         <li class = "dashed"> New distribution from weighted average of survivors and established </li>
                                     </ul>'),
-                     Image = Images.Devlp["BTscheme"],
+                     Image = Images.LPXRS["BTscheme"],
                      Footer = Cite['Kelley2014a']))
 
 DevelopmentBTscheme1 = DevelopmentBTscheme2 = DevelopmentBTscheme
 
-DevelopmentBTscheme1[[2]]$Image = Images.Devlp["BTscheme1"]
-DevelopmentBTscheme2[[2]]$Image = Images.Devlp["BTscheme2"]
+DevelopmentBTscheme1[[2]]$Image = Images.LPXRS["BTscheme1"]
+DevelopmentBTscheme2[[2]]$Image = Images.LPXRS["BTscheme2"]
 DevelopmentBTscheme[[2]]$Footer = ''
 
 Development = list(DevelopmentTitle, "New Page", DevelopmentOverview, "New Slide",
@@ -1182,6 +1182,61 @@ EvaluationOverview2[[2]]$Text    = paste('<table  class = "table1">
 
     )
 
+EvaluationExtra = EvaluationOverview1
+EvaluationExtra[[2]]$Image   = Images.Evalu['CompFPC']
+EvaluationExtra[[2]]$Text    = paste('<table  class = "table1">
+           <tr>
+           <th></th>
+               <th>Metric</th>
+               <th>LPX</th>
+           </tr>
+           <tr>
+               <td>Recovery Time</td>
+               <td>NME</td>
+               <td>',SmileyImage(5),'</td>
+           </tr>
+           <tr>
+               <td>Fire Control</td>
+               <td> MM </td>
+               <td>',SmileyImage(5),'</td>
+           </tr>
+           </table>'
+
+    )
+
+EvaluationExtra2 = EvaluationExtra
+EvaluationExtra2[[2]]$Image   = Images.Evalu['CompFPC']
+EvaluationExtra2[[2]]$Text    = paste('<table  class = "table1">
+           <tr>
+           <th></th>
+               <th>LPX</th>
+               <th>LPX-Mv1</th>
+           </tr>
+           <tr>
+               <td> Recovery Time - Resprouting</td>
+               <td>', SmileyImage(5), '</td>
+               <td>', SmileyImage(1),'</td>
+           </tr>
+           <tr>
+               <td> Recovery Time - Non-resprouting</td>
+               <td>', SmileyImage(5), '</td>
+               <td>', SmileyImage(5),'</td>
+           </tr>
+           <tr>
+               <td> Fire Control </td>
+               <td>',SmileyImage(5),'</td>
+               <td>',SmileyImage(1),'</td>
+           </tr>
+           <tr>
+               <td> Fire Control - Moisture </td>
+               <td>',SmileyImage(5),'</td>
+               <td>',SmileyImage(3),'</td>
+           </tr>
+           </table>'
+
+    )
+
+
 EvaluationFPC = list("slide",
                      Image = list(
                      Title = SectionTitle,
@@ -1199,7 +1254,8 @@ EvaluationRec = list("slide",
 Evaluation=list(EvaluationTitle, "New Page", EvaluationInital,
                 "New Slide", EvaluationOverview1, "New Slide",
                 EvaluationOverview2, "New Slide", EvaluationRec,
-                "New Slide", EvaluationFPC)
+                "New Slide", EvaluationFPC, "New Page", EvaluationExtra,
+                "New Slide", EvaluationExtra2)
 
 ################################################################################
 ## Application                                                                ##
@@ -1487,7 +1543,7 @@ CafeM = list(Phendulum1, "New Page", Phendulum2, "New Slide", Phendulum3,
 ################################################################################
 
 Images = c(Images.index, Images.title, Images.Intro, Images.LPX, Images.Bench, Images.Error,
-           Images.Devlp, Images.Evalu, Images.Applc, Images.Smiley, Images.Concl,
+           Images.LPXRS, Images.Evalu, Images.Applc, Images.Smiley, Images.Concl,
            Images.CafeM)
 
 AdditionalSection = c(TitlePage, "New Slide", Introduction, "New Slide",
