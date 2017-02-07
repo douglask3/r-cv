@@ -11,7 +11,7 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
     library(gitBasedProjects)
     sourceAllLibs()
     sourceScholar<- function(file)
-	 source(paste("../googleScholarGrab/", file, sep =''))
+	 source(paste("../webpageGenerator/libs/googleScholarGrab/", file, sep =''))
 
     sourceScholar("MakeUserProfile.r")
     sourceScholar("MakePublicationDocument.r")
@@ -52,7 +52,7 @@ r2cv <- function(Top = NULL, Name = NULL, Contact = NULL, AdditionalSection = NU
             source(i, local = TRUE)
 
             Images = paste(ImagesPath, '/', Images, sep = '')
-            
+
             if (length(Name) > 3)  Images = c(Name[4], Images)
             if (!is.null(Images)) {
                 cpInFiles  = c(cpInFiles , Images)
